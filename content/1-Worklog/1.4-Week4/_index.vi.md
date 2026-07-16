@@ -1,6 +1,6 @@
 ---
 title: "Nhật ký Tuần 4"
-date: 2026-07-18
+date: 2026-07-15
 weight: 4
 chapter: false
 pre: " <b> 1.4 </b> "
@@ -71,3 +71,8 @@ pre: " <b> 1.4 </b> "
   * AWS Application Migration Service (MGN)
   * AWS DataSync
   * Di chuyển Container lên Amazon EKS
+  ### Đánh giá Tuần 4:
+
+Trong tuần 4, em đã có cơ hội thực hành triển khai kiến trúc WordPress có tính sẵn sàng cao và khả năng mở rộng trên AWS bằng Amazon EC2, RDS Multi-AZ, Auto Scaling Group, Application Load Balancer và Amazon CloudFront.
+
+Bên cạnh đó, em cũng nắm được quy trình di chuyển máy chủ và cơ sở dữ liệu bằng VM Import/Export, AWS Schema Conversion Tool (SCT) và AWS Database Migration Service (DMS). Đồng thời, em tìm hiểu thêm về AWS Migration Hub, AWS MGN và AWS DataSync, giúp hiểu rõ hơn về các giải pháp di chuyển và triển khai hệ thống trên AWS.

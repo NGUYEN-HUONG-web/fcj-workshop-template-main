@@ -1,6 +1,6 @@
 ---
 title: "Week 4 Worklog"
-date: 2026-07-18
+date: 2026-07-15
 weight: 1
 chapter: false
 pre: " <b> 1.4. </b> "
@@ -71,3 +71,8 @@ pre: " <b> 1.4. </b> "
   * AWS Application Migration Service (MGN)
   * AWS DataSync
   * Container Migration to Amazon EKS
+  ### Week 4 Evaluation:
+
+During Week 4, I gained practical experience in deploying a highly available and scalable WordPress architecture on AWS using Amazon EC2, RDS Multi-AZ, Auto Scaling Group, Application Load Balancer, and Amazon CloudFront.
+
+I also learned the server and database migration process using VM Import/Export, AWS Schema Conversion Tool (SCT), and AWS Database Migration Service (DMS). In addition, I explored AWS Migration Hub, AWS MGN, and AWS DataSync, giving me a better understanding of cloud migration strategies and production-ready AWS architectures.
