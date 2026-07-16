@@ -6,50 +6,46 @@ chapter: false
 pre: " <b> 1.3. </b> "
 ---
 
-### Mục tiêu tuần 3:
+### Mục tiêu Tuần 3
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Triển khai hệ thống giám sát và quan sát bằng Amazon CloudWatch (Metrics, Logs, Alarms và Dashboards).
+* Xây dựng kiến trúc Hybrid DNS với Route 53 Resolver và Microsoft Active Directory.
+* Nâng cao kỹ năng sử dụng AWS CLI để tự động hóa việc quản lý các dịch vụ Storage, Networking, IAM và Compute.
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 06/07/2026   | 06/07/2026      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 07/07/2026   | 07/07/2026      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 08/07/2026   | 08/07/2026      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 09/07/2026   | 09/07/2026      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 10/07/2026   | 10/07/2026      | <https://cloudjourney.awsstudygroup.com/> |
+### Công việc thực hiện trong tuần
 
+| Ngày | Công việc | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
+| --- | ---- | ---------- | --------------- | ------------------ |
+| 2 | - Cấu hình CloudWatch Metrics, Logs Insights, Alarms và Dashboards.<br>- **Thực hành:** Giám sát hiệu năng EC2 và tạo cảnh báo khi CPU Utilization vượt ngưỡng. | 06/07/2026 | 06/07/2026 | <https://000008.awsstudygroup.com/> |
+| 3 | - Triển khai Microsoft Active Directory.<br>- Cấu hình Remote Desktop Gateway (RDGW).<br>- Thiết lập Route 53 Resolver (Inbound/Outbound Endpoints và Resolver Rules).<br>- Kiểm tra khả năng phân giải Hybrid DNS. | 07/07/2026 | 07/07/2026 | <https://000010.awsstudygroup.com/> |
+| 4 | - Cài đặt và cấu hình AWS CLI v2.<br>- Quản lý Amazon S3 và Amazon SNS bằng AWS CLI.<br>- Tìm hiểu các định dạng đầu ra và tùy chọn lọc dữ liệu của AWS CLI. | 08/07/2026 | 08/07/2026 | <https://000011.awsstudygroup.com/> |
+| 5 | - Quản lý người dùng và vai trò IAM bằng AWS CLI.<br>- Cấu hình xác thực MFA.<br>- Triển khai các tài nguyên mạng VPC.<br>- Khởi tạo EC2 bằng AWS CLI. | 09/07/2026 | 09/07/2026 | <https://000011.awsstudygroup.com/> |
+| 6 | - Khắc phục các lỗi thường gặp của AWS CLI.<br>- Cấu hình thông tin xác thực SAML.<br>- Dọn dẹp tài nguyên AWS bằng AWS CLI. | 10/07/2026 | 10/07/2026 | <https://000011.awsstudygroup.com/> |
 
-### Kết quả đạt được tuần 3:
+### Kết quả đạt được trong Tuần 3
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Triển khai thành công hệ thống giám sát bằng Amazon CloudWatch.
+  * Cấu hình Metrics, Logs, Alarms và Dashboards.
+  * Giám sát hiệu năng EC2 và thiết lập cảnh báo CPU Utilization.
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+* Xây dựng thành công môi trường Hybrid DNS bằng cách:
+  * Triển khai Microsoft Active Directory.
+  * Cấu hình Route 53 Resolver.
+  * Kiểm tra khả năng phân giải DNS giữa môi trường on-premises và AWS.
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+* Nâng cao kỹ năng sử dụng AWS CLI, bao gồm:
+  * Quản lý Amazon S3 và Amazon SNS.
+  * Tạo và quản lý người dùng, vai trò IAM.
+  * Triển khai các tài nguyên mạng VPC.
+  * Khởi tạo và quản lý EC2 bằng AWS CLI.
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+* Rèn luyện kỹ năng xử lý các lỗi thường gặp của AWS CLI liên quan đến:
+  * Thông tin xác thực (Credentials) và quyền truy cập (Permissions).
+  * Xác thực MFA và SAML.
+  * Cấu hình CLI và các lỗi khi gọi AWS API.
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+* Dọn dẹp toàn bộ tài nguyên AWS bằng AWS CLI nhằm tránh phát sinh chi phí không cần thiết.
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
+### Đánh giá tuần
 
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+Trong tuần này, em đã hiểu rõ hơn về giám sát hệ thống trên AWS, mạng lai (Hybrid Networking) và quản trị hạ tầng bằng dòng lệnh. Thông qua việc thực hành với Amazon CloudWatch, em học được cách theo dõi hiệu năng tài nguyên và chủ động phát hiện các sự cố tiềm ẩn. Việc cấu hình Hybrid DNS bằng Route 53 Resolver kết hợp với Microsoft Active Directory giúp em hiểu rõ hơn về mô hình tích hợp giữa hệ thống on-premises và AWS. Bên cạnh đó, em cũng tự tin hơn khi sử dụng AWS CLI để tự động hóa việc triển khai và quản lý hạ tầng thay vì chỉ thao tác trên AWS Management Console. Nhìn chung, các bài thực hành trong tuần đã giúp em nâng cao kiến thức chuyên môn cũng như kỹ năng giải quyết vấn đề trong môi trường AWS.
