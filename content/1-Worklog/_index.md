@@ -16,7 +16,7 @@ Typically, and as a standard, a worklog is carried out over about 3 months (thro
 
 **Week 3:** [Monitoring, Hybrid DNS, and Infrastructure Automation](1.3-Week3/)
 
-**Week 4:** [Doing task C...](1.4-Week4/)
+**Week 4:** [High Availability & Migration on AWS](1.4-Week4/)
 
 **Week 5:** [Doing task D...](1.5-Week5/)
 
