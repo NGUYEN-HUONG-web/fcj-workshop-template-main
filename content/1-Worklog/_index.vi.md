@@ -15,9 +15,9 @@ Thông thường và cũng là tiêu chuẩn, một worklog được thực hi�
 
 **Tuần 2:** [Lưu trữ, Cơ sở dữ liệu và Kiến trúc Tính sẵn sàng cao trên AWS.](1.2-Week2/)
 
-**Tuần 3:** [Làm công việc B...](1.3-Week3/)
+**Tuần 3:** [Giám sát, Mạng lai và Tự động hóa hạ tầng](1.3-week3/)
 
-**Tuần 4:** [Làm công việc C...](1.4-Week4/)
+**Tuần 4:** [Tính sẵn sàng cao và Di chuyển hệ thống trên AWS](1.4-week4/)
 
 **Tuần 5:** [Làm công việc D...](1.5-Week5/)
 
