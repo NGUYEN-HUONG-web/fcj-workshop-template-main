@@ -10,7 +10,9 @@ pre: " <b> 3.1. </b> "
 
 While learning AWS and completing hands-on labs, I encountered an experience that many beginners in Cloud computing may also face.
 
-At the beginning of my learning journey, I received **200 USD in AWS Credits** to explore AWS services. After completing several lab exercises, I checked my AWS Billing dashboard and noticed that **27 USD** had already been deducted. Assuming I had forgotten to remove a few resources, I carefully reviewed my EC2 instances, Lambda functions, VPCs, S3 buckets, and other services.
+Initially, I received **100 USD in AWS Credits** to learn and practice with AWS services. After completing **five additional AWS hands-on tasks**, I earned **another 100 USD in AWS Credits**, giving me a total of **200 USD in AWS Credits**. I was confident that this amount would be sufficient for my entire learning journey on AWS.
+
+However, after finishing several lab exercises, I checked **AWS Billing** and was surprised to find that **27 USD** had already been deducted. Thinking I had simply forgotten to delete a few resources, I carefully reviewed my **Amazon EC2** instances, **AWS Lambda** functions, **Amazon VPC**, **Amazon S3**, and other AWS services. What I discovered later was the real reason why my total AWS Credits loss eventually reached **47.77 USD**.
 
 To my surprise, the next day my AWS bill increased again, and the total cost eventually reached **47.77 USD**.
 
