@@ -1,6 +1,6 @@
 ---
 title: "Week 4 Worklog"
-date: 2026-07-15
+date: 2026-07-17
 weight: 4
 chapter: false
 pre: " <b> 1.4. </b> "
@@ -18,11 +18,11 @@ pre: " <b> 1.4. </b> "
 
 | Day | Task | Start Date | Completion Date | Reference Material |
 | --- | ---- | ---------- | --------------- | ------------------ |
-| 2 | - **WordPress on AWS – Part 1** <br>&emsp; + Prepare VPC, Public/Private Subnets, and Security Groups <br>&emsp; + Deploy Amazon RDS Multi-AZ <br>&emsp; + Launch EC2 and install WordPress <br>&emsp; + Connect WordPress to Amazon RDS | 09/29/2025 | 09/29/2025 | <https://000021.awsstudygroup.com/> |
-| 3 | - **WordPress on AWS – Part 2** <br>&emsp; + Create AMI from the configured EC2 instance <br>&emsp; + Configure Launch Template and Auto Scaling Group <br>&emsp; + Deploy Application Load Balancer <br>&emsp; + Integrate Amazon CloudFront <br>&emsp; + Perform RDS Snapshot & Restore <br>&emsp; + Clean up AWS resources | 09/30/2025 | 09/30/2025 | <https://000021.awsstudygroup.com/> |
-| 4 | - **Server Migration (VM Import/Export)** <br>&emsp; + Prepare an On-Premises virtual machine <br>&emsp; + Upload VM image to Amazon S3 <br>&emsp; + Import VM as AMI and launch EC2 <br>&emsp; + Export EC2 back to VM image <br>&emsp; + Configure IAM Roles and S3 permissions | 10/01/2025 | 10/01/2025 | <https://000014.awsstudygroup.com/> |
-| 5 | - **Database Migration** <br>&emsp; + Prepare source and target databases <br>&emsp; + Convert schema using AWS SCT <br>&emsp; + Configure AWS DMS Replication Instance <br>&emsp; + Create Endpoints and Migration Task <br>&emsp; + Perform Full Load and Change Data Capture (CDC) <br>&emsp; + Explore AWS DMS Serverless | 10/02/2025 | 10/02/2025 | <https://000043.awsstudygroup.com/> |
-| 6 | - **Migration Monitoring & Advanced Services** <br>&emsp; + Monitor DMS using Amazon CloudWatch <br>&emsp; + Analyze Task Logs and Table Statistics <br>&emsp; + Troubleshoot migration issues <br>&emsp; + Learn AWS Migration Hub, AWS MGN, AWS DataSync, and Container Migration to Amazon EKS | 10/03/2025 | 10/03/2025 | <https://000043.awsstudygroup.com/> |
+| 2 | - **WordPress on AWS – Part 1** <br>&emsp; + Prepare VPC, Public/Private Subnets, and Security Groups <br>&emsp; + Deploy Amazon RDS Multi-AZ <br>&emsp; + Launch EC2 and install WordPress <br>&emsp; + Connect WordPress to Amazon RDS | 12/07/2026 | 12/07/2026 | <https://000021.awsstudygroup.com/> |
+| 3 | - **WordPress on AWS – Part 2** <br>&emsp; + Create AMI from the configured EC2 instance <br>&emsp; + Configure Launch Template and Auto Scaling Group <br>&emsp; + Deploy Application Load Balancer <br>&emsp; + Integrate Amazon CloudFront <br>&emsp; + Perform RDS Snapshot & Restore <br>&emsp; + Clean up AWS resources | 13/07/2026 | 13/07/2026 | <https://000021.awsstudygroup.com/> |
+| 4 | - **Server Migration (VM Import/Export)** <br>&emsp; + Prepare an On-Premises virtual machine <br>&emsp; + Upload VM image to Amazon S3 <br>&emsp; + Import VM as AMI and launch EC2 <br>&emsp; + Export EC2 back to VM image <br>&emsp; + Configure IAM Roles and S3 permissions | 14/07/2026 | 14/07/2026 | <https://000014.awsstudygroup.com/> |
+| 5 | - **Database Migration** <br>&emsp; + Prepare source and target databases <br>&emsp; + Convert schema using AWS SCT <br>&emsp; + Configure AWS DMS Replication Instance <br>&emsp; + Create Endpoints and Migration Task <br>&emsp; + Perform Full Load and Change Data Capture (CDC) <br>&emsp; + Explore AWS DMS Serverless | 15/07/2026 | 15/07/2026 | <https://000043.awsstudygroup.com/> |
+| 6 | - **Migration Monitoring & Advanced Services** <br>&emsp; + Monitor DMS using Amazon CloudWatch <br>&emsp; + Analyze Task Logs and Table Statistics <br>&emsp; + Troubleshoot migration issues <br>&emsp; + Learn AWS Migration Hub, AWS MGN, AWS DataSync, and Container Migration to Amazon EKS | 16/07/2026 | 16/07/2026 | <https://000043.awsstudygroup.com/> |
 
 ### Week 4 Achievements:
 
