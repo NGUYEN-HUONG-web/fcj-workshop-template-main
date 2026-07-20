@@ -117,3 +117,6 @@ More importantly, this experience reminded me that **Cost Optimization should be
 
 - **AWS Well-Architected Framework – Cost Optimization Pillar**  
   https://docs.aws.amazon.com/wellarchitected/latest/cost-optimization-pillar/welcome.html
+
+  ## Article link
+  https://www.facebook.com/groups/awsstudygroupfcj/?multi_permalinks=2215517809213179&notif_id=1784349094559062&notif_t=feedback_reaction_generic&ref=notif
