@@ -357,3 +357,36 @@ input[type="submit"]:hover,
   align-items: center;
   justify-content: center;
 }
+
+.profile-frame {
+  border: 1px solid rgba(67, 92, 124, 0.18);
+  border-radius: 20px;
+  padding: 1.4rem 1.6rem;
+  background: #ffffff;
+  box-shadow: 0 14px 32px rgba(45, 65, 90, 0.08);
+  margin-bottom: 2rem;
+  overflow-x: auto;
+}
+
+.profile-frame table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.profile-frame th,
+.profile-frame td {
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid rgba(67, 92, 124, 0.12);
+  text-align: left;
+  vertical-align: top;
+}
+
+.profile-frame th {
+  width: 190px;
+  font-weight: 700;
+  color: #283e5b;
+}
+
+.profile-frame tr:last-child td {
+  border-bottom: none;
+}

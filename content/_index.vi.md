@@ -7,26 +7,21 @@ chapter: false
 
 # Báo cáo thực tập
 ### Thông tin sinh viên:
-&emsp; **Họ và tên:** Nguyễn Thị Thu  Hường
-
-&emsp; **Số điện thoại:** 0886100173
-
-&emsp; **Email:** huonghanna10052004@gmail.com
-
-&emsp; **Trường:** Đại học Sài Gòn
-
-&emsp; **Ngành:** Công nghệ thông tin
-
-&emsp; **Lớp:** DCT122C4
-
-&emsp; **Công ty thực tập:** Công ty TNHH Amazon Web Services Viet Nam
-
-&emsp; **Vị trí thực tập:** Workforce Bootcamp - First Cloud AI Journey
-
-&emsp; **Thời gian thực tập:** Từ ngày 22/06/2026 đến ngày 12/08/2026
+<div class="profile-frame">
+<table>
+  <tr><th>Họ và tên</th><td>Nguyễn Thị Thu Hường</td></tr>
+  <tr><th>Số điện thoại</th><td>0886100173</td></tr>
+  <tr><th>Email</th><td>huonghanna10052004@gmail.com</td></tr>
+  <tr><th>Trường</th><td>Đại học Sài Gòn</td></tr>
+  <tr><th>Ngành</th><td>Công nghệ thông tin</td></tr>
+  <tr><th>Lớp</th><td>DCT122C4</td></tr>
+  <tr><th>Công ty thực tập</th><td>Công ty TNHH Amazon Web Services Viet Nam</td></tr>
+  <tr><th>Vị trí thực tập</th><td>Workforce Bootcamp - First Cloud AI Journey</td></tr>
+  <tr><th>Thời gian thực tập</th><td>Từ ngày 22/06/2026 đến ngày 12/08/2026</td></tr>
+</table>
+</div>
 
 ![Ảnh đại diện của bạn](/images/anhavatar.png)
-
 
 ### Nội dung báo cáo
 
