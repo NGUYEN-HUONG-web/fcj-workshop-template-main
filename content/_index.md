@@ -7,7 +7,18 @@ chapter: false
 
 # Internship Report
 
-### Student Information
+<p class="page-subtitle">AWS Cloud Internship Portfolio</p>
+
+<div class="hero-panel">
+  <img src="/images/anhavatar.png" alt="Avatar" class="hero-avatar">
+  <div class="hero-card-text">
+    <p class="hero-role">AWS Cloud Intern</p>
+    <h2 class="hero-name">Nguyen Thi Thu Huong</h2>
+    <p class="hero-text">Cloud engineering internship journey and technical report for Workforce Bootcamp.</p>
+  </div>
+</div>
+
+## Student Information
 
 <div class="profile-card">
   <div class="profile-card__header">
@@ -28,15 +39,13 @@ chapter: false
   </div>
 </div>
 
-![Profile Photo](/images/anhavatar.png)
-
 ### Report Contents
 
-1. [Worklog](1-Worklog/)
-2. [Proposal](2-Proposal/)
-3. [Published Blog Posts](3-BlogsPosted/)
-4. [Events Attended](4-EventParticipated/)
-5. [Workshop](5-Workshop/)
-6. [Self-Evaluation](6-Self-evaluation/)
-7. [Feedback and Suggestions](7-Feedback/)
+1. 📝 [Worklog](1-Worklog/)
+2. 📄 [Proposal](2-Proposal/)
+3. 📰 [Published Blog Posts](3-BlogsPosted/)
+4. 🎓 [Events Attended](4-EventParticipated/)
+5. 🛠️ [Workshop](5-Workshop/)
+6. ✅ [Self-Evaluation](6-Self-evaluation/)
+7. 💬 [Feedback and Suggestions](7-Feedback/)
 
