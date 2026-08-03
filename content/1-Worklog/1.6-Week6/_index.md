@@ -1,53 +1,56 @@
 ---
 title: "Week 6 Worklog"
-date: 2024-01-01
+date: 2026-07-27
 weight: 6
 chapter: false
 pre: " <b> 1.6. </b> "
 ---
 
-### Week 6 Objectives:
+### Week 6 Objectives
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Understand the fundamentals of containers and the differences between containers and virtual machines.
+* Package applications using Docker.
+* Manage Docker images with Amazon Elastic Container Registry (Amazon ECR).
+* Learn about Amazon Elastic Container Service (Amazon ECS) and AWS Fargate.
+* Explore Kubernetes and Amazon Elastic Kubernetes Service (Amazon EKS).
+* Deploy containerized applications on AWS.
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2026 | 08/11/2026      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2026 | 08/12/2026      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2026 | 08/13/2026      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2026 | 08/15/2026      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2026 | 08/15/2026      | <https://cloudjourney.awsstudygroup.com/> |
+### Tasks Completed During the Week
 
+| Day | Tasks | Start Date | Completion Date | Reference Materials |
+| --- | --- | --- | --- | --- |
+| **2** | - Learned about Docker Images, Containers, Dockerfiles, Registries, Volumes, and Networks.<br>- Installed Docker Desktop.<br>- Practiced using `docker pull`, `docker run`, `docker ps`, `docker logs`, and `docker exec`.<br>- Compared container technology with traditional virtual machines. | 27/07/2026 | 27/07/2026 | <https://docs.docker.com/get-started/> |
+| **3** | - Wrote Dockerfiles for both backend and frontend applications.<br>- Used Multi-stage Builds to reduce Docker image size.<br>- Built and ran containers locally.<br>- Learned Docker Compose and the use of environment variables. | 28/07/2026 | 28/07/2026 | <https://docs.docker.com/build/building/multi-stage/> |
+| **4** | - Created an Amazon ECR repository.<br>- Logged in to Amazon ECR using the AWS CLI.<br>- Tagged and pushed Docker images to Amazon ECR.<br>- Enabled Image Scanning and reviewed detected vulnerabilities. | 29/07/2026 | 29/07/2026 | <https://docs.aws.amazon.com/AmazonECR/latest/userguide/getting-started-cli.html> |
+| **5** | - Learned about ECS Clusters, Task Definitions, Tasks, and Services.<br>- Compared Amazon ECS on EC2 with AWS Fargate.<br>- Created a Task Definition using a Docker image stored in Amazon ECR.<br>- Deployed an ECS Service and reviewed container logs. | 30/07/2026 | 30/07/2026 | <https://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html> |
+| **6** | - Studied Kubernetes architecture, including the Control Plane, Worker Nodes, Pods, Deployments, and Services.<br>- Practiced using `kubectl` and Kubernetes YAML manifests.<br>- Learned about Amazon EKS, Managed Node Groups, and EKS Pod Identity.<br>- Deployed a sample application and verified Pod status. | 31/07/2026 | 31/07/2026 | <https://docs.aws.amazon.com/eks/latest/userguide/what-is-eks.html> |
 
-### Week 6 Achievements:
+### Achievements
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Clearly understood the differences between containers and virtual machines.
+* Successfully wrote Dockerfiles and packaged applications as Docker images.
+* Used Multi-stage Builds to optimize Docker image size.
+* Managed multiple containers using Docker Compose.
+* Created an Amazon ECR repository and successfully pushed Docker images.
+* Understood the architecture of Amazon ECS, including Clusters, Task Definitions, and Services.
+* Learned the roles of Pods, Deployments, and Services in Kubernetes.
+* Gained hands-on experience with Amazon EKS and Managed Node Groups.
+* Became familiar with essential Docker commands, Amazon ECR operations, and basic `kubectl` commands.
 
-* Successfully created and configured an AWS Free Tier account.
+### Challenges and Solutions
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+| Challenges | Solutions |
+| --- | --- |
+| Docker images were too large. | Reduced image size by using smaller base images and implementing Multi-stage Builds. |
+| Unable to push Docker images to Amazon ECR. | Verified the AWS Region, IAM permissions, and repeated the Amazon ECR login process. |
+| Containers stopped immediately after startup. | Checked `docker logs`, verified environment variables, and reviewed the `ENTRYPOINT` configuration. |
+| Kubernetes Pods remained in the `ImagePullBackOff` state. | Verified the image URI, image tag, and Amazon ECR access permissions. |
+| Kubernetes Services were inaccessible. | Reviewed Labels, Selectors, Port, and TargetPort configurations to ensure they matched correctly. |
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+---
 
-* Used AWS CLI to perform basic operations such as:
+### Weekly Reflection
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
+Week 6 provided me with a solid understanding of how containerization standardizes application development and deployment. Docker ensures that applications run consistently across local development environments and AWS cloud infrastructure, reducing deployment issues caused by environmental differences.
 
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+I also learned how Amazon ECR serves as a secure container image registry, while Amazon ECS and Amazon EKS offer two different approaches to container orchestration. Although Kubernetes is a powerful and flexible platform, it introduces additional complexity. Understanding core concepts such as Pods, Deployments, Services, and resource status monitoring is essential for effectively managing containerized applications in production environments.

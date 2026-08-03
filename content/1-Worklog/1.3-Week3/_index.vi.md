@@ -1,51 +1,53 @@
 ---
-title: "Worklog Tuần 3"
-date: 2026-07-11
+title: "Nhật ký công việc Tuần 3"
+date: 2026-07-06
 weight: 3
 chapter: false
 pre: " <b> 1.3. </b> "
 ---
 
-### Mục tiêu Tuần 3
+### Mục tiêu tuần 3
 
-* Triển khai hệ thống giám sát và quan sát bằng Amazon CloudWatch (Metrics, Logs, Alarms và Dashboards).
-* Xây dựng kiến trúc Hybrid DNS với Route 53 Resolver và Microsoft Active Directory.
-* Nâng cao kỹ năng sử dụng AWS CLI để tự động hóa việc quản lý các dịch vụ Storage, Networking, IAM và Compute.
+* Triển khai hoạt động giám sát bằng Amazon CloudWatch.
+* Cấu hình CloudWatch Metrics, Logs, Alarms và Dashboards.
+* Tìm hiểu Hybrid DNS với Route 53 Resolver và Microsoft Active Directory.
+* Thực hành quản lý tài nguyên bằng AWS CLI.
+* Viết các lệnh và Script cơ bản để tự động hóa công việc quản trị.
 
 ### Công việc thực hiện trong tuần
 
-| Ngày | Công việc | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
-| --- | ---- | ---------- | --------------- | ------------------ |
-| 2 | - Cấu hình CloudWatch Metrics, Logs Insights, Alarms và Dashboards.<br>- **Thực hành:** Giám sát hiệu năng EC2 và tạo cảnh báo khi CPU Utilization vượt ngưỡng. | 06/07/2026 | 06/07/2026 | <https://000008.awsstudygroup.com/> |
-| 3 | - Triển khai Microsoft Active Directory.<br>- Cấu hình Remote Desktop Gateway (RDGW).<br>- Thiết lập Route 53 Resolver (Inbound/Outbound Endpoints và Resolver Rules).<br>- Kiểm tra khả năng phân giải Hybrid DNS. | 07/07/2026 | 07/07/2026 | <https://000010.awsstudygroup.com/> |
-| 4 | - Cài đặt và cấu hình AWS CLI v2.<br>- Quản lý Amazon S3 và Amazon SNS bằng AWS CLI.<br>- Tìm hiểu các định dạng đầu ra và tùy chọn lọc dữ liệu của AWS CLI. | 08/07/2026 | 08/07/2026 | <https://000011.awsstudygroup.com/> |
-| 5 | - Quản lý người dùng và vai trò IAM bằng AWS CLI.<br>- Cấu hình xác thực MFA.<br>- Triển khai các tài nguyên mạng VPC.<br>- Khởi tạo EC2 bằng AWS CLI. | 09/07/2026 | 09/07/2026 | <https://000011.awsstudygroup.com/> |
-| 6 | - Khắc phục các lỗi thường gặp của AWS CLI.<br>- Cấu hình thông tin xác thực SAML.<br>- Dọn dẹp tài nguyên AWS bằng AWS CLI. | 10/07/2026 | 10/07/2026 | <https://000011.awsstudygroup.com/> |
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
+| --- | --- | --- | --- | --- |
+| **2** | - Tìm hiểu CloudWatch Metrics, Logs và Namespaces.<br>- Theo dõi CPUUtilization, NetworkIn, NetworkOut và StatusCheckFailed của EC2.<br>- Xem DatabaseConnections và FreeStorageSpace của RDS.<br>- Thực hành truy vấn Log bằng CloudWatch Logs Insights. | 06/07/2026 | 06/07/2026 | <https://000008.awsstudygroup.com/> |
+| **3** | - Tạo CloudWatch Alarm cho chỉ số CPU của EC2.<br>- Tạo Amazon SNS Topic và Email Subscription.<br>- Cấu hình gửi cảnh báo khi chỉ số vượt ngưỡng.<br>- Xây dựng CloudWatch Dashboard tổng hợp EC2 và RDS Metrics. | 07/07/2026 | 07/07/2026 | <https://000008.awsstudygroup.com/> |
+| **4** | - Tìm hiểu DNS và mô hình Hybrid DNS.<br>- Triển khai Microsoft Active Directory và Remote Desktop Gateway.<br>- Tạo Route 53 Private Hosted Zone.<br>- Kiểm tra khả năng phân giải tên miền trong VPC. | 08/07/2026 | 08/07/2026 | <https://000010.awsstudygroup.com/> |
+| **5** | - Tạo Route 53 Resolver Inbound Endpoint và Outbound Endpoint.<br>- Tạo Resolver Rule và liên kết Rule với VPC.<br>- Kiểm tra phân giải tên miền từ AWS đến hệ thống bên ngoài và theo chiều ngược lại. | 09/07/2026 | 09/07/2026 | <https://000010.awsstudygroup.com/> |
+| **6** | - Cài đặt và cấu hình AWS CLI.<br>- Kiểm tra danh tính bằng `aws sts get-caller-identity`.<br>- Thực hành lệnh quản lý S3, IAM, EC2 và VPC.<br>- Viết Script cơ bản để kiểm tra, khởi động và dừng EC2.<br>- Tổng kết nội dung tuần 3. | 10/07/2026 | 10/07/2026 | <https://000011.awsstudygroup.com/> |
 
-### Kết quả đạt được trong Tuần 3
+### Kết quả đạt được
 
-* Triển khai thành công hệ thống giám sát bằng Amazon CloudWatch.
-  * Cấu hình Metrics, Logs, Alarms và Dashboards.
-  * Giám sát hiệu năng EC2 và thiết lập cảnh báo CPU Utilization.
+* Theo dõi được các chỉ số hoạt động của EC2 và RDS.
+* Tạo CloudWatch Alarm và nhận thông báo qua Amazon SNS.
+* Xây dựng Dashboard theo dõi tài nguyên tập trung.
+* Sử dụng Logs Insights để truy vấn và phân tích Log.
+* Hiểu vai trò của Route 53 Resolver trong Hybrid DNS.
+* Phân biệt được Inbound Endpoint và Outbound Endpoint.
+* Cài đặt và sử dụng AWS CLI để quản lý tài nguyên.
+* Viết được các lệnh hỗ trợ kiểm tra trạng thái EC2 và S3.
 
-* Xây dựng thành công môi trường Hybrid DNS bằng cách:
-  * Triển khai Microsoft Active Directory.
-  * Cấu hình Route 53 Resolver.
-  * Kiểm tra khả năng phân giải DNS giữa môi trường on-premises và AWS.
+### Khó khăn và cách khắc phục
 
-* Nâng cao kỹ năng sử dụng AWS CLI, bao gồm:
-  * Quản lý Amazon S3 và Amazon SNS.
-  * Tạo và quản lý người dùng, vai trò IAM.
-  * Triển khai các tài nguyên mạng VPC.
-  * Khởi tạo và quản lý EC2 bằng AWS CLI.
+| Khó khăn | Cách khắc phục |
+| --- | --- |
+| CloudWatch Alarm ở trạng thái `INSUFFICIENT_DATA` | Chờ hệ thống thu thập đủ dữ liệu và kiểm tra Period, Evaluation Periods. |
+| SNS không gửis. email | Kiểm tra email xác nhận Subscription và thư mục Spam. |
+| Resolver không phân giải được tên miền | Kiểm tra Security Group, Resolver Rule, DNS Server IP và liên kết VPC. |
+| AWS CLI báo `Unable to locate credentials` | Chạy `aws configure` và kiểm tra lại Access Key, Secret Key và Region. |
 
-* Rèn luyện kỹ năng xử lý các lỗi thường gặp của AWS CLI liên quan đến:
-  * Thông tin xác thực (Credentials) và quyền truy cập (Permissions).
-  * Xác thực MFA và SAML.
-  * Cấu hình CLI và các lỗi khi gọi AWS API.
-
-* Dọn dẹp toàn bộ tài nguyên AWS bằng AWS CLI nhằm tránh phát sinh chi phí không cần thiết.
+---
 
 ### Đánh giá tuần
 
-Trong tuần này, em đã hiểu rõ hơn về giám sát hệ thống trên AWS, mạng lai (Hybrid Networking) và quản trị hạ tầng bằng dòng lệnh. Thông qua việc thực hành với Amazon CloudWatch, em học được cách theo dõi hiệu năng tài nguyên và chủ động phát hiện các sự cố tiềm ẩn. Việc cấu hình Hybrid DNS bằng Route 53 Resolver kết hợp với Microsoft Active Directory giúp em hiểu rõ hơn về mô hình tích hợp giữa hệ thống on-premises và AWS. Bên cạnh đó, em cũng tự tin hơn khi sử dụng AWS CLI để tự động hóa việc triển khai và quản lý hạ tầng thay vì chỉ thao tác trên AWS Management Console. Nhìn chung, các bài thực hành trong tuần đã giúp em nâng cao kiến thức chuyên môn cũng như kỹ năng giải quyết vấn đề trong môi trường AWS.
+Tuần 3 giúp tôi hiểu rõ tầm quan trọng của Monitoring và Observability trong vận hành Cloud. CloudWatch không chỉ hiển thị số liệu mà còn hỗ trợ cảnh báo và phân tích sự cố thông qua Metrics, Logs và Alarms.
+
+Hybrid DNS là phần kiến thức khó nhất trong tuần vì liên quan đến Active Directory, Route 53 Resolver và cấu hình mạng. AWS CLI giúp tôi rút ngắn thời gian thực hiện các công việc lặp lại, nhưng cũng yêu cầu cẩn thận với quyền IAM và thông tin xác thực.

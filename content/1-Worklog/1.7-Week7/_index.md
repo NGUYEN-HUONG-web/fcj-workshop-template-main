@@ -1,53 +1,56 @@
 ---
 title: "Week 7 Worklog"
-date: 2024-01-01
+date: 2026-08-03
 weight: 7
 chapter: false
 pre: " <b> 1.7. </b> "
 ---
 
-### Week 7 Objectives:
+### Week 7 Objectives
 
-* Connect and get acquainted with members of First Cloud AI Journey.
-* Understand basic AWS services, how to use the console & CLI.
+* Understand the DevOps culture and the CI/CD workflow.
+* Manage source code using Git and GitHub.
+* Build an automated CI/CD pipeline with GitHub Actions.
+* Automate application testing, building, and packaging.
+* Push Docker images to Amazon Elastic Container Registry (Amazon ECR).
+* Automatically deploy new application versions to AWS.
 
-### Tasks to be carried out this week:
-| Day | Task                                                                                                                                                                                                   | Start Date | Completion Date | Reference Material                        |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------- | --------------- | ----------------------------------------- |
-| 2   | - Get acquainted with FCAJ members <br> - Read and take note of internship unit rules and regulations                                                                                                   | 08/11/2026 | 08/11/2026      |
-| 3   | - Learn about AWS and its types of services <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                              | 08/12/2026 | 08/12/2026      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Create AWS Free Tier account <br> - Learn about AWS Console & AWS CLI <br> - **Practice:** <br>&emsp; + Create AWS account <br>&emsp; + Install & configure AWS CLI <br> &emsp; + How to use AWS CLI | 08/13/2026 | 08/13/2026      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Learn basic EC2: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - SSH connection methods to EC2 <br> - Learn about Elastic IP   <br>                            | 08/14/2026 | 08/15/2026      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Practice:** <br>&emsp; + Launch an EC2 instance <br>&emsp; + Connect via SSH <br>&emsp; + Attach an EBS volume                                                                                     | 08/15/2026 | 08/15/2026      | <https://cloudjourney.awsstudygroup.com/> |
+### Tasks Completed During the Week
 
+| Day | Tasks | Start Date | Completion Date | Reference Materials |
+| --- | --- | --- | --- | --- |
+| **2** | - Learned about DevOps principles and the Software Development Life Cycle (SDLC).<br>- Studied the differences between Continuous Integration (CI), Continuous Delivery, and Continuous Deployment.<br>- Reviewed Git Branches, Commits, Merges, and Pull Requests.<br>- Established source code management practices for the project. | 03/08/2026 | 03/08/2026 | <https://docs.github.com/actions> |
+| **3** | - Learned the structure of GitHub Actions workflows.<br>- Created workflow files under the `.github/workflows` directory.<br>- Configured workflow triggers for Push and Pull Request events.<br>- Added jobs to check out the source code and prepare the build environment. | 04/08/2026 | 04/08/2026 | <https://docs.github.com/actions/writing-workflows> |
+| **4** | - Configured dependency installation.<br>- Automated unit testing and application builds.<br>- Stored build artifacts for later use.<br>- Reviewed workflow logs and resolved pipeline execution issues. | 05/08/2026 | 05/08/2026 | <https://docs.github.com/actions/automating-builds-and-tests> |
+| **5** | - Added Docker image build steps to the pipeline.<br>- Configured AWS authentication using GitHub Secrets or IAM Roles.<br>- Logged in to Amazon ECR.<br>- Tagged Docker images using the Commit SHA and pushed them to Amazon ECR. | 06/08/2026 | 06/08/2026 | <https://github.com/aws-actions/amazon-ecr-login> |
+| **6** | - Deployed the latest application version to Amazon ECS, Amazon EKS, or Amazon EC2.<br>- Verified deployment status and reviewed application logs.<br>- Tested source code changes to trigger the CI/CD pipeline.<br>- Completed the project documentation for the CI/CD workflow. | 07/08/2026 | 07/08/2026 | <https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-cd-pipeline.html> |
 
-### Week 7 Achievements:
+### Achievements
 
-* Understood what AWS is and mastered the basic service groups: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Understood the purpose and key stages of the CI/CD process.
+* Managed source code using Git branches and Pull Requests.
+* Created GitHub Actions workflows using YAML.
+* Automated testing and application builds whenever source code changed.
+* Stored build artifacts generated during the pipeline.
+* Automatically built and pushed Docker images to Amazon ECR.
+* Secured sensitive credentials using GitHub Secrets.
+* Successfully deployed applications to AWS.
+* Learned how to analyze workflow logs and identify pipeline failures.
 
-* Successfully created and configured an AWS Free Tier account.
+### Challenges and Solutions
 
-* Became familiar with the AWS Management Console and learned how to find, access, and use services via the web interface.
+| Challenges | Solutions |
+| --- | --- |
+| The pipeline was not triggered. | Verified the branch name and the events defined in the `on` section of the workflow. |
+| The build process could not locate the JAR file. | Executed the Maven or Gradle build step before building the Docker image and verified the artifact path. |
+| GitHub Actions could not authenticate with Amazon ECR. | Verified the AWS Region, IAM permissions, and authentication credentials. |
+| A new Docker image was pushed, but the application was not updated. | Created a new Task Definition revision or updated the deployment to use the latest image tag. |
+| Sensitive information was exposed in the workflow. | Moved all credentials to GitHub Secrets or adopted OpenID Connect (OIDC) for secure authentication. |
 
-* Installed and configured AWS CLI on the computer, including:
-  * Access Key
-  * Secret Key
-  * Default Region
-  * ...
+---
 
-* Used AWS CLI to perform basic operations such as:
+### Weekly Reflection
 
-  * Check account & configuration information
-  * Retrieve the list of regions
-  * View EC2 service
-  * Create and manage key pairs
-  * Check information about running services
-  * ...
+Week 7 helped me understand how DevOps bridges software development and operations by automating the software delivery process. Instead of building and deploying applications manually, GitHub Actions enabled me to automatically validate source code, run tests, package the application, and deploy new versions to AWS.
 
-* Acquired the ability to connect between the web interface and CLI to manage AWS resources in parallel.
-* ...
+One of the most important lessons I learned is that an effective CI/CD pipeline should not only execute successfully but also be secure, maintainable, and capable of detecting issues early in the development process. Using GitHub Secrets or OpenID Connect (OIDC) significantly improves security by protecting AWS credentials and reducing the risk of exposing sensitive information.

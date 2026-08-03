@@ -1,55 +1,56 @@
 ---
-title: "Worklog Tuần 7"
-date: 2024-01-01
+title: "Nhật ký công việc Tuần 7"
+date: 2026-08-03
 weight: 7
 chapter: false
 pre: " <b> 1.7. </b> "
 ---
 
-### Mục tiêu tuần 7:
+### Mục tiêu tuần 7
 
-* Kết nối, làm quen với các thành viên trong First Cloud AI Journey.
-* Hiểu dịch vụ AWS cơ bản, cách dùng console & CLI.
+* Hiểu văn hóa DevOps và quy trình CI/CD.
+* Quản lý mã nguồn bằng Git và GitHub.
+* Xây dựng Pipeline tự động bằng GitHub Actions.
+* Tự động kiểm thử, Build và đóng gói ứng dụng.
+* Đẩy Docker Image lên Amazon ECR.
+* Tự động triển khai phiên bản mới lên AWS.
 
-### Các công việc cần triển khai trong tuần này:
-| Thứ | Công việc                                                                                                                                                                                   | Ngày bắt đầu | Ngày hoàn thành | Nguồn tài liệu                            |
-| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ | --------------- | ----------------------------------------- |
-| 2   | - Làm quen với các thành viên FCAJ <br> - Đọc và lưu ý các nội quy, quy định tại đơn vị thực tập                                                                                             | 11/08/2026   | 11/08/2026      |
-| 3   | - Tìm hiểu AWS và các loại dịch vụ <br>&emsp; + Compute <br>&emsp; + Storage <br>&emsp; + Networking <br>&emsp; + Database <br>&emsp; + ... <br>                                            | 12/08/2026   | 12/08/2026      | <https://cloudjourney.awsstudygroup.com/> |
-| 4   | - Tạo AWS Free Tier account <br> - Tìm hiểu AWS Console & AWS CLI <br> - **Thực hành:** <br>&emsp; + Tạo AWS account <br>&emsp; + Cài AWS CLI & cấu hình <br> &emsp; + Cách sử dụng AWS CLI | 13/08/2026   | 13/08/2026      | <https://cloudjourney.awsstudygroup.com/> |
-| 5   | - Tìm hiểu EC2 cơ bản: <br>&emsp; + Instance types <br>&emsp; + AMI <br>&emsp; + EBS <br>&emsp; + ... <br> - Các cách remote SSH vào EC2 <br> - Tìm hiểu Elastic IP   <br>                  | 14/08/2026   | 15/08/2026      | <https://cloudjourney.awsstudygroup.com/> |
-| 6   | - **Thực hành:** <br>&emsp; + Tạo EC2 instance <br>&emsp; + Kết nối SSH <br>&emsp; + Gắn EBS volume                                                                                         | 15/08/2026   | 15/08/2026      | <https://cloudjourney.awsstudygroup.com/> |
+### Công việc thực hiện trong tuần
 
+| Thứ | Công việc | Ngày bắt đầu | Ngày hoàn thành | Tài liệu tham khảo |
+| --- | --- | --- | --- | --- |
+| **2** | - Tìm hiểu DevOps và vòng đời phát triển phần mềm.<br>- Phân biệt Continuous Integration, Continuous Delivery và Continuous Deployment.<br>- Ôn tập Git Branch, Commit, Merge và Pull Request.<br>- Xây dựng quy tắc quản lý mã nguồn cho dự án. | 03/08/2026 | 03/08/2026 | <https://docs.github.com/actions> |
+| **3** | - Tìm hiểu cấu trúc GitHub Actions Workflow.<br>- Tạo Workflow trong `.github/workflows`.<br>- Cấu hình Trigger khi Push và Pull Request.<br>- Tạo Job Checkout Source Code và thiết lập môi trường Build. | 04/08/2026 | 04/08/2026 | <https://docs.github.com/actions/writing-workflows> |
+| **4** | - Cấu hình cài đặt Dependencies.<br>- Chạy Unit Test và Build ứng dụng tự động.<br>- Lưu Build Artifact.<br>- Kiểm tra Workflow Logs và xử lý các lỗi xảy ra trong Pipeline. | 05/08/2026 | 05/08/2026 | <https://docs.github.com/actions/automating-builds-and-tests> |
+| **5** | - Bổ sung bước Build Docker Image.<br>- Cấu hình kết nối AWS bằng GitHub Secrets hoặc IAM Role.<br>- Đăng nhập Amazon ECR.<br>- Gắn Tag theo Commit SHA và Push Image lên ECR. | 06/08/2026 | 06/08/2026 | <https://github.com/aws-actions/amazon-ecr-login> |
+| **6** | - Cập nhật phiên bản ứng dụng trên ECS, EKS hoặc EC2.<br>- Kiểm tra trạng thái triển khai và Log.<br>- Thử nghiệm thay đổi mã nguồn để kích hoạt Pipeline.<br>- Hoàn thiện tài liệu quy trình CI/CD. | 07/08/2026 | 07/08/2026 | <https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-cd-pipeline.html> |
 
-### Kết quả đạt được tuần 7:
+### Kết quả đạt được
 
-* Hiểu AWS là gì và nắm được các nhóm dịch vụ cơ bản: 
-  * Compute
-  * Storage
-  * Networking 
-  * Database
-  * ...
+* Hiểu mục đích và các giai đoạn của CI/CD.
+* Quản lý mã nguồn theo Branch và Pull Request.
+* Tạo GitHub Actions Workflow bằng YAML.
+* Tự động chạy Test và Build khi mã nguồn thay đổi.
+* Lưu Artifact sau quá trình Build.
+* Tự động Build và Push Docker Image lên Amazon ECR.
+* Quản lý thông tin nhạy cảm bằng GitHub Secrets.
+* Thực hiện triển khai ứng dụng lên AWS.
+* Biết đọc Workflow Logs và xác định bước gây lỗi.
 
-* Đã tạo và cấu hình AWS Free Tier account thành công.
+### Khó khăn và cách khắc phục
 
-* Làm quen với AWS Management Console và biết cách tìm, truy cập, sử dụng dịch vụ từ giao diện web.
+| Khó khăn | Cách khắc phục |
+| --- | --- |
+| Pipeline không được kích hoạt | Kiểm tra tên Branch và sự kiện trong phần `on` của Workflow. |
+| Build không tìm thấy tệp JAR | Chạy bước Maven/Gradle Build trước khi Build Docker Image và kiểm tra đúng đường dẫn Artifact. |
+| GitHub Actions không đăng nhập được ECR | Kiểm tra AWS Region, quyền IAM và thông tin xác thực. |
+| Image mới đã Push nhưng ứng dụng chưa cập nhật | Tạo Revision mới cho Task Definition hoặc cập nhật Deployment sử dụng Image Tag mới. |
+| Workflow để lộ thông tin nhạy cảm | Chuyển toàn bộ thông tin xác thực sang GitHub Secrets hoặc sử dụng OpenID Connect. |
 
-* Cài đặt và cấu hình AWS CLI trên máy tính bao gồm:
-  * Access Key
-  * Secret Key
-  * Region mặc định
-  * ...
+---
 
-* Sử dụng AWS CLI để thực hiện các thao tác cơ bản như:
+### Đánh giá tuần
 
-  * Kiểm tra thông tin tài khoản & cấu hình
-  * Lấy danh sách region
-  * Xem dịch vụ EC2
-  * Tạo và quản lý key pair
-  * Kiểm tra thông tin dịch vụ đang chạy
-  * ...
+Tuần 7 giúp tôi hiểu cách DevOps kết nối quá trình phát triển và vận hành phần mềm. Thay vì Build và Deploy thủ công, GitHub Actions tự động kiểm tra mã nguồn, chạy Test, đóng gói ứng dụng và triển khai phiên bản mới.
 
-* Có khả năng kết nối giữa giao diện web và CLI để quản lý tài nguyên AWS song song.
-* ...
-
-
+Điều tôi học được là một Pipeline tốt không chỉ cần chạy thành công mà còn phải an toàn, dễ theo dõi và có khả năng phát hiện lỗi sớm. Việc sử dụng Secret hoặc OpenID Connect giúp hạn chế nguy cơ để lộ thông tin xác thực AWS.
