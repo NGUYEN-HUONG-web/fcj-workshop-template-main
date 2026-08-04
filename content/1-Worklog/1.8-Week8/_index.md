@@ -6,6 +6,19 @@ chapter: false
 pre: " <b> 1.8. </b> "
 ---
 
+<div class="worklog-page">
+<section class="worklog-hero">
+<div class="worklog-hero__eyebrow">Week 8</div>
+<h1>Final Project Deployment, Monitoring, Cost Optimization, and Internship Summary</h1>
+<p class="worklog-hero__lead">Final stage delivery of the internship project, including deployment validation, monitoring setup, AWS cost review, documentation completion, and summary of the technical growth achieved during the program.</p>
+</section>
+
+<section class="worklog-overview-card">
+<p><strong>Overview:</strong> This Worklog documents my learning journey throughout the internship, covering AWS fundamentals, hands-on labs, cloud infrastructure deployment, system monitoring, automation, containerization, and DevOps practices. It demonstrates the progress I made, the technical skills I developed, and the practical experience I gained while designing, deploying, and managing solutions on AWS.</p>
+</section>
+
+<section class="worklog-content">
+
 ### Week 8 Objectives
 
 * Complete and deploy the final project on AWS.
@@ -75,3 +88,6 @@ During the final week of the internship, I applied the knowledge gained througho
 I realized that successfully deploying an application is only the first step. A reliable cloud solution must also be continuously monitored, secured with appropriate access controls, and regularly optimized for cost efficiency. My experience with an Amazon RDS instance that continued running unexpectedly reinforced the importance of responsible cloud resource management and proactive cost monitoring.
 
 After eight weeks of internship training, I significantly strengthened my AWS knowledge and improved my practical skills in infrastructure deployment, containerization, CI/CD automation, cloud monitoring, and troubleshooting. This internship has provided a solid foundation for my future career in Cloud Computing, DevOps, and AWS application development.
+
+</section>
+</div>

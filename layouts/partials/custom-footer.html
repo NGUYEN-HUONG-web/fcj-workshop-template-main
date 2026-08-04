@@ -22,3 +22,29 @@
   ga("create", "UA-158079754-2", "auto");
   ga("send", "pageview");
 </script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.body.classList.add("ui-ready");
+
+    if (window.lucide) {
+      var iconTargets = [
+        ['#sidebar-toggle i', 'panel-left-open'],
+        ['#toc-menu i', 'book-open-text'],
+        ['#top-github-link i', 'square-pen'],
+        ['.nav-prev i', 'chevron-left'],
+        ['.nav-next i', 'chevron-right']
+      ];
+
+      iconTargets.forEach(function (pair) {
+        var element = document.querySelector(pair[0]);
+        if (element) {
+          element.setAttribute('data-lucide', pair[1]);
+          element.classList.add('lucide-icon');
+        }
+      });
+
+      window.lucide.createIcons();
+    }
+  });
+</script>
