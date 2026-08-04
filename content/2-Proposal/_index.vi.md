@@ -157,7 +157,7 @@ Các dịch vụ chính được sử dụng gồm:
 | Security Group | Kiểm soát lưu lượng mạng |
 
 > **Hình 3.2. Kiến trúc triển khai hệ thống trên AWS.**
-![Hình 3.2](/images/3.2.pr.png)
+![Hình 3.2](/images/3.2.p.r.s.png)
 ---
 
 ## 3.3 Thiết kế cơ sở dữ liệu
@@ -232,6 +232,7 @@ Kiến trúc triển khai bao gồm các thành phần chính như Frontend, AI 
 | Security | IAM, Security Group |
 
 > **Hình 4.1. Môi trường triển khai AI Learning Assistant Platform trên AWS.**
+![Hình 4.1](/images/4.1.p.r.png)
 ## 4.2 Quy trình triển khai hệ thống
 
 Quá trình triển khai được thực hiện theo các bước sau:
@@ -246,6 +247,7 @@ Quá trình triển khai được thực hiện theo các bước sau:
 8. Truy cập và kiểm thử hệ thống thông qua trình duyệt.
 
 > **Hình 4.2. Quy trình triển khai AI Learning Assistant Platform trên AWS.**
+![Hình 4.1](/images/4.2.p.r.png)
 ## 4.3 Kiểm thử hệ thống
 
 Sau khi triển khai thành công, hệ thống được kiểm thử nhằm đánh giá tính ổn định và khả năng hoạt động của các chức năng chính.
