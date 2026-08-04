@@ -300,4 +300,3 @@ The primary monitoring metrics include:
 
 In addition, learning documents are periodically backed up to **Amazon S3** to ensure data durability and support disaster recovery in case of system failures.
 
-> **Figure 4.3. Monitoring Dashboard of the AI Learning Assistant Platform Using Amazon CloudWatch**
