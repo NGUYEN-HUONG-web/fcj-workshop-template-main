@@ -1,30 +1,30 @@
 /* Modern portfolio + AWS report styling */
 :root {
-  color-scheme: light dark;
+  color-scheme: light;
   --aws-navy: #232f3e;
   --aws-navy-soft: #31405a;
   --aws-orange: #ff9900;
   --aws-orange-strong: #ff7a00;
   --aws-orange-soft: rgba(255, 153, 0, 0.12);
-  --page-bg: #f5f7fb;
-  --page-bg-accent: #eef3ff;
-  --surface-bg: rgba(255, 255, 255, 0.94);
+  --page-bg: #f7f9fc;
+  --page-bg-accent: #edf3ff;
+  --surface-bg: #ffffff;
   --surface-strong: #ffffff;
-  --surface-muted: #f8fbff;
-  --border-color: rgba(35, 47, 62, 0.12);
-  --border-strong: rgba(255, 153, 0, 0.2);
-  --text-primary: #101828;
-  --text-secondary: #475467;
-  --text-tertiary: #667085;
-  --accent: var(--aws-orange);
-  --accent-strong: var(--aws-orange-strong);
-  --accent-soft: var(--aws-orange-soft);
-  --accent-soft-2: rgba(255, 153, 0, 0.08);
-  --shadow-sm: 0 16px 34px rgba(15, 23, 42, 0.08);
-  --shadow-md: 0 28px 60px rgba(15, 23, 42, 0.14);
-  --radius-lg: 24px;
-  --radius-md: 18px;
-  --radius-sm: 12px;
+  --surface-muted: #f8fafc;
+  --border-color: rgba(15, 23, 42, 0.12);
+  --border-strong: rgba(30, 91, 168, 0.2);
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-tertiary: #475569;
+  --accent: #1e5ba8;
+  --accent-strong: #15437a;
+  --accent-soft: rgba(30, 91, 168, 0.12);
+  --accent-soft-2: rgba(30, 91, 168, 0.08);
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.08);
+  --radius-lg: 22px;
+  --radius-md: 16px;
+  --radius-sm: 10px;
   --sidebar-width: 260px;
   --content-max-width: 1240px;
   --space-sm: 0.75rem;
@@ -46,8 +46,7 @@ html {
 
 body {
   background:
-    radial-gradient(circle at top left, rgba(37, 99, 235, 0.16), transparent 24%),
-    radial-gradient(circle at right center, rgba(14, 165, 233, 0.11), transparent 20%),
+    radial-gradient(circle at top left, rgba(30, 91, 168, 0.08), transparent 24%),
     linear-gradient(135deg, var(--page-bg) 0%, var(--page-bg-accent) 100%);
   color: var(--text-primary) !important;
   font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
@@ -61,7 +60,7 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: linear-gradient(120deg, rgba(255, 255, 255, 0.2), transparent 48%);
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.18), transparent 48%);
   pointer-events: none;
   z-index: -1;
 }
@@ -86,28 +85,29 @@ body::before {
 }
 
 #body-inner {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(244, 247, 255, 0.95));
+  background: var(--surface-strong);
   border: 1px solid var(--border-color);
-  border-radius: 28px;
+  border-radius: 20px;
   padding: 2rem 2.25rem 2.5rem;
   box-shadow: var(--shadow-md);
-  backdrop-filter: blur(12px);
+  backdrop-filter: none;
 }
 
 #body #breadcrumbs {
   display: inline-flex;
   align-items: center;
-  padding: 0.65rem 0.95rem;
+  padding: 0.7rem 0.95rem;
   margin: 0 0 1.1rem;
   border: 1px solid var(--border-color);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.72);
-  backdrop-filter: blur(10px);
+  background: #f8fafc;
+  backdrop-filter: none;
 }
 
 #body #breadcrumbs .links {
-  color: var(--text-secondary);
+  color: var(--text-primary);
   font-size: 0.92rem;
+  font-weight: 700;
 }
 
 #body .nav {
@@ -130,7 +130,7 @@ body::before {
   letter-spacing: -0.03em;
   color: var(--text-primary) !important;
   margin: 0 0 0.6rem;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 #body h1::after,
@@ -152,7 +152,7 @@ h6 {
   color: var(--text-primary) !important;
   margin-top: 1.8rem;
   margin-bottom: 0.65rem;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: -0.02em;
 }
 
@@ -172,6 +172,7 @@ dd {
   color: var(--text-secondary);
   font-size: 1rem;
   line-height: 1.8;
+  font-weight: 700;
 }
 
 ul,
@@ -202,6 +203,7 @@ a,
 a strong {
   color: var(--accent);
   text-decoration: none;
+  font-weight: 700;
 }
 
 a:hover,
