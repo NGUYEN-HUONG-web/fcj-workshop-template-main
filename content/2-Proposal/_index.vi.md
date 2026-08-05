@@ -131,50 +131,53 @@ Giải pháp không chỉ phù hợp với sinh viên và giảng viên mà còn
 
 ## 3.1 Kiến trúc tổng thể
 
-AI Learning Assistant Platform được xây dựng theo mô hình Client – Server kết hợp với kiến trúc **Retrieval-Augmented Generation (RAG)**. Hệ thống gồm ba thành phần chính:
+AI Learning Assistant Platform được xây dựng theo mô hình **Client–Server** kết hợp với kiến trúc **Retrieval-Augmented Generation (RAG)** và được triển khai trên **Amazon Web Services (AWS)**.
 
-- **Frontend:** Giao diện web giúp người dùng quản lý tài liệu và tương tác với AI.
-- **Backend:** Xử lý nghiệp vụ, quản lý người dùng, tài liệu và điều phối các dịch vụ AI.
-- **Knowledge Base & AI:** Lưu trữ dữ liệu học tập, truy xuất thông tin và tạo câu trả lời dựa trên mô hình ngôn ngữ lớn (LLMs).
+Kiến trúc hệ thống gồm các thành phần chính:
+
+- **Client Layer:** Người dùng truy cập hệ thống thông qua trình duyệt web.
+- **Application Layer:** Toàn bộ ứng dụng được triển khai trên **Amazon EC2** bằng **Docker Compose**, bao gồm Nginx, Frontend, Backend, MongoDB, PostgreSQL và MinIO.
+- **AI & Data Layer:** Backend xử lý AI Chat, Retrieval-Augmented Generation (RAG), Knowledge Base và quản lý tài liệu học tập; PostgreSQL với **pgvector** hỗ trợ truy xuất ngữ nghĩa, trong khi MongoDB lưu trữ dữ liệu hệ thống.
 
 > **Hình 3.1. Kiến trúc tổng thể của AI Learning Assistant Platform.**
-![Hình 3.1](/images/3.1.pr.png)
+![Hình 3.1](/images/3.1.p.r.s.png)
+
 ---
 
 ## 3.2 Kiến trúc triển khai trên AWS
 
-Hệ thống được triển khai trên nền tảng **Amazon Web Services (AWS)** bằng Docker Compose.
+Hệ thống được triển khai trên nền tảng **Amazon Web Services (AWS)** bằng **Docker Compose** trên một **Amazon EC2**.
 
-Các dịch vụ chính được sử dụng gồm:
+Các dịch vụ AWS chính được sử dụng gồm:
 
 | Dịch vụ | Vai trò |
 |----------|----------|
-| Amazon EC2 | Chạy toàn bộ ứng dụng |
-| Amazon EBS | Lưu trữ dữ liệu hệ thống |
-| Amazon S3 | Lưu trữ và sao lưu tài liệu |
-| Amazon CloudWatch | Giám sát hệ thống |
-| AWS IAM | Quản lý quyền truy cập |
-| Security Group | Kiểm soát lưu lượng mạng |
+| Amazon EC2 | Chạy toàn bộ hệ thống và các Docker Container |
+| Amazon EBS | Lưu trữ Docker Volume và dữ liệu hệ thống |
+| Amazon S3 | Lưu trữ và sao lưu tài liệu học tập |
+| Amazon CloudWatch | Giám sát tài nguyên, log và trạng thái hệ thống |
+| AWS IAM | Quản lý quyền truy cập tài nguyên AWS |
+| Security Group | Kiểm soát lưu lượng mạng và bảo mật truy cập |
 
 > **Hình 3.2. Kiến trúc triển khai hệ thống trên AWS.**
 ![Hình 3.2](/images/3.2.p.r.s.png)
+
 ---
 
 ## 3.3 Thiết kế cơ sở dữ liệu
 
-Hệ thống sử dụng **MongoDB** để lưu trữ dữ liệu ứng dụng và **PostgreSQL** để hỗ trợ lưu trữ dữ liệu phục vụ quá trình truy xuất.
+Hệ thống sử dụng nhiều thành phần lưu trữ nhằm đáp ứng các yêu cầu về quản lý dữ liệu, truy xuất ngữ nghĩa và lưu trữ tài liệu học tập.
 
-Các nhóm dữ liệu chính bao gồm:
-
-- Người dùng.
-- Môn học.
-- Tài liệu học tập.
-- Knowledge Base.
-- Hội thoại.
-- Lịch sử học tập.
+| Thành phần | Vai trò |
+|------------|----------|
+| MongoDB | Lưu trữ dữ liệu người dùng, hội thoại, Knowledge Base và cấu hình hệ thống |
+| PostgreSQL + pgvector | Lưu trữ vector embedding phục vụ Retrieval-Augmented Generation (RAG) |
+| MinIO | Lưu trữ tài liệu học tập được người dùng tải lên |
+| Amazon S3 | Lưu trữ dữ liệu sao lưu và tài liệu dự phòng |
 
 > **Hình 3.3. Sơ đồ cơ sở dữ liệu của hệ thống.**
 ![Hình 3.3](/images/3.3.pr.drawio.png)
+
 ---
 
 ## 3.4 Quy trình hoạt động
@@ -191,6 +194,7 @@ Sau khi người dùng tải tài liệu lên, hệ thống thực hiện các b
 
 > **Hình 3.4. Quy trình hoạt động của AI Learning Assistant Platform sử dụng RAG.**
 ![Hình 3.4](/images/3.4.p.r.png)
+
 ---
 
 ## 3.5 Công nghệ sử dụng
@@ -201,17 +205,17 @@ Sau khi người dùng tải tài liệu lên, hệ thống thực hiện các b
 | Backend | FastGPT (Customized) |
 | AI | Large Language Models (LLMs) |
 | AI Framework | Retrieval-Augmented Generation (RAG) |
-| Database | MongoDB, PostgreSQL |
-| Object Storage | MinIO / Amazon S3 |
+| Database | MongoDB, PostgreSQL + pgvector |
+| Object Storage | MinIO, Amazon S3 |
 | Container | Docker, Docker Compose |
 | Cloud Platform | Amazon Web Services (AWS) |
 # Phần 4. Triển khai và kiểm thử
 
 ## 4.1 Môi trường triển khai
 
-AI Learning Assistant Platform được triển khai trên nền tảng **Amazon Web Services (AWS)** tại Region **US East (N. Virginia) – us-east-1**. Toàn bộ hệ thống được đóng gói dưới dạng các Docker Container và quản lý bằng Docker Compose trên một máy chủ Amazon EC2.
+AI Learning Assistant Platform được triển khai trên nền tảng **Amazon Web Services (AWS)** tại Region **US East (N. Virginia) – us-east-1**. Toàn bộ hệ thống được đóng gói dưới dạng các **Docker Container** và quản lý bằng **Docker Compose** trên một **Amazon EC2**.
 
-Kiến trúc triển khai bao gồm các thành phần chính như Frontend, AI Learning Assistant Backend (FastGPT), MongoDB, PostgreSQL với pgvector, MinIO và Nginx. Ngoài ra, hệ thống sử dụng Amazon S3 để lưu trữ tài liệu và sao lưu dữ liệu, Amazon CloudWatch để giám sát hoạt động, cùng AWS IAM để quản lý quyền truy cập.
+Kiến trúc triển khai bao gồm **Nginx**, **Frontend (Next.js/React)**, **AI Learning Assistant Backend (FastGPT Customized)**, **MongoDB**, **PostgreSQL với pgvector** và **MinIO**. Bên cạnh đó, hệ thống sử dụng **Amazon S3** để sao lưu dữ liệu, **Amazon CloudWatch** để giám sát hiệu năng và trạng thái hoạt động, cùng **AWS IAM** và **Security Group** để quản lý quyền truy cập và bảo mật hệ thống.
 
 ### Cấu hình môi trường
 
@@ -227,47 +231,55 @@ Kiến trúc triển khai bao gồm các thành phần chính như Frontend, AI 
 | Database | MongoDB |
 | Vector Database | PostgreSQL + pgvector |
 | Object Storage | MinIO |
-| Backup | Amazon S3 |
+| Backup Storage | Amazon S3 |
 | Monitoring | Amazon CloudWatch |
-| Security | IAM, Security Group |
+| Security | AWS IAM, Security Group |
 
 > **Hình 4.1. Môi trường triển khai AI Learning Assistant Platform trên AWS.**
 ![Hình 4.1](/images/4.1.p.r.png)
+
+---
+
 ## 4.2 Quy trình triển khai hệ thống
 
-Quá trình triển khai được thực hiện theo các bước sau:
+Quy trình triển khai hệ thống được thực hiện theo các bước sau:
 
-1. Tạo và cấu hình Amazon EC2.
-2. Cài đặt Docker và Docker Compose.
-3. Tải mã nguồn từ GitHub.
-4. Cấu hình các biến môi trường.
-5. Khởi động các container bằng Docker Compose.
-6. Kiểm tra trạng thái hoạt động của các dịch vụ.
-7. Cấu hình Nginx và Security Group.
-8. Truy cập và kiểm thử hệ thống thông qua trình duyệt.
+1. Khởi tạo và cấu hình **Amazon EC2**, **Security Group** và **Elastic IP**.
+2. Cài đặt **Docker** và **Docker Compose** trên máy chủ EC2.
+3. Tải mã nguồn từ GitHub và cấu hình các biến môi trường.
+4. Khởi động các Docker Container gồm **Nginx**, **Frontend**, **Backend**, **MongoDB**, **PostgreSQL** và **MinIO**.
+5. Kết nối **Amazon S3** để sao lưu dữ liệu và **Amazon CloudWatch** để giám sát hệ thống.
+6. Kiểm tra trạng thái hoạt động của các dịch vụ và cấu hình Nginx.
+7. Truy cập hệ thống thông qua trình duyệt để kiểm thử và đưa vào vận hành.
 
 > **Hình 4.2. Quy trình triển khai AI Learning Assistant Platform trên AWS.**
-![Hình 4.1](/images/4.2.p.r.png)
+![Hình 4.2](/images/4.2.p.r.png)
+
+---
+
 ## 4.3 Kiểm thử hệ thống
 
 Sau khi triển khai thành công, hệ thống được kiểm thử nhằm đánh giá tính ổn định và khả năng hoạt động của các chức năng chính.
 
 | Chức năng | Kết quả |
 |-----------|----------|
-| Đăng nhập | Thành công |
-| Tạo môn học | Thành công |
-| Upload tài liệu | Thành công |
+| Đăng nhập và xác thực người dùng | Thành công |
+| Quản lý môn học | Thành công |
+| Upload tài liệu học tập | Thành công |
 | Xây dựng Knowledge Base | Thành công |
 | AI Chat (RAG) | Thành công |
-| Summary | Thành công |
-| Quiz | Thành công |
-| Flashcard | Thành công |
-| Lưu lịch sử hội thoại | Thành công |
+| Tóm tắt bài học (Summary) | Thành công |
+| Tạo bài kiểm tra (Quiz) | Thành công |
+| Tạo Flashcard | Thành công |
+| Lưu lịch sử học tập | Thành công |
 
-Kết quả kiểm thử cho thấy hệ thống hoạt động ổn định và đáp ứng các yêu cầu chức năng đã đề ra.
+Kết quả kiểm thử cho thấy hệ thống hoạt động ổn định, các Docker Container vận hành bình thường và các chức năng chính đều đáp ứng yêu cầu của hệ thống.
+
+---
+
 ## 4.4 Giám sát và vận hành
 
-Trong quá trình vận hành, Amazon CloudWatch được sử dụng để theo dõi hiệu năng và trạng thái hoạt động của hệ thống.
+Trong quá trình vận hành, **Amazon CloudWatch** được sử dụng để theo dõi hiệu năng và trạng thái hoạt động của hệ thống.
 
 Các chỉ số được giám sát bao gồm:
 
@@ -276,8 +288,158 @@ Các chỉ số được giám sát bao gồm:
 - Disk Usage.
 - Network Traffic.
 - Docker Container Logs.
-- Trạng thái dịch vụ.
+- Trạng thái hoạt động của các dịch vụ.
 
-Ngoài ra, dữ liệu tài liệu được sao lưu định kỳ lên Amazon S3 nhằm đảm bảo khả năng phục hồi khi xảy ra sự cố.
+Ngoài ra, dữ liệu và tài liệu học tập được sao lưu định kỳ lên **Amazon S3** nhằm đảm bảo khả năng phục hồi khi xảy ra sự cố và hỗ trợ duy trì tính ổn định của hệ thống.
+# Phần 5. Bảo mật, chi phí và quản lý rủi ro
 
-> **Hình 4.3. Dashboard giám sát AI Learning Assistant Platform bằng Amazon CloudWatch.**
+## 5.1 Bảo mật hệ thống
+
+AI Learning Assistant Platform lưu trữ tài khoản, tài liệu học tập và lịch sử hội thoại của người dùng. Vì vậy, bảo mật được xem là một yêu cầu quan trọng trong quá trình triển khai hệ thống trên AWS.
+
+Các biện pháp bảo mật chính bao gồm:
+
+- Sử dụng **AWS IAM** để quản lý quyền truy cập vào tài nguyên AWS theo nguyên tắc quyền tối thiểu.
+- Sử dụng **Security Group** để giới hạn các cổng và nguồn được phép truy cập Amazon EC2.
+- Sử dụng **HTTPS** để mã hóa dữ liệu truyền giữa người dùng và hệ thống.
+- Không lưu API Key, mật khẩu hoặc thông tin nhạy cảm trực tiếp trong mã nguồn.
+- Sử dụng **AWS Secrets Manager** hoặc biến môi trường để quản lý thông tin xác thực.
+- Sử dụng **AWS KMS** để hỗ trợ mã hóa dữ liệu khi cần thiết.
+- Amazon S3 được cấu hình hạn chế quyền truy cập đối với tài liệu và dữ liệu sao lưu.
+- MongoDB, PostgreSQL và các dịch vụ nội bộ không được mở trực tiếp ra Internet.
+- Sử dụng **Amazon CloudWatch** để theo dõi log và phát hiện các hoạt động bất thường.
+
+
+## 5.2 Chi phí triển khai dự kiến
+
+AI Learning Assistant Platform được triển khai theo mô hình MVP trên Amazon Web Services (AWS) nhằm tối ưu chi phí nhưng vẫn đảm bảo hiệu năng và khả năng mở rộng. Trong giai đoạn đầu, toàn bộ hệ thống được triển khai trên một Amazon EC2 instance bằng Docker Compose, kết hợp với các dịch vụ lưu trữ, giám sát và bảo mật của AWS.
+
+Bảng dưới đây trình bày chi phí ước tính hàng tháng của các dịch vụ chính được sử dụng trong hệ thống.
+
+### Bảng 5.1. Chi phí triển khai dự kiến
+
+| STT | Dịch vụ AWS | Cấu hình dự kiến | Mục đích sử dụng | Chi phí ước tính (USD/tháng) |
+|:--:|-------------|------------------|------------------|-----------------------------:|
+| 1 | Amazon EC2 | t3.large (2 vCPU, 8 GB RAM) | Chạy AI Learning Assistant, Nginx, MongoDB, PostgreSQL và MinIO | 60 |
+| 2 | Amazon EBS | 50 GB (gp3) | Lưu Docker Volume và dữ liệu hệ thống | 4 |
+| 3 | Amazon S3 | 50 GB | Lưu tài liệu học tập và sao lưu dữ liệu | 2 |
+| 4 | Amazon CloudWatch | Metrics, Logs, Alarms | Giám sát và cảnh báo hệ thống | 5 |
+| 5 | Elastic IP | 01 Public IP | Truy cập hệ thống từ Internet | 0* |
+| 6 | Data Transfer | Khoảng 100 GB/tháng | Lưu lượng truy cập Internet | 8 |
+| 7 | Google Gemini API / OpenAI API | Theo số lượng request | Xử lý AI và sinh câu trả lời | 15 – 50 |
+
+| | | | **Tổng chi phí dự kiến** | **94 – 129 USD/tháng** |
+
+> **Lưu ý:**
+>
+> - Chi phí trên chỉ mang tính ước tính tại Region **US East (N. Virginia) – us-east-1** và có thể thay đổi theo bảng giá AWS.
+> - Elastic IP không phát sinh chi phí khi được gắn với một EC2 đang hoạt động.
+> - Chi phí sử dụng mô hình AI phụ thuộc vào số lượng request và số lượng token được xử lý.
+
+### Đánh giá chi phí
+
+Với quy mô từ **5–20 người dùng**, chi phí triển khai khoảng **94–129 USD/tháng**, trong đó Amazon EC2 và dịch vụ mô hình ngôn ngữ (LLM API) chiếm tỷ trọng lớn nhất. Kiến trúc triển khai trên một EC2 bằng Docker Compose giúp giảm chi phí hạ tầng trong giai đoạn đầu nhưng vẫn đáp ứng đầy đủ các chức năng của hệ thống.
+
+### Biện pháp tối ưu chi phí
+
+Để giảm chi phí vận hành, hệ thống áp dụng các biện pháp sau:
+
+- Triển khai toàn bộ dịch vụ trên một Amazon EC2 trong giai đoạn MVP.
+- Theo dõi chi phí bằng **AWS Budgets** và **Billing Alerts**.
+- Giám sát tài nguyên bằng **Amazon CloudWatch** để tối ưu cấu hình EC2.
+- Xóa hoặc dừng các tài nguyên không sử dụng sau khi kiểm thử.
+- Sao lưu dữ liệu định kỳ lên Amazon S3 thay vì duy trì nhiều bản sao trực tiếp trên EC2.
+- Giới hạn số lượng request và token gửi đến mô hình AI nhằm kiểm soát chi phí API.
+- Có thể mở rộng sang **Amazon ECS**, **Application Load Balancer** và **Auto Scaling** khi số lượng người dùng tăng mà không cần thay đổi kiến trúc tổng thể.
+# Phần 6. Đánh giá và hướng phát triển
+
+## 6.1 Đánh giá theo AWS Well-Architected Framework
+
+AI Learning Assistant Platform được đánh giá dựa trên các nguyên tắc của **AWS Well-Architected Framework**, nhằm đảm bảo hệ thống có khả năng vận hành ổn định, bảo mật, tối ưu hiệu năng và chi phí.
+
+### Bảng 6.1. Đánh giá hệ thống theo AWS Well-Architected Framework
+
+| Trụ cột | Giải pháp áp dụng trong dự án |
+|----------|-------------------------------|
+| Operational Excellence | Triển khai bằng Docker Compose, sử dụng GitHub để quản lý mã nguồn và Amazon CloudWatch để giám sát hệ thống. |
+| Security | Áp dụng AWS IAM, Security Group, HTTPS, AWS Secrets Manager và AWS KMS để bảo vệ tài nguyên và dữ liệu. |
+| Reliability | Sao lưu dữ liệu bằng Amazon S3, theo dõi trạng thái hệ thống bằng CloudWatch và sử dụng Docker Restart Policy để tăng khả năng phục hồi. |
+| Performance Efficiency | Sử dụng PostgreSQL + pgvector để truy xuất dữ liệu theo ngữ nghĩa, kết hợp RAG nhằm nâng cao hiệu quả trả lời của AI. |
+| Cost Optimization | Triển khai toàn bộ dịch vụ trên một Amazon EC2 trong giai đoạn MVP, sử dụng AWS Budgets và Billing Alerts để kiểm soát chi phí. |
+| Sustainability | Kiến trúc có thể mở rộng sang ECS, Auto Scaling và Application Load Balancer khi số lượng người dùng tăng. |
+
+Nhìn chung, hệ thống đáp ứng các yêu cầu cơ bản của AWS Well-Architected Framework đối với một ứng dụng AI triển khai trên nền tảng điện toán đám mây. Kiến trúc hiện tại phù hợp với quy mô MVP và có khả năng mở rộng trong các giai đoạn tiếp theo.
+
+> **Hình 6.1. Đánh giá AI Learning Assistant Platform theo AWS Well-Architected Framework.**
+![Hình 4.2](/images/6.1.p.r.png)
+---
+
+## 6.2 Hướng phát triển
+
+Trong tương lai, AI Learning Assistant Platform có thể được mở rộng nhằm nâng cao hiệu năng, khả năng mở rộng và trải nghiệm người dùng.
+
+Các hướng phát triển chính bao gồm:
+
+- Chuyển từ Docker Compose sang Amazon ECS hoặc Amazon EKS để tăng khả năng mở rộng.
+- Triển khai Application Load Balancer và Auto Scaling để hỗ trợ nhiều người dùng đồng thời.
+- Mở rộng Knowledge Base cho nhiều môn học và nhiều nhóm người dùng.
+- Tích hợp thêm các mô hình AI như Amazon Bedrock, Google Gemini hoặc OpenAI.
+- Bổ sung các tính năng AI như tạo Mindmap, AI Tutor, Speech-to-Text và Text-to-Speech.
+- Xây dựng ứng dụng di động trên Android và iOS.
+- Tối ưu quy trình RAG nhằm cải thiện tốc độ và độ chính xác của câu trả lời.
+- Hoàn thiện hệ thống giám sát, cảnh báo và sao lưu tự động để nâng cao độ tin cậy của hệ thống.
+
+Với kiến trúc hiện tại, AI Learning Assistant Platform có thể tiếp tục mở rộng để đáp ứng nhu cầu học tập của nhiều người dùng, đồng thời sẵn sàng triển khai ở quy mô lớn hơn trên nền tảng Amazon Web Services.
+# Phần 7. Kết luận
+
+## 7.1 Kết quả đạt được
+
+AI Learning Assistant Platform được xây dựng nhằm hỗ trợ người học khai thác tài liệu học tập thông qua trí tuệ nhân tạo kết hợp với công nghệ Retrieval-Augmented Generation (RAG). Hệ thống cho phép người dùng tải lên tài liệu, xây dựng Knowledge Base và tương tác với AI bằng ngôn ngữ tự nhiên, từ đó nâng cao độ chính xác của câu trả lời so với các chatbot AI truyền thống.
+
+Bên cạnh chức năng hỏi đáp, hệ thống còn tích hợp các tính năng hỗ trợ học tập như quản lý tài liệu, tóm tắt bài học, tạo câu hỏi trắc nghiệm, Flashcard và lưu lịch sử hội thoại. Toàn bộ ứng dụng được triển khai trên nền tảng Amazon Web Services (AWS), đáp ứng các yêu cầu cơ bản về hiệu năng, bảo mật, khả năng mở rộng và quản lý hệ thống.
+
+Thông qua quá trình thực hiện dự án, các mục tiêu chính đã đạt được gồm:
+
+- Xây dựng nền tảng AI Learning Assistant dựa trên FastGPT.
+- Ứng dụng Retrieval-Augmented Generation (RAG) để nâng cao chất lượng câu trả lời.
+- Triển khai hệ thống trên Amazon EC2 bằng Docker Compose.
+- Tích hợp MongoDB, PostgreSQL, MinIO và các dịch vụ AWS.
+- Xây dựng kiến trúc có khả năng mở rộng và phù hợp với giai đoạn MVP.
+
+---
+
+## 7.2 Hạn chế
+
+Mặc dù đã đáp ứng các mục tiêu đề ra, hệ thống vẫn còn một số hạn chế:
+
+- Kiến trúc hiện tại sử dụng một Amazon EC2 nên chưa đáp ứng yêu cầu sẵn sàng cao (High Availability).
+- Chưa triển khai Auto Scaling và Load Balancer.
+- Chất lượng câu trả lời vẫn phụ thuộc vào nội dung và chất lượng của tài liệu được tải lên.
+- Chưa hỗ trợ ứng dụng di động và làm việc ngoại tuyến.
+- Một số tính năng AI nâng cao vẫn đang trong giai đoạn nghiên cứu và phát triển.
+
+---
+
+## 7.3 Hướng phát triển
+
+Trong tương lai, AI Learning Assistant Platform sẽ được mở rộng theo các hướng sau:
+
+- Triển khai Amazon ECS hoặc Amazon EKS để nâng cao khả năng mở rộng.
+- Sử dụng Application Load Balancer và Auto Scaling nhằm hỗ trợ nhiều người dùng đồng thời.
+- Tích hợp thêm các mô hình AI như Amazon Bedrock, Google Gemini hoặc OpenAI.
+- Mở rộng các chức năng học tập như AI Tutor, Mindmap, Speech-to-Text và Text-to-Speech.
+- Phát triển ứng dụng trên nền tảng Android và iOS.
+- Tối ưu quy trình RAG để nâng cao tốc độ và độ chính xác của hệ thống.
+- Hoàn thiện cơ chế giám sát, sao lưu và phục hồi dữ liệu nhằm tăng tính ổn định và an toàn trong quá trình vận hành.
+
+Những định hướng trên sẽ giúp AI Learning Assistant Platform trở thành một nền tảng học tập thông minh có khả năng phục vụ nhiều đối tượng người dùng và đáp ứng tốt hơn các nhu cầu trong môi trường giáo dục hiện đại.
+
+---
+
+## 7.4 Kết luận
+
+AI Learning Assistant Platform là một giải pháp hỗ trợ học tập ứng dụng trí tuệ nhân tạo, được xây dựng trên nền tảng FastGPT và triển khai trên Amazon Web Services (AWS). Việc kết hợp công nghệ Retrieval-Augmented Generation (RAG) với Knowledge Base giúp hệ thống cung cấp câu trả lời bám sát tài liệu học tập, góp phần nâng cao hiệu quả học tập và giảm hiện tượng AI tạo thông tin không có căn cứ.
+
+Với kiến trúc được thiết kế theo hướng mở, hệ thống có thể tiếp tục mở rộng và tích hợp thêm nhiều dịch vụ AI cũng như các dịch vụ AWS trong tương lai. Dự án không chỉ đáp ứng mục tiêu xây dựng một trợ lý học tập thông minh mà còn tạo nền tảng cho việc nghiên cứu, phát triển và ứng dụng Generative AI trong lĩnh vực giáo dục.
+
+Bên cạnh việc xây dựng nền tảng học tập thông minh, dự án còn minh họa cách triển khai một ứng dụng Generative AI trên Amazon Web Services thông qua Docker Compose, Amazon EC2, Amazon S3, Amazon CloudWatch và các dịch vụ bảo mật của AWS. Đây là nền tảng để tiếp tục mở rộng hệ thống trong tương lai.
