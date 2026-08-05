@@ -1,5 +1,5 @@
 ---
-title: "Proposal"
+title: "Project"
 date: 2026-08-04
 weight: 2
 chapter: false
@@ -28,117 +28,118 @@ To address these challenges, this project proposes the **AI Learning Assistant P
 
 The primary objective of this project is to develop an intelligent learning assistant platform that enables learners to access and utilize knowledge from educational documents efficiently.
 
-The main objectives include:
+The main objectives of the project include:
 
-- Develop an AI Learning Assistant based on the **Retrieval-Augmented Generation (RAG)** framework.
-- Enable users to upload and manage learning materials.
-- Build a semantic **Knowledge Base** for information retrieval.
-- Allow AI to answer questions based on user-provided documents.
-- Provide learning support features, including lesson summarization, quiz generation, and flashcard creation.
-- Deploy the platform on **Amazon Web Services (AWS)** using a cloud-native architecture.
+- Building an AI Learning Assistant system applying **Retrieval-Augmented Generation (RAG)** technology.
+- Allowing users to upload and manage learning documents.
+- Developing a **Knowledge Base** to support semantic information retrieval.
+- Enabling AI to answer questions based on the content of the user's documents.
+- Integrating learning support features such as lesson summaries, quiz generation, and Flashcards.
+- Deploying the system on **Amazon Web Services (AWS)** following the cloud computing model.
 
 ---
 
 ## 1.3 Solution Overview
 
-The **AI Learning Assistant Platform** is an intelligent educational platform that allows users to upload learning materials and interact with an AI assistant using natural language.
+The AI Learning Assistant Platform is an intelligent learning platform that allows users to upload learning materials and interact with AI using natural language.
 
-After documents are uploaded, the system automatically processes the content, performs text chunking, generates vector embeddings, and constructs a **Knowledge Base**. When a user submits a question, the platform applies the **Retrieval-Augmented Generation (RAG)** framework to retrieve the most relevant document fragments, which are then provided as contextual information to the AI model for generating accurate and document-grounded responses.
+After a document is uploaded, the system automatically processes the content, splits the document into smaller chunks, generates **Embeddings**, and builds a **Knowledge Base**. When a user asks a question, the system uses the **Retrieval-Augmented Generation (RAG)** mechanism to retrieve relevant document segments and provides context to the AI model to generate an accurate response closely aligned with the document's content.
 
-In addition to question answering, the platform supports document management, lesson summarization, quiz generation, flashcard creation, and learning history management. The entire system is containerized using Docker and deployed on AWS, providing a scalable and maintainable foundation for future development.
+In addition to Q&A capabilities, the system also supports document management, lesson summarization, quiz generation, Flashcards, and learning history tracking. The entire application is deployed on AWS using Docker, creating a solid foundation for future scalability and development.
 
-### Project Overview
+### Quick Overview
 
-| Item | Description |
-|------|-------------|
+| Criteria | Value |
+|----------|----------|
 | Project Name | AI Learning Assistant Platform |
 | Project Type | Intelligent Learning Assistant Platform |
-| Target Users | Students and Instructors |
+| Target Audience | Students, Instructors |
 | Development Platform | FastGPT (Customized) |
-| AI Technologies | Retrieval-Augmented Generation (RAG), Knowledge Base, Embedding |
+| AI Technology | RAG, Knowledge Base, Embedding |
 | Cloud Platform | Amazon Web Services (AWS) |
 | AWS Services | Amazon EC2, Amazon S3, Amazon CloudWatch |
 | Database | MongoDB, PostgreSQL |
 | Deployment Method | Docker Compose |
+
 # Part 2. Problem Analysis and Proposed Solution
 
-## 2.1 Problem Statement
+## 2.1 The Problem
 
-In today's educational environment, students frequently rely on various learning resources such as textbooks, lecture slides, reference materials, and laboratory manuals. As the volume of these resources continues to increase, locating specific information becomes increasingly time-consuming, which negatively affects learning efficiency.
+In today's educational environment, students often have to use multiple sources of materials such as textbooks, lecture slides, reference documents, and lab guides. As the amount of material grows, searching for specific content becomes time-consuming and affects learning efficiency.
 
-Although modern AI chatbots are capable of answering a wide range of questions using natural language, most of them rely solely on pre-trained knowledge. Consequently, they cannot accurately utilize users' personal learning materials and may generate responses that are irrelevant, inconsistent with the uploaded documents, or entirely unsupported by the provided content.
+Although current AI chatbots can answer many questions using natural language, most of them rely only on pre-trained knowledge. This prevents AI from accurately extracting content from users' personal documents and can result in responses that are out of context or not present in the documents.
 
-Therefore, there is a growing need for an intelligent solution that enables AI to understand and retrieve information directly from users' learning materials, allowing learners to access accurate information more efficiently.
+Therefore, a solution is needed that allows AI to understand and extract data directly from learning materials, helping users find information quickly and receive more accurate answers.
+
 ---
 
 ## 2.2 Proposed Solution
 
-To address the limitations of traditional AI chatbots, this project proposes the development of the **AI Learning Assistant Platform** based on the **Retrieval-Augmented Generation (RAG)** framework.
+To solve the above problems, this project proposes building the **AI Learning Assistant Platform** based on **Retrieval-Augmented Generation (RAG)** technology.
 
-Unlike conventional AI systems, the proposed platform allows users to upload their learning materials to build a personalized **Knowledge Base**. When a user submits a question, the system first retrieves the most relevant document fragments from the Knowledge Base before sending the retrieved context to the Large Language Model (LLM) to generate a grounded response.
+Unlike traditional AI chatbots, the system allows users to upload learning materials to build a **Knowledge Base**. When a user asks a question, the system retrieves relevant content segments from the Knowledge Base before sending them to the AI model to generate an answer.
 
-As a result, the platform provides several advantages:
+Thanks to this, the AI can:
 
-- Generate responses based on users' learning materials.
-- Reduce AI hallucinations by incorporating retrieved contextual information.
-- Provide source references for generated answers.
-- Improve the accuracy and reliability of AI-generated responses.
+- Answer based on the content of the user's documents.
+- Reduce the phenomenon of AI generating unfounded information (Hallucination).
+- Display reference sources for the answers.
+- Improve the accuracy and reliability of the results.
 
-In addition to question answering, the platform also provides several learning support features, including:
+In addition to the Q&A function, the system also supports features such as:
 
 - Learning document management.
-- Lesson summarization.
-- Automatic quiz generation.
+- Lesson content summarization.
+- Quiz generation.
 - Flashcard generation for revision.
-- Learning and conversation history management.
+- Saving learning and conversation history.
 
 ---
 
-## 2.3 System Workflow
+## 2.3 Workflow
 
-The overall workflow of the AI Learning Assistant Platform consists of the following steps:
+The system's workflow consists of the following steps:
 
-1. The user uploads learning materials to the platform.
-2. The system extracts and preprocesses the document content.
-3. The content is divided into smaller text chunks.
-4. Vector embeddings are generated and stored in the Vector Database.
-5. The user submits a question using natural language.
-6. The system retrieves the most relevant document chunks from the Knowledge Base.
-7. The retrieved context is provided to the Large Language Model (LLM) to generate an accurate response.
-8. The final response, together with its corresponding source references, is presented to the user.
+1. The user uploads learning materials to the system.
+2. The system extracts content and processes the documents.
+3. The content is divided into small segments (Chunking).
+4. The system creates Embeddings and saves them to the Vector Database.
+5. The user asks a question in natural language.
+6. The system retrieves suitable document segments from the Knowledge Base.
+7. The AI model uses the document segments as context to generate an answer.
+8. The result along with the reference source is displayed to the user.
 
-> **Figure 2.1. Workflow of the AI Learning Assistant Platform Using Retrieval-Augmented Generation (RAG)**
+> **Figure 2.1. Workflow of the AI Learning Assistant Platform using RAG.**
 
 ![Retrieval-Augmented Generation Workflow](/images/h3bl3.png)
 
----
+## 2.4 Benefits of the Solution
 
-## 2.4 Benefits of the Proposed Solution
+Applying RAG technology to the AI Learning Assistant Platform brings many benefits:
 
-The adoption of the Retrieval-Augmented Generation (RAG) framework provides several significant benefits for the AI Learning Assistant Platform:
+- Supports quick information search in learning materials.
+- Improves the accuracy of answers by using real data.
+- Reduces Hallucination in AI models.
+- Saves time for studying and revising.
+- Creates an intelligent, flexible, and scalable learning environment on the AWS platform.
 
-- Rapid information retrieval from learning materials.
-- Improved answer accuracy through document-grounded responses.
-- Reduced AI hallucinations by leveraging retrieved contextual information.
-- Increased learning efficiency and reduced study time.
-- A scalable, flexible, and cloud-native learning environment deployed on Amazon Web Services (AWS).
+The solution is not only suitable for students and instructors but can also be expanded for training organizations or enterprises needing to build an internal document-based Q&A system.
 
-The proposed solution is suitable not only for students and instructors but can also be extended to educational institutions and organizations that require intelligent document-based question-answering systems.
 # Part 3. System Design and Architecture
 
-## 3.1 Overall System Architecture
+## 3.1 Overall Architecture
 
-The **AI Learning Assistant Platform** is designed using a **Client–Server architecture** combined with the **Retrieval-Augmented Generation (RAG)** framework and deployed on **Amazon Web Services (AWS)** to provide an intelligent learning platform capable of document management, semantic search, and AI-assisted learning.
+The AI Learning Assistant Platform is built on a **Client–Server** model combined with **Retrieval-Augmented Generation (RAG)** architecture and deployed on **Amazon Web Services (AWS)** to build an intelligent learning platform capable of managing documents, semantic searching, and AI-assisted learning.
 
 The system architecture is divided into five main layers:
 
-- **Client Layer:** Students and instructors access the platform through a web browser using HTTP or HTTPS protocols.
-- **Application Layer:** The entire application is deployed on **Amazon EC2** as **Docker containers** managed by **Docker Compose**, including Nginx, Frontend, Backend, MongoDB, PostgreSQL with pgvector, MinIO, and Redis.
-- **AI & Data Layer:** The backend handles AI Chat, Retrieval-Augmented Generation (RAG), Knowledge Base management, document processing, and semantic search. **PostgreSQL with pgvector** stores vector embeddings, while **MongoDB** manages user information, conversations, and system configuration.
-- **Infrastructure Layer:** **Amazon EBS** provides persistent storage for Docker volumes and application data. **Amazon S3** is used to store backups and archived learning documents.
-- **DevOps & Monitoring Layer:** **GitHub Actions** and **Amazon ECR** automate the CI/CD pipeline, while **Amazon CloudWatch**, **CloudWatch Alarm**, **Amazon SNS**, and **AWS Budgets** provide monitoring, alerting, and cost management.
+- **Client Layer:** Students and instructors access the system via web browsers using HTTP or HTTPS protocols.
+- **Application Layer:** The entire application is deployed on **Amazon EC2** as **Docker Containers** managed by **Docker Compose**, including Nginx, Frontend, Backend, MongoDB, PostgreSQL with pgvector, and MinIO.
+- **AI & Data Layer:** The Backend handles AI Chat, Retrieval-Augmented Generation (RAG), Knowledge Base, Document Processing, and Semantic Search. PostgreSQL with **pgvector** stores vector embeddings, while MongoDB manages user data, conversations, and system configurations.
+- **Infrastructure Layer:** Amazon EBS provides persistent storage for Docker Volumes and system data. Amazon S3 is used to store backups and redundant documents.
+- **DevOps & Monitoring Layer:** GitHub Actions and Amazon ECR support the CI/CD pipeline, while Amazon CloudWatch, CloudWatch Alarm, and AWS Budgets help monitor the system, alert on issues, and control operational costs.
 
-The architecture follows a **Production Lite** approach, making it suitable for an MVP while still providing essential capabilities for deployment, security, monitoring, backup, and automation on AWS.
+The architecture is designed following a **Production Lite** approach, suitable for MVP scale while still meeting basic requirements for deployment, security, monitoring, backup, and automation on the AWS platform.
 
 > **Figure 3.1. Overall Architecture of the AI Learning Assistant Platform.**
 
@@ -146,36 +147,36 @@ The architecture follows a **Production Lite** approach, making it suitable for 
 
 ---
 
-## 3.2 AWS Deployment Architecture
+## 3.2 Deployment Architecture on AWS
 
 The AI Learning Assistant Platform is deployed on **Amazon Web Services (AWS)** in the **US East (N. Virginia) – us-east-1** Region.
 
-Users access the system through an **Elastic IP** or a custom domain using HTTP or HTTPS. All incoming traffic is filtered by **AWS Security Group** before reaching the Amazon EC2 instance.
+Users access the platform through an **Elastic IP** or the domain name of the Amazon EC2 instance using HTTP or HTTPS protocols. All incoming traffic is controlled by **Security Groups** before reaching the EC2 server.
 
-Inside the EC2 instance, **Docker Compose** manages the application containers, including **Nginx**, **Frontend**, **Backend**, **MongoDB**, **PostgreSQL with pgvector**, **MinIO**, and **Redis**. **Amazon EBS** provides persistent storage for Docker volumes and application data.
+Inside Amazon EC2, Docker Compose manages the system's containers, including Nginx, Frontend, Backend, MongoDB, PostgreSQL with pgvector, MinIO, and Redis. Amazon EBS is used for storing Docker Volumes and persistent data.
 
-To improve data reliability, MongoDB, PostgreSQL, and MinIO are periodically backed up to **Amazon S3**. **Amazon CloudWatch** together with **CloudWatch Alarm** monitors system performance and generates alerts when predefined thresholds are exceeded. **Amazon SNS** delivers email notifications for critical events.
+To ensure data resilience, MongoDB, PostgreSQL, and MinIO are periodically backed up to **Amazon S3**. Amazon CloudWatch combined with CloudWatch Alarm is used to monitor system performance and send alerts when issues occur.
 
-The deployment process is automated through **GitHub Actions** and **Amazon ECR**. Whenever new code is pushed to the GitHub repository, GitHub Actions automatically builds Docker images, pushes them to Amazon ECR, and deploys the latest version to Amazon EC2.
+The deployment process is automated using **GitHub Actions** and **Amazon ECR**. When source code is updated on the GitHub Repository, GitHub Actions automatically builds the Docker Image, pushes the Image to Amazon ECR, and deploys the new version to Amazon EC2.
 
 ### AWS Services Used
 
-| AWS Service | Purpose |
-|-------------|---------|
-| Amazon EC2 | Hosts the entire AI Learning Assistant Platform |
-| Amazon EBS | Provides persistent storage for Docker volumes and application data |
-| Amazon S3 | Stores backups of MongoDB, PostgreSQL, and learning documents |
-| Amazon ECR | Stores and manages Docker container images |
-| Amazon CloudWatch | Monitors system metrics, logs, and dashboards |
-| CloudWatch Alarm | Triggers alerts based on CPU, memory, disk, and service health |
-| Amazon SNS | Sends email notifications for monitoring alerts |
-| AWS IAM | Manages authentication and authorization for AWS resources |
-| Security Group | Controls inbound and outbound network access to EC2 |
-| AWS Budgets | Monitors AWS spending and generates budget alerts |
+| AWS Service | Role |
+|-------------|----------|
+| Amazon EC2 | Runs the entire AI Learning Assistant system |
+| Amazon EBS | Stores Docker Volumes and persistent data |
+| Amazon S3 | Backs up MongoDB, PostgreSQL, and learning documents |
+| Amazon ECR | Manages Docker Images |
+| Amazon CloudWatch | Monitors Metrics and Logs |
+| CloudWatch Alarm | Alerts on CPU, Memory, Disk, and service status |
+| Amazon SNS | Sends Email Notifications when alerts occur |
+| AWS IAM | Manages access permissions for AWS resources |
+| Security Group | Controls network access to the EC2 instance |
+| AWS Budgets | Monitors and alerts on AWS costs |
 
-The current architecture is optimized for internship projects and MVP deployments. Running the application on a single Amazon EC2 instance minimizes operational costs while maintaining scalability through Docker containers, CI/CD automation, and AWS management services.
+The current architecture is optimized for internship environments and the MVP phase. Deploying on a single Amazon EC2 instance helps reduce operational costs while ensuring future scalability through CI/CD, Docker Containers, and AWS management services.
 
-> **Figure 3.2. AWS Deployment Architecture of the AI Learning Assistant Platform.**
+> **Figure 3.2. System Deployment Architecture on AWS.**
 
 ![Figure 3.2](/images/3.2.d.s.png)
 
@@ -183,56 +184,56 @@ The current architecture is optimized for internship projects and MVP deployment
 
 ## 3.3 Database Design
 
-The platform uses multiple storage components to satisfy the requirements of user data management, semantic retrieval, and document storage.
+The system utilizes multiple storage components to meet requirements for data management, semantic retrieval, and learning document storage.
 
-| Component | Purpose |
-|-----------|---------|
-| MongoDB | Stores user accounts, conversations, Knowledge Base metadata, and system configuration |
-| PostgreSQL + pgvector | Stores vector embeddings for semantic search and Retrieval-Augmented Generation |
+| Component | Role |
+|------------|----------|
+| MongoDB | Stores user information, conversations, Knowledge Base, and system configurations |
+| PostgreSQL + pgvector | Stores Vector Embeddings for Semantic Search and Retrieval-Augmented Generation |
 | MinIO | Stores learning documents uploaded by users |
-| Amazon S3 | Stores backups of databases and uploaded learning documents |
-| Amazon EBS | Provides persistent storage for Docker volumes and application data |
+| Amazon S3 | Backs up MongoDB, PostgreSQL, and learning documents |
+| Amazon EBS | Stores Docker Volumes and persistent system data |
 
-MongoDB, PostgreSQL, and MinIO operate within the internal Docker network and are not directly exposed to the public Internet, improving the overall security of the system.
+MongoDB, PostgreSQL, and MinIO operate within the internal Docker network and are not directly exposed to the Internet to enhance system security.
 
-> **Figure 3.3. Database Architecture of the AI Learning Assistant Platform.**
+> **Figure 3.3. Database Schema of the System.**
 
 ![Figure 3.3](/images/3.3.pr.drawio.png)
 
 ---
 
-## 3.4 System Workflow
+## 3.4 Workflow Process
 
-After a user uploads a learning document, the AI Learning Assistant Platform performs the Retrieval-Augmented Generation (RAG) workflow as follows:
+After a user uploads a document to the system, the AI Learning Assistant Platform executes the Retrieval-Augmented Generation (RAG) process through the following steps:
 
-1. The user uploads a learning document.
-2. The backend extracts the document content.
-3. The document is divided into smaller chunks.
-4. Vector embeddings are generated for each chunk.
-5. The embeddings are stored in PostgreSQL with pgvector, while metadata is stored in MongoDB.
-6. The user submits a question through the AI Chat interface.
-7. The backend generates an embedding for the question and performs semantic search against the vector database.
-8. Relevant document chunks are retrieved and combined with the user's question to construct a prompt.
-9. The prompt is sent to the Large Language Model (LLM).
-10. The AI generates an answer based on the retrieved context and returns the response together with reference sources.
+1. The user uploads learning materials to the system.
+2. The Backend extracts content from the document.
+3. The document is divided into small segments (Chunking).
+4. The system creates Vector Embeddings for each segment.
+5. Embeddings are stored in PostgreSQL with pgvector, while Metadata is stored in MongoDB.
+6. The user submits a question from the AI Chat interface.
+7. The Backend generates an Embedding for the question and performs Semantic Search in the Vector Database.
+8. Relevant document segments are retrieved and combined with the question to form a Prompt.
+9. The Prompt is sent to the Large Language Model (LLM).
+10. The AI generates a response based on the document's context and returns the result along with reference sources to the user.
 
-This workflow significantly reduces hallucination, improves response accuracy, and enables the AI model to answer questions based on user-provided learning materials.
+This process helps AI reduce Hallucination, improve response accuracy, and effectively utilize users' learning resources.
 
-> **Figure 3.4. Retrieval-Augmented Generation (RAG) Workflow of the AI Learning Assistant Platform.**
+> **Figure 3.4. Workflow of the AI Learning Assistant Platform using RAG.**
 
 ![Figure 3.4](/images/3.4.p.r.png)
 
 ---
 
-## 3.5 Technologies Used
+## 3.5 Technology Stack
 
 | Component | Technology |
-|-----------|------------|
+|------------|-----------|
 | Frontend | Next.js, React, TypeScript |
 | Backend | FastGPT (Customized) |
-| AI Model | Large Language Models (LLMs) |
+| AI | Large Language Models (LLMs) |
 | AI Framework | Retrieval-Augmented Generation (RAG) |
-| Database | MongoDB, PostgreSQL with pgvector |
+| Database | MongoDB, PostgreSQL + pgvector |
 | Object Storage | MinIO |
 | Containerization | Docker, Docker Compose |
 | Version Control | GitHub |
@@ -250,26 +251,28 @@ This workflow significantly reduces hallucination, improves response accuracy, a
 
 The AI Learning Assistant Platform is deployed on **Amazon Web Services (AWS)** in the **US East (N. Virginia) – us-east-1** Region.
 
-The application runs on an **Amazon EC2** instance using **Docker Compose**. The deployment includes **Nginx**, **Frontend (Next.js/React)**, **Backend (FastGPT Customized)**, **MongoDB**, **PostgreSQL with pgvector**, and **MinIO**.
+The entire system is deployed on an **Amazon EC2** instance using **Docker Compose**, including **Nginx**, **Frontend (Next.js/React)**, **Backend (FastGPT Customized)**, **MongoDB**, **PostgreSQL with pgvector**, and **MinIO**.
 
-Supporting AWS services include **Amazon EBS** for persistent storage, **Amazon S3** for backups, **Amazon ECR** for Docker image management, **GitHub Actions** for CI/CD, **Amazon CloudWatch** for monitoring, **AWS IAM**, **Security Group**, and **AWS Budgets**.
+The system uses **Amazon EBS** for persistent data storage, **Amazon S3** for data backup, **Amazon ECR** for managing Docker Images, **GitHub Actions** for CI/CD automation, **Amazon CloudWatch** for system monitoring, and **AWS IAM**, **Security Group**, and **AWS Budgets** for managing security and costs.
 
-### Deployment Environment
+### Environment Configuration
 
 | Component | Technology / Service |
 |------------|----------------------|
 | Cloud Platform | Amazon Web Services (AWS) |
 | Region | us-east-1 |
 | Compute | Amazon EC2 |
-| Storage | Amazon EBS |
+| Persistent Storage | Amazon EBS |
 | Container | Docker, Docker Compose |
 | Reverse Proxy | Nginx |
+| Frontend | Next.js, React |
+| Backend | FastGPT (Customized) |
 | Database | MongoDB, PostgreSQL + pgvector |
 | Object Storage | MinIO |
 | Container Registry | Amazon ECR |
 | CI/CD | GitHub Actions |
 | Monitoring | Amazon CloudWatch |
-| Backup | Amazon S3 |
+| Backup Storage | Amazon S3 |
 | Security | AWS IAM, Security Group |
 | Cost Monitoring | AWS Budgets |
 
@@ -279,20 +282,19 @@ Supporting AWS services include **Amazon EBS** for persistent storage, **Amazon 
 
 ---
 
-## 4.2 Deployment Process
+## 4.2 System Deployment Process
 
-The deployment workflow consists of the following steps:
+The deployment workflow is executed through the following steps:
 
-1. Create and configure Amazon EC2.
-2. Install Docker and Docker Compose.
-3. Push source code to GitHub.
-4. GitHub Actions builds Docker images.
-5. Docker images are pushed to Amazon ECR.
-6. Amazon EC2 pulls the latest images and starts containers using Docker Compose.
-7. Amazon CloudWatch monitors system health.
-8. MongoDB, PostgreSQL, and MinIO data are backed up to Amazon S3.
+1. Initialize and configure **Amazon EC2**, **Security Group**, and **Elastic IP**.
+2. Install **Docker** and **Docker Compose** on Amazon EC2.
+3. Push the source code to the **GitHub Repository**.
+4. **GitHub Actions** automatically builds the Docker Image and pushes it to **Amazon ECR**.
+5. Amazon EC2 pulls the new Docker Image and starts the containers using **Docker Compose**.
+6. **Amazon CloudWatch** monitors the system's operational status.
+7. MongoDB, PostgreSQL, and MinIO data are periodically backed up to **Amazon S3**.
 
-> **Figure 4.2. Deployment Workflow of the AI Learning Assistant Platform.**
+> **Figure 4.2. Deployment Workflow of the AI Learning Assistant Platform on AWS.**
 
 ![Figure 4.2](/images/4.2.d.x..png)
 
@@ -300,25 +302,27 @@ The deployment workflow consists of the following steps:
 
 ## 4.3 System Testing
 
-| Test Item | Result |
-|------------|--------|
-| User Authentication | Passed |
-| Course Management | Passed |
-| Document Upload | Passed |
-| Knowledge Base | Passed |
-| AI Chat (RAG) | Passed |
-| Summary | Passed |
-| Quiz | Passed |
-| Flashcard | Passed |
-| Deployment & CI/CD | Passed |
+After successful deployment, the system was tested to evaluate the stability and functionality of its core features.
 
-The testing results indicate that the platform operates successfully, all Docker containers are running correctly, and the core system functions meet the project requirements.
+| Function | Result |
+|-----------|----------|
+| User Authentication and Login | Passed |
+| Course Management | Passed |
+| Learning Document Upload | Passed |
+| Knowledge Base Generation | Passed |
+| AI Chat (RAG) | Passed |
+| Lesson Summary | Passed |
+| Quiz Generation | Passed |
+| Flashcard Generation | Passed |
+| CI/CD Deployment | Passed |
+
+The testing results demonstrate that the system operates stably, the Docker Containers function normally, and the core functionalities meet the platform's requirements.
 
 ---
 
 ## 4.4 Monitoring and Operations
 
-The platform uses **Amazon CloudWatch** to monitor system performance and resource utilization.
+During system operation, **Amazon CloudWatch** is used to monitor performance and operational status.
 
 The monitored metrics include:
 
@@ -328,31 +332,31 @@ The monitored metrics include:
 - Network Traffic
 - Docker Container Logs
 
-Application data and uploaded learning documents are backed up regularly to **Amazon S3**, while **AWS Budgets** is used to monitor AWS spending and notify administrators when budget thresholds are exceeded.
+Additionally, data from MongoDB, PostgreSQL, and learning documents are periodically backed up to **Amazon S3** to ensure data recovery capabilities in case of incidents. **AWS Budgets** is used to track costs and alert when usage exceeds the established budget.
 
-# Part 5. Security, Cost Optimization, and Future Development
+# Part 5. Security and Cost Optimization
 
 ## 5.1 System Security
 
-The AI Learning Assistant Platform stores user accounts, learning materials, and conversation history. Therefore, security is an essential consideration throughout the AWS deployment.
+The AI Learning Assistant Platform stores user accounts, learning materials, and conversation histories. Therefore, the system applies multiple measures to ensure data safety when deployed on Amazon Web Services (AWS).
 
-The main security measures include:
+The primary security measures include:
 
-- Using **AWS IAM** to manage access permissions based on the **Principle of Least Privilege**.
-- Using **Security Groups** to control inbound access to the Amazon EC2 instance.
-- Using **HTTPS** to encrypt communication between users and the platform.
-- Storing API keys and configuration values in **Environment Variables** instead of hardcoding them into the source code.
-- Restricting access to backup data stored in **Amazon S3**.
-- Keeping MongoDB, PostgreSQL, and MinIO within the internal Docker network without direct Internet access.
-- Using **Amazon CloudWatch** to monitor system status and detect abnormal activities.
+- Using **AWS IAM** to manage access permissions following the **Least Privilege** principle.
+- Using **Security Groups** to control access ports to the Amazon EC2 instance.
+- Using **HTTPS** to encrypt data transmitted between users and the system.
+- Storing configuration information and API Keys using **Environment Variables**, rather than hardcoding them in the source code.
+- Restricting access permissions to **Amazon S3** for backup data.
+- MongoDB, PostgreSQL, and MinIO operate exclusively within the internal Docker network and cannot be accessed directly from the Internet.
+- Using **Amazon CloudWatch** to monitor operational status and detect system anomalies.
 
 ---
 
 ## 5.2 Estimated Deployment Cost
 
-The platform is deployed using a **Production Lite** architecture to balance performance, scalability, and operational cost.
+The system is deployed following a **Production Lite** model to optimize costs while still meeting requirements for performance, security, and scalability.
 
-### Table 5.1. Estimated Monthly Deployment Cost
+### Table 5.1. Estimated Deployment Cost
 
 | AWS Service | Purpose | Estimated Cost (USD/Month) |
 |--------------|---------|---------------------------:|
@@ -368,7 +372,7 @@ The platform is deployed using a **Production Lite** architecture to balance per
 
 ### Cost Optimization
 
-The platform applies several cost optimization strategies:
+The platform applies the following cost optimization strategies:
 
 - Deploy all services on a single Amazon EC2 instance during the MVP phase.
 - Monitor AWS spending using **AWS Budgets**.
@@ -381,9 +385,9 @@ The platform applies several cost optimization strategies:
 
 # Part 6. Evaluation and Future Development
 
-## 6.1 Evaluation Based on the AWS Well-Architected Framework
+## 6.1 Evaluation Based on AWS Well-Architected Framework
 
-The AI Learning Assistant Platform is evaluated according to the principles of the **AWS Well-Architected Framework**.
+The AI Learning Assistant Platform is evaluated based on the principles of the **AWS Well-Architected Framework**.
 
 ### Table 6.1. System Evaluation
 
@@ -394,9 +398,9 @@ The AI Learning Assistant Platform is evaluated according to the principles of t
 | Reliability | Amazon S3 Backup, Docker Restart Policy, Amazon CloudWatch |
 | Performance Efficiency | PostgreSQL + pgvector, Retrieval-Augmented Generation (RAG) |
 | Cost Optimization | Amazon EC2, AWS Budgets, Amazon CloudWatch |
-| Sustainability | The architecture can be extended to Amazon ECS and Application Load Balancer |
+| Sustainability | Architecture can be extended to Amazon ECS and Application Load Balancer |
 
-Overall, the current architecture satisfies the fundamental principles of the AWS Well-Architected Framework for an AI application deployed on AWS. It is suitable for an MVP while remaining scalable for future development.
+The current architecture satisfies the fundamental principles of the AWS Well-Architected Framework for an AI application deployed on AWS. It is suitable for an MVP while remaining scalable for future development.
 
 > **Figure 6.1. Evaluation of the AI Learning Assistant Platform Based on the AWS Well-Architected Framework.**
 
@@ -406,72 +410,67 @@ Overall, the current architecture satisfies the fundamental principles of the AW
 
 ## 6.2 Future Development
 
-In the future, the AI Learning Assistant Platform can be enhanced in the following directions:
+In the future, the system can be expanded in the following directions:
 
-- Migrate from Docker Compose to **Amazon ECS** for better scalability.
-- Deploy an **Application Load Balancer (ALB)** to distribute incoming traffic.
-- Expand the Knowledge Base to support more subjects and users.
+- Deploy **Amazon ECS** to enhance scalability.
+- Use an **Application Load Balancer** to distribute incoming traffic.
+- Expand the Knowledge Base for multiple subjects and users.
 - Integrate additional AI models such as **Amazon Bedrock**, **Google Gemini**, or **OpenAI**.
-- Introduce new AI features, including AI Tutor, Mind Map generation, Speech-to-Text, and Text-to-Speech.
-- Enhance monitoring, alerting, and backup mechanisms to improve system reliability.
+- Add AI features such as AI Tutor, Mindmap, Speech-to-Text, and Text-to-Speech.
+- Perfect the Monitoring, Alerting, and Backup system to improve reliability.
 
-With its current architecture, the AI Learning Assistant Platform is well suited for MVP deployment and can be expanded to support larger workloads and more users on Amazon Web Services in the future.
+With its current architecture, the AI Learning Assistant Platform can effectively meet deployment needs during the MVP phase and is ready to scale as the number of users increases in the future.
 
 # Part 7. Conclusion
 
-## 7.1 Project Achievements
+## 7.1 Achievements
 
-The AI Learning Assistant Platform was developed to help learners interact with educational resources through Artificial Intelligence combined with Retrieval-Augmented Generation (RAG).
+The AI Learning Assistant Platform was built to support learners in exploiting educational materials through artificial intelligence combined with Retrieval-Augmented Generation (RAG) technology. The system allows users to upload documents, build a Knowledge Base, and interact with AI using natural language, thereby improving the accuracy of responses compared to traditional AI chatbots.
 
-The platform enables users to upload learning materials, build a personalized Knowledge Base, and communicate with the AI using natural language. This approach significantly improves response accuracy compared with traditional AI chatbots that rely solely on pre-trained knowledge.
+Besides Q&A functionality, the system integrates learning support features such as document management, lesson summarization, quiz generation, Flashcards, and conversation history tracking. The entire application is deployed on Amazon Web Services (AWS), meeting basic requirements for performance, security, scalability, and system management.
 
-In addition to AI-powered question answering, the platform provides several learning support features, including document management, lesson summarization, quiz generation, flashcard creation, and conversation history management.
+Through the project's execution, the following primary objectives were achieved:
 
-The entire application is deployed on Amazon Web Services (AWS), meeting the fundamental requirements for performance, security, scalability, and system management.
-
-The major achievements of this project include:
-
-- Developing an AI Learning Assistant Platform based on FastGPT.
-- Applying Retrieval-Augmented Generation (RAG) to improve AI response quality.
-- Deploying the platform on Amazon EC2 using Docker Compose.
-- Integrating MongoDB, PostgreSQL, MinIO, and AWS cloud services.
-- Designing a scalable architecture suitable for the MVP stage.
+- Built an AI Learning Assistant platform based on FastGPT.
+- Applied Retrieval-Augmented Generation (RAG) to improve response quality.
+- Deployed the system on Amazon EC2 using Docker Compose.
+- Integrated MongoDB, PostgreSQL, MinIO, and various AWS services.
+- Established a scalable architecture suitable for the MVP phase.
 
 ---
 
 ## 7.2 Limitations
 
-Although the project has achieved its primary objectives, several limitations remain:
+Although the intended objectives have been met, the system still has some limitations:
 
-- The current architecture relies on a single Amazon EC2 instance and therefore does not provide High Availability.
-- Auto Scaling and Load Balancing have not yet been implemented.
-- AI response quality still depends heavily on the quality of uploaded learning materials.
-- Mobile applications and offline learning capabilities are not currently supported.
-- Several advanced AI features are still under research and development.
+- The current architecture uses a single Amazon EC2 instance, so it does not yet meet High Availability requirements.
+- Auto Scaling and Load Balancers have not been deployed.
+- Response quality remains dependent on the content and quality of the uploaded documents.
+- Mobile applications and offline capabilities are not yet supported.
+- Some advanced AI features are still in the research and development phase.
 
 ---
 
-## 7.3 Future Work
+## 7.3 Future Development
 
-Future improvements to the AI Learning Assistant Platform include:
+In the future, the AI Learning Assistant Platform will be expanded in the following directions:
 
-- Migrating to Amazon ECS or Amazon EKS to improve scalability.
-- Deploying Application Load Balancer and Auto Scaling to support more concurrent users.
-- Integrating additional AI models such as Amazon Bedrock, Google Gemini, and OpenAI.
-- Adding advanced learning features including AI Tutor, Mind Map generation, Speech-to-Text, and Text-to-Speech.
-- Developing Android and iOS mobile applications.
-- Optimizing the Retrieval-Augmented Generation (RAG) pipeline to improve response speed and accuracy.
-- Enhancing monitoring, backup, and disaster recovery mechanisms to increase system reliability.
+- Deploy Amazon ECS or Amazon EKS to improve scalability.
+- Use an Application Load Balancer and Auto Scaling to support many concurrent users.
+- Integrate additional AI models such as Amazon Bedrock, Google Gemini, or OpenAI.
+- Expand learning functionalities such as AI Tutor, Mindmap, Speech-to-Text, and Text-to-Speech.
+- Develop applications on Android and iOS platforms.
+- Optimize the RAG process to enhance system speed and accuracy.
+- Perfect mechanisms for monitoring, backup, and data recovery to increase stability and safety during operations.
 
-These future enhancements will enable the platform to serve a broader range of users while better addressing the needs of modern intelligent education systems.
+These directions will help the AI Learning Assistant Platform become an intelligent learning platform capable of serving diverse user groups and better meeting the needs of modern educational environments.
 
 ---
 
 ## 7.4 Conclusion
 
-The AI Learning Assistant Platform is an intelligent learning support solution built on FastGPT and deployed on Amazon Web Services (AWS).
+The AI Learning Assistant Platform is a learning support solution utilizing artificial intelligence, built on the FastGPT platform and deployed on Amazon Web Services (AWS). Combining Retrieval-Augmented Generation (RAG) technology with a Knowledge Base allows the system to provide answers closely tied to learning materials, contributing to improved learning efficiency and reducing unfounded information generation by AI.
 
-By combining Retrieval-Augmented Generation (RAG) with a Knowledge Base, the platform delivers responses grounded in user-provided learning materials, thereby improving answer accuracy and reducing AI hallucinations.
+With an open-architecture design, the system can continue to expand and integrate more AI services as well as AWS services in the future. The project not only fulfills the goal of building an intelligent learning assistant but also establishes a foundation for the research, development, and application of Generative AI in the education sector.
 
-The platform is designed with a scalable architecture that can easily integrate additional AI models and AWS services in the future. Beyond achieving the objective of building an intelligent learning assistant, this project also establishes a practical foundation for further research and the application of Generative AI technologies in education.
-Besides developing an intelligent learning platform, the project also demonstrates how to deploy a **Generative AI** application on **Amazon Web Services (AWS)** using **Docker Compose**, **Amazon EC2**, **Amazon S3**, **Amazon CloudWatch**, and AWS security services. This deployment architecture provides a scalable, secure, and maintainable foundation for future system enhancements and feature expansion.
+In addition to building the intelligent learning platform, the project also illustrates how to deploy a Generative AI application on Amazon Web Services through Docker Compose, Amazon EC2, Amazon S3, Amazon CloudWatch, and AWS security services. This forms the basis for continuing to expand the system in the future.

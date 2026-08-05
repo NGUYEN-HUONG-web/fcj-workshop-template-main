@@ -1,5 +1,5 @@
 ---
-title: "Bản đề xuất"
+title: "Dự án "
 date: 2026-08-04
 weight: 2
 chapter: false
