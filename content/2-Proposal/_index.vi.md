@@ -247,29 +247,35 @@ Quy trình này giúp AI hạn chế hiện tượng Hallucination, nâng cao đ
 
 ## 4.1 Môi trường triển khai
 
-AI Learning Assistant Platform được triển khai trên nền tảng **Amazon Web Services (AWS)** tại Region **US East (N. Virginia) – us-east-1**. Toàn bộ hệ thống được đóng gói dưới dạng các **Docker Container** và quản lý bằng **Docker Compose** trên một **Amazon EC2**.
+AI Learning Assistant Platform được triển khai trên **Amazon Web Services (AWS)** tại Region **US East (N. Virginia) – us-east-1**.
 
-Kiến trúc triển khai bao gồm **Nginx**, **Frontend (Next.js/React)**, **AI Learning Assistant Backend (FastGPT Customized)**, **MongoDB**, **PostgreSQL với pgvector** và **MinIO**. Bên cạnh đó, hệ thống sử dụng **Amazon S3** để sao lưu dữ liệu, **Amazon CloudWatch** để giám sát hiệu năng và trạng thái hoạt động, cùng **AWS IAM** và **Security Group** để quản lý quyền truy cập và bảo mật hệ thống.
+Toàn bộ hệ thống được triển khai trên một **Amazon EC2** bằng **Docker Compose**, bao gồm **Nginx**, **Frontend (Next.js/React)**, **Backend (FastGPT Customized)**, **MongoDB**, **PostgreSQL với pgvector** và **MinIO**.
+
+Hệ thống sử dụng **Amazon EBS** để lưu trữ dữ liệu lâu dài, **Amazon S3** để sao lưu dữ liệu, **Amazon ECR** để quản lý Docker Image, **GitHub Actions** để tự động hóa quy trình CI/CD, **Amazon CloudWatch** để giám sát hệ thống, cùng **AWS IAM**, **Security Group** và **AWS Budgets** để quản lý bảo mật và chi phí.
 
 ### Cấu hình môi trường
 
-| Thành phần | Công nghệ |
-|------------|-----------|
+| Thành phần | Công nghệ / Dịch vụ |
+|------------|---------------------|
 | Cloud Platform | Amazon Web Services (AWS) |
 | Region | us-east-1 |
 | Compute | Amazon EC2 |
-| Container | Docker Compose |
+| Persistent Storage | Amazon EBS |
+| Container | Docker, Docker Compose |
 | Reverse Proxy | Nginx |
+| Frontend | Next.js, React |
 | Backend | FastGPT (Customized) |
-| Frontend | Next.js / React |
-| Database | MongoDB |
-| Vector Database | PostgreSQL + pgvector |
+| Database | MongoDB, PostgreSQL + pgvector |
 | Object Storage | MinIO |
-| Backup Storage | Amazon S3 |
+| Container Registry | Amazon ECR |
+| CI/CD | GitHub Actions |
 | Monitoring | Amazon CloudWatch |
+| Backup Storage | Amazon S3 |
 | Security | AWS IAM, Security Group |
+| Cost Monitoring | AWS Budgets |
 
 > **Hình 4.1. Môi trường triển khai AI Learning Assistant Platform trên AWS.**
+
 ![Hình 4.1](/images/4.1.d.x.png)
 
 ---
@@ -279,14 +285,15 @@ Kiến trúc triển khai bao gồm **Nginx**, **Frontend (Next.js/React)**, **A
 Quy trình triển khai hệ thống được thực hiện theo các bước sau:
 
 1. Khởi tạo và cấu hình **Amazon EC2**, **Security Group** và **Elastic IP**.
-2. Cài đặt **Docker** và **Docker Compose** trên máy chủ EC2.
-3. Tải mã nguồn từ GitHub và cấu hình các biến môi trường.
-4. Khởi động các Docker Container gồm **Nginx**, **Frontend**, **Backend**, **MongoDB**, **PostgreSQL** và **MinIO**.
-5. Kết nối **Amazon S3** để sao lưu dữ liệu và **Amazon CloudWatch** để giám sát hệ thống.
-6. Kiểm tra trạng thái hoạt động của các dịch vụ và cấu hình Nginx.
-7. Truy cập hệ thống thông qua trình duyệt để kiểm thử và đưa vào vận hành.
+2. Cài đặt **Docker** và **Docker Compose** trên Amazon EC2.
+3. Đẩy mã nguồn lên **GitHub Repository**.
+4. **GitHub Actions** tự động xây dựng Docker Image và đẩy lên **Amazon ECR**.
+5. Amazon EC2 tải Docker Image mới và khởi động các container bằng **Docker Compose**.
+6. **Amazon CloudWatch** giám sát trạng thái hoạt động của hệ thống.
+7. Dữ liệu MongoDB, PostgreSQL và MinIO được sao lưu định kỳ lên **Amazon S3**.
 
 > **Hình 4.2. Quy trình triển khai AI Learning Assistant Platform trên AWS.**
+
 ![Hình 4.2](/images/4.2.d.x..png)
 
 ---
@@ -302,128 +309,114 @@ Sau khi triển khai thành công, hệ thống được kiểm thử nhằm đ�
 | Upload tài liệu học tập | Thành công |
 | Xây dựng Knowledge Base | Thành công |
 | AI Chat (RAG) | Thành công |
-| Tóm tắt bài học (Summary) | Thành công |
-| Tạo bài kiểm tra (Quiz) | Thành công |
+| Tóm tắt bài học | Thành công |
+| Tạo Quiz | Thành công |
 | Tạo Flashcard | Thành công |
-| Lưu lịch sử học tập | Thành công |
+| Triển khai CI/CD | Thành công |
 
-Kết quả kiểm thử cho thấy hệ thống hoạt động ổn định, các Docker Container vận hành bình thường và các chức năng chính đều đáp ứng yêu cầu của hệ thống.
+Kết quả kiểm thử cho thấy hệ thống hoạt động ổn định, các Docker Container vận hành bình thường và các chức năng chính đáp ứng yêu cầu của nền tảng.
 
 ---
 
 ## 4.4 Giám sát và vận hành
 
-Trong quá trình vận hành, **Amazon CloudWatch** được sử dụng để theo dõi hiệu năng và trạng thái hoạt động của hệ thống.
+Trong quá trình vận hành, **Amazon CloudWatch** được sử dụng để giám sát hiệu năng và trạng thái hoạt động của hệ thống.
 
-Các chỉ số được giám sát bao gồm:
+Các chỉ số được theo dõi bao gồm:
 
-- CPU Utilization.
-- Memory Usage.
-- Disk Usage.
-- Network Traffic.
-- Docker Container Logs.
-- Trạng thái hoạt động của các dịch vụ.
+- CPU Utilization
+- Memory Usage
+- Disk Usage
+- Network Traffic
+- Docker Container Logs
 
-Ngoài ra, dữ liệu và tài liệu học tập được sao lưu định kỳ lên **Amazon S3** nhằm đảm bảo khả năng phục hồi khi xảy ra sự cố và hỗ trợ duy trì tính ổn định của hệ thống.
-# Phần 5. Bảo mật, chi phí và quản lý rủi ro
+Ngoài ra, dữ liệu của MongoDB, PostgreSQL và các tài liệu học tập được sao lưu định kỳ lên **Amazon S3** nhằm đảm bảo khả năng phục hồi dữ liệu khi xảy ra sự cố. **AWS Budgets** được sử dụng để theo dõi chi phí và cảnh báo khi mức sử dụng vượt quá ngân sách đã thiết lập.
+# Phần 5. Bảo mật và tối ưu chi phí
 
 ## 5.1 Bảo mật hệ thống
 
-AI Learning Assistant Platform lưu trữ tài khoản, tài liệu học tập và lịch sử hội thoại của người dùng. Vì vậy, bảo mật được xem là một yêu cầu quan trọng trong quá trình triển khai hệ thống trên AWS.
+AI Learning Assistant Platform lưu trữ tài khoản người dùng, tài liệu học tập và lịch sử hội thoại. Do đó, hệ thống áp dụng nhiều biện pháp nhằm đảm bảo an toàn dữ liệu khi triển khai trên Amazon Web Services (AWS).
 
 Các biện pháp bảo mật chính bao gồm:
 
-- Sử dụng **AWS IAM** để quản lý quyền truy cập vào tài nguyên AWS theo nguyên tắc quyền tối thiểu.
-- Sử dụng **Security Group** để giới hạn các cổng và nguồn được phép truy cập Amazon EC2.
+- Sử dụng **AWS IAM** để quản lý quyền truy cập theo nguyên tắc **Least Privilege**.
+- Sử dụng **Security Group** để kiểm soát các cổng truy cập vào Amazon EC2.
 - Sử dụng **HTTPS** để mã hóa dữ liệu truyền giữa người dùng và hệ thống.
-- Không lưu API Key, mật khẩu hoặc thông tin nhạy cảm trực tiếp trong mã nguồn.
-- Sử dụng **AWS Secrets Manager** hoặc biến môi trường để quản lý thông tin xác thực.
-- Sử dụng **AWS KMS** để hỗ trợ mã hóa dữ liệu khi cần thiết.
-- Amazon S3 được cấu hình hạn chế quyền truy cập đối với tài liệu và dữ liệu sao lưu.
-- MongoDB, PostgreSQL và các dịch vụ nội bộ không được mở trực tiếp ra Internet.
-- Sử dụng **Amazon CloudWatch** để theo dõi log và phát hiện các hoạt động bất thường.
+- Lưu trữ thông tin cấu hình và API Key bằng **Environment Variables**, không lưu trực tiếp trong mã nguồn.
+- Giới hạn quyền truy cập vào **Amazon S3** đối với dữ liệu sao lưu.
+- MongoDB, PostgreSQL và MinIO chỉ hoạt động trong mạng nội bộ Docker và không được truy cập trực tiếp từ Internet.
+- Sử dụng **Amazon CloudWatch** để giám sát trạng thái hoạt động và phát hiện các sự cố của hệ thống.
 
+---
 
 ## 5.2 Chi phí triển khai dự kiến
 
-AI Learning Assistant Platform được triển khai theo mô hình MVP trên Amazon Web Services (AWS) nhằm tối ưu chi phí nhưng vẫn đảm bảo hiệu năng và khả năng mở rộng. Trong giai đoạn đầu, toàn bộ hệ thống được triển khai trên một Amazon EC2 instance bằng Docker Compose, kết hợp với các dịch vụ lưu trữ, giám sát và bảo mật của AWS.
-
-Bảng dưới đây trình bày chi phí ước tính hàng tháng của các dịch vụ chính được sử dụng trong hệ thống.
+Hệ thống được triển khai theo mô hình **Production Lite** nhằm tối ưu chi phí nhưng vẫn đáp ứng các yêu cầu về hiệu năng, bảo mật và khả năng mở rộng.
 
 ### Bảng 5.1. Chi phí triển khai dự kiến
 
-| STT | Dịch vụ AWS | Cấu hình dự kiến | Mục đích sử dụng | Chi phí ước tính (USD/tháng) |
-|:--:|-------------|------------------|------------------|-----------------------------:|
-| 1 | Amazon EC2 | t3.large (2 vCPU, 8 GB RAM) | Chạy AI Learning Assistant, Nginx, MongoDB, PostgreSQL và MinIO | 60 |
-| 2 | Amazon EBS | 50 GB (gp3) | Lưu Docker Volume và dữ liệu hệ thống | 4 |
-| 3 | Amazon S3 | 50 GB | Lưu tài liệu học tập và sao lưu dữ liệu | 2 |
-| 4 | Amazon CloudWatch | Metrics, Logs, Alarms | Giám sát và cảnh báo hệ thống | 5 |
-| 5 | Elastic IP | 01 Public IP | Truy cập hệ thống từ Internet | 0* |
-| 6 | Data Transfer | Khoảng 100 GB/tháng | Lưu lượng truy cập Internet | 8 |
-| 7 | Google Gemini API / OpenAI API | Theo số lượng request | Xử lý AI và sinh câu trả lời | 15 – 50 |
+| AWS Service | Purpose | Estimated Cost (USD/Month) |
+|--------------|---------|---------------------------:|
+| Amazon EC2 (t3.large) | Application Hosting | 60 |
+| Amazon EBS (50 GB) | Persistent Storage | 4 |
+| Amazon S3 | Backup Storage | 2 |
+| Amazon ECR | Docker Image Registry | 1 |
+| Amazon CloudWatch | Monitoring | 3 |
+| Data Transfer | Internet Traffic | 8 |
+| Google Gemini / OpenAI API | AI Processing | 15–50 |
 
-| | | | **Tổng chi phí dự kiến** | **94 – 129 USD/tháng** |
+| | **Estimated Total** | **93–128 USD/Month** |
 
-> **Lưu ý:**
->
-> - Chi phí trên chỉ mang tính ước tính tại Region **US East (N. Virginia) – us-east-1** và có thể thay đổi theo bảng giá AWS.
-> - Elastic IP không phát sinh chi phí khi được gắn với một EC2 đang hoạt động.
-> - Chi phí sử dụng mô hình AI phụ thuộc vào số lượng request và số lượng token được xử lý.
+### Cost Optimization
 
-### Đánh giá chi phí
+The platform applies the following cost optimization strategies:
 
-Với quy mô từ **5–20 người dùng**, chi phí triển khai khoảng **94–129 USD/tháng**, trong đó Amazon EC2 và dịch vụ mô hình ngôn ngữ (LLM API) chiếm tỷ trọng lớn nhất. Kiến trúc triển khai trên một EC2 bằng Docker Compose giúp giảm chi phí hạ tầng trong giai đoạn đầu nhưng vẫn đáp ứng đầy đủ các chức năng của hệ thống.
+- Deploy all services on a single Amazon EC2 instance during the MVP phase.
+- Monitor AWS spending using **AWS Budgets**.
+- Store backups on **Amazon S3** instead of maintaining multiple copies on EC2.
+- Remove unused AWS resources after testing.
+- Optimize AI API requests to reduce token consumption.
+- Scale to **Application Load Balancer** and **Amazon ECS** only when user demand increases.
 
-### Biện pháp tối ưu chi phí
+---
 
-Để giảm chi phí vận hành, hệ thống áp dụng các biện pháp sau:
-
-- Triển khai toàn bộ dịch vụ trên một Amazon EC2 trong giai đoạn MVP.
-- Theo dõi chi phí bằng **AWS Budgets** và **Billing Alerts**.
-- Giám sát tài nguyên bằng **Amazon CloudWatch** để tối ưu cấu hình EC2.
-- Xóa hoặc dừng các tài nguyên không sử dụng sau khi kiểm thử.
-- Sao lưu dữ liệu định kỳ lên Amazon S3 thay vì duy trì nhiều bản sao trực tiếp trên EC2.
-- Giới hạn số lượng request và token gửi đến mô hình AI nhằm kiểm soát chi phí API.
-- Có thể mở rộng sang **Amazon ECS**, **Application Load Balancer** và **Auto Scaling** khi số lượng người dùng tăng mà không cần thay đổi kiến trúc tổng thể.
 # Phần 6. Đánh giá và hướng phát triển
 
 ## 6.1 Đánh giá theo AWS Well-Architected Framework
 
-AI Learning Assistant Platform được đánh giá dựa trên các nguyên tắc của **AWS Well-Architected Framework**, nhằm đảm bảo hệ thống có khả năng vận hành ổn định, bảo mật, tối ưu hiệu năng và chi phí.
+AI Learning Assistant Platform được đánh giá dựa trên các nguyên tắc của **AWS Well-Architected Framework**.
 
-### Bảng 6.1. Đánh giá hệ thống theo AWS Well-Architected Framework
+### Bảng 6.1. Đánh giá hệ thống
 
-| Trụ cột | Giải pháp áp dụng trong dự án |
-|----------|-------------------------------|
-| Operational Excellence | Triển khai bằng Docker Compose, sử dụng GitHub để quản lý mã nguồn và Amazon CloudWatch để giám sát hệ thống. |
-| Security | Áp dụng AWS IAM, Security Group, HTTPS, AWS Secrets Manager và AWS KMS để bảo vệ tài nguyên và dữ liệu. |
-| Reliability | Sao lưu dữ liệu bằng Amazon S3, theo dõi trạng thái hệ thống bằng CloudWatch và sử dụng Docker Restart Policy để tăng khả năng phục hồi. |
-| Performance Efficiency | Sử dụng PostgreSQL + pgvector để truy xuất dữ liệu theo ngữ nghĩa, kết hợp RAG nhằm nâng cao hiệu quả trả lời của AI. |
-| Cost Optimization | Triển khai toàn bộ dịch vụ trên một Amazon EC2 trong giai đoạn MVP, sử dụng AWS Budgets và Billing Alerts để kiểm soát chi phí. |
-| Sustainability | Kiến trúc có thể mở rộng sang ECS, Auto Scaling và Application Load Balancer khi số lượng người dùng tăng. |
+| Pillar | Implementation |
+|---------|----------------|
+| Operational Excellence | Docker Compose, GitHub Actions, Amazon CloudWatch |
+| Security | AWS IAM, Security Group, HTTPS, Environment Variables |
+| Reliability | Amazon S3 Backup, Docker Restart Policy, Amazon CloudWatch |
+| Performance Efficiency | PostgreSQL + pgvector, Retrieval-Augmented Generation (RAG) |
+| Cost Optimization | Amazon EC2, AWS Budgets, Amazon CloudWatch |
+| Sustainability | Architecture can be extended to Amazon ECS and Application Load Balancer |
 
-Nhìn chung, hệ thống đáp ứng các yêu cầu cơ bản của AWS Well-Architected Framework đối với một ứng dụng AI triển khai trên nền tảng điện toán đám mây. Kiến trúc hiện tại phù hợp với quy mô MVP và có khả năng mở rộng trong các giai đoạn tiếp theo.
+The current architecture satisfies the fundamental principles of the AWS Well-Architected Framework for an AI application deployed on AWS. It is suitable for an MVP while remaining scalable for future development.
 
 > **Hình 6.1. Đánh giá AI Learning Assistant Platform theo AWS Well-Architected Framework.**
-![Hình 4.2](/images/6.1.p.r.png)
+
+![Hình 6.1](/images/6.1.p.r.png)
+
 ---
 
 ## 6.2 Hướng phát triển
 
-Trong tương lai, AI Learning Assistant Platform có thể được mở rộng nhằm nâng cao hiệu năng, khả năng mở rộng và trải nghiệm người dùng.
+Trong tương lai, hệ thống có thể được mở rộng theo các hướng sau:
 
-Các hướng phát triển chính bao gồm:
+- Triển khai **Amazon ECS** để tăng khả năng mở rộng.
+- Sử dụng **Application Load Balancer** để phân phối lưu lượng truy cập.
+- Mở rộng Knowledge Base cho nhiều môn học và người dùng.
+- Tích hợp thêm các mô hình AI như **Amazon Bedrock**, **Google Gemini** hoặc **OpenAI**.
+- Bổ sung các tính năng AI như AI Tutor, Mindmap, Speech-to-Text và Text-to-Speech.
+- Hoàn thiện hệ thống Monitoring, Alerting và Backup để nâng cao độ tin cậy.
 
-- Chuyển từ Docker Compose sang Amazon ECS hoặc Amazon EKS để tăng khả năng mở rộng.
-- Triển khai Application Load Balancer và Auto Scaling để hỗ trợ nhiều người dùng đồng thời.
-- Mở rộng Knowledge Base cho nhiều môn học và nhiều nhóm người dùng.
-- Tích hợp thêm các mô hình AI như Amazon Bedrock, Google Gemini hoặc OpenAI.
-- Bổ sung các tính năng AI như tạo Mindmap, AI Tutor, Speech-to-Text và Text-to-Speech.
-- Xây dựng ứng dụng di động trên Android và iOS.
-- Tối ưu quy trình RAG nhằm cải thiện tốc độ và độ chính xác của câu trả lời.
-- Hoàn thiện hệ thống giám sát, cảnh báo và sao lưu tự động để nâng cao độ tin cậy của hệ thống.
-
-Với kiến trúc hiện tại, AI Learning Assistant Platform có thể tiếp tục mở rộng để đáp ứng nhu cầu học tập của nhiều người dùng, đồng thời sẵn sàng triển khai ở quy mô lớn hơn trên nền tảng Amazon Web Services.
+Với kiến trúc hiện tại, AI Learning Assistant Platform có thể đáp ứng tốt nhu cầu triển khai trong giai đoạn MVP và sẵn sàng mở rộng khi số lượng người dùng tăng trong tương lai.
 # Phần 7. Kết luận
 
 ## 7.1 Kết quả đạt được

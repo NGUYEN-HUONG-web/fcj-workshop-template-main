@@ -248,73 +248,77 @@ This workflow significantly reduces hallucination, improves response accuracy, a
 
 ## 4.1 Deployment Environment
 
-The AI Learning Assistant Platform is deployed on **Amazon Web Services (AWS)** in the **US East (N. Virginia) Region (us-east-1)**. The entire application is containerized using **Docker** and orchestrated with **Docker Compose** on a single **Amazon EC2** instance.
+The AI Learning Assistant Platform is deployed on **Amazon Web Services (AWS)** in the **US East (N. Virginia) – us-east-1** Region.
 
-The deployment architecture includes **Nginx**, **Frontend (Next.js/React)**, **AI Learning Assistant Backend (FastGPT Customized)**, **MongoDB**, **PostgreSQL with pgvector**, and **MinIO**. In addition, **Amazon S3** is used for backup storage, **Amazon CloudWatch** monitors system performance and availability, while **AWS IAM** and **Security Groups** provide access control and network security.
+The application runs on an **Amazon EC2** instance using **Docker Compose**. The deployment includes **Nginx**, **Frontend (Next.js/React)**, **Backend (FastGPT Customized)**, **MongoDB**, **PostgreSQL with pgvector**, and **MinIO**.
 
-### Deployment Environment Configuration
+Supporting AWS services include **Amazon EBS** for persistent storage, **Amazon S3** for backups, **Amazon ECR** for Docker image management, **GitHub Actions** for CI/CD, **Amazon CloudWatch** for monitoring, **AWS IAM**, **Security Group**, and **AWS Budgets**.
 
-| Component | Technology |
-|-----------|------------|
+### Deployment Environment
+
+| Component | Technology / Service |
+|------------|----------------------|
 | Cloud Platform | Amazon Web Services (AWS) |
 | Region | us-east-1 |
 | Compute | Amazon EC2 |
-| Container Orchestration | Docker Compose |
+| Storage | Amazon EBS |
+| Container | Docker, Docker Compose |
 | Reverse Proxy | Nginx |
-| Backend | FastGPT (Customized) |
-| Frontend | Next.js / React |
-| Database | MongoDB |
-| Vector Database | PostgreSQL + pgvector |
+| Database | MongoDB, PostgreSQL + pgvector |
 | Object Storage | MinIO |
-| Backup Storage | Amazon S3 |
+| Container Registry | Amazon ECR |
+| CI/CD | GitHub Actions |
 | Monitoring | Amazon CloudWatch |
-| Security | AWS IAM, Security Groups |
+| Backup | Amazon S3 |
+| Security | AWS IAM, Security Group |
+| Cost Monitoring | AWS Budgets |
 
-> **Figure 4.1. Deployment environment of the AI Learning Assistant Platform on AWS.**
+> **Figure 4.1. Deployment Environment of the AI Learning Assistant Platform on AWS.**
+
 ![Figure 4.1](/images/4.1.d.x.png)
 
 ---
 
-## 4.2 System Deployment Process
+## 4.2 Deployment Process
 
-The deployment process consists of the following steps:
+The deployment workflow consists of the following steps:
 
-1. Provision and configure **Amazon EC2**, **Security Groups**, and an **Elastic IP**.
-2. Install **Docker** and **Docker Compose** on the EC2 instance.
-3. Clone the project source code from GitHub and configure environment variables.
-4. Start the Docker containers, including **Nginx**, **Frontend**, **Backend**, **MongoDB**, **PostgreSQL**, and **MinIO**.
-5. Configure **Amazon S3** for backup storage and **Amazon CloudWatch** for monitoring.
-6. Verify service status and configure **Nginx** as the reverse proxy.
-7. Access the application through a web browser for validation and production deployment.
+1. Create and configure Amazon EC2.
+2. Install Docker and Docker Compose.
+3. Push source code to GitHub.
+4. GitHub Actions builds Docker images.
+5. Docker images are pushed to Amazon ECR.
+6. Amazon EC2 pulls the latest images and starts containers using Docker Compose.
+7. Amazon CloudWatch monitors system health.
+8. MongoDB, PostgreSQL, and MinIO data are backed up to Amazon S3.
 
-> **Figure 4.2. Deployment workflow of the AI Learning Assistant Platform on AWS.**
+> **Figure 4.2. Deployment Workflow of the AI Learning Assistant Platform.**
+
 ![Figure 4.2](/images/4.2.d.x..png)
 
 ---
 
 ## 4.3 System Testing
 
-After deployment, the system was tested to evaluate the stability and functionality of its core features.
-
-| Function | Result |
-|----------|--------|
-| User Authentication and Login | Passed |
+| Test Item | Result |
+|------------|--------|
+| User Authentication | Passed |
 | Course Management | Passed |
-| Learning Document Upload | Passed |
-| Knowledge Base Generation | Passed |
+| Document Upload | Passed |
+| Knowledge Base | Passed |
 | AI Chat (RAG) | Passed |
-| Lesson Summary | Passed |
-| Quiz Generation | Passed |
-| Flashcard Generation | Passed |
-| Learning History Management | Passed |
+| Summary | Passed |
+| Quiz | Passed |
+| Flashcard | Passed |
+| Deployment & CI/CD | Passed |
 
-The testing results demonstrate that the system operates reliably. All Docker containers run successfully, and the major platform functionalities perform as expected.
+The testing results indicate that the platform operates successfully, all Docker containers are running correctly, and the core system functions meet the project requirements.
 
 ---
 
 ## 4.4 Monitoring and Operations
 
-During system operation, **Amazon CloudWatch** is used to monitor application performance, resource utilization, and service availability.
+The platform uses **Amazon CloudWatch** to monitor system performance and resource utilization.
 
 The monitored metrics include:
 
@@ -323,96 +327,78 @@ The monitored metrics include:
 - Disk Usage
 - Network Traffic
 - Docker Container Logs
-- Service Health Status
 
-Furthermore, application data and learning documents are periodically backed up to **Amazon S3** to ensure disaster recovery capability, improve data durability, and maintain overall system reliability.
+Application data and uploaded learning documents are backed up regularly to **Amazon S3**, while **AWS Budgets** is used to monitor AWS spending and notify administrators when budget thresholds are exceeded.
 
-# Part 5. Security, Cost Analysis, and Risk Management
+# Part 5. Security, Cost Optimization, and Future Development
 
 ## 5.1 System Security
 
-The AI Learning Assistant Platform stores user accounts, learning materials, and conversation histories. Therefore, security is considered one of the most important aspects of deploying the system on Amazon Web Services (AWS).
+The AI Learning Assistant Platform stores user accounts, learning materials, and conversation history. Therefore, security is an essential consideration throughout the AWS deployment.
 
-The primary security measures include:
+The main security measures include:
 
-- Using **AWS Identity and Access Management (IAM)** to manage access permissions based on the principle of least privilege.
-- Configuring **Security Groups** to restrict inbound traffic and allow access only through required ports.
+- Using **AWS IAM** to manage access permissions based on the **Principle of Least Privilege**.
+- Using **Security Groups** to control inbound access to the Amazon EC2 instance.
 - Using **HTTPS** to encrypt communication between users and the platform.
-- Avoiding hardcoded API keys, passwords, or other sensitive credentials in the source code.
-- Managing credentials through **AWS Secrets Manager** or environment variables.
-- Using **AWS Key Management Service (AWS KMS)** for data encryption when required.
-- Configuring **Amazon S3** with restricted access policies for learning documents and backup data.
-- Keeping MongoDB, PostgreSQL, and other internal services inaccessible from the public Internet.
-- Monitoring application logs and system activities using **Amazon CloudWatch** to detect abnormal behavior.
+- Storing API keys and configuration values in **Environment Variables** instead of hardcoding them into the source code.
+- Restricting access to backup data stored in **Amazon S3**.
+- Keeping MongoDB, PostgreSQL, and MinIO within the internal Docker network without direct Internet access.
+- Using **Amazon CloudWatch** to monitor system status and detect abnormal activities.
 
 ---
 
 ## 5.2 Estimated Deployment Cost
 
-The AI Learning Assistant Platform is deployed as a Minimum Viable Product (MVP) on Amazon Web Services (AWS), focusing on cost efficiency while maintaining acceptable performance and scalability.
-
-During the initial deployment phase, the entire system is hosted on a single Amazon EC2 instance using Docker Compose, together with AWS storage, monitoring, and security services.
-
-The table below presents the estimated monthly operating cost.
+The platform is deployed using a **Production Lite** architecture to balance performance, scalability, and operational cost.
 
 ### Table 5.1. Estimated Monthly Deployment Cost
 
-| No. | AWS Service | Estimated Configuration | Purpose | Estimated Cost (USD/Month) |
-|:--:|-------------|-------------------------|---------|---------------------------:|
-| 1 | Amazon EC2 | t3.large (2 vCPU, 8 GB RAM) | Hosting AI Learning Assistant, Nginx, MongoDB, PostgreSQL, and MinIO | 60 |
-| 2 | Amazon EBS | 50 GB (gp3) | Docker volumes and persistent storage | 4 |
-| 3 | Amazon S3 | 50 GB | Learning documents and backup storage | 2 |
-| 4 | Amazon CloudWatch | Metrics, Logs, Alarms | Monitoring and system alerts | 5 |
-| 5 | Elastic IP | One Public IP | Public Internet access | 0* |
-| 6 | Data Transfer | Approximately 100 GB/month | Internet traffic | 8 |
-| 7 | Google Gemini API / OpenAI API | Based on API requests | AI inference and response generation | 15–50 |
+| AWS Service | Purpose | Estimated Cost (USD/Month) |
+|--------------|---------|---------------------------:|
+| Amazon EC2 (t3.large) | Application Hosting | 60 |
+| Amazon EBS (50 GB) | Persistent Storage | 4 |
+| Amazon S3 | Backup Storage | 2 |
+| Amazon ECR | Docker Image Registry | 1 |
+| Amazon CloudWatch | Monitoring | 3 |
+| Data Transfer | Internet Traffic | 8 |
+| Google Gemini / OpenAI API | AI Processing | 15–50 |
 
-| | | | **Estimated Total Cost** | **94–129 USD/Month** |
+| | **Estimated Total** | **93–128 USD/Month** |
 
-> **Note**
->
-> - The above costs are estimated for the **US East (N. Virginia) Region (us-east-1)** and may vary depending on AWS pricing.
-> - Elastic IP does not incur additional charges when attached to a running EC2 instance.
-> - AI model costs depend on the number of requests and processed tokens.
+### Cost Optimization
 
-### Cost Evaluation
-
-For an expected workload of **5–20 concurrent users**, the estimated monthly operating cost ranges from **94 to 129 USD**. Amazon EC2 and Large Language Model (LLM) API services represent the largest portion of the overall infrastructure cost.
-
-Deploying the platform on a single EC2 instance using Docker Compose significantly reduces infrastructure expenses during the MVP stage while still providing all essential system functionalities.
-
-### Cost Optimization Strategies
-
-To minimize operational expenses, the platform adopts the following approaches:
+The platform applies several cost optimization strategies:
 
 - Deploy all services on a single Amazon EC2 instance during the MVP phase.
-- Monitor costs using **AWS Budgets** and **AWS Billing Alerts**.
-- Optimize EC2 resource utilization through **Amazon CloudWatch** monitoring.
-- Stop or remove unused cloud resources after testing.
-- Store backup data in Amazon S3 instead of maintaining multiple copies on EC2.
-- Limit AI requests and token consumption to control LLM API costs.
-- Scale the architecture to **Amazon ECS**, **Application Load Balancer**, and **Auto Scaling** when user demand increases without significantly changing the overall system architecture.
+- Monitor AWS spending using **AWS Budgets**.
+- Store backups on **Amazon S3** instead of maintaining multiple copies on EC2.
+- Remove unused AWS resources after testing.
+- Optimize AI API requests to reduce token consumption.
+- Scale to **Application Load Balancer** and **Amazon ECS** only when user demand increases.
+
+---
 
 # Part 6. Evaluation and Future Development
 
 ## 6.1 Evaluation Based on the AWS Well-Architected Framework
 
-The AI Learning Assistant Platform is evaluated according to the principles of the **AWS Well-Architected Framework** to ensure operational excellence, security, reliability, performance efficiency, and cost optimization.
+The AI Learning Assistant Platform is evaluated according to the principles of the **AWS Well-Architected Framework**.
 
-### Table 6.1. Evaluation Based on the AWS Well-Architected Framework
+### Table 6.1. System Evaluation
 
-| Pillar | Implementation in the Project |
-|---------|-------------------------------|
-| Operational Excellence | Deployed using Docker Compose, source code managed with GitHub, and monitored through Amazon CloudWatch. |
-| Security | Uses AWS IAM, Security Groups, HTTPS, AWS Secrets Manager, and AWS KMS to protect infrastructure and data. |
-| Reliability | Performs data backup with Amazon S3, monitors system health using CloudWatch, and applies Docker Restart Policies to improve service availability. |
-| Performance Efficiency | Uses PostgreSQL with pgvector for semantic search and Retrieval-Augmented Generation (RAG) to improve AI response quality. |
-| Cost Optimization | Deploys all services on a single Amazon EC2 instance during the MVP stage and monitors expenses using AWS Budgets and Billing Alerts. |
-| Sustainability | The architecture can be extended to Amazon ECS, Auto Scaling, and Application Load Balancer as the user base grows. |
+| Pillar | Implementation |
+|---------|----------------|
+| Operational Excellence | Docker Compose, GitHub Actions, Amazon CloudWatch |
+| Security | AWS IAM, Security Group, HTTPS, Environment Variables |
+| Reliability | Amazon S3 Backup, Docker Restart Policy, Amazon CloudWatch |
+| Performance Efficiency | PostgreSQL + pgvector, Retrieval-Augmented Generation (RAG) |
+| Cost Optimization | Amazon EC2, AWS Budgets, Amazon CloudWatch |
+| Sustainability | The architecture can be extended to Amazon ECS and Application Load Balancer |
 
-Overall, the platform satisfies the fundamental recommendations of the AWS Well-Architected Framework for deploying an AI-powered application on AWS. The current architecture is well suited for the MVP stage while remaining scalable for future expansion.
+Overall, the current architecture satisfies the fundamental principles of the AWS Well-Architected Framework for an AI application deployed on AWS. It is suitable for an MVP while remaining scalable for future development.
 
-> **Figure 6.1. Evaluation of the AI Learning Assistant Platform Based on the AWS Well-Architected Framework**
+> **Figure 6.1. Evaluation of the AI Learning Assistant Platform Based on the AWS Well-Architected Framework.**
 
 ![Figure 6.1](/images/6.1.p.r.png)
 
@@ -420,20 +406,16 @@ Overall, the platform satisfies the fundamental recommendations of the AWS Well-
 
 ## 6.2 Future Development
 
-The AI Learning Assistant Platform can be further enhanced to improve system performance, scalability, and user experience.
+In the future, the AI Learning Assistant Platform can be enhanced in the following directions:
 
-The main future development directions include:
+- Migrate from Docker Compose to **Amazon ECS** for better scalability.
+- Deploy an **Application Load Balancer (ALB)** to distribute incoming traffic.
+- Expand the Knowledge Base to support more subjects and users.
+- Integrate additional AI models such as **Amazon Bedrock**, **Google Gemini**, or **OpenAI**.
+- Introduce new AI features, including AI Tutor, Mind Map generation, Speech-to-Text, and Text-to-Speech.
+- Enhance monitoring, alerting, and backup mechanisms to improve system reliability.
 
-- Migrating from Docker Compose to Amazon ECS or Amazon EKS for better scalability.
-- Deploying an Application Load Balancer together with Auto Scaling to support a larger number of concurrent users.
-- Expanding the Knowledge Base to cover more academic subjects and user groups.
-- Integrating additional AI models such as Amazon Bedrock, Google Gemini, and OpenAI.
-- Introducing advanced AI features including Mind Map generation, AI Tutor, Speech-to-Text, and Text-to-Speech.
-- Developing native mobile applications for Android and iOS.
-- Optimizing the Retrieval-Augmented Generation (RAG) pipeline to improve response speed and accuracy.
-- Enhancing monitoring, alerting, automated backup, and disaster recovery mechanisms to improve system reliability.
-
-With its current architecture, the AI Learning Assistant Platform provides a solid foundation for future expansion and is capable of supporting a significantly larger number of users on Amazon Web Services.
+With its current architecture, the AI Learning Assistant Platform is well suited for MVP deployment and can be expanded to support larger workloads and more users on Amazon Web Services in the future.
 
 # Part 7. Conclusion
 
