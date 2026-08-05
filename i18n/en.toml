@@ -1,0 +1,72 @@
+[hero_eyebrow]
+other = "AWS Cloud Internship Portfolio"
+[hero_title]
+other = "Internship Report"
+[hero_lead]
+other = "Cloud engineering internship journey and technical report for the AWS Workforce Bootcamp."
+[student_role]
+other = "AWS Cloud Intern"
+[student_name]
+other = "Nguyen Thi Thu Huong"
+[student_description]
+other = "Cloud engineering internship journey and technical report for Workforce Bootcamp."
+[profile_section_title]
+other = "Student Information"
+[profile_card_eyebrow]
+other = "AWS Internship Portfolio"
+[profile_card_title]
+other = "Student Profile"
+[profile_card_subtitle]
+other = "Cloud engineering internship journey and technical report."
+[label_fullname]
+other = "Full Name"
+[value_fullname]
+other = "Nguyen Thi Thu Huong"
+[label_phone]
+other = "Phone Number"
+[value_phone]
+other = "0886100173"
+[label_email]
+other = "Email"
+[value_email]
+other = "huonghanna10052004@gmail.com"
+[label_university]
+other = "University"
+[value_university]
+other = "Saigon University"
+[label_major]
+other = "Major"
+[value_major]
+other = "Information Technology"
+[label_class]
+other = "Class"
+[value_class]
+other = "DCT122C4"
+[label_company]
+other = "Internship Company"
+[value_company]
+other = "Amazon Web Services Vietnam Co., Ltd."
+[label_position]
+other = "Internship Position"
+[value_position]
+other = "Workforce Bootcamp - First Cloud AI Journey"
+[label_period]
+other = "Internship Period"
+[value_period]
+other = "From June 22, 2026 to August 12, 2026"
+[report_section_title]
+other = "Report Contents"
+[report_link_1]
+other = "1. Worklog"
+[report_link_2]
+other = "2. Proposal"
+[report_link_3]
+other = "3. Published Blog Posts"
+[report_link_4]
+other = "4. Events Attended"
+[report_link_5]
+other = "5. Workshop"
+[report_link_6]
+other = "6. Self-Evaluation"
+[report_link_7]
+other = "7. Feedback and Suggestions"

@@ -128,68 +128,98 @@ Giải pháp không chỉ phù hợp với sinh viên và giảng viên mà còn
 
 ## 3.1 Kiến trúc tổng thể
 
-AI Learning Assistant Platform được xây dựng theo mô hình **Client–Server** kết hợp với kiến trúc **Retrieval-Augmented Generation (RAG)** và được triển khai trên **Amazon Web Services (AWS)**.
+AI Learning Assistant Platform được xây dựng theo mô hình **Client–Server** kết hợp với kiến trúc **Retrieval-Augmented Generation (RAG)** và được triển khai trên **Amazon Web Services (AWS)** nhằm xây dựng một nền tảng học tập thông minh có khả năng quản lý tài liệu, tìm kiếm ngữ nghĩa và hỗ trợ học tập bằng trí tuệ nhân tạo.
 
-Kiến trúc hệ thống gồm các thành phần chính:
+Kiến trúc hệ thống được chia thành năm lớp chính:
 
-- **Client Layer:** Người dùng truy cập hệ thống thông qua trình duyệt web.
-- **Application Layer:** Toàn bộ ứng dụng được triển khai trên **Amazon EC2** bằng **Docker Compose**, bao gồm Nginx, Frontend, Backend, MongoDB, PostgreSQL và MinIO.
-- **AI & Data Layer:** Backend xử lý AI Chat, Retrieval-Augmented Generation (RAG), Knowledge Base và quản lý tài liệu học tập; PostgreSQL với **pgvector** hỗ trợ truy xuất ngữ nghĩa, trong khi MongoDB lưu trữ dữ liệu hệ thống.
+- **Client Layer:** Sinh viên và giảng viên truy cập hệ thống thông qua trình duyệt web bằng giao thức HTTP hoặc HTTPS.
+- **Application Layer:** Toàn bộ ứng dụng được triển khai trên **Amazon EC2** dưới dạng các **Docker Container** được quản lý bởi **Docker Compose**, bao gồm Nginx, Frontend, Backend, MongoDB, PostgreSQL với pgvector và MinIO.
+- **AI & Data Layer:** Backend xử lý AI Chat, Retrieval-Augmented Generation (RAG), Knowledge Base, Document Processing và Semantic Search. PostgreSQL với **pgvector** lưu trữ vector embedding, trong khi MongoDB quản lý dữ liệu người dùng, hội thoại và cấu hình hệ thống.
+- **Infrastructure Layer:** Amazon EBS cung cấp vùng lưu trữ lâu dài cho Docker Volume và dữ liệu hệ thống. Amazon S3 được sử dụng để lưu trữ các bản sao lưu và tài liệu dự phòng.
+- **DevOps & Monitoring Layer:** GitHub Actions và Amazon ECR hỗ trợ quy trình CI/CD, trong khi Amazon CloudWatch, CloudWatch Alarm và AWS Budgets giúp giám sát hệ thống, cảnh báo sự cố và kiểm soát chi phí vận hành.
+
+Kiến trúc được thiết kế theo hướng **Production Lite**, phù hợp với quy mô MVP nhưng vẫn đáp ứng các yêu cầu cơ bản về triển khai, bảo mật, giám sát, sao lưu và tự động hóa trên nền tảng AWS.
 
 > **Hình 3.1. Kiến trúc tổng thể của AI Learning Assistant Platform.**
+
 ![Hình 3.1](/images/3.1.d.x.png)
 
 ---
 
 ## 3.2 Kiến trúc triển khai trên AWS
 
-Hệ thống được triển khai trên nền tảng **Amazon Web Services (AWS)** bằng **Docker Compose** trên một **Amazon EC2**.
+AI Learning Assistant Platform được triển khai trên **Amazon Web Services (AWS)** tại Region **US East (N. Virginia) – us-east-1**.
 
-Các dịch vụ AWS chính được sử dụng gồm:
+Người dùng truy cập hệ thống thông qua **Elastic IP** hoặc tên miền của Amazon EC2 bằng giao thức HTTP hoặc HTTPS. Toàn bộ lưu lượng truy cập được kiểm soát bởi **Security Group** trước khi chuyển đến máy chủ EC2.
 
-| Dịch vụ | Vai trò |
-|----------|----------|
-| Amazon EC2 | Chạy toàn bộ hệ thống và các Docker Container |
-| Amazon EBS | Lưu trữ Docker Volume và dữ liệu hệ thống |
-| Amazon S3 | Lưu trữ và sao lưu tài liệu học tập |
-| Amazon CloudWatch | Giám sát tài nguyên, log và trạng thái hệ thống |
+Bên trong Amazon EC2, Docker Compose quản lý các container của hệ thống gồm Nginx, Frontend, Backend, MongoDB, PostgreSQL với pgvector, MinIO và Redis. Amazon EBS được sử dụng để lưu trữ Docker Volume và dữ liệu lâu dài.
+
+Để đảm bảo khả năng phục hồi dữ liệu, MongoDB, PostgreSQL và MinIO được sao lưu định kỳ lên **Amazon S3**. Amazon CloudWatch kết hợp với CloudWatch Alarm được sử dụng để theo dõi hiệu năng hệ thống và gửi cảnh báo khi xảy ra sự cố.
+
+Quy trình triển khai được tự động hóa bằng **GitHub Actions** và **Amazon ECR**. Khi mã nguồn được cập nhật lên GitHub Repository, GitHub Actions sẽ tự động xây dựng Docker Image, đẩy Image lên Amazon ECR và triển khai phiên bản mới lên Amazon EC2.
+
+### Các dịch vụ AWS được sử dụng
+
+| Dịch vụ AWS | Vai trò |
+|-------------|----------|
+| Amazon EC2 | Chạy toàn bộ hệ thống AI Learning Assistant |
+| Amazon EBS | Lưu Docker Volume và dữ liệu lâu dài |
+| Amazon S3 | Sao lưu MongoDB, PostgreSQL và tài liệu học tập |
+| Amazon ECR | Quản lý Docker Image |
+| Amazon CloudWatch | Giám sát Metrics và Logs |
+| CloudWatch Alarm | Cảnh báo CPU, Memory, Disk và trạng thái dịch vụ |
+| Amazon SNS | Gửi Email Notification khi xảy ra cảnh báo |
 | AWS IAM | Quản lý quyền truy cập tài nguyên AWS |
-| Security Group | Kiểm soát lưu lượng mạng và bảo mật truy cập |
+| Security Group | Kiểm soát truy cập mạng vào EC2 |
+| AWS Budgets | Theo dõi và cảnh báo chi phí AWS |
+
+Kiến trúc hiện tại được tối ưu cho môi trường thực tập và giai đoạn MVP. Việc triển khai trên một Amazon EC2 giúp giảm chi phí vận hành, đồng thời vẫn đảm bảo khả năng mở rộng trong tương lai thông qua CI/CD, Docker Container và các dịch vụ quản trị của AWS.
 
 > **Hình 3.2. Kiến trúc triển khai hệ thống trên AWS.**
-![Figure 3.2](/images/3.2.d.s.png)
+
+![Hình 3.2](/images/3.2.d.s.png)
 
 ---
 
 ## 3.3 Thiết kế cơ sở dữ liệu
 
-Hệ thống sử dụng nhiều thành phần lưu trữ nhằm đáp ứng các yêu cầu về quản lý dữ liệu, truy xuất ngữ nghĩa và lưu trữ tài liệu học tập.
+Hệ thống sử dụng nhiều thành phần lưu trữ nhằm đáp ứng yêu cầu quản lý dữ liệu, truy xuất ngữ nghĩa và lưu trữ tài liệu học tập.
 
 | Thành phần | Vai trò |
 |------------|----------|
-| MongoDB | Lưu trữ dữ liệu người dùng, hội thoại, Knowledge Base và cấu hình hệ thống |
-| PostgreSQL + pgvector | Lưu trữ vector embedding phục vụ Retrieval-Augmented Generation (RAG) |
-| MinIO | Lưu trữ tài liệu học tập được người dùng tải lên |
-| Amazon S3 | Lưu trữ dữ liệu sao lưu và tài liệu dự phòng |
+| MongoDB | Lưu trữ thông tin người dùng, hội thoại, Knowledge Base và cấu hình hệ thống |
+| PostgreSQL + pgvector | Lưu trữ Vector Embedding phục vụ Semantic Search và Retrieval-Augmented Generation |
+| MinIO | Lưu trữ tài liệu học tập do người dùng tải lên |
+| Amazon S3 | Sao lưu MongoDB, PostgreSQL và tài liệu học tập |
+| Amazon EBS | Lưu Docker Volume và dữ liệu lâu dài của hệ thống |
+
+MongoDB, PostgreSQL và MinIO hoạt động trong mạng nội bộ Docker và không được mở trực tiếp ra Internet nhằm tăng cường bảo mật cho hệ thống.
 
 > **Hình 3.3. Sơ đồ cơ sở dữ liệu của hệ thống.**
+
 ![Hình 3.3](/images/3.3.pr.drawio.png)
 
 ---
 
 ## 3.4 Quy trình hoạt động
 
-Sau khi người dùng tải tài liệu lên, hệ thống thực hiện các bước sau:
+Sau khi người dùng tải tài liệu lên hệ thống, AI Learning Assistant Platform thực hiện quy trình Retrieval-Augmented Generation (RAG) theo các bước sau:
 
-1. Trích xuất nội dung từ tài liệu.
-2. Chia tài liệu thành các đoạn nhỏ (Chunking).
-3. Tạo Embedding cho từng đoạn.
-4. Lưu dữ liệu vào Knowledge Base.
-5. Người dùng đặt câu hỏi.
-6. Hệ thống truy xuất các đoạn tài liệu liên quan.
-7. Mô hình AI tạo câu trả lời và trả kết quả cho người dùng.
+1. Người dùng tải tài liệu học tập lên hệ thống.
+2. Backend trích xuất nội dung từ tài liệu.
+3. Tài liệu được chia thành các đoạn nhỏ (Chunking).
+4. Hệ thống tạo Vector Embedding cho từng đoạn.
+5. Embedding được lưu trong PostgreSQL với pgvector, trong khi Metadata được lưu trong MongoDB.
+6. Người dùng gửi câu hỏi từ giao diện AI Chat.
+7. Backend tạo Embedding cho câu hỏi và thực hiện Semantic Search trong Vector Database.
+8. Các đoạn tài liệu liên quan được truy xuất và kết hợp với câu hỏi để tạo Prompt.
+9. Prompt được gửi đến Large Language Model (LLM).
+10. AI tạo câu trả lời dựa trên ngữ cảnh của tài liệu và trả kết quả kèm nguồn tham khảo cho người dùng.
+
+Quy trình này giúp AI hạn chế hiện tượng Hallucination, nâng cao độ chính xác của câu trả lời và tận dụng hiệu quả nguồn tài liệu học tập của người dùng.
 
 > **Hình 3.4. Quy trình hoạt động của AI Learning Assistant Platform sử dụng RAG.**
+
 ![Hình 3.4](/images/3.4.p.r.png)
 
 ---
@@ -203,9 +233,16 @@ Sau khi người dùng tải tài liệu lên, hệ thống thực hiện các b
 | AI | Large Language Models (LLMs) |
 | AI Framework | Retrieval-Augmented Generation (RAG) |
 | Database | MongoDB, PostgreSQL + pgvector |
-| Object Storage | MinIO, Amazon S3 |
-| Container | Docker, Docker Compose |
+| Object Storage | MinIO |
+| Containerization | Docker, Docker Compose |
+| Version Control | GitHub |
+| CI/CD | GitHub Actions |
+| Container Registry | Amazon ECR |
 | Cloud Platform | Amazon Web Services (AWS) |
+| Monitoring | Amazon CloudWatch, CloudWatch Alarm |
+| Backup Storage | Amazon S3 |
+| Persistent Storage | Amazon EBS |
+| Cost Management | AWS Budgets |
 # Phần 4. Triển khai và kiểm thử
 
 ## 4.1 Môi trường triển khai

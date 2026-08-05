@@ -1,0 +1,72 @@
+[hero_eyebrow]
+other = "AWS Cloud Internship Portfolio"
+[hero_title]
+other = "Báo cáo thực tập"
+[hero_lead]
+other = "Hành trình thực tập Cloud Engineering và báo cáo kỹ thuật cho AWS Workforce Bootcamp."
+[student_role]
+other = "AWS Cloud Intern"
+[student_name]
+other = "Nguyễn Thị Thu Hường"
+[student_description]
+other = "Hành trình thực tập Cloud Engineering và báo cáo kỹ thuật cho Workforce Bootcamp."
+[profile_section_title]
+other = "Thông tin sinh viên"
+[profile_card_eyebrow]
+other = "AWS Internship Portfolio"
+[profile_card_title]
+other = "Hồ sơ sinh viên"
+[profile_card_subtitle]
+other = "Hành trình thực tập cloud engineering và báo cáo kỹ thuật."
+[label_fullname]
+other = "Họ và tên"
+[value_fullname]
+other = "Nguyễn Thị Thu Hường"
+[label_phone]
+other = "Số điện thoại"
+[value_phone]
+other = "0886100173"
+[label_email]
+other = "Email"
+[value_email]
+other = "huonghanna10052004@gmail.com"
+[label_university]
+other = "Trường"
+[value_university]
+other = "Đại học Sài Gòn"
+[label_major]
+other = "Ngành"
+[value_major]
+other = "Công nghệ thông tin"
+[label_class]
+other = "Lớp"
+[value_class]
+other = "DCT122C4"
+[label_company]
+other = "Công ty thực tập"
+[value_company]
+other = "Công ty TNHH Amazon Web Services Viet Nam"
+[label_position]
+other = "Vị trí thực tập"
+[value_position]
+other = "Workforce Bootcamp - First Cloud AI Journey"
+[label_period]
+other = "Thời gian thực tập"
+[value_period]
+other = "Từ ngày 22/06/2026 đến ngày 12/08/2026"
+[report_section_title]
+other = "Nội dung báo cáo"
+[report_link_1]
+other = "1. Nhật ký công việc"
+[report_link_2]
+other = "2. Proposal"
+[report_link_3]
+other = "3. Các bài blogs đã đăng"
+[report_link_4]
+other = "4. Các events đã tham gia"
+[report_link_5]
+other = "5. Workshop"
+[report_link_6]
+other = "6. Tự đánh giá"
+[report_link_7]
+other = "7. Chia sẻ, đóng góp ý kiến"

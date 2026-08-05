@@ -128,68 +128,98 @@ The proposed solution is suitable not only for students and instructors but can 
 
 ## 3.1 Overall System Architecture
 
-The AI Learning Assistant Platform is built using a **Client–Server architecture** combined with the **Retrieval-Augmented Generation (RAG)** framework and deployed on **Amazon Web Services (AWS)**.
+The **AI Learning Assistant Platform** is designed using a **Client–Server architecture** combined with the **Retrieval-Augmented Generation (RAG)** framework and deployed on **Amazon Web Services (AWS)** to provide an intelligent learning platform capable of document management, semantic search, and AI-assisted learning.
 
-The system architecture consists of the following main layers:
+The system architecture is divided into five main layers:
 
-- **Client Layer:** Users access the platform through a web browser.
-- **Application Layer:** The application is deployed on an **Amazon EC2** instance using **Docker Compose**, including Nginx, Frontend, Backend, MongoDB, PostgreSQL, and MinIO.
-- **AI & Data Layer:** The backend handles AI chat, Retrieval-Augmented Generation (RAG), Knowledge Base management, and document processing. **PostgreSQL with pgvector** provides semantic vector retrieval, while **MongoDB** stores application data and system configurations.
+- **Client Layer:** Students and instructors access the platform through a web browser using HTTP or HTTPS protocols.
+- **Application Layer:** The entire application is deployed on **Amazon EC2** as **Docker containers** managed by **Docker Compose**, including Nginx, Frontend, Backend, MongoDB, PostgreSQL with pgvector, MinIO, and Redis.
+- **AI & Data Layer:** The backend handles AI Chat, Retrieval-Augmented Generation (RAG), Knowledge Base management, document processing, and semantic search. **PostgreSQL with pgvector** stores vector embeddings, while **MongoDB** manages user information, conversations, and system configuration.
+- **Infrastructure Layer:** **Amazon EBS** provides persistent storage for Docker volumes and application data. **Amazon S3** is used to store backups and archived learning documents.
+- **DevOps & Monitoring Layer:** **GitHub Actions** and **Amazon ECR** automate the CI/CD pipeline, while **Amazon CloudWatch**, **CloudWatch Alarm**, **Amazon SNS**, and **AWS Budgets** provide monitoring, alerting, and cost management.
 
-> **Figure 3.1. Overall architecture of the AI Learning Assistant Platform.**
+The architecture follows a **Production Lite** approach, making it suitable for an MVP while still providing essential capabilities for deployment, security, monitoring, backup, and automation on AWS.
+
+> **Figure 3.1. Overall Architecture of the AI Learning Assistant Platform.**
+
 ![Figure 3.1](/images/3.1.d.x.png)
 
 ---
 
 ## 3.2 AWS Deployment Architecture
 
-The system is deployed on **Amazon Web Services (AWS)** using **Docker Compose** running on an **Amazon EC2** instance.
+The AI Learning Assistant Platform is deployed on **Amazon Web Services (AWS)** in the **US East (N. Virginia) – us-east-1** Region.
 
-The primary AWS services used in the deployment are summarized below.
+Users access the system through an **Elastic IP** or a custom domain using HTTP or HTTPS. All incoming traffic is filtered by **AWS Security Group** before reaching the Amazon EC2 instance.
+
+Inside the EC2 instance, **Docker Compose** manages the application containers, including **Nginx**, **Frontend**, **Backend**, **MongoDB**, **PostgreSQL with pgvector**, **MinIO**, and **Redis**. **Amazon EBS** provides persistent storage for Docker volumes and application data.
+
+To improve data reliability, MongoDB, PostgreSQL, and MinIO are periodically backed up to **Amazon S3**. **Amazon CloudWatch** together with **CloudWatch Alarm** monitors system performance and generates alerts when predefined thresholds are exceeded. **Amazon SNS** delivers email notifications for critical events.
+
+The deployment process is automated through **GitHub Actions** and **Amazon ECR**. Whenever new code is pushed to the GitHub repository, GitHub Actions automatically builds Docker images, pushes them to Amazon ECR, and deploys the latest version to Amazon EC2.
+
+### AWS Services Used
 
 | AWS Service | Purpose |
 |-------------|---------|
-| Amazon EC2 | Hosts the entire application and Docker containers |
-| Amazon EBS | Stores Docker volumes and persistent application data |
-| Amazon S3 | Stores and backs up learning documents |
-| Amazon CloudWatch | Monitors system performance, logs, and resource utilization |
-| AWS IAM | Manages access control and permissions |
-| Security Group | Controls inbound and outbound network traffic |
+| Amazon EC2 | Hosts the entire AI Learning Assistant Platform |
+| Amazon EBS | Provides persistent storage for Docker volumes and application data |
+| Amazon S3 | Stores backups of MongoDB, PostgreSQL, and learning documents |
+| Amazon ECR | Stores and manages Docker container images |
+| Amazon CloudWatch | Monitors system metrics, logs, and dashboards |
+| CloudWatch Alarm | Triggers alerts based on CPU, memory, disk, and service health |
+| Amazon SNS | Sends email notifications for monitoring alerts |
+| AWS IAM | Manages authentication and authorization for AWS resources |
+| Security Group | Controls inbound and outbound network access to EC2 |
+| AWS Budgets | Monitors AWS spending and generates budget alerts |
 
-> **Figure 3.2. AWS deployment architecture of the system.**
-![Figure 3.2](/static/images/3.2.d.s.png)
+The current architecture is optimized for internship projects and MVP deployments. Running the application on a single Amazon EC2 instance minimizes operational costs while maintaining scalability through Docker containers, CI/CD automation, and AWS management services.
+
+> **Figure 3.2. AWS Deployment Architecture of the AI Learning Assistant Platform.**
+
+![Figure 3.2](/images/3.2.d.s.png)
 
 ---
 
 ## 3.3 Database Design
 
-The platform utilizes multiple storage components to support structured data management, semantic retrieval, and document storage.
+The platform uses multiple storage components to satisfy the requirements of user data management, semantic retrieval, and document storage.
 
 | Component | Purpose |
 |-----------|---------|
-| MongoDB | Stores users, conversations, knowledge bases, and system configurations |
-| PostgreSQL + pgvector | Stores vector embeddings for Retrieval-Augmented Generation (RAG) |
+| MongoDB | Stores user accounts, conversations, Knowledge Base metadata, and system configuration |
+| PostgreSQL + pgvector | Stores vector embeddings for semantic search and Retrieval-Augmented Generation |
 | MinIO | Stores learning documents uploaded by users |
-| Amazon S3 | Stores backup data and archived learning documents |
+| Amazon S3 | Stores backups of databases and uploaded learning documents |
+| Amazon EBS | Provides persistent storage for Docker volumes and application data |
 
-> **Figure 3.3. Database architecture of the system.**
+MongoDB, PostgreSQL, and MinIO operate within the internal Docker network and are not directly exposed to the public Internet, improving the overall security of the system.
+
+> **Figure 3.3. Database Architecture of the AI Learning Assistant Platform.**
+
 ![Figure 3.3](/images/3.3.pr.drawio.png)
 
 ---
 
 ## 3.4 System Workflow
 
-After a user uploads a learning document, the system performs the following process:
+After a user uploads a learning document, the AI Learning Assistant Platform performs the Retrieval-Augmented Generation (RAG) workflow as follows:
 
-1. Extract document content.
-2. Split the document into smaller chunks.
-3. Generate embeddings for each chunk.
-4. Store the processed data in the Knowledge Base.
-5. Receive a user's question.
-6. Retrieve the most relevant document chunks.
-7. Generate an answer using the AI model and return the response to the user.
+1. The user uploads a learning document.
+2. The backend extracts the document content.
+3. The document is divided into smaller chunks.
+4. Vector embeddings are generated for each chunk.
+5. The embeddings are stored in PostgreSQL with pgvector, while metadata is stored in MongoDB.
+6. The user submits a question through the AI Chat interface.
+7. The backend generates an embedding for the question and performs semantic search against the vector database.
+8. Relevant document chunks are retrieved and combined with the user's question to construct a prompt.
+9. The prompt is sent to the Large Language Model (LLM).
+10. The AI generates an answer based on the retrieved context and returns the response together with reference sources.
 
-> **Figure 3.4. Workflow of the AI Learning Assistant Platform using Retrieval-Augmented Generation (RAG).**
+This workflow significantly reduces hallucination, improves response accuracy, and enables the AI model to answer questions based on user-provided learning materials.
+
+> **Figure 3.4. Retrieval-Augmented Generation (RAG) Workflow of the AI Learning Assistant Platform.**
+
 ![Figure 3.4](/images/3.4.p.r.png)
 
 ---
@@ -202,10 +232,17 @@ After a user uploads a learning document, the system performs the following proc
 | Backend | FastGPT (Customized) |
 | AI Model | Large Language Models (LLMs) |
 | AI Framework | Retrieval-Augmented Generation (RAG) |
-| Database | MongoDB, PostgreSQL + pgvector |
-| Object Storage | MinIO, Amazon S3 |
+| Database | MongoDB, PostgreSQL with pgvector |
+| Object Storage | MinIO |
 | Containerization | Docker, Docker Compose |
+| Version Control | GitHub |
+| CI/CD | GitHub Actions |
+| Container Registry | Amazon ECR |
 | Cloud Platform | Amazon Web Services (AWS) |
+| Monitoring | Amazon CloudWatch, CloudWatch Alarm |
+| Backup Storage | Amazon S3 |
+| Persistent Storage | Amazon EBS |
+| Cost Management | AWS Budgets |
 
 # Part 4. Deployment and Testing
 
