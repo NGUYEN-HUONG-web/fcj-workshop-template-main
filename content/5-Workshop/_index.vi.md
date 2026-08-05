@@ -1,28 +1,29 @@
 ---
 title: "Workshop"
-date: 2024-01-01
+date: 2026-07-17
 weight: 5
 chapter: false
 pre: " <b> 5. </b> "
 ---
 
-# Đảm bảo truy cập Hybrid an toàn đến S3 bằng cách sử dụng VPC endpoint
+# Triển khai AI Learning Assistant Platform trên Amazon Web Services
 
 #### Tổng quan
 
-**AWS PrivateLink** cung cấp kết nối riêng tư đến các dịch vụ aws từ VPCs hoặc trung tâm dữ liệu (on-premise) mà không làm lộ lưu lượng truy cập ra ngoài public internet.
+**AI Learning Assistant Platform** là một nền tảng học tập thông minh được xây dựng dựa trên kiến trúc **Retrieval-Augmented Generation (RAG)**, cho phép người dùng tải tài liệu học tập, xây dựng Knowledge Base và tương tác với mô hình AI để nhận câu trả lời dựa trên nội dung tài liệu.
 
-Trong bài lab này, chúng ta sẽ học cách tạo, cấu hình, và kiểm tra VPC endpoints để cho phép workload của bạn tiếp cận các dịch vụ AWS mà không cần đi qua Internet công cộng.
+Trong Workshop này, chúng ta sẽ từng bước triển khai hệ thống trên **Amazon Web Services (AWS)** bằng **Docker Compose** chạy trên **Amazon EC2**. Đồng thời, Workshop cũng hướng dẫn cấu hình **GitHub Actions** và **Amazon ECR** để xây dựng quy trình **CI/CD**, sử dụng **Amazon CloudWatch** để giám sát hệ thống và **Amazon S3** để sao lưu dữ liệu.
 
-Chúng ta sẽ tạo hai loại endpoints để truy cập đến Amazon S3: gateway vpc endpoint và interface vpc endpoint. Hai loại vpc endpoints này mang đến nhiều lợi ích tùy thuộc vào việc bạn truy cập đến S3 từ môi trường cloud hay từ trung tâm dữ liệu (on-premise).
-+ **Gateway** - Tạo gateway endpoint để gửi lưu lượng đến Amazon S3 hoặc DynamoDB using private IP addresses. Bạn điều hướng lưu lượng từ VPC của bạn đến gateway endpoint bằng các bảng định tuyến (route tables)
-+ **Interface** - Tạo interface endpoint để gửi lưu lượng đến các dịch vụ điểm cuối (endpoints) sử dụng Network Load Balancer để phân phối lưu lượng. Lưu lượng dành cho dịch vụ điểm cuối được resolved bằng DNS.
+Sau khi hoàn thành Workshop, bạn sẽ có thể triển khai, vận hành và quản lý một ứng dụng Generative AI trên AWS theo mô hình **Production Lite**, đồng thời áp dụng các dịch vụ AWS để đảm bảo khả năng mở rộng, giám sát và tối ưu chi phí.
 
 #### Nội dung
 
-1. [Tổng quan về workshop](5.1-Workshop-overview/)
-2. [Chuẩn bị](5.2-Prerequiste/)
-3. [Truy cập đến S3 từ VPC](5.3-S3-vpc/)
-4. [Truy cập đến S3 từ TTDL On-premises](5.4-S3-onprem/)
-5. [VPC Endpoint Policies (làm thêm)](5.5-Policy/)
-6. [Dọn dẹp tài nguyên](5.6-Cleanup/)
+1. [Tổng quan hệ thống](5.1-Workshop-overview/)
+2. [Chuẩn bị môi trường](5.2-Prerequisite/)
+3. [Triển khai Amazon EC2](5.3-Deploy-EC2/)
+4. [Cài đặt Docker và Docker Compose](5.4-Docker/)
+5. [Triển khai AI Learning Assistant Platform](5.5-Deploy-Application/)
+6. [Thiết lập CI/CD với GitHub Actions và Amazon ECR](5.6-CICD/)
+7. [Giám sát hệ thống bằng Amazon CloudWatch](5.7-Monitoring/)
+8. [Kiểm thử hệ thống](5.8-Testing/)
+9. [Dọn dẹp tài nguyên AWS](5.9-Cleanup/)

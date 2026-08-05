@@ -45,7 +45,7 @@ AI Learning Assistant Platform là nền tảng học tập thông minh cho phé
 
 Sau khi tài liệu được tải lên, hệ thống sẽ tự động xử lý nội dung, chia nhỏ tài liệu, tạo **Embedding** và xây dựng **Knowledge Base**. Khi người dùng đặt câu hỏi, hệ thống sử dụng cơ chế **Retrieval-Augmented Generation (RAG)** để truy xuất các đoạn tài liệu liên quan, sau đó cung cấp ngữ cảnh cho mô hình AI nhằm tạo ra câu trả lời chính xác và bám sát nội dung tài liệu.
 
-Ngoài chức năng hỏi đáp, hệ thống còn hỗ trợ quản lý tài liệu, tóm tắt bài học, tạo câu hỏi trắc nghiệm, Flashcard và lưu lịch sử học tập. Toàn bộ ứng dụng được triển khai trên AWS bằng Docker, tạo nền tảng thuận lợi cho việc mở rộng và phát triển trong tương lai.
+Ngoài chức năng hỏi đáp, hệ thống còn hỗ trợ quản lý tài liệu, tóm tắt bài học, tạo câu hỏi trắc nghiệm, Flashcard và lưu lịch sử học tập. Toàn bộ ứng dụng được triển khai trên AWS bằng Docker Compose và tự động hóa quy trình triển khai thông qua GitHub Actions kết hợp với Amazon ECR, tạo nền tảng thuận lợi cho việc mở rộng và phát triển trong tương lai.
 
 ### Thông tin tổng quan
 
@@ -152,7 +152,7 @@ AI Learning Assistant Platform được triển khai trên **Amazon Web Services
 
 Người dùng truy cập hệ thống thông qua **Elastic IP** hoặc tên miền của Amazon EC2 bằng giao thức HTTP hoặc HTTPS. Toàn bộ lưu lượng truy cập được kiểm soát bởi **Security Group** trước khi chuyển đến máy chủ EC2.
 
-Bên trong Amazon EC2, Docker Compose quản lý các container của hệ thống gồm Nginx, Frontend, Backend, MongoDB, PostgreSQL với pgvector, MinIO và Redis. Amazon EBS được sử dụng để lưu trữ Docker Volume và dữ liệu lâu dài.
+Bên trong Amazon EC2, Docker Compose quản lý các container của hệ thống gồm Nginx, Frontend, Backend, MongoDB, PostgreSQL với pgvector, MinIO. Amazon EBS được sử dụng để lưu trữ Docker Volume và dữ liệu lâu dài.
 
 Để đảm bảo khả năng phục hồi dữ liệu, MongoDB, PostgreSQL và MinIO được sao lưu định kỳ lên **Amazon S3**. Amazon CloudWatch kết hợp với CloudWatch Alarm được sử dụng để theo dõi hiệu năng hệ thống và gửi cảnh báo khi xảy ra sự cố.
 

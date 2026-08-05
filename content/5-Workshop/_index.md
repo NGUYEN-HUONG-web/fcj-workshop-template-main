@@ -1,28 +1,29 @@
 ---
 title: "Workshop"
-date: 2024-01-01
+date: 2026-08-05
 weight: 5
 chapter: false
 pre: " <b> 5. </b> "
 ---
 
-# Secure Hybrid Access to S3 using VPC Endpoints
+# Deploy AI Learning Assistant Platform on Amazon Web Services
 
 #### Overview
 
-**AWS PrivateLink** provides private connectivity to AWS services from VPCs and your on-premises networks, without exposing your traffic to the Public Internet.
+The **AI Learning Assistant Platform** is an intelligent learning platform built on the **Retrieval-Augmented Generation (RAG)** architecture. It enables users to upload learning materials, build a Knowledge Base, and interact with an AI assistant that generates responses based on the uploaded documents.
 
-In this lab, you will learn how to create, configure, and test VPC endpoints that enable your workloads to reach AWS services without traversing the Public Internet.
+In this workshop, you will deploy the platform on **Amazon Web Services (AWS)** using **Docker Compose** running on **Amazon EC2**. You will also configure **GitHub Actions** and **Amazon ECR** to implement a **CI/CD** pipeline, use **Amazon CloudWatch** to monitor system performance, and configure **Amazon S3** for data backup.
 
-You will create two types of endpoints to access Amazon S3: a Gateway VPC endpoint, and an Interface VPC endpoint. These two types of VPC endpoints offer different benefits depending on if you are accessing Amazon S3 from the cloud or your on-premises location
-+ **Gateway** - Create a gateway endpoint to send traffic to Amazon S3 or DynamoDB using private IP addresses.You route traffic from your VPC to the gateway endpoint using route tables.
-+ **Interface** - Create an interface endpoint to send traffic to endpoint services that use a Network Load Balancer to distribute traffic. Traffic destined for the endpoint service is resolved using DNS.
+By the end of this workshop, you will be able to deploy, operate, and manage a Generative AI application on AWS using a **Production Lite** architecture while applying AWS best practices for deployment, monitoring, security, and cost optimization.
 
-#### Content
+#### Contents
 
-1. [Workshop overview](5.1-Workshop-overview)
-2. [Prerequiste](5.2-Prerequiste/)
-3. [Access S3 from VPC](5.3-S3-vpc/)
-4. [Access S3 from On-premises](5.4-S3-onprem/)
-5. [VPC Endpoint Policies (Bonus)](5.5-Policy/)
-6. [Clean up](5.6-Cleanup/)
+1. [System Overview](5.1-Workshop-overview/)
+2. [Prerequisites](5.2-Prerequisite/)
+3. [Deploy Amazon EC2](5.3-Deploy-EC2/)
+4. [Install Docker and Docker Compose](5.4-Docker/)
+5. [Deploy AI Learning Assistant Platform](5.5-Deploy-Application/)
+6. [Configure CI/CD with GitHub Actions and Amazon ECR](5.6-CICD/)
+7. [Configure Monitoring with Amazon CloudWatch](5.7-Monitoring/)
+8. [System Testing](5.8-Testing/)
+9. [Cleanup AWS Resources](5.9-Cleanup/)

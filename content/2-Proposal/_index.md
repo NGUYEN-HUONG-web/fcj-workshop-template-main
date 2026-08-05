@@ -45,7 +45,7 @@ The AI Learning Assistant Platform is an intelligent learning platform that allo
 
 After a document is uploaded, the system automatically processes the content, splits the document into smaller chunks, generates **Embeddings**, and builds a **Knowledge Base**. When a user asks a question, the system uses the **Retrieval-Augmented Generation (RAG)** mechanism to retrieve relevant document segments and provides context to the AI model to generate an accurate response closely aligned with the document's content.
 
-In addition to Q&A capabilities, the system also supports document management, lesson summarization, quiz generation, Flashcards, and learning history tracking. The entire application is deployed on AWS using Docker, creating a solid foundation for future scalability and development.
+In addition to Q&A capabilities, the system also supports document management, lesson summarization, quiz generation, Flashcards, and learning history tracking. The entire application is deployed on AWS using Docker Compose and the deployment process is automated through GitHub Actions in conjunction with Amazon ECR, creating a favorable foundation for future scaling and development.
 
 ### Quick Overview
 
@@ -153,7 +153,7 @@ The AI Learning Assistant Platform is deployed on **Amazon Web Services (AWS)** 
 
 Users access the platform through an **Elastic IP** or the domain name of the Amazon EC2 instance using HTTP or HTTPS protocols. All incoming traffic is controlled by **Security Groups** before reaching the EC2 server.
 
-Inside Amazon EC2, Docker Compose manages the system's containers, including Nginx, Frontend, Backend, MongoDB, PostgreSQL with pgvector, MinIO, and Redis. Amazon EBS is used for storing Docker Volumes and persistent data.
+Inside Amazon EC2, Docker Compose manages the system's containers, including Nginx, Frontend, Backend, MongoDB, PostgreSQL with pgvector, MinIO. Amazon EBS is used for storing Docker Volumes and persistent data.
 
 To ensure data resilience, MongoDB, PostgreSQL, and MinIO are periodically backed up to **Amazon S3**. Amazon CloudWatch combined with CloudWatch Alarm is used to monitor system performance and send alerts when issues occur.
 
@@ -473,4 +473,4 @@ The AI Learning Assistant Platform is a learning support solution utilizing arti
 
 With an open-architecture design, the system can continue to expand and integrate more AI services as well as AWS services in the future. The project not only fulfills the goal of building an intelligent learning assistant but also establishes a foundation for the research, development, and application of Generative AI in the education sector.
 
-In addition to building the intelligent learning platform, the project also illustrates how to deploy a Generative AI application on Amazon Web Services through Docker Compose, Amazon EC2, Amazon S3, Amazon CloudWatch, and AWS security services. This forms the basis for continuing to expand the system in the future.
+In addition to building a smart learning platform, the project also illustrates how to deploy a Generative AI application on Amazon Web Services using Docker Compose, Amazon EC2, Amazon ECR, GitHub Actions, Amazon S3, Amazon CloudWatch, and AWS security services.
