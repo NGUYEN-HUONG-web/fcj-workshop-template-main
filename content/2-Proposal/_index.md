@@ -69,11 +69,6 @@ In today's educational environment, students frequently rely on various learning
 Although modern AI chatbots are capable of answering a wide range of questions using natural language, most of them rely solely on pre-trained knowledge. Consequently, they cannot accurately utilize users' personal learning materials and may generate responses that are irrelevant, inconsistent with the uploaded documents, or entirely unsupported by the provided content.
 
 Therefore, there is a growing need for an intelligent solution that enables AI to understand and retrieve information directly from users' learning materials, allowing learners to access accurate information more efficiently.
-
-> **Figure 2.1. Current Challenges in AI-Assisted Learning**
-
-![Figure 2.1](/images/2.1.pr.png)
-
 ---
 
 ## 2.2 Proposed Solution
@@ -112,7 +107,7 @@ The overall workflow of the AI Learning Assistant Platform consists of the follo
 7. The retrieved context is provided to the Large Language Model (LLM) to generate an accurate response.
 8. The final response, together with its corresponding source references, is presented to the user.
 
-> **Figure 2.2. Workflow of the AI Learning Assistant Platform Using Retrieval-Augmented Generation (RAG)**
+> **Figure 2.1. Workflow of the AI Learning Assistant Platform Using Retrieval-Augmented Generation (RAG)**
 
 ![Retrieval-Augmented Generation Workflow](/images/h3bl3.png)
 
@@ -142,7 +137,7 @@ The system architecture consists of the following main layers:
 - **AI & Data Layer:** The backend handles AI chat, Retrieval-Augmented Generation (RAG), Knowledge Base management, and document processing. **PostgreSQL with pgvector** provides semantic vector retrieval, while **MongoDB** stores application data and system configurations.
 
 > **Figure 3.1. Overall architecture of the AI Learning Assistant Platform.**
-![Figure 3.1](/images/3.1.p.r.s.png)
+![Figure 3.1](/images/3.1.d.x.png)
 
 ---
 
@@ -162,7 +157,7 @@ The primary AWS services used in the deployment are summarized below.
 | Security Group | Controls inbound and outbound network traffic |
 
 > **Figure 3.2. AWS deployment architecture of the system.**
-![Figure 3.2](/images/3.2.p.r.s.png)
+![Figure 3.2](/static/images/3.2.d.s.png)
 
 ---
 
@@ -239,7 +234,7 @@ The deployment architecture includes **Nginx**, **Frontend (Next.js/React)**, **
 | Security | AWS IAM, Security Groups |
 
 > **Figure 4.1. Deployment environment of the AI Learning Assistant Platform on AWS.**
-![Figure 4.1](/images/4.1.p.r.png)
+![Figure 4.1](/images/4.1.d.x.png)
 
 ---
 
@@ -256,7 +251,7 @@ The deployment process consists of the following steps:
 7. Access the application through a web browser for validation and production deployment.
 
 > **Figure 4.2. Deployment workflow of the AI Learning Assistant Platform on AWS.**
-![Figure 4.2](/images/4.2.p.r.png)
+![Figure 4.2](/images/4.2.d.x..png)
 
 ---
 

@@ -70,9 +70,6 @@ Trong môi trường học tập hiện nay, sinh viên thường phải sử d�
 Mặc dù các chatbot AI hiện nay có khả năng trả lời nhiều câu hỏi bằng ngôn ngữ tự nhiên, nhưng phần lớn chỉ dựa trên kiến thức đã được huấn luyện trước. Điều này khiến AI không thể khai thác chính xác nội dung từ tài liệu riêng của người dùng, đồng thời có thể tạo ra những câu trả lời không đúng với ngữ cảnh hoặc không có trong tài liệu.
 
 Do đó, cần có một giải pháp cho phép AI hiểu và khai thác trực tiếp dữ liệu từ tài liệu học tập, giúp người dùng tìm kiếm thông tin nhanh chóng và nhận được câu trả lời chính xác hơn.
-
-Hình 2.1 Bài toán hiện tại
-![Hình 2.1](/images/2.1.pr.png)
 ---
 
 ## 2.2 Giải pháp đề xuất
@@ -111,7 +108,7 @@ Quy trình hoạt động của hệ thống gồm các bước sau:
 7. Mô hình AI sử dụng các đoạn tài liệu làm ngữ cảnh để sinh câu trả lời.
 8. Kết quả cùng nguồn tham khảo được hiển thị cho người dùng.
 
-> **Hình 2.2. Quy trình hoạt động của AI Learning Assistant Platform sử dụng RAG.**
+> **Hình 2.1. Quy trình hoạt động của AI Learning Assistant Platform sử dụng RAG.**
 
 ![Quy trình Retrieval-Augmented Generation](/images/h3bl3.png)
 
@@ -140,7 +137,7 @@ Kiến trúc hệ thống gồm các thành phần chính:
 - **AI & Data Layer:** Backend xử lý AI Chat, Retrieval-Augmented Generation (RAG), Knowledge Base và quản lý tài liệu học tập; PostgreSQL với **pgvector** hỗ trợ truy xuất ngữ nghĩa, trong khi MongoDB lưu trữ dữ liệu hệ thống.
 
 > **Hình 3.1. Kiến trúc tổng thể của AI Learning Assistant Platform.**
-![Hình 3.1](/images/3.1.p.r.s.png)
+![Hình 3.1](/images/3.1.d.x.png)
 
 ---
 
@@ -160,7 +157,7 @@ Các dịch vụ AWS chính được sử dụng gồm:
 | Security Group | Kiểm soát lưu lượng mạng và bảo mật truy cập |
 
 > **Hình 3.2. Kiến trúc triển khai hệ thống trên AWS.**
-![Hình 3.2](/images/3.2.p.r.s.png)
+![Figure 3.2](/images/3.2.d.s.png)
 
 ---
 
@@ -236,7 +233,7 @@ Kiến trúc triển khai bao gồm **Nginx**, **Frontend (Next.js/React)**, **A
 | Security | AWS IAM, Security Group |
 
 > **Hình 4.1. Môi trường triển khai AI Learning Assistant Platform trên AWS.**
-![Hình 4.1](/images/4.1.p.r.png)
+![Hình 4.1](/images/4.1.d.x.png)
 
 ---
 
@@ -253,7 +250,7 @@ Quy trình triển khai hệ thống được thực hiện theo các bước sa
 7. Truy cập hệ thống thông qua trình duyệt để kiểm thử và đưa vào vận hành.
 
 > **Hình 4.2. Quy trình triển khai AI Learning Assistant Platform trên AWS.**
-![Hình 4.2](/images/4.2.p.r.png)
+![Hình 4.2](/images/4.2.d.x..png)
 
 ---
 
