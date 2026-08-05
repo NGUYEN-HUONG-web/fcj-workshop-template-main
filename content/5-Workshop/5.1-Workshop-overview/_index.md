@@ -84,18 +84,3 @@ After completing this workshop, you will be able to:
 
 ---
 
-# Workshop Contents
-
-The workshop is organized into the following sections:
-
-| Section | Content |
-|:------:|---------|
-| **5.1** | Workshop Overview |
-| **5.2** | Environment Preparation |
-| **5.3** | Deploy AWS Infrastructure |
-| **5.4** | Install Docker and Docker Compose |
-| **5.5** | Deploy the AI Learning Assistant Platform |
-| **5.6** | Configure CI/CD |
-| **5.7** | Configure Monitoring |
-| **5.8** | System Testing |
-| **5.9** | Clean Up AWS Resources |

@@ -84,18 +84,3 @@ Sau khi hoàn thành Workshop này, bạn sẽ có thể:
 
 ---
 
-## Nội dung Workshop
-
-Workshop được chia thành các phần sau:
-
-| Mục | Nội dung |
-|:---:|----------|
-| **5.1** | Tổng quan Workshop |
-| **5.2** | Chuẩn bị môi trường |
-| **5.3** | Triển khai Amazon EC2 |
-| **5.4** | Cài đặt Docker và Docker Compose |
-| **5.5** | Triển khai AI Learning Assistant Platform |
-| **5.6** | Thiết lập CI/CD |
-| **5.7** | Thiết lập giám sát hệ thống |
-| **5.8** | Kiểm thử hệ thống |
-| **5.9** | Dọn dẹp tài nguyên AWS |
