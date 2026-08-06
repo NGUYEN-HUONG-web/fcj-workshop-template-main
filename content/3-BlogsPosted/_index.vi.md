@@ -6,8 +6,6 @@ chapter: false
 pre: " <b> 3. </b> "
 ---
 
-# Các bài Blog đã đăng
-
 Trong quá trình thực tập, mình đã nghiên cứu các bài viết từ **AWS Blog**, kết hợp với trải nghiệm thực tế và quá trình học tập để viết các bài chia sẻ kỹ thuật. Mỗi bài blog đều tập trung vào một chủ đề cụ thể, giúp tổng hợp kiến thức, chia sẻ kinh nghiệm cũng như giới thiệu các giải pháp và thực hành tốt nhất (Best Practices) trên AWS.
 
 Các bài viết đã đăng trên **AWS Study Group**:

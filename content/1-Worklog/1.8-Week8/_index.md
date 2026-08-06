@@ -6,88 +6,72 @@ chapter: false
 pre: " <b> 1.8. </b> "
 ---
 
-<div class="worklog-page">
-<section class="worklog-hero">
-<div class="worklog-hero__eyebrow">Week 8</div>
-<h1>Final Project Deployment, Monitoring, Cost Optimization, and Internship Summary</h1>
-<p class="worklog-hero__lead">Final stage delivery of the internship project, including deployment validation, monitoring setup, AWS cost review, documentation completion, and summary of the technical growth achieved during the program.</p>
-</section>
-
-<section class="worklog-overview-card">
-<p><strong>Overview:</strong> This Worklog documents my learning journey throughout the internship, covering AWS fundamentals, hands-on labs, cloud infrastructure deployment, system monitoring, automation, containerization, and DevOps practices. It demonstrates the progress I made, the technical skills I developed, and the practical experience I gained while designing, deploying, and managing solutions on AWS.</p>
-</section>
-
-<section class="worklog-content">
-
 ### Week 8 Objectives
 
 * Complete and deploy the final project on AWS.
-* Verify all system functions and end-to-end workflows.
-* Configure monitoring, logging, and alerting.
+* Verify all system functionalities and end-to-end workflows.
+* Configure Monitoring, Logging, and Alerting.
 * Review security settings and optimize AWS costs.
-* Complete the Worklog, Proposal, Workshop, and internship report.
-* Summarize the knowledge and skills gained throughout the internship.
+* Complete the Worklog, Proposal, Workshop documentation, and Internship Report.
+* Summarize the knowledge and experience gained throughout the internship.
 
-### Tasks Completed During the Week
+### Tasks Performed This Week
 
-| Day | Tasks | Start Date | Completion Date | Reference Materials |
+| Day | Tasks | Start Date | Completion Date | References |
 | --- | --- | --- | --- | --- |
-| **2** | - Completed the remaining project features.<br>- Verified connectivity between the frontend, backend, database, and AWS services.<br>- Standardized environment variables and application configuration.<br>- Updated the system architecture diagram. | 10/08/2026 | 10/08/2026 | |
-| **3** | - Deployed the final application using the CI/CD pipeline.<br>- Verified Docker images stored in Amazon ECR.<br>- Checked container status, service endpoints, and database connectivity.<br>- Performed functional testing after deployment. | 11/08/2026 | 11/08/2026 | <https://docs.github.com/actions> |
-| **4** | - Configured Amazon CloudWatch Logs and Metrics.<br>- Created dashboards to monitor CPU, memory, network traffic, and application errors.<br>- Configured CloudWatch Alarms and Amazon SNS notifications.<br>- Analyzed logs to identify and resolve application issues. | 12/08/2026 | 12/08/2026 | <https://000008.awsstudygroup.com/> |
-| **5** | - Used AWS Cost Explorer to analyze service costs.<br>- Reviewed IAM policies, Security Groups, and S3 Bucket Policies.<br>- Identified unused AWS resources.<br>- Optimized infrastructure by adjusting configurations and scheduling automatic start/stop operations. | 13/08/2026 | 13/08/2026 | <https://docs.aws.amazon.com/cost-management/> |
-| **6** | - Completed the Worklog, Proposal, Blog, and Workshop documentation.<br>- Added screenshots, architecture diagrams, and code snippets.<br>- Removed unused AWS resources.<br>- Summarized the knowledge, technical skills, and practical experience gained throughout the eight-week internship. | 14/08/2026 | 14/08/2026 | |
+| **Monday** | - Complete the remaining project features.<br>- Verify connectivity between the Frontend, Backend, Database, and AWS services.<br>- Standardize environment variables and configuration settings.<br>- Update the system architecture diagram. | 10/08/2026 | 10/08/2026 | |
+| **Tuesday** | - Deploy the final application using a CI/CD pipeline.<br>- Verify Docker images stored in Amazon ECR.<br>- Check container status, application endpoints, and database connectivity.<br>- Perform functional testing after deployment. | 11/08/2026 | 11/08/2026 | <https://docs.github.com/actions> |
+| **Wednesday** | - Configure Amazon CloudWatch Logs and Metrics.<br>- Create dashboards to monitor CPU, memory, network traffic, and application errors.<br>- Configure CloudWatch Alarms with Amazon SNS notifications.<br>- Analyze logs to identify and resolve application issues. | 12/08/2026 | 12/08/2026 | <https://000008.awsstudygroup.com/> |
+| **Thursday** | - Use AWS Cost Explorer to analyze service costs.<br>- Review IAM policies, Security Groups, and Amazon S3 Bucket Policies.<br>- Identify unused AWS resources.<br>- Optimize costs by adjusting configurations and scheduling automatic Start/Stop operations. | 13/08/2026 | 13/08/2026 | <https://docs.aws.amazon.com/cost-management/> |
+| **Friday** | - Finalize the Worklog, Proposal, Blog, and Workshop documentation.<br>- Add screenshots, architecture diagrams, and code snippets.<br>- Clean up unused AWS resources.<br>- Summarize the knowledge, skills, and experience gained during the eight-week internship. | 14/08/2026 | 14/08/2026 | |
 
 ### Achievements
 
-#### Final Project Completion
+#### Project Completion
 
 * Successfully completed and deployed the final project on AWS.
-* Verified the communication flow between all system components.
-* Used Docker and a CI/CD pipeline to standardize the deployment process.
-* Updated the system architecture and deployment documentation.
+* Verified the end-to-end communication between all system components.
+* Standardized the deployment process using Docker and a CI/CD pipeline.
+* Updated the system architecture diagram and deployment documentation.
 
 #### Monitoring and Operations
 
 * Collected application metrics and logs using Amazon CloudWatch.
-* Built centralized dashboards to monitor system health.
+* Built monitoring dashboards to visualize system health.
 * Configured CloudWatch Alarms with Amazon SNS notifications.
-* Used log analysis to identify and troubleshoot application issues.
+* Used log analysis to troubleshoot and resolve application issues.
 
 #### Security and Cost Optimization
 
-* Reviewed IAM policies based on the Principle of Least Privilege.
-* Audited Security Group rules and removed unnecessary open ports.
-* Verified S3 Public Access settings and Bucket Policies.
-* Used AWS Cost Explorer to identify services generating costs.
-* Stopped or deleted unused AWS resources.
-* Applied automated start/stop schedules for Amazon EC2 and Amazon RDS when appropriate.
+* Reviewed IAM policies following the Principle of Least Privilege.
+* Audited open ports in Security Groups.
+* Verified Amazon S3 Public Access settings and Bucket Policies.
+* Used AWS Cost Explorer to identify cost-generating services.
+* Stopped or removed unused AWS resources.
+* Applied automated Start/Stop schedules for Amazon EC2 and Amazon RDS when appropriate.
 
 #### Documentation Completion
 
-* Completed the Worklog covering all eight internship weeks.
+* Completed the eight-week internship Worklog.
 * Finalized the project Proposal and Workshop documentation.
 * Added screenshots, architecture diagrams, and code snippets.
-* Summarized the knowledge gained and conducted a self-evaluation of the internship experience.
+* Summarized the knowledge gained and evaluated the overall internship experience.
 
 ### Challenges and Solutions
 
 | Challenges | Solutions |
 | --- | --- |
-| The newly deployed application did not function correctly. | Verified the Docker image tag, environment variables, service endpoints, and CloudWatch Logs to identify the root cause. |
-| AWS costs continued to increase after completing hands-on labs. | Used AWS Cost Explorer to review costs by service and Region, then stopped or removed unnecessary running resources. |
-| Security Groups allowed overly broad network access. | Restricted inbound rules to only the required ports and trusted source IP addresses. |
-| Documentation lacked consistency or supporting images. | Reviewed each deployment step and added screenshots, explanations, and updated architecture diagrams. |
+| The newly deployed application did not function correctly. | Verified Docker image tags, environment variables, application endpoints, and CloudWatch Logs to identify and resolve deployment issues. |
+| AWS costs continued to increase after completing the workshops. | Used AWS Cost Explorer to analyze costs by service and Region, then stopped or deleted unnecessary running resources. |
+| Security Groups contained overly permissive inbound rules. | Restricted access to only the required ports and limited traffic sources based on the principle of least privilege. |
+| Documentation lacked consistency and sufficient screenshots. | Reviewed each deployment step, added screenshots, improved annotations, and updated architecture diagrams. |
 
 ---
 
 ### Weekly Reflection
 
-During the final week of the internship, I applied the knowledge gained throughout the program to complete, deploy, and operate a cloud-based application on AWS. This experience strengthened my understanding of how Compute, Storage, Database, Networking, Security, Container, and Monitoring services work together to support a production-ready system.
+During the final week of my internship, I applied the knowledge and skills acquired throughout the program to complete, deploy, and operate a cloud-based application on AWS. This experience strengthened my understanding of how AWS services—including Compute, Storage, Database, Networking, Security, Containers, and Monitoring—work together to support a production-ready system.
 
-I realized that successfully deploying an application is only the first step. A reliable cloud solution must also be continuously monitored, secured with appropriate access controls, and regularly optimized for cost efficiency. My experience with an Amazon RDS instance that continued running unexpectedly reinforced the importance of responsible cloud resource management and proactive cost monitoring.
+I realized that successfully deploying an application is only the first step. A reliable cloud solution also requires continuous monitoring, proper security practices, regular maintenance, and ongoing cost optimization. The unexpected AWS charges caused by an unattended Amazon RDS instance provided a valuable real-world lesson about responsible cloud resource management.
 
-After eight weeks of internship training, I significantly strengthened my AWS knowledge and improved my practical skills in infrastructure deployment, containerization, CI/CD automation, cloud monitoring, and troubleshooting. This internship has provided a solid foundation for my future career in Cloud Computing, DevOps, and AWS application development.
-
-</section>
-</div>
+After completing the eight-week internship, I significantly improved my AWS knowledge, cloud infrastructure deployment skills, containerization experience, CI/CD implementation, and troubleshooting capabilities. These experiences have established a strong foundation for pursuing a career in Cloud Computing, DevOps, and AWS-based application development.

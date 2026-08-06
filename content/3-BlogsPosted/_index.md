@@ -6,8 +6,6 @@ chapter: false
 pre: " <b> 3. </b> "
 ---
 
-# Blogs Posted
-
 During my internship, I researched official AWS Blog articles and combined them with my own hands-on experience to write technical blog posts. These articles summarize what I learned, share practical experiences, and introduce AWS architectures and best practices to the community.
 
 The following are the blog posts I have published on the **AWS Study Group**:

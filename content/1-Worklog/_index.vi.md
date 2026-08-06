@@ -6,7 +6,6 @@ chapter: false
 pre: " <b> 1. </b> "
 ---
 
-# Nhật ký công việc
 
 Trong suốt **8 tuần thực tập** tại **First Cloud AI Journey**, tôi đã có cơ hội tìm hiểu và làm việc với nhiều dịch vụ của Amazon Web Services (AWS), từng bước phát triển từ những kiến thức cơ bản về điện toán đám mây đến triển khai nâng cao, tự động hóa và vận hành hệ thống trên Cloud.
 
