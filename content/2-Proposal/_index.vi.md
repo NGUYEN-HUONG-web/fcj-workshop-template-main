@@ -469,4 +469,4 @@ AI Learning Assistant Platform là một giải pháp hỗ trợ học tập ứ
 
 Với kiến trúc được thiết kế theo hướng mở, hệ thống có thể tiếp tục mở rộng và tích hợp thêm nhiều dịch vụ AI cũng như các dịch vụ AWS trong tương lai. Dự án không chỉ đáp ứng mục tiêu xây dựng một trợ lý học tập thông minh mà còn tạo nền tảng cho việc nghiên cứu, phát triển và ứng dụng Generative AI trong lĩnh vực giáo dục.
 
-Bên cạnh việc xây dựng nền tảng học tập thông minh, dự án còn minh họa cách triển khai một ứng dụng Generative AI trên Amazon Web Services thông qua Docker Compose, Amazon EC2, Amazon S3, Amazon CloudWatch và các dịch vụ bảo mật của AWS. Đây là nền tảng để tiếp tục mở rộng hệ thống trong tương lai.
+Bên cạnh việc xây dựng nền tảng học tập thông minh, dự án còn minh họa cách triển khai một ứng dụng Generative AI trên Amazon Web Services thông qua Docker Compose, Amazon EC2, Amazon ECR, GitHub Actions, Amazon S3, Amazon CloudWatch và các dịch vụ bảo mật của AWS.
