@@ -23,6 +23,9 @@ pre: "<b> 4.2 </b>"
 | **Hình thức** | Trình bày kỹ thuật kết hợp thực hành |
 | **Trang sự kiện** | [Xem trên Luma](https://luma.com/8qewnfuu) |
 
+![Ảnh minh họa 2](/images/event2.png)
+
+
 ## 2. Tổng quan sự kiện
 
 **Agent Forge – Deepdive Day 2** là buổi thứ hai trong chuỗi workshop Agent Forge kéo dài ba ngày.

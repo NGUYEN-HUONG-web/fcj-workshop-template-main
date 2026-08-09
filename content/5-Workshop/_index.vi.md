@@ -122,66 +122,19 @@ EventBridge kích hoạt Lambda theo lịch. Lambda gọi EC2 API để bật m�
 
 AWS Budgets theo dõi chi phí dự án và gửi cảnh báo khi chi phí thực tế hoặc dự báo tiến gần ngưỡng đã cấu hình.
 
-## Kiểm thử ứng dụng
-
-Mở AI Learning Assistant qua Public IP hoặc `FE_DOMAIN` và kiểm tra các luồng sau.
-
-### Trợ lý học bài
-
-Chọn chế độ **Giải thích** và nhập:
-
-```text
-Giải thích sự khác nhau giữa Amazon S3 và Amazon EBS bằng ví dụ dễ hiểu.
-```
-
-Sau đó gửi câu hỏi tiếp theo:
-
-```text
-Cho tôi một tình huống thực tế để lựa chọn giữa hai dịch vụ này.
-```
-
-Trợ lý phải hiểu “hai dịch vụ này” là S3 và EBS trong lượt hội thoại trước.
-
-### Học tập dựa trên tài liệu
-
-Đính kèm tài liệu mẫu và nhập:
-
-```text
-Hãy tóm tắt nội dung chính của tài liệu này và tạo 3 câu hỏi ôn tập.
-```
-
-Ứng dụng sử dụng tài liệu làm ngữ cảnh hội thoại hoặc truy xuất các đoạn liên quan từ Knowledge Base thông qua PostgreSQL và pgvector.
-
-### Luyện tập và theo dõi tiến độ
-
-Mở một bài học, trả lời một câu hỏi, xem kết quả, lật một thẻ nhớ và kiểm tra lịch sử học tập. Các bước này xác nhận chu trình học, luyện tập, ôn tập và theo dõi tiến độ hoạt động đầy đủ.
-
-## Checklist nghiệm thu
-
-- [ ] EC2 đang `Running` và status checks là `2/2 passed`.
-- [ ] Tất cả Docker container cần thiết đang chạy.
-- [ ] Website truy cập được qua địa chỉ đã cấu hình.
-- [ ] Docker image cần thiết tồn tại trong Amazon ECR.
-- [ ] GitHub Actions workflow gần nhất thành công.
-- [ ] MinIO và Amazon S3 đúng với vai trò lưu trữ đã triển khai.
-- [ ] CloudWatch nhận metric và Dashboard hiển thị dữ liệu.
-- [ ] CloudWatch Alarm và SNS notification đã được cấu hình.
-- [ ] Lambda và EventBridge có lịch cùng múi giờ chính xác.
-- [ ] AWS Budgets hiển thị budget của dự án.
-- [ ] Mô hình AI, ứng dụng và Knowledge Base phản hồi thành công.
-- [ ] Hội thoại theo ngữ cảnh và xử lý tài liệu hoạt động.
-- [ ] Bài luyện tập, thẻ nhớ và lịch sử học tập truy cập được.
-
 ## Nội dung Workshop
 
-1. [Tổng quan kiến trúc và hệ thống](5.1-workshop-overview/)
-2. [Chuẩn bị môi trường](5.2-prerequiste/)
-3. [Triển khai Amazon EC2](5.3-deploy-ec2/)
-4. [Dịch vụ ứng dụng và lưu trữ](5.4-s3-onprem/)
-5. [Bảo mật và endpoint policy](5.5-policy/)
-6. [Dọn dẹp tài nguyên AWS](5.6-cleanup/)
+1. [Giới thiệu](5.1-workshop-overview/)
+2. [Kiến trúc hệ thống](5.2-prerequiste/)
+3. [Triển khai môi trường](5.3-environment-deployment/)
+4. [Điều kiện tiên quyết và chạy local](5.4-local-setup/)
+5. [Triển khai EC2 và Docker Compose](5.5-ec2-docker/)
+6. [CI/CD với GitHub Actions và ECR](5.6-cicd-ecr/)
+7. [Lưu trữ với MinIO và Amazon S3](5.7-storage/)
+8. [Giám sát với CloudWatch và SNS](5.8-monitoring/)
+9. [Tự động hóa và tối ưu chi phí](5.9-automation-cost/)
+10. [Dọn dẹp và hướng phát triển](5.10-testing-demo/)
 
 ## Kết luận
 
 Workshop trình bày mô hình Production Lite cho nền tảng học tập Generative AI trên AWS. Docker Compose giúp triển khai nhất quán; GitHub Actions và ECR hỗ trợ quản lý phiên bản; CloudWatch và SNS cung cấp giám sát; Lambda, EventBridge và AWS Budgets hỗ trợ kiểm soát chi phí; ứng dụng cung cấp trợ lý AI dựa trên tài liệu cùng các tính năng học tập thực tế.
-

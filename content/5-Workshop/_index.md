@@ -122,66 +122,19 @@ EventBridge invokes Lambda functions on a schedule. Lambda calls the EC2 API to 
 
 AWS Budgets tracks project spending and sends notifications when actual or forecast cost approaches a configured threshold.
 
-## Application validation
-
-Open the AI Learning Assistant through its Public IP or `FE_DOMAIN` and validate the following flows.
-
-### Learning assistant
-
-Select **Explain** mode and ask:
-
-```text
-Explain the difference between Amazon S3 and Amazon EBS with an easy-to-understand example.
-```
-
-Then send a contextual follow-up:
-
-```text
-Give me a practical situation for choosing between these two services.
-```
-
-The assistant should understand that “these two services” refers to S3 and EBS from the previous turn.
-
-### Document-grounded learning
-
-Attach a tested document and ask:
-
-```text
-Summarize the main content of this document and create three review questions.
-```
-
-The application should use the document as conversation context or retrieve relevant chunks from the Knowledge Base through PostgreSQL and pgvector.
-
-### Practice and progress
-
-Open a lesson, complete one quiz question, review its result, flip a flashcard, and inspect the learning history. These checks validate the complete learning, practice, review, and progress-tracking cycle.
-
-## Acceptance checklist
-
-- [ ] EC2 is `Running` and status checks show `2/2 passed`.
-- [ ] All required Docker containers are running.
-- [ ] The website is reachable through the configured address.
-- [ ] The required application image exists in Amazon ECR.
-- [ ] The latest GitHub Actions workflow succeeds.
-- [ ] MinIO and Amazon S3 match their implemented storage roles.
-- [ ] CloudWatch receives metrics and dashboard widgets display data.
-- [ ] CloudWatch alarms and SNS notifications are configured.
-- [ ] Lambda and EventBridge schedules exist with the correct time zone.
-- [ ] AWS Budgets displays the project budget.
-- [ ] The AI model, application, and Knowledge Base respond successfully.
-- [ ] Contextual chat and document processing work correctly.
-- [ ] Quiz, flashcard, and learning-history features are accessible.
-
 ## Workshop contents
 
-1. [Architecture and system overview](5.1-workshop-overview/)
-2. [Environment prerequisites](5.2-prerequiste/)
-3. [Deploy Amazon EC2](5.3-deploy-ec2/)
-4. [Application services and storage](5.4-s3-onprem/)
-5. [Security and endpoint policies](5.5-policy/)
-6. [Clean up AWS resources](5.6-cleanup/)
+1. [Introduction](5.1-workshop-overview/)
+2. [System architecture](5.2-prerequiste/)
+3. [Environment deployment](5.3-environment-deployment/)
+4. [Prerequisites and local setup](5.4-local-setup/)
+5. [Deploy EC2 and Docker Compose](5.5-ec2-docker/)
+6. [CI/CD with GitHub Actions and ECR](5.6-cicd-ecr/)
+7. [Storage with MinIO and Amazon S3](5.7-storage/)
+8. [Monitoring with CloudWatch and SNS](5.8-monitoring/)
+9. [Automation and cost optimization](5.9-automation-cost/)
+10. [Cleanup and future development](5.10-testing-demo/)
 
 ## Conclusion
 
 This workshop demonstrates a production-lite Generative AI platform on AWS. Docker Compose provides a repeatable application stack; GitHub Actions and ECR support versioned delivery; CloudWatch and SNS provide operational visibility; Lambda, EventBridge, and AWS Budgets support cost control; and the application delivers document-grounded AI assistance with practical learning features.
-

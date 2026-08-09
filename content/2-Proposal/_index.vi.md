@@ -17,9 +17,8 @@ S
 |:---:|---|---|---|---|
 | 1 | Nguyễn Thị Thu Hường| 3122411079 | Trưởng nhóm | 
 | 2 | Trần Quốc Bảo | 3122411015 | Thành viên | 
-| 3 | Nguyễn Ngọc Thúy Vy | 3122411079 | Thành viên |
-| 4 |  | MSSV004 | Thành viên |
-| 5 |  | MSSV004 | Thành viên |
+| 3 | Nguyễn Ngọc Thúy Vy | 3122411256 | Thành viên |
+
 ---
 # Phần 2. Tổng quan dự án
 

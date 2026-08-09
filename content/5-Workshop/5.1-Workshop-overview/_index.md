@@ -1,86 +1,141 @@
 ---
-title: "Workshop Overview"
-date: 2026-08-05
+title: "Introduction"
+date: 2026-08-09
 weight: 1
 chapter: false
 pre: " <b> 5.1. </b> "
 ---
 
-# Workshop Overview
+# 5.1 Introduction
 
-## Introduction
+## 5.1.1 Background
 
-In this workshop, we will deploy the **AI Learning Assistant Platform** on **Amazon Web Services (AWS)**.
+The rapid development of artificial intelligence, large language models, and cloud computing has created new opportunities in education. AI can support information retrieval, explain concepts, guide learners, generate review questions, and interact with users through natural language.
 
-The AI Learning Assistant Platform is an intelligent learning platform built on **FastGPT (Customized)** and the **Retrieval-Augmented Generation (RAG)** architecture. It enables users to upload learning materials, build a **Knowledge Base**, and interact with an AI assistant that generates responses based on the uploaded documents.
+In practice, students and instructors work with textbooks, slides, laboratory guides, reference materials, and research papers. As the volume of material grows, locating a specific piece of information becomes time-consuming and reduces learning efficiency.
 
-The entire system is deployed on **Amazon EC2** using **Docker Compose**, together with **Amazon ECR**, **GitHub Actions**, **Amazon S3**, **Amazon CloudWatch**, **AWS IAM**, and **Security Groups** to establish a complete workflow for deployment, monitoring, security, and application management on AWS.
+Conventional AI chatbots mainly rely on knowledge acquired during training. They do not automatically understand a user's private documents and can produce inaccurate or unsupported answers, a problem commonly known as **AI hallucination**.
 
-> **Figure 5.1. Deployment Architecture of the AI Learning Assistant Platform on AWS**
+> **📷 Insert an image here:** Learning materials distributed across multiple locations and difficult to search.  
+> File: `/images/5-Workshop/5.1-Introduction/learning-problem.png`
+<!-- ![The learning-document management problem](/images/5-Workshop/5.1-Introduction/learning-problem.png) -->
 
-![Figure 5.1](/images/5.1.ws.png)
+## 5.1.2 Problem statement
 
----
+The project addresses the following requirements:
 
-# Deployment Architecture
+- Centralize learning materials on one platform.
+- Retrieve information by meaning instead of exact keyword matching.
+- Generate answers grounded in user-provided documents.
+- Reduce unsupported information and improve source traceability.
+- Combine theory, question answering, practice, and progress tracking.
+- Deploy the system on AWS at a cost appropriate for an internship project.
 
-The AI Learning Assistant Platform follows a **Client–Server** architecture deployed on **Amazon Web Services (AWS)**.
+## 5.1.3 Proposed solution
 
-Users access the platform through a web browser. Requests are routed through **Nginx**, which forwards them to the **Frontend** and **Backend** services. The Backend is responsible for business logic, Knowledge Base management, and the **Retrieval-Augmented Generation (RAG)** workflow.
+The **AI Learning Assistant Platform** is an intelligent learning platform customized from FastGPT and built around **Retrieval-Augmented Generation (RAG)**.
 
-The entire application is containerized using **Docker Compose** and deployed on a single **Amazon EC2** instance, integrating AWS services for storage, monitoring, backup, and security.
+When a user uploads a document, the system extracts its content, divides it into smaller chunks, creates vector embeddings, and builds a Knowledge Base. When the user asks a question, the system retrieves relevant chunks, adds them to the context, and sends the resulting prompt to a large language model to generate an answer.
 
-### System Components
+Compared with a conventional chatbot, the solution offers three key differences:
 
-| Component | Description |
-|------------|-------------|
-| Amazon EC2 | Hosts the entire AI Learning Assistant Platform |
-| Docker Compose | Manages and orchestrates Docker containers |
-| Nginx | Reverse Proxy |
-| Frontend | User interface (Next.js / React) |
-| Backend | FastGPT (Customized), AI Chat, and RAG processing |
-| MongoDB | Stores application and user data |
-| PostgreSQL + pgvector | Stores vector embeddings for semantic retrieval |
-| MinIO | Stores uploaded learning materials |
-| Amazon S3 | Stores backup data |
-| Amazon ECR | Stores Docker images |
-| GitHub Actions | Automates the CI/CD pipeline |
-| Amazon CloudWatch | Monitors system performance and logs |
-| AWS IAM | Manages access permissions |
-| Security Group | Controls inbound and outbound network traffic |
+1. Answers are grounded in the user's own documents.
+2. Semantic Search finds relevant content even when a question does not contain the document's exact keywords.
+3. A Knowledge Base can be reused across conversations and learning features.
 
----
+> **📷 Insert an image here:** AI Learning Assistant home page after sign-in.  
+> File: `/images/5-Workshop/5.1-Introduction/application-home.png`
+<!-- ![AI Learning Assistant home page](/images/5-Workshop/5.1-Introduction/application-home.png) -->
 
-# System Workflow
+## 5.1.4 Project objectives
 
-After the platform is successfully deployed, it operates as follows:
+### Functional objectives
 
-1. Users sign in to the platform.
-2. Users upload learning materials.
-3. The system processes documents, performs chunking, and generates vector embeddings.
-4. The processed data is stored in the Knowledge Base.
-5. Users submit questions through the AI Chat interface.
-6. The Backend executes the Retrieval-Augmented Generation (RAG) process to retrieve relevant information.
-7. The AI model generates responses based on the retrieved context.
-8. The generated answer is returned to the user interface.
+- Manage AWS learning paths, subjects, and lesson content.
+- Upload and manage learning documents.
+- Build a Knowledge Base from uploaded documents.
+- Provide Explain, Guide, and Exam Practice assistant modes.
+- Support multi-turn conversations while preserving context.
+- Summarize documents and generate review questions.
+- Provide quizzes, flashcards, and learning-history tracking.
+- Display references when supported by the selected workflow.
 
-> **Figure 5.2. Workflow of the AI Learning Assistant Platform**
+### Technical objectives
 
-![Figure 5.2](/images/5.2.ws.png)
+- Containerize the application with Docker and Docker Compose.
+- Deploy the system on Amazon EC2.
+- Store versioned container images in Amazon ECR.
+- Automate image builds with GitHub Actions.
+- Use MongoDB, PostgreSQL/pgvector, Redis, and MinIO for their designated roles.
+- Back up essential data to Amazon S3.
+- Monitor the system with CloudWatch, alarms, and SNS.
+- Schedule EC2 start and stop operations with Lambda and EventBridge.
+- Track expenditure with AWS Budgets.
 
----
+> **📷 Insert an image here:** Main functions including learning paths, AI assistant, documents, quizzes, and flashcards.  
+> File: `/images/5-Workshop/5.1-Introduction/main-features.png`
+<!-- ![Main system functions](/images/5-Workshop/5.1-Introduction/main-features.png) -->
 
-# Learning Outcomes
+## 5.1.5 Project scope
 
-After completing this workshop, you will be able to:
+### Functional scope
 
-- Deploy the AI Learning Assistant Platform on Amazon EC2 using Docker Compose.
-- Deploy and manage a multi-container application on AWS.
-- Build a CI/CD pipeline using GitHub Actions and Amazon ECR.
-- Configure Amazon S3 for data backup.
-- Monitor system performance with Amazon CloudWatch.
-- Configure AWS IAM and Security Groups to secure the platform.
-- Access and verify all core features of the AI Learning Assistant Platform.
+The workshop focuses on an MVP containing the essential learning functions: content management, RAG-based AI question answering, document reading, quizzes, flashcards, and activity history.
 
----
+### Deployment scope
 
+The system uses a **Production Lite** model on one Amazon EC2 instance. Application services run through Docker Compose; EBS provides persistent volumes; ECR stores container images; S3 stores backups; CloudWatch supplies monitoring; and Lambda with EventBridge supports operational automation.
+
+### Current exclusions
+
+- Multi-Availability-Zone high availability.
+- Auto Scaling and large-scale container orchestration.
+- Fully managed databases for every data component.
+- Multi-Region disaster recovery.
+- Advanced learning analytics and a complete instructor dashboard.
+
+These capabilities are reserved for future development after the MVP stage.
+
+## 5.1.6 Process overview
+
+Learner flow:
+
+```text
+Sign in
+   ↓
+Select a learning path or subject
+   ↓
+Open a lesson or upload a document
+   ↓
+Ask the AI assistant a question
+   ↓
+Receive a Knowledge Base-grounded answer
+   ↓
+Review with quizzes and flashcards
+   ↓
+Track learning history
+```
+
+System operations flow:
+
+```text
+Source code → GitHub Actions → Amazon ECR → Amazon EC2
+
+User → Nginx → AI Learning Assistant → Data and AI services
+
+CloudWatch → Alarm → SNS
+
+EventBridge → Lambda → Start/Stop EC2
+```
+
+> **📷 Insert an image here:** Workflow from the learner to the learning functions and AWS services.  
+> File: `/images/5-Workshop/5.1-Introduction/system-workflow.png`
+<!-- ![System workflow](/images/5-Workshop/5.1-Introduction/system-workflow.png) -->
+
+## 5.1.7 Solution value
+
+For learners, the platform reduces time spent searching for information, provides contextual explanations, and combines study, question answering, and practice in a unified workflow.
+
+For administrators, the container-based architecture clearly separates service responsibilities, while AWS provides deployment infrastructure, storage, monitoring, alerts, automation, and cost control.
+
+The solution can later be adapted for schools, training centers, or enterprises that need an intelligent question-answering system grounded in internal documents.

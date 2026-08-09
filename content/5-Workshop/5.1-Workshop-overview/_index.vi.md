@@ -1,86 +1,142 @@
 ---
-title: "Workshop Overview"
-date: 2026-08-05
+title: "Giới thiệu"
+date: 2026-08-09
 weight: 1
 chapter: false
 pre: " <b> 5.1. </b> "
 ---
 
-# Tổng quan Workshop
+# 5.1 Giới thiệu
 
-## Giới thiệu
+## 5.1.1 Bối cảnh
 
-Trong Workshop này, chúng ta sẽ triển khai **AI Learning Assistant Platform** trên nền tảng **Amazon Web Services (AWS)**.
+Sự phát triển nhanh của Trí tuệ nhân tạo, mô hình ngôn ngữ lớn và điện toán đám mây tạo ra nhiều cơ hội ứng dụng trong giáo dục. AI không chỉ hỗ trợ tìm kiếm thông tin mà còn có thể giải thích kiến thức, hướng dẫn học tập, tạo câu hỏi ôn tập và tương tác với người học bằng ngôn ngữ tự nhiên.
 
-AI Learning Assistant Platform là một nền tảng học tập thông minh được phát triển dựa trên **FastGPT (Customized)** và kiến trúc **Retrieval-Augmented Generation (RAG)**. Hệ thống cho phép người dùng tải tài liệu học tập, xây dựng **Knowledge Base** và sử dụng trí tuệ nhân tạo để trả lời câu hỏi dựa trên nội dung của tài liệu.
+Trong thực tế, sinh viên và giảng viên thường sử dụng nhiều loại tài liệu như giáo trình, slide, bài thực hành, tài liệu tham khảo và bài nghiên cứu. Khi số lượng tài liệu tăng, việc tìm lại một nội dung cụ thể trở nên mất thời gian và làm giảm hiệu quả học tập.
 
-Toàn bộ hệ thống được triển khai trên **Amazon EC2** bằng **Docker Compose**, kết hợp với **Amazon ECR**, **GitHub Actions**, **Amazon S3**, **Amazon CloudWatch**, **AWS IAM** và **Security Group** nhằm xây dựng một quy trình triển khai, giám sát và quản lý ứng dụng AI trên AWS.
+Các chatbot AI thông thường chủ yếu dựa vào kiến thức có sẵn từ quá trình huấn luyện. Chúng không tự động hiểu tài liệu riêng của người dùng và có thể tạo câu trả lời sai hoặc không có căn cứ, thường được gọi là **AI Hallucination**.
 
-> **Hình 5.1. Kiến trúc triển khai AI Learning Assistant Platform trên AWS**
+> **📷 Chèn ảnh tại đây:** Minh họa vấn đề tài liệu học tập phân tán và khó tìm kiếm.  
+> File: `/images/5-Workshop/5.1-Introduction/learning-problem.png`
+<!-- ![Vấn đề quản lý tài liệu học tập](/images/5-Workshop/5.1-Introduction/learning-problem.png) -->
 
-![Hình 5.1](/images/5.1.ws.png)
+## 5.1.2 Bài toán cần giải quyết
 
----
+Dự án cần giải quyết các yêu cầu chính:
 
-## Kiến trúc triển khai
+- Cho phép người dùng tập trung tài liệu học tập vào một nền tảng.
+- Tìm kiếm nội dung theo ý nghĩa thay vì chỉ khớp từ khóa.
+- Tạo câu trả lời dựa trên tài liệu do người dùng cung cấp.
+- Giảm thông tin không chính xác và tăng khả năng truy vết nguồn.
+- Kết hợp học lý thuyết, hỏi đáp, luyện tập và theo dõi tiến độ.
+- Triển khai hệ thống trên AWS với chi phí phù hợp phạm vi đồ án.
 
-AI Learning Assistant Platform được triển khai theo mô hình **Client – Server** trên nền tảng Amazon Web Services (AWS).
+## 5.1.3 Giải pháp đề xuất
 
-Người dùng truy cập hệ thống thông qua trình duyệt Web. Các yêu cầu được chuyển đến **Nginx**, sau đó điều phối đến **Frontend** và **Backend**. Backend chịu trách nhiệm xử lý nghiệp vụ, quản lý Knowledge Base và thực hiện quy trình **Retrieval-Augmented Generation (RAG)**.
+**AI Learning Assistant Platform** là nền tảng trợ lý học tập thông minh được tùy biến từ FastGPT và xây dựng theo phương pháp **Retrieval-Augmented Generation (RAG)**.
 
-Toàn bộ ứng dụng được đóng gói dưới dạng các **Docker Container** và triển khai trên một **Amazon EC2**, kết hợp với các dịch vụ lưu trữ, giám sát, sao lưu và bảo mật của AWS.
+Khi người dùng tải tài liệu lên, hệ thống trích xuất nội dung, chia tài liệu thành các đoạn nhỏ, tạo vector embedding và xây dựng Knowledge Base. Khi có câu hỏi, hệ thống tìm các đoạn liên quan, ghép chúng vào ngữ cảnh và gửi prompt đến mô hình ngôn ngữ lớn để tạo câu trả lời.
 
-### Thành phần hệ thống
+So với chatbot truyền thống, giải pháp có ba điểm khác biệt:
 
-| Thành phần | Vai trò |
-|------------|----------|
-| Amazon EC2 | Chạy toàn bộ AI Learning Assistant Platform |
-| Docker Compose | Quản lý và điều phối các Docker Container |
-| Nginx | Reverse Proxy |
-| Frontend | Giao diện người dùng (Next.js / React) |
-| Backend | FastGPT (Customized), AI Chat và RAG |
-| MongoDB | Lưu trữ dữ liệu hệ thống |
-| PostgreSQL + pgvector | Lưu trữ Vector Embedding phục vụ RAG |
-| MinIO | Lưu trữ tài liệu học tập |
-| Amazon S3 | Sao lưu dữ liệu |
-| Amazon ECR | Quản lý Docker Image |
-| GitHub Actions | Tự động hóa quy trình CI/CD |
-| Amazon CloudWatch | Giám sát hiệu năng và trạng thái hệ thống |
-| AWS IAM | Quản lý quyền truy cập |
-| Security Group | Kiểm soát lưu lượng truy cập mạng |
+1. Câu trả lời được tạo dựa trên tài liệu riêng của người dùng.
+2. Semantic Search giúp tìm nội dung liên quan ngay cả khi câu hỏi không dùng đúng từ khóa trong tài liệu.
+3. Knowledge Base có thể tái sử dụng cho nhiều cuộc hội thoại và chức năng học tập.
 
----
+> **📷 Chèn ảnh tại đây:** Trang chính AI Learning Assistant sau khi đăng nhập.  
+> File: `/images/5-Workshop/5.1-Introduction/application-home.png`
+<!-- ![Trang chính AI Learning Assistant](/images/5-Workshop/5.1-Introduction/application-home.png) -->
 
-## Quy trình hoạt động
+## 5.1.4 Mục tiêu dự án
 
-Sau khi hệ thống được triển khai thành công, AI Learning Assistant Platform hoạt động theo quy trình sau:
+### Mục tiêu chức năng
 
-1. Người dùng đăng nhập vào hệ thống.
-2. Tải tài liệu học tập lên nền tảng.
-3. Hệ thống xử lý tài liệu, thực hiện Chunking và tạo Vector Embedding.
-4. Dữ liệu được lưu vào Knowledge Base.
-5. Người dùng gửi câu hỏi bằng ngôn ngữ tự nhiên.
-6. Backend thực hiện quy trình Retrieval-Augmented Generation (RAG) để truy xuất thông tin liên quan.
-7. Mô hình AI tạo câu trả lời dựa trên dữ liệu được truy xuất.
-8. Kết quả được trả về giao diện người dùng.
+- Quản lý lộ trình, môn học và nội dung bài học AWS.
+- Cho phép tải lên và quản lý tài liệu học tập.
+- Xây dựng Knowledge Base từ tài liệu.
+- Cung cấp trợ lý với các chế độ Giải thích, Hướng dẫn và Luyện thi.
+- Hỗ trợ hội thoại nhiều lượt và duy trì ngữ cảnh.
+- Tóm tắt tài liệu và tạo câu hỏi ôn tập.
+- Cung cấp bài luyện tập, thẻ nhớ và lịch sử học tập.
+- Hiển thị nguồn tham khảo khi workflow hỗ trợ.
 
-> **Hình 5.2. Quy trình hoạt động của AI Learning Assistant Platform**
+### Mục tiêu kỹ thuật
 
-![Hình 5.2](/images/5.2.ws.png)
+- Container hóa ứng dụng bằng Docker và Docker Compose.
+- Triển khai hệ thống trên Amazon EC2.
+- Lưu Docker image theo phiên bản trong Amazon ECR.
+- Tự động build bằng GitHub Actions.
+- Sử dụng MongoDB, PostgreSQL/pgvector, Redis và MinIO đúng vai trò.
+- Sao lưu dữ liệu cần thiết trên Amazon S3.
+- Giám sát bằng CloudWatch, Alarm và SNS.
+- Tự động bật/tắt EC2 bằng Lambda và EventBridge.
+- Theo dõi chi phí bằng AWS Budgets.
 
----
+> **📷 Chèn ảnh tại đây:** Màn hình tổng hợp các chức năng chính: lộ trình, trợ lý AI, tài liệu, bài luyện tập và thẻ nhớ.  
+> File: `/images/5-Workshop/5.1-Introduction/main-features.png`
+<!-- ![Các chức năng chính của hệ thống](/images/5-Workshop/5.1-Introduction/main-features.png) -->
 
-## Kết quả đạt được
+## 5.1.5 Phạm vi dự án
 
-Sau khi hoàn thành Workshop này, bạn sẽ có thể:
+### Phạm vi chức năng
 
-- Triển khai AI Learning Assistant Platform trên Amazon EC2 bằng Docker Compose.
-- Triển khai và vận hành ứng dụng đa container trên AWS.
-- Thiết lập quy trình CI/CD bằng GitHub Actions và Amazon ECR.
-- Cấu hình Amazon S3 để sao lưu dữ liệu.
-- Giám sát hệ thống bằng Amazon CloudWatch.
-- Thiết lập AWS IAM và Security Group để bảo vệ hệ thống.
-- Truy cập và kiểm thử toàn bộ chức năng của AI Learning Assistant Platform.
+Workshop tập trung vào phiên bản MVP với các chức năng học tập cốt lõi: quản lý nội dung, hỏi đáp AI dựa trên RAG, đọc tài liệu, bài luyện tập, thẻ nhớ và lịch sử hoạt động.
 
----
+### Phạm vi triển khai
+
+Hệ thống sử dụng mô hình **Production Lite** trên một Amazon EC2 instance. Các dịch vụ ứng dụng chạy bằng Docker Compose; EBS lưu volume; ECR lưu image; S3 lưu backup; CloudWatch cung cấp giám sát; Lambda và EventBridge hỗ trợ tự động hóa.
+
+### Ngoài phạm vi hiện tại
+
+- High Availability trên nhiều Availability Zone.
+- Auto Scaling và container orchestration quy mô lớn.
+- Managed database cho toàn bộ thành phần dữ liệu.
+- Disaster Recovery đa Region.
+- Phân tích học tập nâng cao và dashboard giảng viên hoàn chỉnh.
+
+Các nội dung này được xem là hướng phát triển sau giai đoạn MVP.
+
+## 5.1.6 Tổng quan quy trình hoạt động
+
+Luồng sử dụng của người học:
+
+```text
+Đăng nhập
+   ↓
+Chọn lộ trình hoặc môn học
+   ↓
+Mở bài học / tải tài liệu
+   ↓
+Đặt câu hỏi cho trợ lý AI
+   ↓
+Nhận câu trả lời dựa trên Knowledge Base
+   ↓
+Ôn tập bằng câu hỏi và thẻ nhớ
+   ↓
+Theo dõi lịch sử học tập
+```
+
+Luồng vận hành của hệ thống:
+
+```text
+Source code → GitHub Actions → Amazon ECR → Amazon EC2
+
+Người dùng → Nginx → AI Learning Assistant → Data & AI Services
+
+CloudWatch → Alarm → SNS
+
+EventBridge → Lambda → Start/Stop EC2
+```
+
+> **📷 Chèn ảnh tại đây:** Sơ đồ quy trình hoạt động từ người dùng đến các chức năng học tập và dịch vụ AWS.  
+> File: `/images/5-Workshop/5.1-Introduction/system-workflow.png`
+<!-- ![Quy trình hoạt động của hệ thống](/images/5-Workshop/5.1-Introduction/system-workflow.png) -->
+
+## 5.1.7 Giá trị của giải pháp
+
+Đối với người học, nền tảng giúp giảm thời gian tìm tài liệu, cung cấp giải thích theo ngữ cảnh và kết hợp học–hỏi–luyện tập trong một quy trình thống nhất.
+
+Đối với người quản trị, kiến trúc container giúp quản lý dịch vụ rõ ràng; AWS cung cấp hạ tầng triển khai, lưu trữ, giám sát, cảnh báo, tự động hóa và kiểm soát chi phí.
+
+Giải pháp có thể được mở rộng cho trường học, trung tâm đào tạo hoặc doanh nghiệp cần xây dựng hệ thống hỏi đáp thông minh dựa trên tài liệu nội bộ.
 
