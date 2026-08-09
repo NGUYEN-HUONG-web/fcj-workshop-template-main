@@ -8,7 +8,7 @@ pre: " <b> 2. </b> "
 
 # AI Learning Assistant Platform
 
-## An Intelligent Document-Based Learning Assistant Platform Deployed on AWS
+### An Intelligent Document-Based Learning Assistant Platform Deployed on AWS
 
 # Part 1. Project Introduction
 

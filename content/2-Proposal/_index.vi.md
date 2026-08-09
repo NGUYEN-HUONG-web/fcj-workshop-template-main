@@ -8,11 +8,11 @@ pre: " <b> 2. </b> "
 
 # AI Learning Assistant Platform
 
-## Nền tảng trợ lý học tập thông minh dựa trên tài liệu triển khai trên AWS
+### Nền tảng trợ lý học tập thông minh dựa trên tài liệu triển khai trên AWS
 # Phần 1. Giới thiệu dự án
 
 # Thông tin nhóm thực hiện
-
+S
 | STT | Họ và tên | Mã số sinh viên | Vai trò |
 |:---:|---|---|---|---|
 | 1 | Nguyễn Thị Thu Hường| 3122411079 | Trưởng nhóm | 
