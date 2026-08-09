@@ -9,8 +9,19 @@ pre: " <b> 2. </b> "
 # AI Learning Assistant Platform
 
 ## Nền tảng trợ lý học tập thông minh dựa trên tài liệu triển khai trên AWS
-
 # Phần 1. Giới thiệu dự án
+
+# Thông tin nhóm thực hiện
+
+| STT | Họ và tên | Mã số sinh viên | Vai trò |
+|:---:|---|---|---|---|
+| 1 | Nguyễn Thị Thu Hường| 3122411079 | Trưởng nhóm | 
+| 2 | Trần Quốc Bảo | 3122411015 | Thành viên | 
+| 3 | Nguyễn Ngọc Thúy Vy | 3122411079 | Thành viên |
+| 4 |  | MSSV004 | Thành viên |
+| 5 |  | MSSV004 | Thành viên |
+---
+# Phần 2. Tổng quan dự án
 
 ## 1.1 Bối cảnh
 

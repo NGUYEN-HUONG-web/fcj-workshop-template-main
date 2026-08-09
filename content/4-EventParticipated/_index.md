@@ -10,9 +10,9 @@ pre: " <b> 4. </b> "
 During my internship, I participated in two events. Each one was a memorable experience that provided new, interesting, and useful knowledge, along with gifts and wonderful moments.
 
 ### [Event 1](4.1-Event1/)  
-&emsp;**Event Name:** Cloud Architect  
+&emsp;**Event Name:**  FCAJ Community Day  
 
-&emsp;**Date & Time:** 09:00, June 20, 2026  
+&emsp;**Date & Time:** 09:00, June 22, 2026  
 
 &emsp;**Location:** 26th Floor, Bitexco Tower, 02 Hai Trieu Street, Saigon Ward, Ho Chi Minh City  
 
@@ -21,7 +21,7 @@ During my internship, I participated in two events. Each one was a memorable exp
 ---
 
 ### [Event 2](4.2-Event2/)  
-&emsp;**Event Name:** FCAJ Community Day  
+&emsp;**Event Name:** Agent Forge – Deepdive Day 2 
 
 &emsp;**Date & Time:** 09:00, June 27, 2026  
 
@@ -30,12 +30,3 @@ During my internship, I participated in two events. Each one was a memorable exp
 &emsp;**Role:** Attendee  
 
 ---
-
-### [Event 3](4.3-Event3/)  
-&emsp;**Event Name:** Cloud Architect Meetup  
-
-&emsp;**Date & Time:** 14:00, August 20, 2025  
-
-&emsp;**Location:** Online / Hybrid session  
-
-&emsp;**Role:** Attendee  

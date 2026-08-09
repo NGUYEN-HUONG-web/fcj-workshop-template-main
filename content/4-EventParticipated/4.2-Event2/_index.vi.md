@@ -1,114 +1,281 @@
 ---
-title: "FCAJ Community Day"
-date: 2024-01-01
+title: "Sự kiện 2"
+date: 2026-08-08
 weight: 2
 chapter: false
-pre: " <b> 4.2. </b> "
+pre: "<b>2. </b>"
 ---
 
-# Bài thu hoạch “FCAJ Community Day”
+# Báo cáo tham dự “Agent Forge – Deepdive Day 2”
 
-### Mục đích của sự kiện
+## 1. Thông tin sự kiện
 
-- Tìm hiểu sự phát triển của AI voice agents từ IVR và chatbot truyền thống
-- Xem cách AI hỗ trợ vận hành DevOps và tăng năng suất cho doanh nghiệp
-- Hiểu cách tích hợp MCP một cách an toàn và linh hoạt
-- Tổng hợp các bài học thực tế từ phần trình bày và demo trực tiếp
+| Hạng mục | Thông tin |
+|---|---|
+| **Tên sự kiện** | Agent Forge – Deepdive Day 2 |
+| **Chủ đề chính** | Advanced Amazon Bedrock AgentCore |
+| **Ngày tổ chức** | Ngày 8 tháng 8 năm 2026 |
+| **Thời gian** | 09:00–12:00 |
+| **Địa điểm** | Bitexco Financial Tower, số 2 đường Hải Triều, TP. Hồ Chí Minh |
+| **Người tổ chức** | Huỳnh Hoàng Long |
+| **Vai trò** | Người tham dự |
+| **Trạng thái** | Đã tham dự |
+| **Hình thức** | Trình bày kỹ thuật kết hợp thực hành |
+| **Trang sự kiện** | [Xem trên Luma](https://luma.com/8qewnfuu) |
 
-### Các phiên trình bày
+## 2. Tổng quan sự kiện
 
-- Voice Agents: Building Human-Like AI Conversations at Scale
-- AWS DevOps Agent: Your Always-Available Operations Teammate
-- AI-Powered Productivity: Workforce Planning For Enterprise
-- Building Secure Private MCP Connection with Amazon Quick
+**Agent Forge – Deepdive Day 2** là buổi thứ hai trong chuỗi workshop Agent Forge kéo dài ba ngày.
 
-### Nội dung nổi bật
+Trong khi Day 1 giới thiệu nền tảng và cách thiết lập AI Agent, Day 2 tập trung vào chủ đề:
 
-#### Voice agents và hội thoại tự nhiên
+> **Personalization, Evaluation & Optimization**
 
-- Voice agent đang dần thay thế các luồng IVR và chatbot đơn giản bằng trải nghiệm hội thoại tự nhiên hơn.
-- Phiên này nhấn mạnh ba thách thức chính: độ trễ, độ chính xác và tương tác tự nhiên.
-- Amazon Nova Sonic được giới thiệu như một foundation model speech-to-speech cho trải nghiệm voice-first.
+Nội dung chính của sự kiện là **Advanced Amazon Bedrock AgentCore**, bao gồm cách xây dựng bộ nhớ, theo dõi quá trình hoạt động, đánh giá chất lượng và tối ưu hóa AI Agent trên AWS.
 
-#### Kiến trúc gợi ý cho voice agent
+Sự kiện kết hợp giữa phần trình bày kỹ thuật, thực hành và trao đổi trực tiếp với người hướng dẫn.
 
-- Telephony xử lý luồng gọi vào và gọi ra.
-- Streaming hỗ trợ xử lý âm thanh với độ trễ thấp.
-- Bedrock cung cấp năng lực truy cập và điều phối mô hình.
-- MCP tools mở rộng khả năng của trợ lý với các công cụ bên ngoài.
+## 3. Lý do tham dự
 
-#### AWS DevOps Agent
+Nội dung sự kiện có liên quan trực tiếp đến dự án **AI Learning Assistant Platform**.
 
-- Phiên DevOps cho thấy AI có thể đóng vai trò như một đồng đội vận hành luôn sẵn sàng.
-- Trọng tâm là giảm MTTD và MTTR bằng hỗ trợ từ AI.
-- Bài trình bày cũng đề cập đến môi trường multi-cloud, hybrid và cách tiếp cận multi-agent của Bedrock AgentCore.
+Nền tảng này cho phép người dùng:
 
-#### AI hỗ trợ năng suất doanh nghiệp
+- Tải tài liệu học tập.
+- Xử lý nội dung PDF, DOCX và TXT.
+- Chia tài liệu thành các đoạn dữ liệu.
+- Tạo vector embedding.
+- Tìm kiếm thông tin trong Dataset.
+- Đặt câu hỏi dựa trên tài liệu.
+- Tạo quiz và flashcard.
+- Nhận câu trả lời từ mô hình AI.
 
-- Phiên này tập trung vào bài toán chuyển đổi HR và lập kế hoạch nhân sự.
-- Amazon Quick được giới thiệu như một trợ lý có thể hỗ trợ tự động hóa vận hành nhân sự và phân tích lực lượng lao động.
-- Nội dung nhấn mạnh sự kết hợp giữa tự động hóa và quyết định dựa trên dữ liệu.
+Dự án cần quản lý dữ liệu của từng người dùng, truy xuất đúng tài liệu và hạn chế câu trả lời không có căn cứ.
 
-#### Kết nối MCP an toàn
+Các nội dung Memory, Evaluations và Observability có thể hỗ trợ trực tiếp cho những yêu cầu này.
 
-- Phiên cuối giải thích MCP và vai trò của nó trong việc mở rộng năng lực của AI assistant.
-- Các thách thức bảo mật khi tích hợp MCP vào môi trường doanh nghiệp được phân tích khá rõ.
-- Amazon Quick VPC private connectivity là một hướng tiếp cận thực tế cho kết nối an toàn.
+## 4. Nội dung chương trình
 
-### Những gì học được
+### 4.1 Amazon Bedrock AgentCore nâng cao
 
-#### Tư duy sản phẩm và kỹ thuật
+Phiên trình bày chính giới thiệu:
 
-- AI assistant hoạt động tốt nhất khi được thiết kế cho một quy trình nghiệp vụ cụ thể.
-- Voice experience cần được tối ưu về độ trễ và cảm giác hội thoại tự nhiên.
-- Thiết kế tích hợp an toàn quan trọng không kém chất lượng mô hình.
+- **Memory:** Lưu thông tin để cá nhân hóa Agent.
+- **Evaluations:** Đánh giá chất lượng và hiệu quả hoạt động.
+- **Observability:** Theo dõi quá trình xử lý yêu cầu.
+- **Registry:** Quản lý Agent và công cụ.
+- **Harness:** Hỗ trợ phát triển và kiểm thử.
+- **Tools:** Kết nối Agent với dịch vụ bên ngoài.
+- **Optimization:** Tối ưu độ chính xác, tốc độ và chi phí.
+- **Policy:** Kiểm soát quyền truy cập và hành vi.
 
-#### Tư duy vận hành
+### 4.2 Phiên thực hành
 
-- AI có thể hỗ trợ xử lý sự cố, phân loại cảnh báo và hỗ trợ vận hành hằng ngày.
-- Multi-agent reasoning giúp mở rộng khả năng hỗ trợ cho nhiều hệ thống hơn.
-- Quan sát hệ thống và tự động hóa vẫn là yếu tố cốt lõi dù có AI.
+Các hoạt động thực hành tập trung vào:
 
-#### Tư duy ứng dụng doanh nghiệp
+1. Thêm Memory cho AI Agent.
+2. Cá nhân hóa hành vi theo người dùng.
+3. Khám phá Agent Observability.
+4. Theo dõi quá trình thực thi.
+5. Sử dụng AgentCore Evaluations.
+6. Tìm hiểu AgentCore Harness.
+7. Kiểm tra vai trò của Harness trong phát triển Agent.
 
-- Công cụ năng suất nên gắn trực tiếp với quy trình nghiệp vụ.
-- Với AI doanh nghiệp, private networking và kiểm soát truy cập là rất quan trọng.
-- Mỗi use case cần được đánh giá theo tác động, bảo mật và khả năng bảo trì.
+### 4.3 Lịch trình
 
-### Ứng dụng vào công việc
+| Thời gian | Hoạt động | Kết quả |
+|---|---|---|
+| **08:30–09:00** | Đăng ký và chuẩn bị | Sẵn sàng môi trường AWS |
+| **09:00–10:00** | Trình bày AgentCore nâng cao | Hiểu các thành phần chính |
+| **10:00–11:00** | Thực hành | Trải nghiệm Memory và Evaluations |
+| **11:00–12:00** | Thảo luận và giao lưu | Giải đáp vấn đề kỹ thuật |
 
-- Xem xét nơi voice agent có thể cải thiện hỗ trợ người dùng hoặc service desk.
-- Tìm cơ hội dùng AI cho xử lý alert và incident response.
-- Đánh giá pattern MCP trước khi kết nối hệ thống nội bộ với AI.
-- Ưu tiên private networking và governance khi triển khai AI trong production.
-- Áp dụng bài học từ sự kiện cho các dự án tự động hóa và nâng cao năng suất sau này.
+## 5. Kiến thức thu nhận được
 
-### Trải nghiệm trong event
+### 5.1 Memory
 
-Tham gia FCAJ Community Day giúp tôi nhìn AI theo hướng thực tế hơn, không chỉ là công nghệ mới mà còn là công cụ có thể hỗ trợ trực tiếp cho vận hành, năng suất và trải nghiệm người dùng. Sự kiện kết nối voice interface, DevOps automation, workforce planning và secure AI integration thành một chủ đề rất rõ ràng.
+Memory giúp Agent lưu lại thông tin cần thiết từ các lần tương tác trước.
 
-#### Voice và conversational AI
+Đối với nền tảng học tập, Memory có thể lưu:
 
-- Tôi hiểu rõ hơn cách voice agent được thiết kế để trò chuyện tự nhiên và phản hồi theo thời gian thực.
-- Phần thảo luận về latency và streaming giúp tôi thấy vì sao kiến trúc là yếu tố quyết định trong hệ thống voice.
+- Ngôn ngữ người dùng ưu tiên.
+- Mục tiêu học tập.
+- Môn học đang theo dõi.
+- Tài liệu thường xuyên sử dụng.
+- Kết quả làm quiz.
+- Chủ đề cần cải thiện.
+- Phong cách trả lời mong muốn.
+- Lịch sử câu hỏi.
 
-#### Vận hành và năng suất
+Memory cần được phân tách theo từng người dùng và không nên lưu thông tin nhạy cảm khi không cần thiết.
 
-- Phiên DevOps Agent cho thấy AI có thể giảm bớt thao tác thủ công trong vận hành.
-- Bài trình bày về workforce planning giúp tôi thấy AI có thể hỗ trợ quyết định doanh nghiệp bằng dữ liệu.
+### 5.2 Evaluations
 
-#### Bảo mật và tích hợp
+Evaluations giúp đo lường chất lượng hoạt động của Agent dựa trên các tiêu chí cụ thể:
 
-- Phiên MCP nhấn mạnh rằng hệ thống AI cần được thiết kế với kết nối an toàn ngay từ đầu.
-- Tôi cũng hiểu rõ hơn cách private networking giúp triển khai AI an toàn hơn trong môi trường production.
+- Độ chính xác của câu trả lời.
+- Mức độ liên quan.
+- Khả năng bám sát tài liệu.
+- Độ chính xác của trích dẫn.
+- Chất lượng truy xuất dữ liệu.
+- Thời gian phản hồi.
+- Tỷ lệ gọi công cụ thành công.
+- Khả năng từ chối khi thiếu thông tin.
 
-#### Bài học rút ra
+Evaluations giúp nhóm phát triển xác định những trường hợp Agent trả lời chưa đạt yêu cầu và đưa ra phương án cải thiện phù hợp.
 
-- AI sẽ hiệu quả nhất khi giải quyết một workflow cụ thể từ đầu đến cuối.
-- Muốn đưa AI vào doanh nghiệp thì kiến trúc bảo mật và governance là bắt buộc.
-- Voice, vận hành và năng suất đều là các bài toán khác nhau, nên cách thiết kế cũng phải khác nhau.
+### 5.3 Observability
 
-#### Một số hình ảnh khi tham gia sự kiện
-* Thêm các hình ảnh của các bạn tại đây
+Observability giúp theo dõi toàn bộ quá trình Agent xử lý yêu cầu.
 
-> Tổng thể, sự kiện giúp tôi nhìn AI theo góc độ kỹ thuật thực tế hơn: hữu ích, an toàn và gắn chặt với nhu cầu kinh doanh.
+Các dữ liệu cần theo dõi gồm:
+
+- Câu hỏi của người dùng.
+- Model được sử dụng.
+- Dataset được lựa chọn.
+- Các đoạn tài liệu được truy xuất.
+- Prompt gửi đến mô hình.
+- Công cụ được gọi.
+- Token sử dụng.
+- Thời gian xử lý.
+- Lỗi và số lần thử lại.
+- Câu trả lời cuối cùng.
+
+Thông tin này giúp xác định nguyên nhân khi Agent chọn sai Dataset, truy xuất thiếu dữ liệu hoặc trả lời không đúng tài liệu.
+
+### 5.4 Registry và Harness
+
+Registry hỗ trợ quản lý các Agent, công cụ và thành phần liên quan trong hệ thống.
+
+Registry có thể được sử dụng để quản lý:
+
+- Danh sách Agent.
+- Danh sách công cụ.
+- Phiên bản công cụ.
+- Mô tả chức năng.
+- Schema đầu vào và đầu ra.
+- Trạng thái hoạt động.
+- Quyền truy cập.
+
+Harness hỗ trợ phát triển và kiểm thử Agent theo một quy trình có cấu trúc.
+
+Harness có thể giúp:
+
+- Cung cấp dữ liệu kiểm thử.
+- Theo dõi từng bước xử lý.
+- So sánh kết quả thực tế với kết quả mong đợi.
+- Tái hiện lỗi.
+- Kiểm tra sau khi thay đổi prompt.
+- Kiểm tra sau khi thay đổi model.
+- Tự động hóa các test case.
+
+### 5.5 Tools và Policy
+
+Tools cho phép Agent thực hiện các tác vụ bên ngoài mô hình ngôn ngữ.
+
+Các công cụ có thể áp dụng cho dự án gồm:
+
+- Tìm kiếm Dataset.
+- Tóm tắt tài liệu.
+- Tạo quiz.
+- Tạo flashcard.
+- Truy xuất file từ Amazon S3.
+- Gọi AWS Lambda.
+- Tra cứu DynamoDB.
+- Gọi API bên ngoài.
+- Gửi thông báo cho người dùng.
+
+Policy giúp giới hạn quyền truy cập và hành động của Agent.
+
+Mỗi công cụ chỉ nên được cấp quyền IAM tối thiểu cần thiết. Không nên sử dụng quyền Administrator cho các tác vụ thông thường.
+
+Các chính sách cần xác định rõ:
+
+- Agent được phép gọi công cụ nào.
+- Người dùng được truy cập tài liệu nào.
+- Công cụ được truy cập tài nguyên AWS nào.
+- Hành động nào cần người dùng xác nhận.
+- Cách ngăn chặn yêu cầu không an toàn.
+- Cách ghi log phục vụ kiểm tra.
+
+### 5.6 Optimization
+
+Optimization tập trung cải thiện hiệu quả hoạt động của Agent.
+
+Các nội dung cần tối ưu gồm:
+
+- Độ chính xác của câu trả lời.
+- Chất lượng truy xuất dữ liệu.
+- Cấu trúc prompt.
+- Khả năng lựa chọn công cụ.
+- Kích thước context.
+- Thời gian phản hồi.
+- Lượng token sử dụng.
+- Chi phí vận hành.
+- Khả năng xử lý lỗi.
+- Trải nghiệm người dùng.
+
+## 6. Ứng dụng vào dự án
+
+Kiến thức từ sự kiện có thể được áp dụng vào workflow của **AI Learning Assistant Platform**:
+
+```text
+Câu hỏi người dùng
+→ Chọn kho kiến thức
+→ Tìm kiếm Dataset
+→ Truy xuất đoạn tài liệu
+→ Tạo prompt
+→ Gọi mô hình AI
+→ Đánh giá kết quả
+→ Trả lời người dùng
+### Các hướng áp dụng cụ thể
+
+- Cá nhân hóa trải nghiệm học tập.
+- Ghi nhớ mục tiêu của người dùng.
+- Theo dõi tiến độ học tập.
+- Lựa chọn đúng Dataset.
+- Theo dõi nội dung được truy xuất.
+- Đánh giá chất lượng câu trả lời.
+- Phát hiện lỗi trong workflow.
+- Giảm hiện tượng AI hallucination.
+- Tối ưu token và thời gian phản hồi.
+- Kiểm soát quyền truy cập tài liệu.
+- Theo dõi hoạt động của công cụ.
+- Đánh giá hiệu quả của mô hình AI.
+
+### Vai trò của các thành phần AgentCore
+
+- **Memory:** Giúp hệ thống ghi nhớ ngôn ngữ, mục tiêu học tập, môn học và những chủ đề người dùng cần cải thiện.
+- **Evaluations:** Kiểm tra độ chính xác, mức độ liên quan và khả năng bám sát tài liệu của câu trả lời.
+- **Observability:** Theo dõi Dataset ID, các đoạn tài liệu được tìm thấy, prompt, lượng token, thời gian phản hồi và lỗi phát sinh.
+- **Tools:** Hỗ trợ tìm kiếm tài liệu, tạo quiz, tạo flashcard, gọi AWS Lambda và truy xuất dữ liệu từ các dịch vụ AWS.
+- **Policy:** Bảo đảm Agent và công cụ chỉ được truy cập những dữ liệu và dịch vụ cần thiết.
+
+## 7. Kết luận
+
+Việc tham dự **Agent Forge – Deepdive Day 2** đã giúp tôi hiểu rõ hơn về quá trình xây dựng, vận hành, theo dõi và đánh giá một AI Agent trên nền tảng AWS.
+
+Thông qua các nội dung về **Memory, Evaluations, Observability, Registry, Harness, Tools, Optimization và Policy**, tôi nhận thấy chất lượng của một AI Agent không chỉ phụ thuộc vào mô hình ngôn ngữ lớn. Một hệ thống hoàn chỉnh còn cần có dữ liệu phù hợp, công cụ hỗ trợ, cơ chế theo dõi, phương pháp đánh giá và chính sách bảo mật rõ ràng.
+
+Trong đó:
+
+- **Memory** giúp Agent cá nhân hóa trải nghiệm cho từng người dùng.
+- **Evaluations** hỗ trợ đo lường độ chính xác và mức độ phù hợp của câu trả lời.
+- **Observability** giúp theo dõi toàn bộ quá trình xử lý để phát hiện và khắc phục lỗi.
+
+Những kiến thức này có thể được áp dụng trực tiếp vào **AI Learning Assistant Platform**, đặc biệt trong các hoạt động:
+
+- Cá nhân hóa trải nghiệm học tập.
+- Ghi nhớ mục tiêu và tiến độ của người dùng.
+- Tìm kiếm đúng tài liệu trong Dataset.
+- Đánh giá mức độ chính xác của câu trả lời.
+- Kiểm tra câu trả lời có bám sát tài liệu hay không.
+- Theo dõi các bước trong workflow.
+- Phát hiện lỗi khi gọi model hoặc công cụ.
+- Giảm hiện tượng AI hallucination.
+- Kiểm soát quyền truy cập vào dữ liệu và dịch vụ AWS.
+- Tối ưu thời gian phản hồi, token và chi phí vận hành.
+
+Bên cạnh kiến thức kỹ thuật, sự kiện còn tạo cơ hội trao đổi với người hướng dẫn và những người cùng quan tâm đến AI Agent. Điều này giúp tôi có thêm góc nhìn thực tế về những khó khăn có thể gặp khi triển khai Agent trong môi trường thật.
+
+Nhìn chung, **Agent Forge – Deepdive Day 2** là một sự kiện hữu ích, có nội dung chuyên sâu và phù hợp với định hướng phát triển dự án. Những kiến thức thu nhận được sẽ là nền tảng để tôi tiếp tục nghiên cứu Amazon Bedrock AgentCore, hoàn thiện **AI Learning Assistant Platform** và phát triển các ứng dụng AI Agent an toàn, đáng tin cậy hơn trong tương lai.
