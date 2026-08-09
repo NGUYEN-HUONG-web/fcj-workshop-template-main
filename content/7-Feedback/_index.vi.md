@@ -1,57 +1,309 @@
 ---
-title: "Chia sẻ, đóng góp ý kiến"
-date: 2024-01-01
+title: "Chia sẻ và đóng góp ý kiến"
+date: 2026-08-09
 weight: 7
 chapter: false
-pre: " <b> 7. </b> "
+pre: "<b>7. </b>"
 ---
 
+# Chia sẻ và đóng góp ý kiến
 
-### Đánh giá chung
+## 1. Cảm nhận chung
 
-**1. Môi trường làm việc**  
-Môi trường làm việc rất thân thiện và cởi mở. Các thành viên trong FCAJ luôn sẵn sàng hỗ trợ khi mình gặp khó khăn, kể cả ngoài giờ làm việc. Không gian làm việc gọn gàng, thoải mái, giúp mình tập trung tốt hơn. Tuy nhiên, mình nghĩ có thể bổ sung thêm một số buổi giao lưu hoặc team bonding để mọi người hiểu nhau hơn.
+Chương trình **First Cloud AI Journey – AWS Workforce Bootcamp** mang đến cho em cơ hội tiếp cận AWS thông qua các hoạt động thực hành và áp dụng kiến thức vào một sản phẩm cụ thể.
 
-**2. Sự hỗ trợ của mentor / team admin**  
-Mentor hướng dẫn rất chi tiết, giải thích rõ ràng khi mình chưa hiểu và luôn khuyến khích mình đặt câu hỏi. Team admin hỗ trợ các thủ tục, tài liệu và tạo điều kiện để mình làm việc thuận lợi. Mình đánh giá cao việc mentor cho phép mình thử và tự xử lý vấn đề thay vì chỉ đưa đáp án.
+Việc kết hợp worklog, bài blog, sự kiện chuyên môn, hoạt động nhóm và dự án cuối kỳ giúp em tìm hiểu về các dịch vụ AWS, đồng thời phát triển khả năng:
 
-**3. Sự phù hợp giữa công việc và chuyên ngành học**  
-Công việc mình được giao phù hợp với kiến thức mình đã học ở trường, đồng thời mở rộng thêm những mảng mới mà mình chưa từng được tiếp cận. Nhờ vậy, mình vừa củng cố kiến thức nền tảng, vừa học thêm kỹ năng thực tế.
+- Tự nghiên cứu tài liệu kỹ thuật.
+- Ghi chép quá trình học tập.
+- Giải quyết vấn đề kỹ thuật.
+- Làm việc và phối hợp theo nhóm.
+- Trình bày kết quả rõ ràng.
+- Đánh giá công việc đã hoàn thành và xác định những hạn chế còn tồn tại.
 
-**4. Cơ hội học hỏi & phát triển kỹ năng**  
-Trong quá trình thực tập, mình học được nhiều kỹ năng mới như sử dụng công cụ quản lý dự án, kỹ năng làm việc nhóm, và cả cách giao tiếp chuyên nghiệp trong môi trường công ty. Mentor cũng chia sẻ nhiều kinh nghiệm thực tế giúp mình định hướng tốt hơn cho sự nghiệp.
+Điểm em đặc biệt đánh giá cao là chương trình khuyến khích học viên chủ động học tập và tự giải quyết vấn đề.
 
-**5. Văn hóa & tinh thần đồng đội**  
-Văn hóa công ty rất tích cực: mọi người tôn trọng lẫn nhau, làm việc nghiêm túc nhưng vẫn vui vẻ. Khi có dự án gấp, mọi người cùng nhau cố gắng, hỗ trợ không phân biệt vị trí. Điều này giúp mình cảm thấy mình là một phần của tập thể, dù chỉ là thực tập sinh.
+Thay vì chỉ tập trung vào lý thuyết, em có cơ hội làm việc trực tiếp với các công nghệ và dịch vụ như:
 
-**6. Chính sách / phúc lợi cho thực tập sinh**  
-Công ty có hỗ trợ phụ cấp thực tập và tạo điều kiện về thời gian linh hoạt khi cần thiết. Ngoài ra, việc được tham gia các buổi đào tạo nội bộ là một điểm cộng lớn.
+- Docker.
+- Amazon EC2.
+- Amazon EBS.
+- Amazon S3.
+- AWS Identity and Access Management.
+- Amazon CloudWatch.
+- AWS Budgets.
+- Retrieval-Augmented Generation.
 
+Thông qua quá trình triển khai dự án RAG Chat, em có thể kiểm tra những nội dung đã hoàn thành, xác định giới hạn của kiến trúc hiện tại và đề xuất các hướng cải thiện trong tương lai.
 
-### Một số câu hỏi khác
-  **Điều bạn hài lòng nhất trong thời gian thực tập?**
+## 2. Những điều em hài lòng
 
-Điều làm mình hài lòng nhất là cơ hội được làm việc trên một dự án thực tế, có ý nghĩa từ đầu đến cuối. Được nhìn thấy cách tất cả các phần kết hợp với nhau - từ thiết lập hạ tầng đến phát triển ứng dụng đến triển khai - là vô cùng bổ ích. Ngoài ra, môi trường học tập hỗ trợ nơi mình có thể tự do đặt câu hỏi và học hỏi từ các chuyên gia có kinh nghiệm đã làm cho trải nghiệm trở nên rất thỏa mãn.
+### 2.1 Nội dung có tính thực tiễn
 
-**Điều bạn nghĩ công ty cần cải thiện cho các thực tập sinh sau?**
+Chương trình cung cấp nội dung có tính thực tế và tạo điều kiện để học viên làm việc với các dịch vụ AWS thông dụng.
 
-Chương trình đã rất xuất sắc, nhưng mình nghĩ có thể được cải thiện với các lộ trình học tập có cấu trúc hơn cho các thực tập sinh có nền tảng khác nhau. Ví dụ, các thực tập sinh đến từ nền tảng AI/ML (như mình) có thể hưởng lợi từ nhiều buổi giới thiệu hơn về cloud computing và các kiến thức cơ bản về phát triển phần mềm trước khi đi sâu vào các dự án phức tạp. Ngoài ra, nhiều buổi học tập đồng đẳng hoặc cơ hội networking giữa các thực tập sinh có thể rất có giá trị.
+Thông qua các bài tập và hoạt động dự án, em hiểu rõ hơn cách nhiều dịch vụ AWS phối hợp trong một hệ thống thay vì chỉ tìm hiểu từng dịch vụ riêng lẻ.
 
-**Nếu giới thiệu cho bạn bè, bạn có khuyên họ thực tập ở đây không? Vì sao?**
+### 2.2 Các buổi chia sẻ chuyên môn
 
-Chắc chắn, mình sẽ rất khuyên các bạn bè tham gia chương trình thực tập này. Đây là cơ hội tuyệt vời để học các công nghệ tiên tiến, làm việc trên các dự án thực tế và tiếp xúc với các thực hành ở cấp độ doanh nghiệp. Môi trường hỗ trợ, các mentor có kinh nghiệm và cách tiếp cận học tập thực hành làm cho nó lý tưởng cho bất kỳ ai muốn phát triển kỹ năng trong cloud computing, DevOps hoặc phát triển phần mềm. Chương trình đặc biệt có giá trị cho sinh viên muốn thu hẹp khoảng cách giữa kiến thức học thuật và thực hành ngành.  
+Các buổi chia sẻ và sự kiện chuyên môn giúp em mở rộng kiến thức về:
 
+- Điện toán đám mây.
+- Trí tuệ nhân tạo.
+- Retrieval-Augmented Generation.
+- Chứng chỉ AWS.
+- Kinh nghiệm làm việc thực tế.
+- Định hướng nghề nghiệp trong lĩnh vực Cloud và AI.
 
-### Đề xuất & mong muốn
-**Bạn có đề xuất gì để cải thiện trải nghiệm trong kỳ thực tập?**
+Các sự kiện này cũng giúp em có thêm góc nhìn về cách công nghệ được ứng dụng trong môi trường chuyên nghiệp.
 
-Cân nhắc cung cấp nhiều buổi onboarding có cấu trúc hơn bao gồm các kiến thức cơ bản về AWS cho các thực tập sinh có kinh nghiệm cloud hạn chế
-Tổ chức nhiều workshop kỹ thuật hoặc phòng lab thực hành về các chủ đề cụ thể (ví dụ: Terraform, Lambda functions, API Gateway)
-Tạo cơ hội cho các thực tập sinh trình bày công việc hoặc chia sẻ những gì đã học với team
-Cân nhắc ghép các thực tập sinh có trình độ kỹ năng khác nhau để học tập đồng đẳng
-Bạn có muốn tiếp tục chương trình này trong tương lai?
-Có, mình sẽ rất quan tâm đến việc tiếp tục với chương trình nếu có cơ hội. Trải nghiệm học tập đã rất xuất sắc, và mình tin rằng vẫn còn nhiều điều để học hỏi, đặc biệt là khi mình tiếp tục phát triển kỹ năng cloud và phát triển phần mềm của mình.
+### 2.3 Hoạt động dự án nhóm
 
-**Góp ý khác (tự do chia sẻ):**
+Quá trình thực hiện dự án nhóm giúp em học cách:
 
-Kỳ thực tập tại AWS FCJ đã là một trải nghiệm chuyển đổi đối với mình. Bước vào với nền tảng vững chắc về AI/ML nhưng kinh nghiệm hạn chế về cloud và phát triển phần mềm, mình đã có thể mở rộng đáng kể bộ kỹ năng của mình và có được sự tự tin trong các lĩnh vực mới. Cơ hội được làm việc trên dự án Slothub, học hỏi từ các mentor có kinh nghiệm và trải nghiệm môi trường làm việc chuyên nghiệp là vô giá. Mình biết ơn vì văn hóa hỗ trợ, các cơ hội học tập và cơ hội đóng góp cho một dự án thực tế. Trải nghiệm này không chỉ nâng cao kỹ năng kỹ thuật của mình mà còn giúp mình hiểu cách làm việc hiệu quả trong một nhóm và giao tiếp chuyên nghiệp trong môi trường công ty. Mình sẽ khuyến khích bất kỳ sinh viên nào quan tâm đến cloud computing, DevOps hoặc phát triển phần mềm nộp đơn cho chương trình này.
+- Phân chia trách nhiệm.
+- Theo dõi tiến độ.
+- Trao đổi khi gặp vấn đề.
+- Thống nhất nội dung kỹ thuật.
+- Kết hợp các phần việc riêng thành một sản phẩm chung.
+- Hỗ trợ các thành viên khác khi cần thiết.
+
+Đây là cơ hội để em cải thiện kỹ năng cộng tác và hiểu rõ hơn trách nhiệm của từng thành viên trong nhóm.
+
+### 2.4 Worklog và bài blog
+
+Yêu cầu viết worklog và blog giúp em hình thành thói quen ghi lại quá trình học tập thay vì chỉ tập trung vào kết quả cuối cùng.
+
+Worklog giúp em:
+
+- Theo dõi tiến độ hằng tuần.
+- Ghi lại những công việc đã hoàn thành.
+- Xác định các vấn đề hiện tại.
+- Lập kế hoạch cho giai đoạn tiếp theo.
+- Đánh giá sự tiến bộ của bản thân.
+
+Các bài blog giúp em luyện tập cách giải thích kiến thức kỹ thuật rõ ràng và có cấu trúc.
+
+### 2.5 Workshop cuối kỳ
+
+Workshop cuối kỳ tạo cơ hội để em tổng hợp kiến thức đã học thành một quy trình hoàn chỉnh mà người khác có thể làm theo.
+
+Quá trình viết tài liệu workshop giúp em chú ý hơn đến:
+
+- Cấu trúc tài liệu.
+- Trình tự các bước thực hiện.
+- Câu lệnh triển khai.
+- Hình ảnh minh chứng.
+- Kết quả mong đợi.
+- Những lỗi có thể xảy ra.
+- Cách kiểm tra sau mỗi bước.
+
+## 3. Những khó khăn em gặp phải
+
+### 3.1 Khối lượng kiến thức lớn
+
+Chương trình bao gồm một lượng kiến thức tương đối lớn về AWS, Docker, RAG và triển khai ứng dụng.
+
+Trong khi đó, thời gian dành cho việc học, triển khai, kiểm thử và hoàn thiện báo cáo còn giới hạn.
+
+Một số chủ đề cần được nghiên cứu sâu hơn, đặc biệt là:
+
+- Bảo mật hệ thống.
+- Quản lý secret.
+- Sao lưu và khôi phục.
+- Giám sát tập trung.
+- Đánh giá chất lượng RAG.
+- Kiến trúc có khả năng mở rộng.
+
+### 3.2 Xử lý lỗi triển khai
+
+Một số lỗi chỉ xuất hiện khi build Docker image hoặc triển khai ứng dụng lên EC2.
+
+Quá trình xử lý thường yêu cầu kiểm tra nhiều lớp:
+
+```text
+Mã nguồn
+→ Docker image
+→ Docker container
+→ Cổng dịch vụ
+→ Security Group
+→ EC2
+→ EBS
+→ IAM
+→ Các dịch vụ AWS liên quan
+```
+
+Việc xác định nguyên nhân gốc đôi khi mất nhiều thời gian vì lỗi có thể đến từ cấu hình, quyền truy cập, kết nối mạng hoặc môi trường chạy.
+
+### 3.3 Thu thập bằng chứng kỹ thuật
+
+Bằng chứng kỹ thuật đôi lúc được thu thập quá muộn.
+
+Do đó, một số bài kiểm thử không có đầy đủ ảnh trước và sau, bao gồm:
+
+- Kiểm tra persistence.
+- Kiểm tra container restart.
+- Kiểm tra sao lưu dữ liệu.
+- Kiểm tra khôi phục dữ liệu.
+- Kiểm tra quyền IAM.
+- Kiểm tra cảnh báo chi phí.
+
+Trong các dự án tiếp theo, em cần xác định trước những bằng chứng cần thu thập và lưu lại kết quả ngay sau mỗi bài kiểm thử.
+
+### 3.4 Chi phí và hạn mức dịch vụ
+
+Chi phí Cloud và quota của các dịch vụ bên ngoài cần được theo dõi trong suốt quá trình thử nghiệm.
+
+Nếu không kiểm soát phù hợp, những tài nguyên không còn sử dụng vẫn có thể tiếp tục phát sinh chi phí.
+
+Em cần chú ý hơn đến:
+
+- Trạng thái EC2.
+- Dung lượng lưu trữ EBS.
+- Dữ liệu lưu trên Amazon S3.
+- Lưu lượng mạng.
+- Quota của model AI.
+- Ngân sách và cảnh báo chi phí.
+- Những tài nguyên không còn được sử dụng.
+
+## 4. Đề xuất cho chương trình
+
+### 4.1 Mở thêm ngày làm việc tại văn phòng
+
+Em đề xuất chương trình mở thêm nhiều ngày hoặc khung giờ để sinh viên đăng ký tham gia trực tiếp tại văn phòng.
+
+Chương trình có số lượng học viên tương đối đông, nhưng số ngày và lượt tham dự được phê duyệt còn hạn chế. Điều này khiến nhiều sinh viên khó sắp xếp thời gian để có trải nghiệm làm việc trực tiếp.
+
+Việc bổ sung ngày hoặc khung giờ có thể:
+
+- Tạo cơ hội công bằng hơn cho sinh viên.
+- Cho phép sinh viên gặp mentor trực tiếp.
+- Tăng khả năng trao đổi giữa các nhóm dự án.
+- Hỗ trợ xử lý vấn đề kỹ thuật nhanh hơn.
+- Giúp sinh viên trải nghiệm môi trường làm việc thực tế.
+- Tạo thêm cơ hội kết nối và học tập đồng đẳng.
+
+### 4.2 Cung cấp lộ trình theo trình độ
+
+Chương trình có thể cung cấp các lộ trình học tập dựa trên nền tảng và trình độ của học viên.
+
+Ví dụ:
+
+- Lộ trình AWS cơ bản cho sinh viên chưa có kinh nghiệm Cloud.
+- Lộ trình DevOps cơ bản cho sinh viên đến từ lĩnh vực AI hoặc Data.
+- Lộ trình AI và RAG cho sinh viên có nền tảng phát triển phần mềm.
+- Nội dung nâng cao cho sinh viên đã có chứng chỉ hoặc kinh nghiệm AWS.
+
+Cấu trúc này có thể giúp học viên xây dựng nền tảng cần thiết trước khi bắt đầu những dự án phức tạp hơn.
+
+### 4.3 Tổ chức thêm workshop thực hành
+
+Chương trình có thể tổ chức thêm các workshop hoặc phòng lab về:
+
+- Terraform.
+- AWS Lambda.
+- Amazon API Gateway.
+- CI/CD.
+- AWS Secrets Manager.
+- Amazon CloudWatch.
+- Sao lưu và khôi phục sau thảm họa.
+- Bảo mật container.
+- Kiến trúc serverless.
+- Đánh giá RAG.
+
+Những phiên thực hành theo từng chủ đề sẽ giúp học viên hiểu rõ hơn cách áp dụng các dịch vụ này vào dự án thực tế.
+
+### 4.4 Tăng cơ hội trình bày và thảo luận
+
+Chương trình có thể tổ chức thêm các buổi để học viên:
+
+- Trình bày tiến độ dự án.
+- Chia sẻ những lỗi đã gặp.
+- Giải thích các giải pháp đã thử nghiệm.
+- Nhận phản hồi từ mentor.
+- Học hỏi cách tiếp cận của những nhóm khác.
+- Luyện tập kỹ năng thuyết trình kỹ thuật.
+
+### 4.5 Mở rộng hoạt động học tập đồng đẳng
+
+Các học viên có nền tảng và trình độ khác nhau có thể được ghép nhóm để hỗ trợ học tập đồng đẳng.
+
+Ví dụ:
+
+- Sinh viên có kinh nghiệm AWS hỗ trợ cấu hình Cloud.
+- Sinh viên có kinh nghiệm AI hỗ trợ RAG và tích hợp model.
+- Sinh viên có kinh nghiệm lập trình hỗ trợ phát triển ứng dụng.
+- Sinh viên có kinh nghiệm DevOps hỗ trợ Docker và CI/CD.
+
+Cách tiếp cận này vừa hỗ trợ quá trình thực hiện dự án, vừa giúp mỗi học viên cải thiện kỹ năng giao tiếp và làm việc nhóm.
+
+## 5. Điều em đánh giá cao nhất
+
+Điều có giá trị nhất đối với em là cơ hội hoàn thành một dự án thực tế từ đầu đến cuối.
+
+Em có thể quan sát cách nhiều thành phần phối hợp với nhau:
+
+```text
+Chuẩn bị mã nguồn
+→ Xây dựng Docker image
+→ Khởi tạo hạ tầng AWS
+→ Triển khai ứng dụng
+→ Lưu trữ dữ liệu
+→ Cấu hình quyền truy cập
+→ Sao lưu dữ liệu
+→ Giám sát hệ thống
+→ Kiểm soát chi phí
+→ Viết tài liệu
+```
+
+Môi trường học tập cũng khuyến khích học viên đặt câu hỏi và tự nghiên cứu. Điều này giúp em tự tin hơn khi làm việc với những công nghệ chưa quen thuộc.
+
+## 6. Em có giới thiệu chương trình không?
+
+Em sẵn sàng giới thiệu chương trình cho những sinh viên quan tâm đến:
+
+- Điện toán đám mây.
+- Trí tuệ nhân tạo.
+- DevOps.
+- Phát triển phần mềm.
+- Triển khai ứng dụng trên AWS.
+
+Chương trình mang lại cơ hội học công nghệ mới, hoàn thành một dự án thực tế và trải nghiệm phương pháp làm việc kỹ thuật có cấu trúc.
+
+Chương trình đặc biệt có giá trị đối với những sinh viên muốn rút ngắn khoảng cách giữa kiến thức học thuật và kỹ năng thực hành trong ngành.
+
+## 7. Mong muốn trong tương lai
+
+Em mong chương trình tiếp tục kết hợp các chủ đề về Cloud và AI.
+
+Trong tương lai, em mong muốn chương trình bổ sung thêm nội dung về:
+
+- Bảo mật Cloud.
+- CI/CD.
+- Serverless.
+- Observability.
+- Infrastructure as Code.
+- Điều phối container.
+- Quản lý secret.
+- Đánh giá RAG.
+- AI Agent.
+- FinOps và tối ưu chi phí.
+
+Nếu có cơ hội, em muốn tiếp tục tham gia các hoạt động chuyên môn, workshop và sự kiện cộng đồng của FCAJ để củng cố kiến thức và chia sẻ những gì đã học với các học viên sau.
+
+## 8. Lời cảm ơn
+
+Em xin cảm ơn ban tổ chức, các mentor, team admin và những học viên khác đã hỗ trợ em trong suốt chương trình.
+
+Những kiến thức và trải nghiệm thu nhận được là nền tảng có giá trị để em tiếp tục phát triển theo định hướng Cloud và AI.
+
+Chương trình đã giúp em cải thiện kỹ năng kỹ thuật và hiểu rõ hơn cách:
+
+- Chủ động học tập.
+- Làm việc theo kế hoạch.
+- Phối hợp với nhóm.
+- Trình bày thông tin kỹ thuật.
+- Tiếp nhận và áp dụng phản hồi.
+- Tiếp tục cải thiện bản thân.
+
+Em trân trọng cơ hội được tham gia **First Cloud AI Journey – AWS Workforce Bootcamp**. Em hy vọng chương trình sẽ tiếp tục phát triển và mang đến cho nhiều sinh viên hơn cơ hội học tập thực tế cũng như trải nghiệm môi trường làm việc chuyên nghiệp.

@@ -1,61 +1,277 @@
 ---
 title: "Self-Assessment"
-date: 2024-01-01
+date: 2026-08-09
 weight: 6
 chapter: false
-pre: " <b> 6. </b> "
+pre: "<b>6. </b>"
 ---
 
+# Self-Assessment
 
-During my internship at **[Company/Organization Name]** from **[start date]** to **[end date]**, I had the opportunity to learn, practice, and apply the knowledge acquired in school to a real-world working environment.  
-I participated in **[briefly describe the main project or task]**, through which I improved my skills in **[list skills: programming, analysis, reporting, communication, etc.]**.  
+During the **First Cloud AI Journey – AWS Workforce Bootcamp**, I strengthened my cloud computing knowledge, learned how to build a Retrieval-Augmented Generation (RAG) application, and applied what I learned to the project **“Deploying the Kotaemon RAG Chat System on AWS.”**
 
-In terms of work ethic, I always strived to complete tasks well, complied with workplace regulations, and actively engaged with colleagues to improve work efficiency.
+Through worklogs, blog posts, technical events, and group project activities, I gradually developed a more structured approach to learning and completing technical tasks.
 
-To objectively reflect on my internship period, I would like to evaluate myself based on the following criteria:
+In addition to deploying the application, I considered several important operational requirements:
 
-| No. | Criteria                            | Description                                                                                      | Good | Fair | Average |
-| --- | ----------------------------------- | ------------------------------------------------------------------------------------------------ | ---- | ---- | ------- |
-| 1   | **Professional knowledge & skills** | Understanding of the field, applying knowledge in practice, proficiency with tools, work quality | ✅    | ☐    | ☐       |
-| 2   | **Ability to learn**                | Ability to absorb new knowledge and learn quickly                                                | ☐    | ✅    | ☐       |
-| 3   | **Proactiveness**                   | Taking initiative, seeking out tasks without waiting for instructions                            | ✅    | ☐    | ☐       |
-| 4   | **Sense of responsibility**         | Completing tasks on time and ensuring quality                                                    | ✅    | ☐    | ☐       |
-| 5   | **Discipline**                      | Adhering to schedules, rules, and work processes                                                 | ☐    | ☐    | ✅       |
-| 6   | **Progressive mindset**             | Willingness to receive feedback and improve oneself                                              | ☐    | ✅    | ☐       |
-| 7   | **Communication**                   | Presenting ideas and reporting work clearly                                                      | ☐    | ✅    | ☐       |
-| 8   | **Teamwork**                        | Working effectively with colleagues and participating in teams                                   | ✅    | ☐    | ☐       |
-| 9   | **Professional conduct**            | Respecting colleagues, partners, and the work environment                                        | ✅    | ☐    | ☐       |
-| 10  | **Problem-solving skills**          | Identifying problems, proposing solutions, and showing creativity                                | ☐    | ✅    | ☐       |
-| 11  | **Contribution to project/team**    | Work effectiveness, innovative ideas, recognition from the team                                  | ✅    | ☐    | ☐       |
-| 12  | **Overall**                         | General evaluation of the entire internship period                                               | ✅    | ☐    | ☐       |
+- Data persistence.
+- Access control.
+- Data backup and recovery.
+- Resource monitoring.
+- Cost control.
+- Protection of sensitive information.
+- Clear presentation of technical evidence.
 
+The following sections provide an objective assessment of my performance during the program.
 
+## 1. Knowledge and Skills Gained
 
-### *Strengths*
+### 1.1 Technical Knowledge
 
-**Strong Sense of Responsibility:** I consistently complete all assigned tasks on time while ensuring high-quality output. I take full ownership of my work and always follow through on my commitments.
+After completing the learning activities and project implementation, I gained knowledge in the following areas:
 
-**Fast Learner:**
- Despite initially having limited experience in cloud computing and software development, I quickly grasped new technologies, tools, and best practices through self-study and guidance from my mentors.
+- Understanding standard Hybrid RAG, including document chunking, embedding generation, hybrid retrieval, and citation-based answer generation.
+- Distinguishing the roles of the **Kotaemon application/framework**, **Gemini chat model**, and **Gemini embedding model**.
+- Understanding how Amazon EC2 provides the server environment for the application.
+- Understanding how Amazon EBS provides persistent storage for EC2.
+- Understanding how Amazon S3 stores backup data.
+- Understanding how IAM roles grant AWS permissions to EC2 instances.
+- Understanding how Security Groups control network traffic.
+- Using Amazon CloudWatch to monitor EC2 metrics.
+- Using AWS Budgets to help control project costs.
+- Understanding how multiple AWS services work together in a demonstration architecture.
+- Recognizing the difference between a **demo-ready MVP** and a **production-ready system**.
+- Understanding the importance of HTTPS, secret management, logging, backups, and scalability.
 
-**Proactive Mindset:**
- I actively explore new areas, seek out additional responsibilities, and contribute innovative ideas to enhance project outcomes without waiting for explicit instructions.
+### 1.2 Hands-on Skills
 
-**Areas for Improvement**
-Cloud and DevOps Expertise: While I have a solid foundation in AI/ML and Data, I need to deepen my theoretical knowledge and hands-on experience with cloud infrastructure, DevOps practices, and AWS services. This internship has been an excellent starting point for building these skills.
+During project implementation, I practiced the following skills:
 
-**Software Development Experience:** I recognize the need to improve my practical software development skills, particularly regarding best practices, code quality, testing, and software architectural patterns. Working on the Slothub project provided me with valuable initial experience in this domain.
+- Using Git to manage and synchronize source code.
+- Using Docker to package and run the application.
+- Using PowerShell on Windows.
+- Using Ubuntu Bash on an EC2 instance.
+- Building a Docker image for Kotaemon.
+- Starting and managing Docker containers.
+- Mapping ports to make the application externally accessible.
+- Checking container status and logs.
+- Using a bind mount on the root EBS volume.
+- Separating application data from the container lifecycle.
+- Backing up application data to Amazon S3.
+- Using an IAM role instead of long-term access keys on EC2.
+- Monitoring EC2 metrics with Amazon CloudWatch.
+- Configuring AWS Budgets to monitor costs.
+- Writing Hugo documentation in Vietnamese and English.
+- Presenting deployment procedures as clear, sequential steps.
+- Checking documentation errors with Hugo build.
+- Collecting screenshots and command output as technical evidence.
 
-**Problem-Solving in Unfamiliar Domains:** When encountering issues in new areas like cloud infrastructure or software development, I sometimes require additional time to analyze the situation and propose solutions. I am committed to refining my overall problem-solving mindset and approach through continuous practice.
+### 1.3 Professional Skills
 
-**Professional Discipline:** I aim to enhance my self-discipline and ensure strict adherence to the rules, regulations, and professional standards of the company or any organization I am a part of.
+In addition to technical knowledge, I improved the following professional skills:
 
-**Focus and Persistence:** I need to cultivate greater persistence and maintain focus on specific tasks, avoiding distractions caused by tangential or unrelated issues.
+- Researching documentation independently when encountering new problems.
+- Comparing multiple sources before reaching a conclusion.
+- Troubleshooting one system layer at a time instead of changing several components simultaneously.
+- Collaborating with other team members.
+- Sharing progress and aligning on common project content.
+- Writing reports with a clearer structure.
+- Presenting architecture and explaining technical decisions.
+- Paying closer attention to schedules and project progress.
+- Handling API keys and AWS information more carefully.
+- Reviewing screenshots before sharing them.
+- Receiving feedback and revising my work accordingly.
 
-**Communication Skills:** I am working on improving my communication skills, specifically my ability to clearly and effectively articulate the challenges or roadblocks I face to my mentors and teammates.
+## 2. Self-Assessment Table
 
-**Practical Application of Knowledge:** I want to continue exploring new technologies with a shift in mindset: focusing on practical application ("learning to apply") rather than just theoretical understanding ("learning to know").
+| No. | Criteria | Comments | Good | Fair | Average |
+|:---:|---|---|:---:|:---:|:---:|
+| 1 | **AWS and RAG knowledge** | I understand and can apply the main components, but I need to learn more about high-availability architecture and advanced security. | ☐ | ✅ | ☐ |
+| 2 | **Ability to learn** | I can independently read documentation, experiment, and adjust when working with new technologies. | ✅ | ☐ | ☐ |
+| 3 | **Sense of responsibility** | I completed assigned tasks and paid attention to the accuracy of the report. | ✅ | ☐ | ☐ |
+| 4 | **Proactiveness** | I proactively investigated problems and proposed solutions, although I occasionally needed more time to identify the best option. | ✅ | ☐ | ☐ |
+| 5 | **Teamwork** | I coordinated with team members, shared information, and helped complete the team’s shared content. | ✅ | ☐ | ☐ |
+| 6 | **Communication and presentation** | I improved my ability to explain technical topics but still need to be more concise and confident during presentations. | ☐ | ✅ | ☐ |
+| 7 | **Problem-solving** | I learned to troubleshoot system layers and use evidence, but I need more experience with complex incidents. | ✅ | ☐ | ☐ |
+| 8 | **Time management** | I tracked progress through worklogs but need to allocate time for testing and collecting evidence earlier. | ☐ | ✅ | ☐ |
+| 9 | **Overall completion** | I completed a demo-ready MVP and workshop documentation, although several items still require further validation. | ✅ | ☐ | ☐ |
 
-> Internship Reflection
-My internship at AWS FCJ has been an invaluable learning experience that provided me with hands-on exposure to professional software development and cloud computing. It has successfully bridged the gap between my academic knowledge of AI/ML and the practical skills required in the industry. I am deeply grateful for the opportunity to work on a real-world project, learn from experienced mentors, and gain practical experience with enterprise-level development practices.
+## 3. Strengths
 
+### 3.1 Ability to Learn
+
+I can independently research new technologies and apply what I learn to practical problems.
+
+When I encounter an unfamiliar topic, I try to:
+
+- Consult official documentation.
+- Compare multiple sources.
+- Test one step at a time.
+- Record the results.
+- Adjust the solution when necessary.
+
+### 3.2 Sense of Responsibility
+
+I make an effort to complete assigned tasks and take responsibility for the quality of my work.
+
+When preparing documentation, I check:
+
+- Content accuracy.
+- Markdown structure.
+- Image paths.
+- Hugo build errors.
+- Sensitive information in screenshots.
+- Consistency between Vietnamese and English versions.
+
+### 3.3 Proactiveness
+
+When deployment problems occur, I investigate the cause instead of waiting for instructions.
+
+My troubleshooting process includes checking:
+
+- EC2 instance status.
+- Network connectivity.
+- Security Group rules.
+- Docker containers.
+- Service ports.
+- Application logs.
+- IAM permissions.
+- Data status.
+- Access to Amazon S3.
+
+### 3.4 Teamwork
+
+I can coordinate with team members, share progress, and help complete shared project content.
+
+I listen to feedback, communicate problems, and adjust my assigned work to support the team’s common goals.
+
+## 4. Areas for Improvement
+
+### 4.1 Cloud and DevOps Knowledge
+
+I need to deepen my knowledge in the following areas:
+
+- HTTPS and TLS certificates.
+- Domain management.
+- Secret management.
+- Centralized logging.
+- Deployment automation.
+- Automated backups.
+- Monitoring and alerting.
+- High availability.
+- Auto Scaling.
+- Load Balancers.
+- Scalable architecture.
+
+### 4.2 RAG Quality Evaluation
+
+My current evaluation process still relies mainly on a small number of manually tested questions.
+
+I need to develop a quantitative evaluation method that includes:
+
+- A test question dataset.
+- Expected answers.
+- Retrieval accuracy.
+- Relevance.
+- Citation accuracy.
+- Faithfulness to source documents.
+- Unsupported-answer rate.
+- Response time.
+
+### 4.3 Data Testing
+
+I need to complete persistence and restore testing with clear evidence.
+
+The testing process should demonstrate:
+
+1. Data status before stopping the container.
+2. Data location on EBS.
+3. Data status after restarting the container.
+4. Backup results in Amazon S3.
+5. Restore results from the backup.
+6. A comparison of data before and after restoration.
+
+### 4.4 Time Management
+
+I need to improve my ability to estimate how long tasks will take.
+
+In future projects, I will allocate dedicated time for:
+
+- Research.
+- Implementation.
+- Testing.
+- Troubleshooting.
+- Evidence collection.
+- Documentation.
+- Content review.
+- Presentation preparation.
+
+### 4.5 Communication and Presentation
+
+I need to communicate more concisely, clearly, and confidently.
+
+When I encounter an issue, I should proactively:
+
+- Report the problem early.
+- Provide relevant logs or evidence.
+- Explain the checks already performed.
+- State the expected result.
+- Propose possible solutions.
+- Ask for support when necessary.
+
+### 4.6 Information Security
+
+I need to continue developing secure habits when working with cloud systems.
+
+Before sharing content, I should review and redact:
+
+- AWS account IDs.
+- API keys.
+- Access Key IDs.
+- Secret Access Keys.
+- Session tokens.
+- Internal IP addresses or domains.
+- Login information.
+- Personal data.
+- Sensitive information in logs.
+
+If an API key is exposed, I should deactivate it and generate a new key instead of continuing to use it.
+
+## 5. Improvement Plan
+
+In the next stage, I plan to:
+
+1. Study AWS security practices in greater depth.
+2. Learn how to use AWS Secrets Manager and Systems Manager Parameter Store.
+3. Configure HTTPS for the application.
+4. Complete the backup and restore process.
+5. Build a test suite for the RAG system.
+6. Evaluate retrieval and generation quality.
+7. Improve logging and monitoring.
+8. Learn Infrastructure as Code.
+9. Practice deployment automation.
+10. Improve my presentation skills.
+11. Communicate problems earlier.
+12. Continue recording progress through worklogs.
+
+## 6. Self-Assessment Conclusion
+
+I believe I made clear progress in my AWS knowledge, deployment skills, and approach to system operations.
+
+The most important outcome was not only completing a working demonstration but also understanding the limitations of the current architecture and identifying an appropriate improvement roadmap.
+
+Through this project, I learned that a functioning RAG system is not necessarily production-ready. A production-ready system also requires security, monitoring, backups, testing, scalability, and well-defined operational procedures.
+
+I plan to continue developing my knowledge in:
+
+- Cloud security.
+- Automation.
+- System monitoring.
+- RAG quality evaluation.
+- Software testing.
+- Scalable architecture.
+- Communication and teamwork.
+
+The **First Cloud AI Journey – AWS Workforce Bootcamp** helped me connect theoretical knowledge with real implementation experience. This experience provides an important foundation for continuing to develop my cloud, AI, and DevOps skills.
+
+> I will continue learning, proactively address my areas for improvement, and work toward building AI systems that are secure, reliable, and valuable in real-world applications.
