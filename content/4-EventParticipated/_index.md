@@ -12,7 +12,7 @@ During my internship, I participated in two events. Each one was a memorable exp
 ### [Event 1](4.1-Event1/)  
 &emsp;**Event Name:**  FCAJ Community Day  
 
-&emsp;**Date & Time:** 09:00, June 22, 2026  
+&emsp;**Date & Time:** 09:00, June 27, 2026  
 
 &emsp;**Location:** 26th Floor, Bitexco Tower, 02 Hai Trieu Street, Saigon Ward, Ho Chi Minh City  
 
@@ -23,7 +23,7 @@ During my internship, I participated in two events. Each one was a memorable exp
 ### [Event 2](4.2-Event2/)  
 &emsp;**Event Name:** Agent Forge – Deepdive Day 2 
 
-&emsp;**Date & Time:** 09:00, June 27, 2026  
+&emsp;**Date & Time:** 09:00, August 08, 2026  
 
 &emsp;**Location:** 26th Floor, Bitexco Tower, 02 Hai Trieu Street, Saigon Ward, Ho Chi Minh City  
 
