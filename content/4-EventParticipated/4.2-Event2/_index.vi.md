@@ -1,9 +1,9 @@
 ---
-title: "Sự kiện 2"
+title: "Event 2"
 date: 2026-08-08
 weight: 2
 chapter: false
-pre: "<b>4.2 </b>"
+pre: "<b> 4.2 </b>"
 ---
 
 # Báo cáo tham dự “Agent Forge – Deepdive Day 2”
