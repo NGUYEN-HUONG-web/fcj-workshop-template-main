@@ -12,7 +12,7 @@ pre: " <b> 2. </b> "
 # Phần 1. Giới thiệu dự án
 
 # Thông tin nhóm thực hiện
-S
+
 | STT | Họ và tên | Mã số sinh viên | Vai trò |
 |:---:|---|---|---|---|
 | 1 | Nguyễn Thị Thu Hường| 3122411079 | Trưởng nhóm | 
