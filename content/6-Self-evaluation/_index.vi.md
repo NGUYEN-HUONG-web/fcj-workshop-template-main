@@ -6,7 +6,6 @@ chapter: false
 pre: "<b>6. </b>"
 ---
 
-# Tự đánh giá
 
 Trong quá trình tham gia chương trình **First Cloud AI Journey – AWS Workforce Bootcamp**, em đã có cơ hội củng cố kiến thức về điện toán đám mây, tìm hiểu quy trình xây dựng ứng dụng Retrieval-Augmented Generation (RAG) và áp dụng kiến thức vào dự án **“Triển khai hệ thống RAG Chat Kotaemon trên AWS”**.
 

@@ -6,7 +6,6 @@ chapter: false
 pre: "<b>7. </b>"
 ---
 
-# Feedback and Suggestions
 
 ## 1. Overall Experience
 

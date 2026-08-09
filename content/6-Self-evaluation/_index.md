@@ -6,7 +6,6 @@ chapter: false
 pre: "<b>6. </b>"
 ---
 
-# Self-Assessment
 
 During the **First Cloud AI Journey – AWS Workforce Bootcamp**, I strengthened my cloud computing knowledge, learned how to build a Retrieval-Augmented Generation (RAG) application, and applied what I learned to the project **“Deploying the Kotaemon RAG Chat System on AWS.”**
 
