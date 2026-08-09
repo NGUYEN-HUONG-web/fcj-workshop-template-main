@@ -13,7 +13,7 @@ home = [ "HTML", "RSS", "JSON"]
 [params]
   # Change default color scheme with a variant one. Can be "red", "blue", "green".
   themeVariant = "workshop"
-  custom_css = ["css/custom.css"]
+  custom_css = ["css/custom.css?v=unified-ui-20260809-2"]
   # Git hub repo link
   editURL = ""
   description = ""
