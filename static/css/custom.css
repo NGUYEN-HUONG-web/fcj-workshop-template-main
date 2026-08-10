@@ -63,7 +63,7 @@ body {
   color: var(--text-primary) !important;
   font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
   line-height: 1.75;
-  font-size: 16px;
+  font-size: 16px !important;
   overflow-x: hidden;
   position: relative;
 }
@@ -203,6 +203,7 @@ body::before {
 
 #body h1,
 #chapter h1 {
+  font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
   font-size: clamp(2rem, 2.8vw, 2.75rem);
   line-height: 1.15;
   letter-spacing: -0.05em;
@@ -236,6 +237,7 @@ h3,
 h4,
 h5,
 h6 {
+  font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
   color: var(--text-primary) !important;
   margin-top: 2rem;
   margin-bottom: 0.75rem;
@@ -1197,9 +1199,12 @@ figcaption {
 
 .student-card__name {
   margin: 0;
+  font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
   font-size: clamp(1.45rem, 2vw, 1.9rem);
+  font-weight: 900;
   line-height: 1.2;
-  color: #f8fafc;
+  letter-spacing: -0.03em;
+  color: #ffffff !important;
   text-shadow: 0 1px 0 rgba(15, 23, 42, 0.12);
 }
 
@@ -1262,6 +1267,19 @@ figcaption {
 
 .report-link:visited {
   color: var(--text-primary) !important;
+}
+
+/* Keep regular homepage copy at one consistent size; headings retain their hierarchy. */
+.report-home :where(
+  p,
+  .report-hero__eyebrow,
+  .student-card__role,
+  .profile-card__eyebrow,
+  .profile-label,
+  .profile-value,
+  .report-link
+) {
+  font-size: 1rem;
 }
 
 body[data-url^="/2-proposal/"] #body-inner,
