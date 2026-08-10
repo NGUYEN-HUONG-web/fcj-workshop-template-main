@@ -1,12 +1,10 @@
 ---
-title: "System Architecture"
+title: "5.2. System Architecture"
 date: 2026-08-09
 weight: 2
 chapter: false
 pre: " <b> 5.2. </b> "
 ---
-
-# 5.2 System Architecture
 
 ## 5.2.1 Architecture overview
 

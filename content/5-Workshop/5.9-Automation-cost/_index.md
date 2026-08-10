@@ -1,12 +1,10 @@
 ---
-title: "Automation and Cost Optimization"
+title: "5.9. Automation and Cost Optimization"
 date: 2026-08-09
 weight: 9
 chapter: false
 pre: " <b> 5.9. </b> "
 ---
-
-# 5.9 Automation and Cost Optimization
 
 ## Scheduled EC2 operations
 

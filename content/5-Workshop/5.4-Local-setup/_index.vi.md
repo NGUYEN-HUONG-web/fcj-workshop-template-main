@@ -1,12 +1,10 @@
 ---
-title: "Điều kiện tiên quyết và chạy local"
+title: "5.4. Điều kiện tiên quyết và chạy local"
 date: 2026-08-09
 weight: 4
 chapter: false
 pre: " <b> 5.4. </b> "
 ---
-
-# 5.4 Điều kiện tiên quyết và chạy local
 
 ## Điều kiện tiên quyết
 

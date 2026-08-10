@@ -9,7 +9,7 @@ pre: " <b> 2. </b> "
 # AI Learning Assistant Platform
 
 ### Nền tảng trợ lý học tập thông minh dựa trên tài liệu triển khai trên AWS
-# Phần 1. Giới thiệu dự án
+ # Giới thiệu dự án
 
 # Thông tin nhóm thực hiện
 
@@ -20,7 +20,7 @@ pre: " <b> 2. </b> "
 | 3 | Nguyễn Ngọc Thúy Vy | 3122411256 | Thành viên |
 
 ---
-# Phần 2. Tổng quan dự án
+# Phần 1. Tổng quan dự án
 
 ## 1.1 Bối cảnh
 
@@ -475,12 +475,6 @@ Sau khi triển khai thành công, hệ thống được kiểm thử nhằm đ�
 | Amazon CloudWatch | Thu thập Logs và Metrics | Thành công |
 
 Kết quả kiểm thử cho thấy toàn bộ Docker Container hoạt động ổn định, các chức năng chính đáp ứng yêu cầu của nền tảng và quá trình Retrieval-Augmented Generation (RAG) hoạt động chính xác với dữ liệu được tải lên.
-
-> **Hình 4.3. Kết quả kiểm thử AI Learning Assistant Platform.**
-
-![Hình 4.3](/images/4.3.d.x.png)
-
----
 
 ## 4.4 Giám sát và vận hành
 

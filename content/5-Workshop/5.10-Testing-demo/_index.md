@@ -1,12 +1,10 @@
 ---
-title: "Cleanup and Future Development"
+title: "5.10. Cleanup and Future Development"
 date: 2026-08-09
 weight: 10
 chapter: false
 pre: " <b> 5.10. </b> "
 ---
-
-# 5.10 Cleanup and Future Development
 
 ## Resource cleanup
 

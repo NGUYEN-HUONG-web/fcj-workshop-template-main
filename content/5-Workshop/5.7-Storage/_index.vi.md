@@ -1,12 +1,10 @@
 ---
-title: "Lưu trữ với MinIO và Amazon S3"
+title: "5.7. Lưu trữ với MinIO và Amazon S3"
 date: 2026-08-09
 weight: 7
 chapter: false
 pre: " <b> 5.7. </b> "
 ---
-
-# 5.7 Lưu trữ với MinIO và Amazon S3
 
 ## Thiết kế lưu trữ
 

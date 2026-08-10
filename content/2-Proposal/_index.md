@@ -5,16 +5,11 @@ weight: 2
 chapter: false
 pre: " <b> 2. </b> "
 ---
-
 # AI Learning Assistant Platform
 
 ### An Intelligent Document-Based Learning Assistant Platform Deployed on AWS
 
-# AI Learning Assistant Platform
-
-### An Intelligent Document-Based Learning Assistant Platform Deployed on AWS
-
-# Part 1. Project Introduction
+#  Project Introduction
 
 # Project Team Information
 
@@ -24,7 +19,7 @@ pre: " <b> 2. </b> "
 | 2 | Trần Quốc Bảo | 3122411015 | Team Member |
 | 3 | Nguyễn Ngọc Thúy Vy | 3122411256 | Team Member |
 
-# Part 2. Project Overviews
+# Part 1. Project Overviews
 
 ## 1.1 Background
 
@@ -432,9 +427,6 @@ After successful deployment, the platform was tested to evaluate its stability, 
 
 The testing results demonstrate that all Docker containers operate reliably, the core platform features function correctly, and the Retrieval-Augmented Generation (RAG) pipeline accurately generates responses based on uploaded learning materials.
 
-> **Figure 4.3. System Testing Results of AI Learning Assistant Platform.**
-
-![Figure 4.3](/images/4.3.d.x.png)
 
 ---
 

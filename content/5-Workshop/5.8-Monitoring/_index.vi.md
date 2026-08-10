@@ -1,12 +1,10 @@
 ---
-title: "Giám sát với CloudWatch và SNS"
+title: "5.8. Giám sát với CloudWatch và SNS"
 date: 2026-08-09
 weight: 8
 chapter: false
 pre: " <b> 5.8. </b> "
 ---
-
-# 5.8 Giám sát với CloudWatch và Amazon SNS
 
 ## Mục tiêu giám sát
 

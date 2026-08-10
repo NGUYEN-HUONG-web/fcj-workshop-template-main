@@ -1,12 +1,10 @@
 ---
-title: "Monitoring with CloudWatch and SNS"
+title: "5.8. Monitoring with CloudWatch and SNS"
 date: 2026-08-09
 weight: 8
 chapter: false
 pre: " <b> 5.8. </b> "
 ---
-
-# 5.8 Monitoring with CloudWatch and Amazon SNS
 
 ## Monitoring objective
 

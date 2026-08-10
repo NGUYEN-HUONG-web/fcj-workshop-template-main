@@ -1,12 +1,10 @@
 ---
-title: "Triển khai môi trường"
+title: "5.3. Triển khai môi trường"
 date: 2026-08-09
 weight: 3
 chapter: false
 pre: " <b> 5.3. </b> "
 ---
-
-# 5.3 Triển khai môi trường
 
 ## Mục tiêu
 

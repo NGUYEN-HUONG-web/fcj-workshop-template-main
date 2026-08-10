@@ -1,12 +1,10 @@
 ---
-title: "Deploy EC2 and Docker Compose"
+title: "5.5. Deploy EC2 and Docker Compose"
 date: 2026-08-09
 weight: 5
 chapter: false
 pre: " <b> 5.5. </b> "
 ---
-
-# 5.5 Deploy EC2 and Docker Compose
 
 ## Create the EC2 instance
 

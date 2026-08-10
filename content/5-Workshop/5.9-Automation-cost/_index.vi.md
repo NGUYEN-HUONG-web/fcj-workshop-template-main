@@ -1,12 +1,10 @@
 ---
-title: "Tự động hóa và tối ưu chi phí"
+title: "5.9. Tự động hóa và tối ưu chi phí"
 date: 2026-08-09
 weight: 9
 chapter: false
 pre: " <b> 5.9. </b> "
 ---
-
-# 5.9 Tự động hóa và tối ưu chi phí
 
 ## Bật/tắt EC2 theo lịch
 

@@ -1,12 +1,10 @@
 ---
-title: "Kiến trúc hệ thống"
+title: "5.2 Kiến trúc hệ thống"
 date: 2026-08-09
 weight: 2
 chapter: false
 pre: " <b> 5.2. </b> "
 ---
-
-# 5.2 Kiến trúc hệ thống
 
 ## 5.2.1 Tổng quan kiến trúc
 

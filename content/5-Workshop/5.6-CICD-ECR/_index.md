@@ -1,12 +1,10 @@
 ---
-title: "CI/CD with GitHub Actions and ECR"
+title: "5.6. CI/CD with GitHub Actions and ECR"
 date: 2026-08-09
 weight: 6
 chapter: false
 pre: " <b> 5.6. </b> "
 ---
-
-# 5.6 CI/CD with GitHub Actions and Amazon ECR
 
 ## Pipeline objective
 

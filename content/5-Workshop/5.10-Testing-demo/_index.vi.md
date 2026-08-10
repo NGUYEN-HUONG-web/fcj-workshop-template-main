@@ -1,12 +1,10 @@
 ---
-title: "Dọn dẹp và hướng phát triển"
+title: "5.10. Dọn dẹp và hướng phát triển"
 date: 2026-08-09
 weight: 10
 chapter: false
 pre: " <b> 5.10. </b> "
 ---
-
-# 5.10 Dọn dẹp và hướng phát triển
 
 ## Dọn dẹp tài nguyên
 

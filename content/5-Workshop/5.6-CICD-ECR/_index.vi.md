@@ -1,12 +1,10 @@
 ---
-title: "CI/CD với GitHub Actions và ECR"
+title: "5.6. CI/CD với GitHub Actions và ECR"
 date: 2026-08-09
 weight: 6
 chapter: false
 pre: " <b> 5.6. </b> "
 ---
-
-# 5.6 CI/CD với GitHub Actions và Amazon ECR
 
 ## Mục tiêu pipeline
 

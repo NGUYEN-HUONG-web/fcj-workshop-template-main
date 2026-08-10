@@ -23,6 +23,7 @@ pre: "<b> 4.2 </b>"
 | **Format** | Technical presentations and hands-on activities |
 | **Event page** | [View on Luma](https://luma.com/8qewnfuu) |
 
+![Picture](/images/event2.png)
 ## 2. Event Overview
 
 **Agent Forge – Deepdive Day 2** was the second session in a three-day Agent Forge workshop series.

@@ -1,13 +1,10 @@
 ---
-title: "Triển khai EC2 và Docker Compose"
+title: "5.5. Triển khai EC2 và Docker Compose"
 date: 2026-08-09
 weight: 5
 chapter: false
 pre: " <b> 5.5. </b> "
 ---
-
-# 5.5 Triển khai EC2 và Docker Compose
-
 ## Tạo EC2 instance
 
 Khởi tạo EC2 bằng Linux AMI được hỗ trợ, instance type phù hợp, EBS đủ dung lượng, IAM role, key pair nếu dùng SSH và Security Group theo nguyên tắc đặc quyền tối thiểu. Ghi lại Region và Instance ID.
