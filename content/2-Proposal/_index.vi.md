@@ -6,12 +6,13 @@ chapter: false
 pre: " <b> 2. </b> "
 ---
 
-# AI Learning Assistant Platform
+<section class="proposal-hero">
+  <p class="proposal-hero__eyebrow">Giới thiệu dự án</p>
+  <h1>AI Learning Assistant Platform</h1>
+  <p class="proposal-hero__summary">Nền tảng trợ lý học tập thông minh dựa trên tài liệu, triển khai trên AWS</p>
+</section>
 
-### Nền tảng trợ lý học tập thông minh dựa trên tài liệu triển khai trên AWS
- # Giới thiệu dự án
-
-# Thông tin nhóm thực hiện
+## Thông tin nhóm thực hiện
 
 | STT | Họ và tên | Mã số sinh viên | Vai trò |
 |:---:|---|---|---|---|

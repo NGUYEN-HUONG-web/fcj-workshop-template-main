@@ -5,13 +5,13 @@ weight: 2
 chapter: false
 pre: " <b> 2. </b> "
 ---
-# AI Learning Assistant Platform
+<section class="proposal-hero">
+  <p class="proposal-hero__eyebrow">Project introduction</p>
+  <h1>AI Learning Assistant Platform</h1>
+  <p class="proposal-hero__summary">An intelligent document-based learning assistant platform deployed on AWS</p>
+</section>
 
-### An Intelligent Document-Based Learning Assistant Platform Deployed on AWS
-
-#  Project Introduction
-
-# Project Team Information
+## Project Team Information
 
 | No. | Full Name | Student ID | Role |
 |:---:|---|---|---|
