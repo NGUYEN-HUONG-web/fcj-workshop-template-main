@@ -24,6 +24,8 @@ This section prepares the shared deployment environment used by the AI Learning 
 
 Prepare a consistent naming convention for the EC2 instance, ECR repository, S3 bucket, IAM roles, CloudWatch resources, Lambda functions, EventBridge schedules, SNS topic, and budget. Use one AWS Region for all regional resources unless the design explicitly requires otherwise.
 
+![AWS Region and main project resources](/images/5-Workshop/5.3-Environment/aws-region-resources.png)
+
 ## Network and access plan
 
 1. Place the EC2 instance in a VPC subnet with outbound Internet access.
@@ -36,15 +38,9 @@ Prepare a consistent naming convention for the EC2 instance, ECR repository, S3 
 
 Create a local `.env` file from the project example and provide values for database credentials, Redis, MinIO, AI model configuration, application URL, and storage settings. Never commit `.env` to Git.
 
+> **⚠️ Image not available:** Repository structure and sanitized `.env.example`.  
+> File: `/images/5-Workshop/5.3-Environment/repository-environment.png`
+
 ## Expected result
 
 The local, CI/CD, and AWS environments use compatible configuration; required resources are named consistently; and secrets are separated from source code.
-
-## Evidence images to add
-
-1. AWS Console showing the selected Region.
-2. Repository structure containing Docker and workflow files.
-3. Project AWS resources and naming convention.
-4. Sanitized environment example with secret values hidden.
-
-<!-- Suggested directory: /static/images/5-Workshop/5.3-Environment/ -->

@@ -18,11 +18,9 @@ EventBridge schedule → Lambda → EC2 StartInstances/StopInstances
 
 Chọn đúng múi giờ, cấu hình retry và chạy thử từng function trước khi bật lịch. Việc stop EC2 không loại bỏ chi phí EBS, Elastic IP, S3 hoặc các tài nguyên vẫn tồn tại.
 
-> **📷 Chèn ảnh tại đây:** Lambda Start/Stop EC2 và kết quả test thành công.  
-> File: `/images/5-Workshop/5.9-Automation-Cost/lambda-start-stop.png`
-<!-- ![Lambda Start Stop EC2](/images/5-Workshop/5.9-Automation-Cost/lambda-start-stop.png) -->
+![Lambda Start Stop EC2 và kết quả kiểm thử](/images/5-Workshop/5.9-Automation-Cost/lambda-start-stop.png)
 
-> **📷 Chèn ảnh tại đây:** EventBridge schedule, múi giờ và lần chạy tiếp theo.  
+> **⚠️ Ảnh chưa có:** EventBridge schedule, múi giờ và lần chạy tiếp theo.  
 > File: `/images/5-Workshop/5.9-Automation-Cost/eventbridge-schedule.png`
 <!-- ![EventBridge schedule](/images/5-Workshop/5.9-Automation-Cost/eventbridge-schedule.png) -->
 
@@ -30,7 +28,7 @@ Chọn đúng múi giờ, cấu hình retry và chạy thử từng function tr�
 
 Tạo monthly cost budget và các ngưỡng cảnh báo cho chi phí thực tế, chi phí dự báo. Gửi cảnh báo đến địa chỉ được theo dõi và kiểm tra phân bổ chi phí định kỳ.
 
-> **📷 Chèn ảnh tại đây:** AWS Budget, ngưỡng cảnh báo và trạng thái hiện tại; che dữ liệu thanh toán.  
+> **⚠️ Ảnh chưa có:** AWS Budget, ngưỡng cảnh báo và trạng thái hiện tại; che dữ liệu thanh toán.  
 > File: `/images/5-Workshop/5.9-Automation-Cost/aws-budget.png`
 <!-- ![AWS Budget của dự án](/images/5-Workshop/5.9-Automation-Cost/aws-budget.png) -->
 
@@ -49,7 +47,7 @@ Chi phí thực tế phụ thuộc Region, kích thước instance, dung lượn
 
 Ước tính theo tháng chỉ là giá trị lập kế hoạch, không phải hóa đơn cố định. Trong quá trình vận hành cần so sánh với Cost Explorer và AWS Budgets.
 
-> **📷 Chèn ảnh tại đây:** Cost Explorer theo dịch vụ, đã che Account ID và thông tin thanh toán.  
+> **⚠️ Ảnh chưa có:** Cost Explorer theo dịch vụ, đã che Account ID và thông tin thanh toán.  
 > File: `/images/5-Workshop/5.9-Automation-Cost/cost-explorer.png`
 <!-- ![Chi phí trên Cost Explorer](/images/5-Workshop/5.9-Automation-Cost/cost-explorer.png) -->
 

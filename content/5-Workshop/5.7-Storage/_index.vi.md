@@ -22,7 +22,7 @@ Nền tảng sử dụng nhiều công nghệ lưu trữ vì mỗi loại dữ l
 
 Tạo bucket private, khai báo endpoint, credential và Docker volume bền vững. Giữ trang quản trị ở mạng riêng. Kiểm tra upload, download và truy cập từ ứng dụng bằng tài liệu không nhạy cảm.
 
-> **📷 Chèn ảnh tại đây:** MinIO bucket, object mẫu và volume bền vững; không hiển thị credential.  
+> **⚠️ Ảnh chưa có:** MinIO bucket, object mẫu và volume bền vững; không hiển thị credential.  
 > File: `/images/5-Workshop/5.7-Storage/minio-storage.png`
 <!-- ![MinIO bucket và object](/images/5-Workshop/5.7-Storage/minio-storage.png) -->
 
@@ -30,17 +30,13 @@ Tạo bucket private, khai báo endpoint, credential và Docker volume bền v�
 
 Tạo bucket private, bật Block Public Access. Áp dụng mã hóa, versioning và lifecycle rule theo chính sách lưu trữ. Cấp quyền cho EC2 qua IAM role và bucket policy tối thiểu.
 
-> **📷 Chèn ảnh tại đây:** S3 bucket private, Block Public Access và cấu hình versioning/mã hóa.  
-> File: `/images/5-Workshop/5.7-Storage/s3-bucket-settings.png`
-<!-- ![Cấu hình Amazon S3](/images/5-Workshop/5.7-Storage/s3-bucket-settings.png) -->
+![Cấu hình bảo mật và versioning của Amazon S3](/images/5-Workshop/5.7-Storage/s3-bucket-settings.png)
 
 ## Sao lưu và khôi phục
 
 Xác định object MinIO, database export và file cấu hình nào được sao lưu lên S3. Lập lịch, quy định thời gian lưu và kiểm thử khôi phục thay vì chỉ giả định dữ liệu có thể phục hồi.
 
-> **📷 Chèn ảnh tại đây:** Danh sách S3 object có thời gian sao lưu gần nhất; không mở nội dung nhạy cảm.  
-> File: `/images/5-Workshop/5.7-Storage/s3-backup-objects.png`
-<!-- ![Object sao lưu trên S3](/images/5-Workshop/5.7-Storage/s3-backup-objects.png) -->
+![Danh sách object sao lưu trên Amazon S3](/images/5-Workshop/5.7-Storage/s3-backup-objects.png)
 
 ## Kiểm tra kết quả
 

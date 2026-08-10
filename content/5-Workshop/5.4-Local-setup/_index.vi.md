@@ -15,9 +15,7 @@ pre: " <b> 5.4. </b> "
 - Biến môi trường và thông tin xác thực mô hình AI hợp lệ.
 - AWS CLI nếu cần kiểm tra quyền AWS từ local.
 
-> **📷 Chèn ảnh tại đây:** Terminal hiển thị phiên bản Git, Docker và Docker Compose.  
-> File: `/images/5-Workshop/5.4-Local-Setup/tool-versions.png`
-<!-- ![Phiên bản công cụ local](/images/5-Workshop/5.4-Local-Setup/tool-versions.png) -->
+![Phiên bản Git, Docker và Docker Compose](/images/5-Workshop/5.4-Local-Setup/tool-versions.png)
 
 ## Tải và cấu hình dự án
 
@@ -39,9 +37,7 @@ docker compose ps
 
 Chờ các container ứng dụng, MongoDB, PostgreSQL/pgvector, Redis, MinIO, Code Sandbox và Nginx hoạt động.
 
-> **📷 Chèn ảnh tại đây:** `docker compose ps` với các container `Up` hoặc healthy.  
-> File: `/images/5-Workshop/5.4-Local-Setup/local-containers.png`
-<!-- ![Container chạy local](/images/5-Workshop/5.4-Local-Setup/local-containers.png) -->
+![Các container chạy trên môi trường local](/images/5-Workshop/5.4-Local-Setup/local-containers.png)
 
 ## Kiểm tra local
 
@@ -52,9 +48,7 @@ Chờ các container ứng dụng, MongoDB, PostgreSQL/pgvector, Redis, MinIO, C
 5. Tải lên tài liệu mẫu không nhạy cảm.
 6. Khởi động lại container và kiểm tra dữ liệu vẫn tồn tại.
 
-> **📷 Chèn ảnh tại đây:** Giao diện ứng dụng local và một câu trả lời AI thành công.  
-> File: `/images/5-Workshop/5.4-Local-Setup/local-application.png`
-<!-- ![Ứng dụng chạy local](/images/5-Workshop/5.4-Local-Setup/local-application.png) -->
+![Ứng dụng và trợ lý AI chạy trên môi trường local](/images/5-Workshop/5.4-Local-Setup/local-application.png)
 
 ## Xử lý lỗi
 

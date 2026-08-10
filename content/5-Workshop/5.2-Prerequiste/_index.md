@@ -104,7 +104,7 @@ EventBridge Scheduler → Lambda → Start/Stop EC2
 AWS Budgets → Actual and forecast cost alerts
 ```
 
-> **📷 Insert evidence here:** Operations diagram covering CloudWatch, SNS, Lambda, EventBridge, and AWS Budgets.  
+> **⚠️ Image not available:** Operations diagram covering CloudWatch, SNS, Lambda, EventBridge, and AWS Budgets.  
 > File: `/images/5-Workshop/5.2-Architecture/operations-architecture.png`
 <!-- ![Monitoring and automation architecture](/images/5-Workshop/5.2-Architecture/operations-architecture.png) -->
 
@@ -123,4 +123,3 @@ AWS Budgets → Actual and forecast cost alerts
 ## 5.2.7 Architecture assessment
 
 The single-EC2 design reduces cost and complexity for the MVP. Docker isolates services; EBS and S3 protect state; CI/CD controls versions; CloudWatch adds visibility; and scheduled operations reduce idle cost. Its main limitation is the single point of failure. A future version can adopt managed databases, multiple Availability Zones, a Load Balancer, Auto Scaling, and managed secret storage.
-

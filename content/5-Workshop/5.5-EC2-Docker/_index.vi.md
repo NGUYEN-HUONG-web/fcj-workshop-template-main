@@ -9,13 +9,9 @@ pre: " <b> 5.5. </b> "
 
 Khởi tạo EC2 bằng Linux AMI được hỗ trợ, instance type phù hợp, EBS đủ dung lượng, IAM role, key pair nếu dùng SSH và Security Group theo nguyên tắc đặc quyền tối thiểu. Ghi lại Region và Instance ID.
 
-> **📷 Chèn ảnh tại đây:** EC2 `Running`, status checks `2/2 passed`; che định danh nhạy cảm.  
-> File: `/images/5-Workshop/5.5-EC2-Docker/ec2-running.png`
-<!-- ![EC2 đang hoạt động](/images/5-Workshop/5.5-EC2-Docker/ec2-running.png) -->
+![EC2 đang hoạt động và vượt qua status checks](/images/5-Workshop/5.5-EC2-Docker/ec2-running.png)
 
-> **📷 Chèn ảnh tại đây:** Inbound rules của Security Group.  
-> File: `/images/5-Workshop/5.5-EC2-Docker/security-group.png`
-<!-- ![Security Group của EC2](/images/5-Workshop/5.5-EC2-Docker/security-group.png) -->
+![Inbound rules của Security Group](/images/5-Workshop/5.5-EC2-Docker/security-group.png)
 
 ## Cài đặt môi trường chạy
 
@@ -31,15 +27,13 @@ docker compose up -d
 docker compose ps
 ```
 
-> **📷 Chèn ảnh tại đây:** Terminal EC2 hiển thị các container `Up` hoặc healthy.  
-> File: `/images/5-Workshop/5.5-EC2-Docker/ec2-containers.png`
-<!-- ![Container trên EC2](/images/5-Workshop/5.5-EC2-Docker/ec2-containers.png) -->
+![Các container đang chạy trên EC2](/images/5-Workshop/5.5-EC2-Docker/ec2-containers.png)
 
 ## Cấu hình Nginx
 
 Nginx Reverse Proxy nhận request từ Public IP hoặc `FE_DOMAIN` và chuyển đến ứng dụng. Cấu hình HTTPS khi có domain và chứng chỉ. Không mở công khai cổng MongoDB, PostgreSQL, Redis hoặc trang quản trị MinIO.
 
-> **📷 Chèn ảnh tại đây:** Website truy cập thành công qua Public IP hoặc domain.  
+> **⚠️ Ảnh chưa có:** Website truy cập thành công qua Public IP hoặc domain.  
 > File: `/images/5-Workshop/5.5-EC2-Docker/public-website.png`
 <!-- ![Website chạy trên EC2](/images/5-Workshop/5.5-EC2-Docker/public-website.png) -->
 

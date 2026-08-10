@@ -12,7 +12,7 @@ Dọn dẹp theo thứ tự phụ thuộc để tránh bỏ sót tài nguyên:
 
 1. Export dữ liệu cần giữ và xác nhận bản sao lưu cuối trên Amazon S3.
 
-> **📷 Chèn ảnh tại đây:** Bản sao lưu cuối trên S3 trước khi xóa tài nguyên.  
+> **⚠️ Ảnh chưa có:** Bản sao lưu cuối trên S3 trước khi xóa tài nguyên.  
 > File: `/images/5-Workshop/5.10-Cleanup-Future/final-s3-backup.png`
 <!-- ![Bản sao lưu cuối trên S3](/images/5-Workshop/5.10-Cleanup-Future/final-s3-backup.png) -->
 2. Dừng Docker Compose, xóa container tạm, image và volume không sử dụng.
@@ -25,7 +25,7 @@ Dọn dẹp theo thứ tự phụ thuộc để tránh bỏ sót tài nguyên:
 9. Xóa IAM policy và role tạm sau khi tài nguyên phụ thuộc đã được loại bỏ.
 10. Kiểm tra Billing, Cost Explorer và Resource Explorer để tìm tài nguyên còn sót.
 
-> **📷 Chèn ảnh tại đây:** EC2 đã stop/terminate và Resource Explorer không còn tài nguyên ngoài ý muốn.  
+> **⚠️ Ảnh chưa có:** EC2 đã stop/terminate và Resource Explorer không còn tài nguyên ngoài ý muốn.  
 > File: `/images/5-Workshop/5.10-Cleanup-Future/resources-cleaned.png`
 <!-- ![Tài nguyên đã được dọn dẹp](/images/5-Workshop/5.10-Cleanup-Future/resources-cleaned.png) -->
 
@@ -48,7 +48,7 @@ Ghi nhận image tag đang triển khai, phiên bản cấu hình môi trường
 - Tự động hóa integration test, security test, load test, backup test và disaster-recovery test.
 - Dùng Infrastructure as Code để tái tạo môi trường nhất quán.
 
-> **📷 Chèn ảnh tại đây:** Sơ đồ kiến trúc đề xuất cho giai đoạn phát triển tiếp theo.  
+> **⚠️ Ảnh chưa có:** Sơ đồ kiến trúc đề xuất cho giai đoạn phát triển tiếp theo.  
 > File: `/images/5-Workshop/5.10-Cleanup-Future/future-architecture.png`
 <!-- ![Kiến trúc phát triển tương lai](/images/5-Workshop/5.10-Cleanup-Future/future-architecture.png) -->
 

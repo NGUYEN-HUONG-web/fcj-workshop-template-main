@@ -124,9 +124,7 @@ CloudWatch → Alarm → SNS
 EventBridge → Lambda → Start/Stop EC2
 ```
 
-> **📷 Insert an image here:** Workflow from the learner to the learning functions and AWS services.  
-> File: `/images/5-Workshop/5.1-Introduction/system-workflow.png`
-<!-- ![System workflow](/images/5-Workshop/5.1-Introduction/system-workflow.png) -->
+![System workflow from the learner to the learning functions and AWS services](/images/5.1.6ws.png)
 
 ## 5.1.7 Solution value
 

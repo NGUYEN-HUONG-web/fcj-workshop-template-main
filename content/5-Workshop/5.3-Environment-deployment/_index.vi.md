@@ -24,9 +24,7 @@ Phần này chuẩn bị môi trường triển khai thống nhất cho AI Learn
 
 Thống nhất quy tắc đặt tên cho EC2, ECR repository, S3 bucket, IAM role, CloudWatch, Lambda, EventBridge, SNS và AWS Budget. Các tài nguyên theo Region nên được tạo trong cùng một Region, trừ khi kiến trúc yêu cầu khác.
 
-> **📷 Chèn ảnh tại đây:** AWS Console hiển thị Region và tài nguyên chính; che Account ID.  
-> File: `/images/5-Workshop/5.3-Environment/aws-region-resources.png`
-<!-- ![Region và tài nguyên AWS](/images/5-Workshop/5.3-Environment/aws-region-resources.png) -->
+![AWS Region và các tài nguyên chính](/images/5-Workshop/5.3-Environment/aws-region-resources.png)
 
 ## Kế hoạch mạng và truy cập
 
@@ -40,7 +38,7 @@ Thống nhất quy tắc đặt tên cho EC2, ECR repository, S3 bucket, IAM rol
 
 Tạo `.env` từ file mẫu của dự án và khai báo thông tin MongoDB, PostgreSQL, Redis, MinIO, mô hình AI, URL ứng dụng và cấu hình lưu trữ. Không commit `.env` lên Git.
 
-> **📷 Chèn ảnh tại đây:** Cấu trúc repository và `.env.example`; che toàn bộ secret.  
+> **⚠️ Ảnh chưa có:** Cấu trúc repository và `.env.example`; che toàn bộ secret.  
 > File: `/images/5-Workshop/5.3-Environment/repository-environment.png`
 <!-- ![Repository và cấu hình môi trường](/images/5-Workshop/5.3-Environment/repository-environment.png) -->
 

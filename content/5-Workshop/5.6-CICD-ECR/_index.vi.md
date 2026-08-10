@@ -14,9 +14,7 @@ Pipeline tạo quy trình phân phối có thể lặp lại và truy vết. M�
 
 Tạo private ECR repository, bật image scanning khi phù hợp và cấu hình lifecycle policy để xóa image cũ. Chỉ cấp cho workflow quyền cần thiết để push image.
 
-> **📷 Chèn ảnh tại đây:** ECR repository có image tag, digest và thời gian push.  
-> File: `/images/5-Workshop/5.6-CICD-ECR/ecr-images.png`
-<!-- ![Docker image trong Amazon ECR](/images/5-Workshop/5.6-CICD-ECR/ecr-images.png) -->
+![Docker image và tag trong Amazon ECR](/images/5-Workshop/5.6-CICD-ECR/ecr-images.png)
 
 ## GitHub Actions workflow
 
@@ -33,17 +31,13 @@ Workflow điển hình gồm:
 
 Lưu cấu hình trong GitHub Secrets hoặc Variables. Ưu tiên OIDC thay cho Access Key dài hạn.
 
-> **📷 Chèn ảnh tại đây:** GitHub Actions workflow thành công và các bước build, push ECR.  
-> File: `/images/5-Workshop/5.6-CICD-ECR/github-actions-success.png`
-<!-- ![GitHub Actions chạy thành công](/images/5-Workshop/5.6-CICD-ECR/github-actions-success.png) -->
+![GitHub Actions build và push image thành công](/images/5-Workshop/5.6-CICD-ECR/github-actions-success.png)
 
 ## Kiểm tra triển khai
 
 Xác nhận workflow thành công, tag và digest đúng đã tồn tại trong ECR, EC2 chạy đúng phiên bản image. Giữ lại tag ổn định gần nhất để rollback khi phiên bản mới lỗi.
 
-> **📷 Chèn ảnh tại đây:** EC2 đang chạy đúng image tag đã build, nếu pipeline có bước deploy.  
-> File: `/images/5-Workshop/5.6-CICD-ECR/deployed-image-tag.png`
-<!-- ![Image tag đang chạy trên EC2](/images/5-Workshop/5.6-CICD-ECR/deployed-image-tag.png) -->
+![Image tag đang được triển khai trên EC2](/images/5-Workshop/5.6-CICD-ECR/deployed-image-tag.png)
 
 ## Ảnh minh chứng cần bổ sung
 

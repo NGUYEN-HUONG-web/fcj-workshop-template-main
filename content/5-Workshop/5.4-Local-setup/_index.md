@@ -15,6 +15,8 @@ pre: " <b> 5.4. </b> "
 - Application environment variables and valid AI model credentials.
 - Optional AWS CLI for testing AWS access locally.
 
+![Git, Docker, and Docker Compose versions](/images/5-Workshop/5.4-Local-Setup/tool-versions.png)
+
 ## Clone and configure the project
 
 ```bash
@@ -35,6 +37,8 @@ docker compose ps
 
 Wait until the required application, MongoDB, PostgreSQL/pgvector, Redis, MinIO, Code Sandbox, and Nginx containers are running.
 
+![Local Docker containers running](/images/5-Workshop/5.4-Local-Setup/local-containers.png)
+
 ## Validate locally
 
 1. Open the configured frontend URL.
@@ -43,6 +47,8 @@ Wait until the required application, MongoDB, PostgreSQL/pgvector, Redis, MinIO,
 4. Ask the AI assistant a prepared question.
 5. Upload a non-sensitive sample document.
 6. Confirm that data remains available after container restart.
+
+![Application and AI assistant running locally](/images/5-Workshop/5.4-Local-Setup/local-application.png)
 
 ## Troubleshooting
 
@@ -53,12 +59,3 @@ docker system df
 ```
 
 Check port conflicts, invalid variables, insufficient memory, unhealthy dependencies, and model API connectivity before moving to AWS.
-
-## Evidence images to add
-
-1. Docker and Docker Compose version commands.
-2. `docker compose ps` showing local services running.
-3. Local application login or home page.
-4. Successful local AI response and sample document upload.
-
-<!-- Suggested files: docker-version.png, local-containers.png, local-home.png, local-ai-response.png -->

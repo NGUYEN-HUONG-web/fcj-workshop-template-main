@@ -153,7 +153,7 @@ AWS Budgets → Cảnh báo chi phí thực tế và dự báo
 - EventBridge và Lambda giảm số giờ chạy EC2 khi hệ thống không sử dụng.
 - AWS Budgets giúp phát hiện sớm nguy cơ vượt ngân sách.
 
-> **📷 Chèn ảnh tại đây:** Sơ đồ vận hành gồm CloudWatch, SNS, Lambda, EventBridge và AWS Budgets.  
+> **⚠️ Ảnh chưa có:** Sơ đồ vận hành gồm CloudWatch, SNS, Lambda, EventBridge và AWS Budgets.  
 > File: `/images/5-Workshop/5.2-Architecture/operations-architecture.png`
 <!-- ![Kiến trúc giám sát và tự động hóa](/images/5-Workshop/5.2-Architecture/operations-architecture.png) -->
 
@@ -179,4 +179,3 @@ AWS Budgets → Cảnh báo chi phí thực tế và dự báo
 Mô hình một EC2 giúp giảm độ phức tạp và chi phí cho giai đoạn MVP. Docker tách biệt dịch vụ; EBS và S3 bảo vệ dữ liệu; CI/CD giúp kiểm soát phiên bản; CloudWatch tăng khả năng quan sát; Lambda và EventBridge giảm chi phí nhàn rỗi.
 
 Hạn chế chính là EC2 vẫn là single point of failure. Khi hệ thống phát triển, có thể chuyển database sang dịch vụ managed, triển khai nhiều Availability Zone, bổ sung Load Balancer, Auto Scaling và dịch vụ quản lý secret.
-
