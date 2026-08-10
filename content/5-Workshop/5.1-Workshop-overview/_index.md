@@ -13,11 +13,6 @@ The rapid development of artificial intelligence, large language models, and clo
 In practice, students and instructors work with textbooks, slides, laboratory guides, reference materials, and research papers. As the volume of material grows, locating a specific piece of information becomes time-consuming and reduces learning efficiency.
 
 Conventional AI chatbots mainly rely on knowledge acquired during training. They do not automatically understand a user's private documents and can produce inaccurate or unsupported answers, a problem commonly known as **AI hallucination**.
-
-> **📷 Insert an image here:** Learning materials distributed across multiple locations and difficult to search.  
-> File: `/images/5-Workshop/5.1-Introduction/learning-problem.png`
-<!-- ![The learning-document management problem](/images/5-Workshop/5.1-Introduction/learning-problem.png) -->
-
 ## 5.1.2 Problem statement
 
 The project addresses the following requirements:
@@ -41,9 +36,9 @@ Compared with a conventional chatbot, the solution offers three key differences:
 2. Semantic Search finds relevant content even when a question does not contain the document's exact keywords.
 3. A Knowledge Base can be reused across conversations and learning features.
 
-> **📷 Insert an image here:** AI Learning Assistant home page after sign-in.  
-> File: `/images/5-Workshop/5.1-Introduction/application-home.png`
-<!-- ![AI Learning Assistant home page](/images/5-Workshop/5.1-Introduction/application-home.png) -->
+Hình 5.1: Trang chính AI Learning Assistant sau khi đăng nhập.  
+
+![Trang chính AI Learning Assistant sau khi đăng nhập](/images/hinh5.1-wshop.png)
 
 ## 5.1.4 Project objectives
 
@@ -70,10 +65,13 @@ Compared with a conventional chatbot, the solution offers three key differences:
 - Schedule EC2 start and stop operations with Lambda and EventBridge.
 - Track expenditure with AWS Budgets.
 
-> **📷 Insert an image here:** Main functions including learning paths, AI assistant, documents, quizzes, and flashcards.  
-> File: `/images/5-Workshop/5.1-Introduction/main-features.png`
-<!-- ![Main system functions](/images/5-Workshop/5.1-Introduction/main-features.png) -->
 
+![Hình5.1.1 Lộ trình ](/images/5.1.1.wrokshop.png)
+![Hình5.1.2 Trợ lý AI ](/images/hinh5.1-wshop.png)
+![Hình5.1.3 Trợ lý tài liệu (trợ lý bài học) ](/images/hinh5.1.3.wrokshop.png)
+![Hình5.1.4 Bài luyện tập ](/images/hinh5.1.4.workshop.png)
+![Hình5.1.5 Thẻ nhớ mặt trước ](/images/5.1.5.workshomt.png)
+![Hình5.1.5 Thẻ nhớ mặt sau ](/images/hinh1.1.5bworkshop.png)
 ## 5.1.5 Project scope
 
 ### Functional scope

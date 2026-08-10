@@ -41,7 +41,7 @@ So với chatbot truyền thống, giải pháp có ba điểm khác biệt:
 
 Hình 5.1: Trang chính AI Learning Assistant sau khi đăng nhập.  
 
-![Trang chính AI Learning Assistant sau khi đăng nhập](/images/hinh5.1 wshop.png)
+![Trang chính AI Learning Assistant sau khi đăng nhập](/images/hinh5.1-wshop.png)
 
 ## 5.1.4 Mục tiêu dự án
 
@@ -68,16 +68,14 @@ Hình 5.1: Trang chính AI Learning Assistant sau khi đăng nhập.
 - Tự động bật/tắt EC2 bằng Lambda và EventBridge.
 - Theo dõi chi phí bằng AWS Budgets.
 
-> **📷 Chèn ảnh tại đây:** Màn hình tổng hợp các chức năng chính: lộ trình, trợ lý AI, tài liệu, bài luyện tập và thẻ nhớ.  
-> File: `/images/5-Workshop/5.1-Introduction/main-features.png`
-<!-- ![Các chức năng chính của hệ thống](/images/5-Workshop/5.1-Introduction/main-features.png) -->
+![Hình5.1.1 Lộ trình](/images/5.1.1.wrokshop.png)
+![Hình5.1.2 Trợ lý AI](/images/hinh5.1-wshop.png)
+![Hình5.1.3 Trợ lý tài liệu (trợ lý bài học)](/images/hinh5.1.3.wrokshop.png)
+![Hình5.1.4 Bài luyện tập](/images/hinh5.1.4.workshop.png)
+![Hình5.1.5 Thẻ nhớ mặt trước](/images/5.1.5.workshomt.png)
+![Hình5.1.5 Thẻ nhớ mặt sau](/images/hinh1.1.5bworkshop.png)
 
-![Hình5.1.1 Lộ trình ](/images/hinh5.1 wshop.png)
-![Hình5.1.2 Trợ lý AI ](/images/hinh5.1 wshop.png)
-![Hình5.1.3 Trợ lý tài liệu (trợ lý bài học) ](/images/hinh5.1 wshop.png)
-![Hình5.1.4 Bài luyện tập ](/images/hinh5.1 wshop.png)
-![Hình5.1.5 Thẻ nhớ  ](/images/hinh5.1 wshop.png)
-#5 hình chưa chèn vào
+
 ## 5.1.5 Phạm vi dự án
 
 ### Phạm vi chức năng
