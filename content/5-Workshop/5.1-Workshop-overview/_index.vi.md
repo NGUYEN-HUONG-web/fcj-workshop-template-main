@@ -16,10 +16,6 @@ Trong thực tế, sinh viên và giảng viên thường sử dụng nhiều lo
 
 Các chatbot AI thông thường chủ yếu dựa vào kiến thức có sẵn từ quá trình huấn luyện. Chúng không tự động hiểu tài liệu riêng của người dùng và có thể tạo câu trả lời sai hoặc không có căn cứ, thường được gọi là **AI Hallucination**.
 
-> **📷 Chèn ảnh tại đây:** Minh họa vấn đề tài liệu học tập phân tán và khó tìm kiếm.  
-> File: `/images/5-Workshop/5.1-Introduction/learning-problem.png`
-<!-- ![Vấn đề quản lý tài liệu học tập](/images/5-Workshop/5.1-Introduction/learning-problem.png) -->
-
 ## 5.1.2 Bài toán cần giải quyết
 
 Dự án cần giải quyết các yêu cầu chính:
@@ -43,9 +39,9 @@ So với chatbot truyền thống, giải pháp có ba điểm khác biệt:
 2. Semantic Search giúp tìm nội dung liên quan ngay cả khi câu hỏi không dùng đúng từ khóa trong tài liệu.
 3. Knowledge Base có thể tái sử dụng cho nhiều cuộc hội thoại và chức năng học tập.
 
-> **📷 Chèn ảnh tại đây:** Trang chính AI Learning Assistant sau khi đăng nhập.  
-> File: `/images/5-Workshop/5.1-Introduction/application-home.png`
-<!-- ![Trang chính AI Learning Assistant](/images/5-Workshop/5.1-Introduction/application-home.png) -->
+Hình 5.1: Trang chính AI Learning Assistant sau khi đăng nhập.  
+
+![Trang chính AI Learning Assistant sau khi đăng nhập](/images/hinh5.1 wshop.png)
 
 ## 5.1.4 Mục tiêu dự án
 
@@ -76,6 +72,12 @@ So với chatbot truyền thống, giải pháp có ba điểm khác biệt:
 > File: `/images/5-Workshop/5.1-Introduction/main-features.png`
 <!-- ![Các chức năng chính của hệ thống](/images/5-Workshop/5.1-Introduction/main-features.png) -->
 
+![Hình5.1.1 Lộ trình ](/images/hinh5.1 wshop.png)
+![Hình5.1.2 Trợ lý AI ](/images/hinh5.1 wshop.png)
+![Hình5.1.3 Trợ lý tài liệu (trợ lý bài học) ](/images/hinh5.1 wshop.png)
+![Hình5.1.4 Bài luyện tập ](/images/hinh5.1 wshop.png)
+![Hình5.1.5 Thẻ nhớ  ](/images/hinh5.1 wshop.png)
+#5 hình chưa chèn vào
 ## 5.1.5 Phạm vi dự án
 
 ### Phạm vi chức năng
@@ -127,11 +129,7 @@ CloudWatch → Alarm → SNS
 
 EventBridge → Lambda → Start/Stop EC2
 ```
-
-> **📷 Chèn ảnh tại đây:** Sơ đồ quy trình hoạt động từ người dùng đến các chức năng học tập và dịch vụ AWS.  
-> File: `/images/5-Workshop/5.1-Introduction/system-workflow.png`
-<!-- ![Quy trình hoạt động của hệ thống](/images/5-Workshop/5.1-Introduction/system-workflow.png) -->
-
+![Hình5.1.6  Sơ đồ quy trình hoạt động từ người dùng đến các chức năng học tập và dịch vụ AWS.  ](/images/5.1.6ws.png)
 ## 5.1.7 Giá trị của giải pháp
 
 Đối với người học, nền tảng giúp giảm thời gian tìm tài liệu, cung cấp giải thích theo ngữ cảnh và kết hợp học–hỏi–luyện tập trong một quy trình thống nhất.
