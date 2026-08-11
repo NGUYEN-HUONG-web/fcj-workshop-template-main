@@ -42,7 +42,7 @@ Wait until the required application, MongoDB, PostgreSQL/pgvector, Redis, MinIO,
 ## Validate locally
 
 1. Open the configured frontend URL.
-2. Sign in or create a test account.
+2. Sign in.
 3. Open a learning path and lesson.
 4. Ask the AI assistant a prepared question.
 5. Upload a non-sensitive sample document.

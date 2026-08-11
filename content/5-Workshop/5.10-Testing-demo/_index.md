@@ -50,5 +50,3 @@ These improvements should be prioritized using measured usage, reliability requi
 4. Disabled EventBridge schedules and cleaned CloudWatch resources.
 5. Resource Explorer, Cost Explorer, or Billing view showing no unintended resources.
 6. Proposed future architecture diagram.
-
-<!-- Suggested directory: /static/images/5-Workshop/5.10-Cleanup-Future/ -->

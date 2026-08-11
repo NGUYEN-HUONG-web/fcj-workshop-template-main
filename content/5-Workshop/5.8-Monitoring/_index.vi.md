@@ -43,12 +43,4 @@ Metric → CloudWatch Alarm → SNS Topic → Subscriber đã xác nhận
 
 Xác nhận Dashboard có dữ liệu mới, trạng thái Alarm giải thích được, hành vi khi thiếu dữ liệu đã cấu hình và địa chỉ email nhạy cảm được che trong minh chứng công khai.
 
-## Ảnh minh chứng cần bổ sung
 
-1. Trạng thái CloudWatch Agent trên EC2.
-2. CloudWatch Dashboard có dữ liệu CPU, bộ nhớ, ổ đĩa hoặc mạng.
-3. Tên Alarm, ngưỡng và trạng thái hiện tại.
-4. SNS topic và subscription `Confirmed`, che địa chỉ email.
-5. Email cảnh báo mẫu đã che thông tin cá nhân.
-
-<!-- Thư mục đề xuất: /static/images/5-Workshop/5.8-Monitoring/ -->

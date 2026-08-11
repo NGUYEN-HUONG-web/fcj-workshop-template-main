@@ -104,9 +104,8 @@ EventBridge Scheduler → Lambda → Start/Stop EC2
 AWS Budgets → Actual and forecast cost alerts
 ```
 
-> **⚠️ Image not available:** Operations diagram covering CloudWatch, SNS, Lambda, EventBridge, and AWS Budgets.  
-> File: `/images/5-Workshop/5.2-Architecture/operations-architecture.png`
-<!-- ![Monitoring and automation architecture](/images/5-Workshop/5.2-Architecture/operations-architecture.png) -->
+![Kiến trúc giám sát và tự động hóa](/images/5-Workshop/5.2-Architecture/operations-architecture.png)
+
 
 ## 5.2.6 Technology stack
 

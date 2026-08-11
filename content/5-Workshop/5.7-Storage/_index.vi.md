@@ -22,9 +22,7 @@ Nền tảng sử dụng nhiều công nghệ lưu trữ vì mỗi loại dữ l
 
 Tạo bucket private, khai báo endpoint, credential và Docker volume bền vững. Giữ trang quản trị ở mạng riêng. Kiểm tra upload, download và truy cập từ ứng dụng bằng tài liệu không nhạy cảm.
 
-> **⚠️ Ảnh chưa có:** MinIO bucket, object mẫu và volume bền vững; không hiển thị credential.  
-> File: `/images/5-Workshop/5.7-Storage/minio-storage.png`
-<!-- ![MinIO bucket và object](/images/5-Workshop/5.7-Storage/minio-storage.png) -->
+![MinIO bucket và object](/images/5-Workshop/5.7-Storage/mino.png) 
 
 ## Cấu hình Amazon S3
 
@@ -46,12 +44,4 @@ Xác định object MinIO, database export và file cấu hình nào được sa
 - Truy cập public trái phép bị từ chối.
 - Khôi phục mẫu thực hiện thành công.
 
-## Ảnh minh chứng cần bổ sung
 
-1. MinIO bucket và object mẫu không nhạy cảm.
-2. MinIO volume bền vững trong Docker Compose hoặc `docker volume ls`.
-3. Amazon S3 bucket private đã bật Block Public Access.
-4. Danh sách S3 object có thời gian sao lưu.
-5. Cấu hình versioning, mã hóa hoặc lifecycle của dự án.
-
-<!-- Thư mục đề xuất: /static/images/5-Workshop/5.7-Storage/ -->

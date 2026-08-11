@@ -17,11 +17,13 @@ EventBridge schedule → Lambda → EC2 StartInstances/StopInstances
 ```
 
 Set the correct time zone, configure retries, and test each function manually before enabling the schedule. Remember that stopping EC2 does not remove EBS, Elastic IP, S3, or other continuing charges.
+![Lambda Start Stop EC2 và kết quả kiểm thử](/images/5-Workshop/5.9-Automation-Cost/lambda-start-stop.png)
 
+[EventBridge schedule](/images/5-Workshop/5.9-Automation-Cost/evenright.png)
 ## AWS Budgets
 
 Create a monthly cost budget and define notification thresholds for actual and forecast spending. Send alerts to a monitored address and review cost allocation regularly.
-
+![AWS Budget của dự án](/images/5-Workshop/5.9-Automation-Cost/buget.png)
 ## Cost structure
 
 Actual prices depend on the Region, instance size, storage volume, traffic, retention, and usage duration. Record the current values from AWS Pricing Calculator or the Billing console before submitting the report.
@@ -37,6 +39,7 @@ Actual prices depend on the Region, instance size, storage volume, traffic, rete
 
 The monthly estimate must be treated as a planning value, not a fixed invoice. Compare the estimate with Cost Explorer and AWS Budgets during operation.
 
+[Chi phí trên Cost Explorer](/images/5-Workshop/5.9-Automation-Cost/cost.png)
 ## Additional optimization measures
 
 - Select an EC2 size based on measured CPU and memory usage.
@@ -49,51 +52,3 @@ The monthly estimate must be treated as a planning value, not a fixed invoice. C
 ## Verification
 
 Confirm Lambda execution results, EventBridge next invocation times, EC2 state changes, budget thresholds, and notification delivery without exposing account or billing details.
-
-## Evidence images to add
-
-1. Lambda functions used to start and stop EC2.
-2. Successful Lambda test result or CloudWatch execution log.
-3. EventBridge schedules, time zone, and next invocation time.
-4. AWS Budget amount, thresholds, and current status.
-5. Cost Explorer overview with account and billing details concealed.
-
-<!-- Suggested directory: /static/images/5-Workshop/5.9-Automation-Cost/ -->
-## Overall operations architecture
-
-{{<mermaid align="center">}}
-flowchart TB
-    subgraph AWS["AWS Cloud"]
-        RES["AWS resources<br/>EC2 · Application · S3"]
-
-        subgraph OBS["Monitoring and alerting"]
-            CW["Amazon CloudWatch<br/>Metrics · Logs · Dashboard"]
-            ALARM["CloudWatch Alarms"]
-            SNS["Amazon SNS"]
-            NOTIFY["Email · SMS · ChatOps"]
-        end
-
-        subgraph AUTO["Operations automation"]
-            EB["Amazon EventBridge<br/>Schedules · AWS events"]
-            LAMBDA["AWS Lambda<br/>Start/Stop · Remediation · Cleanup"]
-        end
-
-        subgraph COST["Cost control"]
-            BUDGETS["AWS Budgets<br/>Actual cost · Forecast"]
-            ACTIONS["Budget Actions"]
-        end
-    end
-
-    RES -->|"Metrics and logs"| CW
-    CW --> ALARM
-    ALARM -->|"State change"| SNS
-    SNS -->|"Send notification"| NOTIFY
-    SNS -->|"Invoke remediation"| LAMBDA
-    EB -->|"Schedule or event"| LAMBDA
-    LAMBDA -->|"Adjust resources"| RES
-    LAMBDA -->|"Execution logs and custom metrics"| CW
-    BUDGETS -->|"Budget alert"| SNS
-    BUDGETS --> ACTIONS
-    ACTIONS -.->|"Apply cost controls"| RES
-{{< /mermaid >}}
-

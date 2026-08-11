@@ -42,7 +42,7 @@ Chờ các container ứng dụng, MongoDB, PostgreSQL/pgvector, Redis, MinIO, C
 ## Kiểm tra local
 
 1. Mở frontend URL đã cấu hình.
-2. Đăng nhập hoặc tạo tài khoản kiểm thử.
+2. Đăng nhập 
 3. Mở một lộ trình và bài học.
 4. Gửi câu hỏi mẫu cho trợ lý AI.
 5. Tải lên tài liệu mẫu không nhạy cảm.
@@ -60,11 +60,3 @@ docker system df
 
 Kiểm tra xung đột cổng, biến môi trường sai, thiếu bộ nhớ, dependency không healthy và kết nối API mô hình trước khi triển khai AWS.
 
-## Ảnh minh chứng cần bổ sung
-
-1. Kết quả kiểm tra phiên bản Docker và Docker Compose.
-2. `docker compose ps` hiển thị dịch vụ local đang chạy.
-3. Trang đăng nhập hoặc trang chính của ứng dụng local.
-4. Câu trả lời AI và thao tác tải tài liệu thành công.
-
-<!-- Tên file đề xuất: docker-version.png, local-containers.png, local-home.png, local-ai-response.png -->

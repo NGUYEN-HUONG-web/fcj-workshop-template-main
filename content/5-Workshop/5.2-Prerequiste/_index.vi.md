@@ -153,9 +153,7 @@ AWS Budgets → Cảnh báo chi phí thực tế và dự báo
 - EventBridge và Lambda giảm số giờ chạy EC2 khi hệ thống không sử dụng.
 - AWS Budgets giúp phát hiện sớm nguy cơ vượt ngân sách.
 
-> **⚠️ Ảnh chưa có:** Sơ đồ vận hành gồm CloudWatch, SNS, Lambda, EventBridge và AWS Budgets.  
-> File: `/images/5-Workshop/5.2-Architecture/operations-architecture.png`
-<!-- ![Kiến trúc giám sát và tự động hóa](/images/5-Workshop/5.2-Architecture/operations-architecture.png) -->
+![Kiến trúc giám sát và tự động hóa](/images/5-Workshop/5.2-Architecture/operations-architecture.png)
 
 ## 5.2.6 Công nghệ sử dụng
 

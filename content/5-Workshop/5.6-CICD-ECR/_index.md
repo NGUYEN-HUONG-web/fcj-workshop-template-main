@@ -14,6 +14,7 @@ The pipeline creates a repeatable, traceable delivery process. Every successful 
 
 Create a private ECR repository, enable image scanning when appropriate, and define a lifecycle policy to remove obsolete images. Grant the workflow only the permissions required to push images.
 
+![Docker image và tag trong Amazon ECR](/images/5-Workshop/5.6-CICD-ECR/ecr-images.png)
 ## GitHub Actions workflow
 
 A typical workflow performs:
@@ -29,16 +30,9 @@ A typical workflow performs:
 
 Store configuration in GitHub Secrets or Variables. Prefer OIDC over long-lived AWS access keys.
 
+![GitHub Actions build và push image thành công](/images/5-Workshop/5.6-CICD-ECR/github-actions-success.png)
 ## Deployment verification
 
 Confirm that the workflow is successful, the expected tag and digest exist in ECR, and EC2 runs the intended image version. If deployment fails, keep the previous known-good tag available for rollback.
 
-## Evidence images to add
-
-1. ECR repository containing the application image and tag.
-2. Image details showing digest and push time.
-3. Successful GitHub Actions workflow summary.
-4. Workflow steps for build and push to ECR.
-5. EC2 running the intended image tag, if automated deployment exists.
-
-<!-- Suggested directory: /static/images/5-Workshop/5.6-CICD-ECR/ -->
+![Image tag đang được triển khai trên EC2](/images/5-Workshop/5.6-CICD-ECR/deployed-image-tag.png)

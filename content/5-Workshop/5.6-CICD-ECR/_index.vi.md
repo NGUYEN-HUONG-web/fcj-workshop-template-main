@@ -39,12 +39,3 @@ Xác nhận workflow thành công, tag và digest đúng đã tồn tại trong 
 
 ![Image tag đang được triển khai trên EC2](/images/5-Workshop/5.6-CICD-ECR/deployed-image-tag.png)
 
-## Ảnh minh chứng cần bổ sung
-
-1. ECR repository chứa image và tag của ứng dụng.
-2. Chi tiết image hiển thị digest và thời gian push.
-3. GitHub Actions workflow chạy thành công.
-4. Các bước build và push image lên ECR.
-5. EC2 chạy đúng image tag nếu đã có tự động deploy.
-
-<!-- Thư mục đề xuất: /static/images/5-Workshop/5.6-CICD-ECR/ -->

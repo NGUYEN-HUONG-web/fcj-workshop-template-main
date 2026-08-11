@@ -33,10 +33,7 @@ docker compose ps
 
 Nginx Reverse Proxy nhận request từ Public IP hoặc `FE_DOMAIN` và chuyển đến ứng dụng. Cấu hình HTTPS khi có domain và chứng chỉ. Không mở công khai cổng MongoDB, PostgreSQL, Redis hoặc trang quản trị MinIO.
 
-> **⚠️ Ảnh chưa có:** Website truy cập thành công qua Public IP hoặc domain.  
-> File: `/images/5-Workshop/5.5-EC2-Docker/public-website.png`
-<!-- ![Website chạy trên EC2](/images/5-Workshop/5.5-EC2-Docker/public-website.png) -->
-
+![Website chạy trên EC2](/images/5-Workshop/5.5-EC2-Docker/dn.png)
 ## Kiểm tra kết quả
 
 - EC2 ở trạng thái `Running`.
@@ -45,13 +42,3 @@ Nginx Reverse Proxy nhận request từ Public IP hoặc `FE_DOMAIN` và chuyể
 - Website truy cập được qua địa chỉ công khai đã cấu hình.
 - Log không có lỗi nghiêm trọng lặp lại.
 - Data volume được mount đúng.
-
-## Ảnh minh chứng cần bổ sung
-
-1. EC2 ở trạng thái `Running`, status checks là `2/2 passed`.
-2. Chi tiết EC2 đã che định danh nhạy cảm.
-3. Inbound rules của Security Group.
-4. Terminal hiển thị Docker và các container đang chạy.
-5. Website truy cập qua Public IP hoặc domain đã cấu hình.
-
-<!-- Thư mục đề xuất: /static/images/5-Workshop/5.5-EC2-Docker/ -->
