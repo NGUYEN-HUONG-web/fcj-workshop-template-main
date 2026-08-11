@@ -59,3 +59,41 @@ Confirm Lambda execution results, EventBridge next invocation times, EC2 state c
 5. Cost Explorer overview with account and billing details concealed.
 
 <!-- Suggested directory: /static/images/5-Workshop/5.9-Automation-Cost/ -->
+## Overall operations architecture
+
+{{<mermaid align="center">}}
+flowchart TB
+    subgraph AWS["AWS Cloud"]
+        RES["AWS resources<br/>EC2 · Application · S3"]
+
+        subgraph OBS["Monitoring and alerting"]
+            CW["Amazon CloudWatch<br/>Metrics · Logs · Dashboard"]
+            ALARM["CloudWatch Alarms"]
+            SNS["Amazon SNS"]
+            NOTIFY["Email · SMS · ChatOps"]
+        end
+
+        subgraph AUTO["Operations automation"]
+            EB["Amazon EventBridge<br/>Schedules · AWS events"]
+            LAMBDA["AWS Lambda<br/>Start/Stop · Remediation · Cleanup"]
+        end
+
+        subgraph COST["Cost control"]
+            BUDGETS["AWS Budgets<br/>Actual cost · Forecast"]
+            ACTIONS["Budget Actions"]
+        end
+    end
+
+    RES -->|"Metrics and logs"| CW
+    CW --> ALARM
+    ALARM -->|"State change"| SNS
+    SNS -->|"Send notification"| NOTIFY
+    SNS -->|"Invoke remediation"| LAMBDA
+    EB -->|"Schedule or event"| LAMBDA
+    LAMBDA -->|"Adjust resources"| RES
+    LAMBDA -->|"Execution logs and custom metrics"| CW
+    BUDGETS -->|"Budget alert"| SNS
+    BUDGETS --> ACTIONS
+    ACTIONS -.->|"Apply cost controls"| RES
+{{< /mermaid >}}
+

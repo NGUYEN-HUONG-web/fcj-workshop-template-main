@@ -73,3 +73,41 @@ Xác nhận kết quả chạy Lambda, thời gian kích hoạt tiếp theo củ
 5. Tổng quan Cost Explorer đã che Account ID và dữ liệu thanh toán.
 
 <!-- Thư mục đề xuất: /static/images/5-Workshop/5.9-Automation-Cost/ -->
+## Sơ đồ vận hành tổng thể
+
+{{<mermaid align="center">}}
+flowchart TB
+    subgraph AWS["AWS Cloud"]
+        RES["Tài nguyên AWS<br/>EC2 · Ứng dụng · S3"]
+
+        subgraph OBS["Giám sát và cảnh báo"]
+            CW["Amazon CloudWatch<br/>Metrics · Logs · Dashboard"]
+            ALARM["CloudWatch Alarms"]
+            SNS["Amazon SNS"]
+            NOTIFY["Email · SMS · ChatOps"]
+        end
+
+        subgraph AUTO["Tự động hóa vận hành"]
+            EB["Amazon EventBridge<br/>Lịch định kỳ · Sự kiện AWS"]
+            LAMBDA["AWS Lambda<br/>Start/Stop · Khắc phục · Dọn dẹp"]
+        end
+
+        subgraph COST["Kiểm soát chi phí"]
+            BUDGETS["AWS Budgets<br/>Chi phí thực tế · Dự báo"]
+            ACTIONS["Budget Actions"]
+        end
+    end
+
+    RES -->|"Metrics và Logs"| CW
+    CW --> ALARM
+    ALARM -->|"Thay đổi trạng thái"| SNS
+    SNS -->|"Gửi cảnh báo"| NOTIFY
+    SNS -->|"Kích hoạt xử lý"| LAMBDA
+    EB -->|"Lịch hoặc sự kiện"| LAMBDA
+    LAMBDA -->|"Điều chỉnh tài nguyên"| RES
+    LAMBDA -->|"Execution logs và custom metrics"| CW
+    BUDGETS -->|"Budget alert"| SNS
+    BUDGETS --> ACTIONS
+    ACTIONS -.->|"Áp dụng biện pháp kiểm soát"| RES
+{{< /mermaid >}}
+
