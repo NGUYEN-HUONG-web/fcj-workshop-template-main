@@ -224,7 +224,7 @@ The architecture follows a **Production Lite** approach, making it suitable for 
 
 > **Figure 3.1. Overall Architecture of AI Learning Assistant Platform.**
 
-![Hình 3.1](/images/AWSKIENTRUC.png)
+![Hình 3.1](/images/AAAA.drawio.png)
 
 ---
 

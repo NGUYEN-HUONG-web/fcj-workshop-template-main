@@ -275,7 +275,7 @@ Kiến trúc được thiết kế theo hướng **Production Lite**, phù hợp
 
 > **Hình 3.1. Kiến trúc tổng thể của AI Learning Assistant Platform.**
 
-![Hình 3.1](/images/AWSKIENTRUC.png)
+![Hình 3.1](/images/AAAA.drawio.png)
 
 ---
 
