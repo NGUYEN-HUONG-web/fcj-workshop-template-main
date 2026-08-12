@@ -1,0 +1,327 @@
+<!doctype html><html lang=vi class="js csstransforms3d"><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=generator content="Hugo 0.134.3"><meta name=description content><meta name=author content="thienlh@thienlu.com"><link rel=icon href=/images/favicon.png type=image/png><title>5.3. Triển khai môi trường :: Báo cáo thực tập</title>
+<link href=/css/nucleus.css?1786510402 rel=stylesheet><link href=/css/fontawesome-all.min.css?1786510402 rel=stylesheet><link href=/css/hybrid.css?1786510402 rel=stylesheet><link href=/css/featherlight.min.css?1786510402 rel=stylesheet><link href=/css/perfect-scrollbar.min.css?1786510402 rel=stylesheet><link href=/css/auto-complete.css?1786510402 rel=stylesheet><link href=/css/atom-one-dark-reasonable.css?1786510402 rel=stylesheet><link href=/css/theme.css?1786510402 rel=stylesheet><link href=/css/hugo-theme.css?1786510402 rel=stylesheet><link href=/css/theme-workshop.css?1786510402 rel=stylesheet><link href="/css/custom.css?v=unified-ui-20260809-2?1786510402" rel=stylesheet><script src=/js/jquery-3.3.1.min.js?1786510402></script><style>:root #header+#content>#left>#rlblock_left{display:none!important}</style><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel=stylesheet><script defer src=https://unpkg.com/lucide@latest/dist/umd/lucide.min.js></script></head><body data-url=/vi/5-workshop/5.3-environment-deployment/><nav id=sidebar class=showVisitedLinks><div id=header-wrapper><div id=header><a id=logo href=/><svg id="Layer_1" data-name="Layer 1" viewBox="0 0 60 30" width="30%"><defs><style>.cls-1{fill:#fff}.cls-2{fill:#fff;fill-rule:evenodd}</style></defs><title>AWS-Logo_White-Color</title><path class="cls-1" d="M14.09 10.85a4.7 4.7.0 00.19 1.48 7.73 7.73.0 00.54 1.19.77.77.0 01.12.38.64.64.0 01-.32.49l-1 .7a.83.83.0 01-.44.15.69.69.0 01-.49-.23 3.8 3.8.0 01-.6-.77q-.25-.42-.51-1a6.14 6.14.0 01-4.89 2.3 4.54 4.54.0 01-3.32-1.19 4.27 4.27.0 01-1.22-3.2 4.28 4.28.0 011.46-3.4A6.06 6.06.0 017.69 6.46a12.47 12.47.0 011.76.13q.92.13 1.91.36V5.73a3.65 3.65.0 00-.79-2.66A3.81 3.81.0 007.86 2.3a7.71 7.71.0 00-1.79.22 12.78 12.78.0 00-1.79.57 4.55 4.55.0 01-.58.22h-.26q-.35.0-.35-.52V2a1.09 1.09.0 01.12-.58 1.2 1.2.0 01.47-.35A10.88 10.88.0 015.77.32 10.19 10.19.0 018.36.0a6 6 0 014.35 1.35 5.49 5.49.0 011.38 4.09zM7.34 13.38a5.36 5.36.0 001.72-.31A3.63 3.63.0 0010.63 12 2.62 2.62.0 0011.19 11a5.63 5.63.0 00.16-1.44v-.7a14.35 14.35.0 00-1.53-.28 12.37 12.37.0 00-1.56-.1 3.84 3.84.0 00-2.47.67A2.34 2.34.0 005 11a2.35 2.35.0 00.61 1.76A2.4 2.4.0 007.34 13.38zm13.35 1.8a1 1 0 01-.64-.16 1.3 1.3.0 01-.35-.65L15.81 1.51a3 3 0 01-.15-.67.36.36.0 01.41-.41H17.7a1 1 0 01.65.16 1.4 1.4.0 01.33.65l2.79 11 2.59-11A1.17 1.17.0 0124.39.6a1.1 1.1.0 01.67-.16H26.4a1.1 1.1.0 01.67.16 1.17 1.17.0 01.32.65L30 12.39 32.88 1.25A1.39 1.39.0 0133.22.6a1 1 0 01.65-.16h1.54a.36.36.0 01.41.41 1.36 1.36.0 010 .26 3.64 3.64.0 01-.12.41l-4 12.86a1.3 1.3.0 01-.35.65 1 1 0 01-.64.16H29.25a1 1 0 01-.67-.17 1.26 1.26.0 01-.32-.67L25.67 3.64l-2.56 10.7a1.26 1.26.0 01-.32.67 1 1 0 01-.67.17zm21.36.44a11.28 11.28.0 01-2.56-.29 7.44 7.44.0 01-1.92-.67 1 1 0 01-.61-.93v-.84q0-.52.38-.52a.9.9.0 01.31.06l.42.17a8.77 8.77.0 001.83.58 9.78 9.78.0 002 .2 4.48 4.48.0 002.43-.55 1.76 1.76.0 00.86-1.57 1.61 1.61.0 00-.45-1.16A4.29 4.29.0 0043 9.22l-2.41-.76A5.15 5.15.0 0138 6.78a3.94 3.94.0 01-.83-2.41 3.7 3.7.0 01.45-1.85 4.47 4.47.0 011.19-1.37 5.27 5.27.0 011.7-.86A7.4 7.4.0 0142.6.0a8.87 8.87.0 011.12.07q.57.07 1.08.19t.95.26a4.27 4.27.0 01.7.29 1.59 1.59.0 01.49.41.94.94.0 01.15.55v.79q0 .52-.38.52a1.76 1.76.0 01-.64-.2 7.74 7.74.0 00-3.2-.64 4.37 4.37.0 00-2.21.47 1.6 1.6.0 00-.79 1.48 1.58 1.58.0 00.49 1.18 4.94 4.94.0 001.83.92L44.55 7a5.08 5.08.0 012.57 1.6A3.76 3.76.0 0147.9 11a4.21 4.21.0 01-.44 1.93 4.4 4.4.0 01-1.21 1.47 5.43 5.43.0 01-1.85.93A8.25 8.25.0 0142.05 15.62z"/><path class="cls-2" d="M45.19 23.81C39.72 27.85 31.78 30 25 30A36.64 36.64.0 01.22 20.57c-.51-.46-.06-1.09.56-.74A49.78 49.78.0 0025.53 26.4 49.23 49.23.0 0044.4 22.53C45.32 22.14 46.1 23.14 45.19 23.81z"/><path class="cls-2" d="M47.47 21.21c-.7-.9-4.63-.42-6.39-.21-.53.06-.62-.4-.14-.74 3.13-2.2 8.27-1.57 8.86-.83s-.16 5.89-3.09 8.35c-.45.38-.88.18-.68-.32C46.69 25.8 48.17 22.11 47.47 21.21z"/></svg></a></div><div class=searchbox><label for=search-by><i class="fas fa-search"></i></label>
+<input data-search-input id=search-by type=search placeholder=Search...>
+<span data-search-clear><i class="fas fa-times"></i></span></div><script type=text/javascript src=/js/lunr.min.js?1786510402></script><script type=text/javascript src=/js/auto-complete.js?1786510402></script><script type=text/javascript>var baseurl="https://main.d151v4q60eqlk1.amplifyapp.com//vi"</script><script type=text/javascript src=/js/search.js?1786510402></script></div><div class=highlightable><ul class=topics><li data-nav-id=/vi/1-worklog/ title="Nhật ký công việc" class=dd-item><a href=/vi/1-worklog/><b>1. </b>Nhật ký công việc
+<i class="fas fa-check read-icon"></i></a><ul><li data-nav-id=/vi/1-worklog/1.1-week1/ title="Nhật ký công việc Tuần 1" class=dd-item><a href=/vi/1-worklog/1.1-week1/><b>1.1. </b>Nhật ký công việc Tuần 1
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.2-week2/ title="Nhật ký công việc Tuần 2" class=dd-item><a href=/vi/1-worklog/1.2-week2/><b>1.2. </b>Nhật ký công việc Tuần 2
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.3-week3/ title="Nhật ký công việc Tuần 3" class=dd-item><a href=/vi/1-worklog/1.3-week3/><b>1.3. </b>Nhật ký công việc Tuần 3
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.4-week4/ title="Nhật ký công việc Tuần 4" class=dd-item><a href=/vi/1-worklog/1.4-week4/><b>1.4. </b>Nhật ký công việc Tuần 4
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.5-week5/ title="Nhật ký công việc Tuần 5" class=dd-item><a href=/vi/1-worklog/1.5-week5/><b>1.5. </b>Nhật ký công việc Tuần 5
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.6-week6/ title="Nhật ký công việc Tuần 6" class=dd-item><a href=/vi/1-worklog/1.6-week6/><b>1.6. </b>Nhật ký công việc Tuần 6
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.7-week7/ title="Nhật ký công việc Tuần 7" class=dd-item><a href=/vi/1-worklog/1.7-week7/><b>1.7. </b>Nhật ký công việc Tuần 7
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/1-worklog/1.8-week8/ title="Nhật ký công việc Tuần 8" class=dd-item><a href=/vi/1-worklog/1.8-week8/><b>1.8. </b>Nhật ký công việc Tuần 8
+<i class="fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/vi/2-proposal/ title="Dự án " class=dd-item><a href=/vi/2-proposal/><b>2. </b>Dự án
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/3-blogsposted/ title="Các bài blogs đã đăng" class=dd-item><a href=/vi/3-blogsposted/><b>3. </b>Các bài blogs đã đăng
+<i class="fas fa-check read-icon"></i></a><ul><li data-nav-id=/vi/3-blogsposted/3.1-blog1/ title="Blog 1" class=dd-item><a href=/vi/3-blogsposted/3.1-blog1/><b>3.1. </b>Blog 1
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/3-blogsposted/3.2-blog2/ title="Blog 2" class=dd-item><a href=/vi/3-blogsposted/3.2-blog2/><b>3.2. </b>Blog 2
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/3-blogsposted/3.3-blog3/ title="Blog 3" class=dd-item><a href=/vi/3-blogsposted/3.3-blog3/><b>3.3. </b>Blog 3
+<i class="fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/vi/4-eventparticipated/ title="Các events đã tham gia" class=dd-item><a href=/vi/4-eventparticipated/><b>4. </b>Các events đã tham gia
+<i class="fas fa-check read-icon"></i></a><ul><li data-nav-id=/vi/4-eventparticipated/4.1-event1/ title="Event 1" class=dd-item><a href=/vi/4-eventparticipated/4.1-event1/><b>4.1. </b>Event 1
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/4-eventparticipated/4.2-event2/ title="Event 2" class=dd-item><a href=/vi/4-eventparticipated/4.2-event2/><b>4.2 </b>Event 2
+<i class="fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/vi/5-workshop/ title=Workshop class="dd-item
+parent"><a href=/vi/5-workshop/><b>5. </b>Workshop
+<i class="fas fa-check read-icon"></i></a><ul><li data-nav-id=/vi/5-workshop/5.1-workshop-overview/ title="5.1 Giới thiệu" class=dd-item><a href=/vi/5-workshop/5.1-workshop-overview/><b>5.1. </b>5.1 Giới thiệu
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/5-workshop/5.2-prerequiste/ title="5.2 Kiến trúc hệ thống" class=dd-item><a href=/vi/5-workshop/5.2-prerequiste/><b>5.2. </b>5.2 Kiến trúc hệ thống
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/5-workshop/5.3-environment-deployment/ title="5.3. Triển khai môi trường" class="dd-item
+active"><a href=/vi/5-workshop/5.3-environment-deployment/><b>5.3. </b>5.3. Triển khai môi trường
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/5-workshop/5.4-local-setup/ title="5.4. Điều kiện tiên quyết và chạy local" class=dd-item><a href=/vi/5-workshop/5.4-local-setup/><b>5.4. </b>5.4. Điều kiện tiên quyết và chạy local
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/5-workshop/5.5-ec2-docker/ title="5.5. Triển khai EC2 và Docker Compose" class=dd-item><a href=/vi/5-workshop/5.5-ec2-docker/><b>5.5. </b>5.5. Triển khai EC2 và Docker Compose
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/5-workshop/5.6-cicd-ecr/ title="5.6. CI/CD với GitHub Actions và ECR" class=dd-item><a href=/vi/5-workshop/5.6-cicd-ecr/><b>5.6. </b>5.6. CI/CD với GitHub Actions và ECR
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/5-workshop/5.7-storage/ title="5.7. Lưu trữ với MinIO và Amazon S3" class=dd-item><a href=/vi/5-workshop/5.7-storage/><b>5.7. </b>5.7. Lưu trữ với MinIO và Amazon S3
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/5-workshop/5.8-monitoring/ title="5.8. Giám sát với CloudWatch và SNS" class=dd-item><a href=/vi/5-workshop/5.8-monitoring/><b>5.8. </b>5.8. Giám sát với CloudWatch và SNS
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/5-workshop/5.9-automation-cost/ title="5.9. Tự động hóa và tối ưu chi phí" class=dd-item><a href=/vi/5-workshop/5.9-automation-cost/><b>5.9. </b>5.9. Tự động hóa và tối ưu chi phí
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/5-workshop/5.10-testing-demo/ title="5.10. Dọn dẹp và hướng phát triển" class=dd-item><a href=/vi/5-workshop/5.10-testing-demo/><b>5.10. </b>5.10. Dọn dẹp và hướng phát triển
+<i class="fas fa-check read-icon"></i></a></li></ul></li><li data-nav-id=/vi/6-self-evaluation/ title="Tự đánh giá" class=dd-item><a href=/vi/6-self-evaluation/><b>6. </b>Tự đánh giá
+<i class="fas fa-check read-icon"></i></a></li><li data-nav-id=/vi/7-feedback/ title="Chia sẻ và đóng góp ý kiến" class=dd-item><a href=/vi/7-feedback/><b>7. </b>Chia sẻ và đóng góp ý kiến
+<i class="fas fa-check read-icon"></i></a></li></ul><section id=shortcuts><h3>More</h3><ul><li><a class=padding href=http://awsstudygroup.com><i class='fab fa-aws'></i> AWS Study Group - Blog</a></li><li><a class=padding href=https://www.facebook.com/groups/awsstudygroupfcj><i class='fab fa-facebook'></i> AWS Study Group - Nhóm FB</a></li></ul></section><section id=prefooter><hr><ul><li><a class=padding><i class="fas fa-language fa-fw"></i><div class=select-style><select id=select-language onchange="location=this.value"><option id=en value=/5-workshop/5.3-environment-deployment/>English</option><option id=vi value=/vi/5-workshop/5.3-environment-deployment/ selected>Tiếng Việt</option></select><svg id="Capa_1" xmlns:xlink="http://www.w3.org/1999/xlink" width="255" height="255" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255"><g><g id="arrow-drop-down"><polygon points="0,63.75 127.5,191.25 255,63.75"/></g></g></svg></div></a></li><li><a class=padding href=# data-clear-history-toggle><i class="fas fa-history fa-fw"></i> Clear History</a></li></ul></section><section id=footer><left><br><br><b>Last Updated</b><br><i><font color=orange>12-08-2026</font>
+</i></left><left><br><br><b>Team</b><br><i><a href=https://www.facebook.com/groups/660548818043427 style=color:orange>First Cloud AI Journey</a>
+</i></left><script async defer src=https://buttons.github.io/buttons.js></script></section></div></nav><section id=body><div id=overlay></div><div class="padding highlightable"><div><div id=top-bar><div id=breadcrumbs itemscope itemtype=http://data-vocabulary.org/Breadcrumb><span id=sidebar-toggle-span><a href=# id=sidebar-toggle data-sidebar-toggle><i class="fas fa-bars"></i>
+</a></span><span id=toc-menu><i class="fas fa-list-alt"></i></span>
+<span class=links><a href=/vi/>Báo cáo thực tập</a> > <a href=/vi/5-workshop/>Workshop</a> > 5.3. Triển khai môi trường</span></div><div class=progress><div class=wrapper><nav id=TableOfContents><ul><li><a href=#mục-tiêu>Mục tiêu</a></li><li><a href=#các-môi-trường-sử-dụng>Các môi trường sử dụng</a></li><li><a href=#kế-hoạch-tài-nguyên-aws>Kế hoạch tài nguyên AWS</a></li><li><a href=#kế-hoạch-mạng-và-truy-cập>Kế hoạch mạng và truy cập</a></li><li><a href=#biến-môi-trường>Biến môi trường</a></li><li><a href=#kết-quả-mong-đợi>Kết quả mong đợi</a></li></ul></nav></div></div></div></div><div id=head-tags></div><div id=body-inner><h1>5.3. Triển khai môi trường</h1><h2 id=mục-tiêu>Mục tiêu</h2><p>Phần này chuẩn bị môi trường triển khai thống nhất cho AI Learning Assistant. Kiến trúc mục tiêu theo mô hình Production Lite: phù hợp phạm vi đồ án nhưng vẫn bảo đảm khả năng tái triển khai, bảo mật, giám sát và khôi phục.</p><h2 id=các-môi-trường-sử-dụng>Các môi trường sử dụng</h2><table><thead><tr><th style=text-align:left>Môi trường</th><th style=text-align:left>Mục đích</th><th style=text-align:left>Thành phần chính</th></tr></thead><tbody><tr><td style=text-align:left>Local</td><td style=text-align:left>Phát triển và kiểm thử chức năng</td><td style=text-align:left>Docker Desktop/Engine, Docker Compose, trình duyệt</td></tr><tr><td style=text-align:left>GitHub Actions</td><td style=text-align:left>Tự động build và phân phối</td><td style=text-align:left>Workflow runner, xác thực AWS, Docker build</td></tr><tr><td style=text-align:left>Amazon ECR</td><td style=text-align:left>Lưu trữ container image</td><td style=text-align:left>Image ứng dụng theo phiên bản</td></tr><tr><td style=text-align:left>Amazon EC2</td><td style=text-align:left>Môi trường chạy hệ thống</td><td style=text-align:left>Docker Compose, Nginx, CloudWatch Agent</td></tr><tr><td style=text-align:left>Amazon S3</td><td style=text-align:left>Object storage trên AWS</td><td style=text-align:left>Sao lưu hoặc lưu trữ dài hạn</td></tr></tbody></table><h2 id=kế-hoạch-tài-nguyên-aws>Kế hoạch tài nguyên AWS</h2><p>Thống nhất quy tắc đặt tên cho EC2, ECR repository, S3 bucket, IAM role, CloudWatch, Lambda, EventBridge, SNS và AWS Budget. Các tài nguyên theo Region nên được tạo trong cùng một Region, trừ khi kiến trúc yêu cầu khác.</p><p><img alt="AWS Region và các tài nguyên chính" src=/images/5-Workshop/5.3-Environment/aws-region-resources.png></p><h2 id=kế-hoạch-mạng-và-truy-cập>Kế hoạch mạng và truy cập</h2><ol><li>Đặt EC2 trong subnet có kết nối Internet đầu ra.</li><li>Chỉ cho phép SSH từ IP tin cậy hoặc sử dụng Session Manager.</li><li>Mở HTTP/HTTPS phục vụ website.</li><li>Giữ cổng database và cache bên trong Docker network.</li><li>Gán IAM role cho EC2 thay vì lưu Access Key dài hạn trên máy chủ.</li></ol><h2 id=biến-môi-trường>Biến môi trường</h2><p>Tạo <code>.env</code> từ file mẫu của dự án và khai báo thông tin MongoDB, PostgreSQL, Redis, MinIO, mô hình AI, URL ứng dụng và cấu hình lưu trữ. Không commit <code>.env</code> lên Git.</p><p>Repository và cấu hình môi trường</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># ==================== 基础配置 ====================</span>
+</span></span><span style=display:flex><span>LOG_DEPTH<span style=color:#f92672>=</span><span style=color:#ae81ff>3</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 默认用户密码（用户名为 root），每次重启会自动更新。</span>
+</span></span><span style=display:flex><span>DEFAULT_ROOT_PSW<span style=color:#f92672>=</span>CHANGE_ME_ROOT_PASSWORD
+</span></span><span style=display:flex><span><span style=color:#75715e># 数据库最大连接数</span>
+</span></span><span style=display:flex><span>DB_MAX_LINK<span style=color:#f92672>=</span><span style=color:#ae81ff>5</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 自动同步索引</span>
+</span></span><span style=display:flex><span>SYNC_INDEX<span style=color:#f92672>=</span>true
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># ==================== 密钥 ====================</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 文件阅读时的密钥</span>
+</span></span><span style=display:flex><span>FILE_TOKEN_KEY<span style=color:#f92672>=</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 密钥加密 key</span>
+</span></span><span style=display:flex><span>AES256_SECRET_KEY<span style=color:#f92672>=</span>CHANGE_ME_AES256_SECRET
+</span></span><span style=display:flex><span><span style=color:#75715e># Invoke 反向调用 JWT 密钥，至少 32 位</span>
+</span></span><span style=display:flex><span>INVOKE_TOKEN_SECRET<span style=color:#f92672>=</span>CHANGE_ME_WITH_AT_LEAST_32_RANDOM_CHARACTERS
+</span></span><span style=display:flex><span><span style=color:#75715e># root key（最高权限）</span>
+</span></span><span style=display:flex><span>ROOT_KEY<span style=color:#f92672>=</span>CHANGE_ME_ROOT_KEY
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># ==================== 服务地址与集成 ====================</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 商业版地址</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># PRO_URL=</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># PRO_TOKEN=</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 官网访客归因 CRM（地址未配置时不进行身份上报）</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># CRM_API_URL=https://crm.example.com/api/v1</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># CRM_API_KEY=</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 插件服务</span>
+</span></span><span style=display:flex><span>PLUGIN_BASE_URL<span style=color:#f92672>=</span>http://localhost:3004
+</span></span><span style=display:flex><span>PLUGIN_TOKEN<span style=color:#f92672>=</span>CHANGE_ME_PLUGIN_TOKEN
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 代码沙箱服务</span>
+</span></span><span style=display:flex><span>CODE_SANDBOX_URL<span style=color:#f92672>=</span>http://localhost:3002
+</span></span><span style=display:flex><span>CODE_SANDBOX_TOKEN<span style=color:#f92672>=</span>CHANGE_ME_CODE_SANDBOX_TOKEN
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># AI Proxy API</span>
+</span></span><span style=display:flex><span>AIPROXY_API_ENDPOINT<span style=color:#f92672>=</span>http://localhost:3010
+</span></span><span style=display:flex><span>AIPROXY_API_TOKEN<span style=color:#f92672>=</span>CHANGE_ME_AIPROXY_TOKEN
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># MCP Server 代理地址，用于 MCP 使用方式页拼接 SSE 地址（末尾不要带 /）</span>
+</span></span><span style=display:flex><span>SSE_MCP_SERVER_PROXY_ENDPOINT<span style=color:#f92672>=</span>http://localhost:3003
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 插件市场地址</span>
+</span></span><span style=display:flex><span>MARKETPLACE_URL<span style=color:#f92672>=</span>https://v2.marketplace.fastgpt.cn
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Agent sandbox</span>
+</span></span><span style=display:flex><span>AGENT_SANDBOX_PROVIDER<span style=color:#f92672>=</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Sealos devbox</span>
+</span></span><span style=display:flex><span>AGENT_SANDBOX_SEALOS_BASEURL<span style=color:#f92672>=</span>
+</span></span><span style=display:flex><span>AGENT_SANDBOX_SEALOS_TOKEN<span style=color:#f92672>=</span>
+</span></span><span style=display:flex><span>AGENT_SANDBOX_SEALOS_IMAGE<span style=color:#f92672>=</span>
+</span></span><span style=display:flex><span>AGENT_SANDBOX_SEALOS_WORK_DIRECTORY<span style=color:#f92672>=</span>/home/devbox/workspace
+</span></span><span style=display:flex><span><span style=color:#75715e># Agent Sandbox 单实例 CPU 核数和内存上限（MiB）</span>
+</span></span><span style=display:flex><span>AGENT_SANDBOX_CPU_COUNT<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span>AGENT_SANDBOX_MEMORY_MIB<span style=color:#f92672>=</span><span style=color:#ae81ff>2048</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Agent Sandbox 存储容量，单位 Gi</span>
+</span></span><span style=display:flex><span>AGENT_SANDBOX_STORAGE_SIZE_GI<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># OpenSandbox 配置（PROVIDER=opensandbox 时生效）</span>
+</span></span><span style=display:flex><span>AGENT_SANDBOX_OPENSANDBOX_BASEURL<span style=color:#f92672>=</span>http://localhost:8090
+</span></span><span style=display:flex><span>AGENT_SANDBOX_OPENSANDBOX_API_KEY<span style=color:#f92672>=</span>CHANGE_ME_OPENSANDBOX_API_KEY
+</span></span><span style=display:flex><span>AGENT_SANDBOX_OPENSANDBOX_RUNTIME<span style=color:#f92672>=</span>docker
+</span></span><span style=display:flex><span>AGENT_SANDBOX_OPENSANDBOX_IMAGE_REPO<span style=color:#f92672>=</span>registry.cn-hangzhou.aliyuncs.com/fastgpt/fastgpt-agent-sandbox
+</span></span><span style=display:flex><span>AGENT_SANDBOX_OPENSANDBOX_IMAGE_TAG<span style=color:#f92672>=</span>v0.1
+</span></span><span style=display:flex><span>AGENT_SANDBOX_OPENSANDBOX_USE_SERVER_PROXY<span style=color:#f92672>=</span>true
+</span></span><span style=display:flex><span>AGENT_SANDBOX_OPENSANDBOX_VOLUME_MANAGER_URL<span style=color:#f92672>=</span>http://localhost:3005
+</span></span><span style=display:flex><span>AGENT_SANDBOX_OPENSANDBOX_VOLUME_MANAGER_TOKEN<span style=color:#f92672>=</span>CHANGE_ME_VOLUME_MANAGER_TOKEN
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 活跃编辑/调试沙箱数量上限</span>
+</span></span><span style=display:flex><span>AGENT_SANDBOX_MAX_EDIT_DEBUG<span style=color:#f92672>=</span><span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 运行中 Agent 沙箱持续未活跃多少分钟后自动暂停</span>
+</span></span><span style=display:flex><span>AGENT_SANDBOX_SUSPEND_MINUTES<span style=color:#f92672>=</span><span style=color:#ae81ff>60</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 已暂停 Agent 沙箱持续未活跃多少天后自动归档</span>
+</span></span><span style=display:flex><span>AGENT_SANDBOX_ARCHIVE_INACTIVE_DAYS<span style=color:#f92672>=</span><span style=color:#ae81ff>7</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Agent 沙箱内 npm/yarn/pnpm/bun 使用的 npm registry（可选）</span>
+</span></span><span style=display:flex><span>AGENT_SANDBOX_NPM_REGISTRY<span style=color:#f92672>=</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Agent 沙箱内 pip/python -m pip/uv 使用的 PyPI index URL（可选）</span>
+</span></span><span style=display:flex><span>AGENT_SANDBOX_PYPI_INDEX_URL<span style=color:#f92672>=</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># ==================== 沙盒代理 (agent-sandbox-proxy) 与网络配置 ====================</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># JWT 验签与内网安全物理阻断密钥 (必须与 Rust Proxy 的 AGENT_SANDBOX_PROXY_SECRET 环境变量保持完全一致)</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 生产环境必须配置为至少 32 字节的高强度随机值，不能使用示例占位。</span>
+</span></span><span style=display:flex><span>AGENT_SANDBOX_PROXY_SECRET<span style=color:#f92672>=</span>CHANGE_ME_WITH_AT_LEAST_32_RANDOM_CHARACTERS
+</span></span><span style=display:flex><span><span style=color:#75715e># 浏览器客户端连接沙盒代理的对外 WebSocket 地址。</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 启用 Agent Sandbox（show_agent_sandbox）时必填；未启用时可留空。</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 开发环境建议配置为 ws://localhost:3006 (指向 Docker Compose 中的 Rust 代理)。</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 生产环境请配置浏览器可访问的 ws:// 或 wss:// 代理地址。</span>
+</span></span><span style=display:flex><span>AGENT_SANDBOX_PROXY_URL<span style=color:#f92672>=</span>ws://localhost:3006
+</span></span><span style=display:flex><span><span style=color:#75715e># 浏览器访问沙盒文件预览的 HTTP(S) 地址。启用 Agent Sandbox 时必填；默认单端口部署时与 WebSocket 使用相同端口。</span>
+</span></span><span style=display:flex><span>AGENT_SANDBOX_PREVIEW_PROXY_URL<span style=color:#f92672>=</span>http://localhost:3006
+</span></span><span style=display:flex><span><span style=color:#75715e># ==================== 对象存储 ====================</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 存储供应商；如果是 Sealos 的对象存储请填 aws-s3</span>
+</span></span><span style=display:flex><span>STORAGE_VENDOR<span style=color:#f92672>=</span>minio
+</span></span><span style=display:flex><span>STORAGE_REGION<span style=color:#f92672>=</span>us-east-1
+</span></span><span style=display:flex><span>STORAGE_ACCESS_KEY_ID<span style=color:#f92672>=</span>CHANGE_ME_STORAGE_ACCESS_KEY
+</span></span><span style=display:flex><span>STORAGE_SECRET_ACCESS_KEY<span style=color:#f92672>=</span>CHANGE_ME_STORAGE_SECRET_KEY
+</span></span><span style=display:flex><span>STORAGE_PUBLIC_BUCKET<span style=color:#f92672>=</span>fastgpt-public
+</span></span><span style=display:flex><span>STORAGE_PRIVATE_BUCKET<span style=color:#f92672>=</span>fastgpt-private
+</span></span><span style=display:flex><span>STORAGE_EXTERNAL_ENDPOINT<span style=color:#f92672>=</span>
+</span></span><span style=display:flex><span>STORAGE_S3_CDN_ENDPOINT<span style=color:#f92672>=</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 下载链接模式：short-proxy | short-redirect | presigned</span>
+</span></span><span style=display:flex><span>STORAGE_DOWNLOAD_URL_MODE<span style=color:#f92672>=</span>short-proxy
+</span></span><span style=display:flex><span><span style=color:#75715e># short-redirect 模式下临时 S3 预签名下载链接 TTL（秒），不太需要改。</span>
+</span></span><span style=display:flex><span>STORAGE_DOWNLOAD_REDIRECT_TTL_SECONDS<span style=color:#f92672>=</span><span style=color:#ae81ff>300</span>
+</span></span><span style=display:flex><span>STORAGE_S3_ENDPOINT<span style=color:#f92672>=</span>http://localhost:9000
+</span></span><span style=display:flex><span>STORAGE_S3_FORCE_PATH_STYLE<span style=color:#f92672>=</span>true
+</span></span><span style=display:flex><span>STORAGE_S3_MAX_RETRIES<span style=color:#f92672>=</span><span style=color:#ae81ff>3</span>
+</span></span><span style=display:flex><span>STORAGE_PUBLIC_ACCESS_EXTRA_SUB_PATH<span style=color:#f92672>=</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># ==================== 数据库与缓存 ====================</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Redis URL</span>
+</span></span><span style=display:flex><span>REDIS_URL<span style=color:#f92672>=</span>redis://default:CHANGE_ME_REDIS_PASSWORD@localhost:6379
+</span></span><span style=display:flex><span><span style=color:#75715e># 流式恢复 Redis 镜像 TTL（秒）：生成中续期 / 结束后缩短，默认 300 / 30</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># STREAM_RESUME_TTL_SECONDS=300</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># STREAM_RESUME_POST_COMPLETE_TTL_SECONDS=30</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Redis 已用内存 / maxmemory 达到阈值后，不再为新流请求创建恢复镜像</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># STREAM_RESUME_REDIS_MAXMEMORY_RATIO=0.8</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># STREAM_RESUME_REDIS_MEMORY_CHECK_INTERVAL_MS=5000</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># MongoDB 连接参数；本地开发连接远程数据库时，可能需要添加 directConnection=true 才能连接</span>
+</span></span><span style=display:flex><span>MONGODB_URI<span style=color:#f92672>=</span>mongodb://CHANGE_ME_USERNAME:CHANGE_ME_PASSWORD@localhost:27017/fastgpt?authSource<span style=color:#f92672>=</span>admin&amp;directConnection<span style=color:#f92672>=</span>true
+</span></span><span style=display:flex><span><span style=color:#75715e># 日志库</span>
+</span></span><span style=display:flex><span>MONGODB_LOG_URI<span style=color:#f92672>=</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 向量库优先级: pg &gt; oceanbase &gt; milvus &gt; opengauss</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 向量量化等级: PG 支持 32/16，OceanBase 支持 32/8/1</span>
+</span></span><span style=display:flex><span>VECTOR_VQ_LEVEL<span style=color:#f92672>=</span><span style=color:#ae81ff>32</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># PG 向量库连接参数</span>
+</span></span><span style=display:flex><span>PG_URL<span style=color:#f92672>=</span>postgresql://CHANGE_ME_USERNAME:CHANGE_ME_PASSWORD@localhost:5432/postgres
+</span></span><span style=display:flex><span><span style=color:#75715e># OceanBase 向量库连接参数</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># OCEANBASE_URL=</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># SeekDB 向量库连接参数</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># SEEKDB_URL=</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Milvus 向量库连接参数</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># MILVUS_ADDRESS=</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># MILVUS_TOKEN=</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># openGauss 向量库连接参数</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># OPENGAUSS_URL=postgresql://gaussdb:FastGPT@123@localhost:5432/fastgpt</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># ==================== 日志配置 ====================</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 日志等级: trace | debug | info | warning | error | fatal</span>
+</span></span><span style=display:flex><span>LOG_ENABLE_CONSOLE<span style=color:#f92672>=</span>true
+</span></span><span style=display:flex><span>LOG_CONSOLE_LEVEL<span style=color:#f92672>=</span>debug
+</span></span><span style=display:flex><span>LOG_ENABLE_OTEL<span style=color:#f92672>=</span>true
+</span></span><span style=display:flex><span>LOG_OTEL_LEVEL<span style=color:#f92672>=</span>info
+</span></span><span style=display:flex><span>LOG_OTEL_SERVICE_NAME<span style=color:#f92672>=</span>fastgpt-client
+</span></span><span style=display:flex><span>LOG_OTEL_URL<span style=color:#f92672>=</span>http://localhost:4318/v1/logs
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 指标</span>
+</span></span><span style=display:flex><span>METRICS_ENABLE_OTEL<span style=color:#f92672>=</span>true
+</span></span><span style=display:flex><span>METRICS_OTEL_URL<span style=color:#f92672>=</span>http://localhost:4318/v1/metrics
+</span></span><span style=display:flex><span>METRICS_OTEL_SERVICE_NAME<span style=color:#f92672>=</span>fastgpt-client
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 追踪</span>
+</span></span><span style=display:flex><span>TRACING_ENABLE_OTEL<span style=color:#f92672>=</span>true
+</span></span><span style=display:flex><span>TRACING_OTEL_URL<span style=color:#f92672>=</span>http://localhost:4318/v1/traces
+</span></span><span style=display:flex><span>TRACING_OTEL_SERVICE_NAME<span style=color:#f92672>=</span>fastgpt-client
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># ==================== 域名与前端 ====================</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 必填。客户端访问 FastGPT 时使用的地址，由协议、主机和可选端口组成，用于补全相对路径资源（注意结尾不要带 /）</span>
+</span></span><span style=display:flex><span>FE_DOMAIN<span style=color:#f92672>=</span>http://localhost:3000
+</span></span><span style=display:flex><span><span style=color:#75715e># 文件域名（也指向 FastGPT 服务）；如需更高安全性可独立分配域名，避免高危文件读取到主域名内容</span>
+</span></span><span style=display:flex><span>FILE_DOMAIN<span style=color:#f92672>=</span>http://localhost:3000
+</span></span><span style=display:flex><span><span style=color:#75715e># 二级路由，需要在打包时确定</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># NEXT_PUBLIC_BASE_URL=/fastai</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># AWS Learning Assistant 真实 RAG 集成（公开资源 ID，不要填写 API Key）</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># NEXT_PUBLIC_AWS_LEARNING_APP_ID=FastGPT 应用/工作流 ID</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># NEXT_PUBLIC_AWS_LEARNING_DATASET_ID=FastGPT Knowledge Base ID</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># ==================== 安全配置 ====================</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 启动 IP 限流（true）；部分接口启用 IP 限流策略以防止异常请求</span>
+</span></span><span style=display:flex><span>USE_IP_LIMIT<span style=color:#f92672>=</span>false
+</span></span><span style=display:flex><span><span style=color:#75715e># 启用内网 IP 检查</span>
+</span></span><span style=display:flex><span>CHECK_INTERNAL_IP<span style=color:#f92672>=</span>false
+</span></span><span style=display:flex><span><span style=color:#75715e># 是否为登录 Cookie 添加 Secure 属性，仅在全站 HTTPS 时启用</span>
+</span></span><span style=display:flex><span>AUTH_COOKIE_SECURE<span style=color:#f92672>=</span>false
+</span></span><span style=display:flex><span><span style=color:#75715e># 是否启用可信反向代理客户端 IP 校验</span>
+</span></span><span style=display:flex><span>TRUSTED_PROXY_ENABLE<span style=color:#f92672>=</span>false
+</span></span><span style=display:flex><span><span style=color:#75715e># 可信反向代理 IP/CIDR 列表，逗号或空白分隔。仅 TRUSTED_PROXY_ENABLE=true 时生效；仅显式可信代理传入的 X-Forwarded-For/X-Real-IP 会用于客户端 IP 解析</span>
+</span></span><span style=display:flex><span>TRUSTED_PROXY_IPS<span style=color:#f92672>=</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 密码错误锁定时长（秒）</span>
+</span></span><span style=display:flex><span>PASSWORD_LOGIN_LOCK_SECONDS<span style=color:#f92672>=</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 密码过期月份（不设置则不过期）</span>
+</span></span><span style=display:flex><span>PASSWORD_EXPIRED_MONTH<span style=color:#f92672>=</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 最大登录客户端数量（默认 10）</span>
+</span></span><span style=display:flex><span>MAX_LOGIN_SESSION<span style=color:#f92672>=</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 自定义跨域；不配置时默认允许所有跨域（逗号分割）</span>
+</span></span><span style=display:flex><span>ALLOWED_ORIGINS<span style=color:#f92672>=</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 强制将图片转成 base64 传递给模型</span>
+</span></span><span style=display:flex><span>MULTIPLE_DATA_TO_BASE64<span style=color:#f92672>=</span>true
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># ==================== 功能开关与特殊配置 ====================</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 是否展示兑换码功能</span>
+</span></span><span style=display:flex><span>SHOW_COUPON<span style=color:#f92672>=</span>false
+</span></span><span style=display:flex><span><span style=color:#75715e># 是否展示优惠券功能</span>
+</span></span><span style=display:flex><span>SHOW_DISCOUNT_COUPON<span style=color:#f92672>=</span>false
+</span></span><span style=display:flex><span><span style=color:#75715e># 申请应用备案地址</span>
+</span></span><span style=display:flex><span>APP_REGISTRATION_URL<span style=color:#f92672>=</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 是否隐藏版权信息配置，只有值为 true 时隐藏</span>
+</span></span><span style=display:flex><span>HIDE_CHAT_COPYRIGHT_SETTING<span style=color:#f92672>=</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 是否允许企微终端自动跳转登录，默认 false</span>
+</span></span><span style=display:flex><span>WECOM_LOGIN_AUTO_REDIRECT<span style=color:#f92672>=</span>false
+</span></span><span style=display:flex><span><span style=color:#75715e># 单个团队成员最多可创建的系统 API Key 数量，最小值为 1</span>
+</span></span><span style=display:flex><span>OPENAPI_KEY_MAX_COUNT<span style=color:#f92672>=</span><span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Agent 引擎选择：fastAgent（FastGPT agent loop）| piAgent（pi-agent-core 引擎）</span>
+</span></span><span style=display:flex><span>AGENT_ENGINE<span style=color:#f92672>=</span>fastAgent
+</span></span><span style=display:flex><span>SKIP_FILE_TYPE_CHECK<span style=color:#f92672>=</span>false
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># ==================== 对话日志推送（可选） ====================</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 日志服务地址</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># CHAT_LOG_URL=http://localhost:8080</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 日志推送间隔</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># CHAT_LOG_INTERVAL=10000</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 日志来源 ID 前缀</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># CHAT_LOG_SOURCE_ID_PREFIX=fastgpt-</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># ==================== 并发控制与限制 ====================</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 微信渠道 poll worker 并发数（默认 1000），需 ≥ online channel 数；channel 数超过该值时消息延迟会线性恶化</span>
+</span></span><span style=display:flex><span>WECHAT_CHANNEL_CONCURRENCY<span style=color:#f92672>=</span><span style=color:#ae81ff>1000</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 文件解析 worker 并发数</span>
+</span></span><span style=display:flex><span>PARSE_FILE_WORKERS<span style=color:#f92672>=</span><span style=color:#ae81ff>10</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 文件解析超时时间（秒）</span>
+</span></span><span style=display:flex><span>PARSE_FILE_TIMEOUT_SECONDS<span style=color:#f92672>=</span><span style=color:#ae81ff>600</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># HTML 转 Markdown worker 并发数</span>
+</span></span><span style=display:flex><span>HTML_TO_MARKDOWN_WORKERS<span style=color:#f92672>=</span><span style=color:#ae81ff>10</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 文本切块 worker 并发数</span>
+</span></span><span style=display:flex><span>TEXT_TO_CHUNKS_WORKERS<span style=color:#f92672>=</span><span style=color:#ae81ff>10</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 工作流最大运行次数，避免极端死循环</span>
+</span></span><span style=display:flex><span>WORKFLOW_MAX_RUN_TIMES<span style=color:#f92672>=</span><span style=color:#ae81ff>500</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 循环/并行节点最大输入数组长度（默认 100）</span>
+</span></span><span style=display:flex><span>WORKFLOW_MAX_LOOP_TIMES<span style=color:#f92672>=</span><span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 并行节点并发上限（最终会 clamp 到 [5, 100]，默认 10）</span>
+</span></span><span style=display:flex><span>WORKFLOW_PARALLEL_MAX_CONCURRENCY<span style=color:#f92672>=</span><span style=color:#ae81ff>10</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 工作流 QPM（若用户套餐有限制，这里不生效）</span>
+</span></span><span style=display:flex><span>CHAT_MAX_QPM<span style=color:#f92672>=</span><span style=color:#ae81ff>5000</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># ==================== 资源限制 ====================</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 服务器接收请求的最大大小（MB）</span>
+</span></span><span style=display:flex><span>SERVICE_REQUEST_MAX_CONTENT_LENGTH<span style=color:#f92672>=</span><span style=color:#ae81ff>10</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 允许的最深文件夹层级，默认 4，范围 2~20（根目录下最多 4 层文件夹）</span>
+</span></span><span style=display:flex><span>MAX_FOLDER_DEPTH<span style=color:#f92672>=</span><span style=color:#ae81ff>4</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 应用文件夹最大数量</span>
+</span></span><span style=display:flex><span>APP_FOLDER_MAX_AMOUNT<span style=color:#f92672>=</span><span style=color:#ae81ff>1000</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 数据集文件夹最大数量</span>
+</span></span><span style=display:flex><span>DATASET_FOLDER_MAX_AMOUNT<span style=color:#f92672>=</span><span style=color:#ae81ff>1000</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 最大上传文件大小（MB）</span>
+</span></span><span style=display:flex><span>UPLOAD_FILE_MAX_SIZE<span style=color:#f92672>=</span><span style=color:#ae81ff>1000</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 最大上传文件数量</span>
+</span></span><span style=display:flex><span>UPLOAD_FILE_MAX_AMOUNT<span style=color:#f92672>=</span><span style=color:#ae81ff>1000</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># LLM 请求追踪保留时长（小时）</span>
+</span></span><span style=display:flex><span>LLM_REQUEST_TRACKING_RETENTION_HOURS<span style=color:#f92672>=</span><span style=color:#ae81ff>6</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># HTML 转 Markdown 最大字符数（超过后不执行转换）</span>
+</span></span><span style=display:flex><span>MAX_HTML_TRANSFORM_CHARS<span style=color:#f92672>=</span><span style=color:#ae81ff>1000000</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># ==================== 开源版特有配置，商业版这部分配置会在 admin 看板 ====================</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># ==================== PDF 增强解析（可选） ====================</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 自定义 PDF 解析服务地址</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># CUSTOM_PDF_PARSE_URL=</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 自定义 PDF 解析服务密钥</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># CUSTOM_PDF_PARSE_KEY=</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># SoMark PDF 解析服务密钥</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># SOMARK_API_KEY=</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Doc2x PDF 解析服务密钥</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># DOC2X_KEY=</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 合合信息 Textin 服务 App ID</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># TEXTIN_APP_ID=</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 合合信息 Textin 服务 Secret Code</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># TEXTIN_SECRET_CODE=</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 向量检索 hnsw ef_search 参数，仅对 PG / OB / OpenGauss 生效</span>
+</span></span><span style=display:flex><span>HNSW_EF_SEARCH<span style=color:#f92672>=</span><span style=color:#ae81ff>100</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 向量检索最大扫描数据量，仅对 PG 生效</span>
+</span></span><span style=display:flex><span>HNSW_MAX_SCAN_TUPLES<span style=color:#f92672>=</span><span style=color:#ae81ff>100000</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#75715e>#  ==================== 知识库处理并发控制  ====================</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 知识库文件解析队列最大并发数</span>
+</span></span><span style=display:flex><span>DATASET_PARSE_MAX_PROCESS<span style=color:#f92672>=</span><span style=color:#ae81ff>10</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 向量训练队列最大并发数</span>
+</span></span><span style=display:flex><span>VECTOR_MAX_PROCESS<span style=color:#f92672>=</span><span style=color:#ae81ff>10</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 问答拆分队列最大并发数</span>
+</span></span><span style=display:flex><span>QA_MAX_PROCESS<span style=color:#f92672>=</span><span style=color:#ae81ff>10</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># 图片理解模型处理队列最大并发数</span>
+</span></span><span style=display:flex><span>VLM_MAX_PROCESS<span style=color:#f92672>=</span><span style=color:#ae81ff>10</span>
+</span></span></code></pre></div><h2 id=kết-quả-mong-đợi>Kết quả mong đợi</h2><p>Môi trường local, CI/CD và AWS dùng cấu hình tương thích; tài nguyên được đặt tên nhất quán; thông tin bí mật được tách khỏi mã nguồn.</p><footer class=footline></footer></div></div><div id=navigation><a class="nav nav-prev" href=/vi/5-workshop/5.2-prerequiste/ title="5.2 Kiến trúc hệ thống"><i class="fa fa-chevron-left"></i></a>
+<a class="nav nav-next" href=/vi/5-workshop/5.4-local-setup/ title="5.4. Điều kiện tiên quyết và chạy local" style=margin-right:0><i class="fa fa-chevron-right"></i></a></div></section><div style=left:-1000px;overflow:scroll;position:absolute;top:-1000px;border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px><div style=border:none;box-sizing:content-box;height:200px;margin:0;padding:0;width:200px></div></div><script src=/js/clipboard.min.js?1786510402></script><script src=/js/perfect-scrollbar.min.js?1786510402></script><script src=/js/perfect-scrollbar.jquery.min.js?1786510402></script><script src=/js/jquery.sticky.js?1786510402></script><script src=/js/featherlight.min.js?1786510402></script><script src=/js/highlight.pack.js?1786510402></script><script>hljs.initHighlightingOnLoad()</script><script src=/js/modernizr.custom-3.6.0.js?1786510402></script><script src=/js/learn.js?1786510402></script><script src=/js/hugo-learn.js?1786510402></script><link href=/mermaid/mermaid.css?1786510402 rel=stylesheet><script src=/mermaid/mermaid.js?1786510402></script><script>mermaid.initialize({startOnLoad:!0})</script><script>(function(e,t,n,s,o,i,a){e.GoogleAnalyticsObject=o,(e[o]=e[o]||function(){(e[o].q=e[o].q||[]).push(arguments)},e[o].l=1*new Date),(i=t.createElement(n),a=t.getElementsByTagName(n)[0]),i.async=1,i.src=s,a.parentNode.insertBefore(i,a)})(window,document,"script","https://www.google-analytics.com/analytics.js","ga"),ga("create","UA-158079754-2","auto"),ga("send","pageview")</script><script>document.addEventListener("DOMContentLoaded",function(){if(document.body.classList.add("ui-ready"),window.lucide){var e=[["#sidebar-toggle i","panel-left-open"],["#toc-menu i","book-open-text"],["#top-github-link i","square-pen"],[".nav-prev i","chevron-left"],[".nav-next i","chevron-right"]];e.forEach(function(e){var t=document.querySelector(e[0]);t&&(t.setAttribute("data-lucide",e[1]),t.classList.add("lucide-icon"))}),window.lucide.createIcons()}})</script></body></html>
