@@ -275,7 +275,7 @@ Kiến trúc được thiết kế theo hướng **Production Lite**, phù hợp
 
 > **Hình 3.1. Kiến trúc tổng thể của AI Learning Assistant Platform.**
 
-![Hình 3.1](/images/3.1.d.x.png)
+![Hình 3.1](/images/AWSKIENTRUC.png)
 
 ---
 
@@ -314,7 +314,7 @@ Kiến trúc hiện tại được tối ưu cho môi trường thực tập và
 
 > **Hình 3.2. Kiến trúc triển khai hệ thống trên AWS.**
 
-![Hình 3.2](/images/3.2.d.s.png)
+![Hình 3.2](/images/ANH2.png)
 
 ---
 

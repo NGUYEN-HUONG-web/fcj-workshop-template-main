@@ -224,7 +224,7 @@ The architecture follows a **Production Lite** approach, making it suitable for 
 
 > **Figure 3.1. Overall Architecture of AI Learning Assistant Platform.**
 
-![Figure 3.1](/images/3.1.d.x.png)
+![Hình 3.1](/images/AWSKIENTRUC.png)
 
 ---
 
@@ -263,7 +263,7 @@ The current architecture is optimized for internship projects and the MVP stage.
 
 > **Figure 3.2. AWS Deployment Architecture of AI Learning Assistant Platform.**
 
-![Figure 3.2](/images/3.2.d.s.png)
+![Hình 3.2](/images/ANH2.png)
 
 ---
 
