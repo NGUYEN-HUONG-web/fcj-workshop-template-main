@@ -11,10 +11,6 @@ pre: " <b> 5.10. </b> "
 Dọn dẹp theo thứ tự phụ thuộc để tránh bỏ sót tài nguyên:
 
 1. Export dữ liệu cần giữ và xác nhận bản sao lưu cuối trên Amazon S3.
-
-> **⚠️ Ảnh chưa có:** Bản sao lưu cuối trên S3 trước khi xóa tài nguyên.  
-> File: `/images/5-Workshop/5.10-Cleanup-Future/final-s3-backup.png`
-<!-- ![Bản sao lưu cuối trên S3](/images/5-Workshop/5.10-Cleanup-Future/final-s3-backup.png) -->
 2. Dừng Docker Compose, xóa container tạm, image và volume không sử dụng.
 3. Stop hoặc terminate EC2 theo quyết định lưu giữ.
 4. Giải phóng Elastic IP không dùng, xóa EBS volume hoặc snapshot lỗi thời.
@@ -25,11 +21,9 @@ Dọn dẹp theo thứ tự phụ thuộc để tránh bỏ sót tài nguyên:
 9. Xóa IAM policy và role tạm sau khi tài nguyên phụ thuộc đã được loại bỏ.
 10. Kiểm tra Billing, Cost Explorer và Resource Explorer để tìm tài nguyên còn sót.
 
-> **⚠️ Ảnh chưa có:** EC2 đã stop/terminate và Resource Explorer không còn tài nguyên ngoài ý muốn.  
-> File: `/images/5-Workshop/5.10-Cleanup-Future/resources-cleaned.png`
-<!-- ![Tài nguyên đã được dọn dẹp](/images/5-Workshop/5.10-Cleanup-Future/resources-cleaned.png) -->
+![Tài nguyên đã được dọn dẹp](/images/5.10.png)
 
-> Xóa tài nguyên là thao tác không thể hoàn tác. Cần kiểm tra Resource ID, Region, trạng thái sao lưu và danh sách phụ thuộc trước mỗi thao tác.
+Xóa tài nguyên là thao tác không thể hoàn tác. Cần kiểm tra Resource ID, Region, trạng thái sao lưu và danh sách phụ thuộc trước mỗi thao tác.
 
 ## Bàn giao hệ thống
 
@@ -48,19 +42,5 @@ Ghi nhận image tag đang triển khai, phiên bản cấu hình môi trường
 - Tự động hóa integration test, security test, load test, backup test và disaster-recovery test.
 - Dùng Infrastructure as Code để tái tạo môi trường nhất quán.
 
-> **⚠️ Ảnh chưa có:** Sơ đồ kiến trúc đề xuất cho giai đoạn phát triển tiếp theo.  
-> File: `/images/5-Workshop/5.10-Cleanup-Future/future-architecture.png`
-<!-- ![Kiến trúc phát triển tương lai](/images/5-Workshop/5.10-Cleanup-Future/future-architecture.png) -->
 
 Các hướng phát triển cần được ưu tiên dựa trên số liệu sử dụng, yêu cầu độ tin cậy, rủi ro bảo mật và ngân sách thực tế.
-
-## Ảnh minh chứng cần bổ sung
-
-1. Bản sao lưu S3 cuối cùng trước khi dọn dẹp.
-2. EC2 đã stop hoặc terminate sau khi dọn tài nguyên.
-3. ECR lifecycle policy hoặc các image tag cần giữ lại.
-4. EventBridge schedule đã tắt và tài nguyên CloudWatch đã dọn.
-5. Resource Explorer, Cost Explorer hoặc Billing cho thấy không còn tài nguyên ngoài ý muốn.
-6. Sơ đồ kiến trúc đề xuất cho giai đoạn phát triển tiếp theo.
-
-<!-- Thư mục đề xuất: /static/images/5-Workshop/5.10-Cleanup-Future/ -->

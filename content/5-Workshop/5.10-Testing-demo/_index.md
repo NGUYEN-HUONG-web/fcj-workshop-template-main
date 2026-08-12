@@ -21,7 +21,7 @@ Clean up in dependency-aware order so resources are not left behind:
 9. Remove temporary IAM policies and roles after dependent resources are gone.
 10. Review Billing, Cost Explorer, and Resource Explorer for remaining resources.
 
-> Deleting resources is irreversible. Confirm the resource ID, Region, backup status, and dependency list before every cleanup action.
+![Tài nguyên đã được dọn dẹp](/images/5.10.png)
 
 ## Handover
 
@@ -41,12 +41,3 @@ Record the deployed image tag, environment configuration version, backup locatio
 - Define infrastructure with code to reproduce the environment consistently.
 
 These improvements should be prioritized using measured usage, reliability requirements, security risk, and available budget.
-
-## Evidence images to add
-
-1. Final S3 backup before cleanup.
-2. EC2 stopped or terminated after resource cleanup.
-3. ECR lifecycle policy or remaining required image tags.
-4. Disabled EventBridge schedules and cleaned CloudWatch resources.
-5. Resource Explorer, Cost Explorer, or Billing view showing no unintended resources.
-6. Proposed future architecture diagram.
